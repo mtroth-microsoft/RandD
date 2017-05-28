@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Microsoft.OData.UriParser;
+using Infrastructure.Parser.UriParser;
 
 namespace ConsoleApplication1
 {
