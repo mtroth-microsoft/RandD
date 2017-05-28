@@ -4,11 +4,7 @@
 // </copyright>
 //---------------------------------------------------------------------
 
-#if ODATA_CLIENT
-namespace Microsoft.OData.Client.ALinq.UriParser
-#else
-namespace Microsoft.OData
-#endif
+namespace Infrastructure.Parser
 {
     #region Namespaces
     using System;

@@ -4,11 +4,7 @@
 // </copyright>
 //---------------------------------------------------------------------
 
-#if ODATA_CORE
-namespace Microsoft.OData.UriParser
-#else
-namespace Microsoft.OData.Service.Parsing
-#endif
+namespace Infrastructure.Parser.UriParser
 {
     #region Namespaces
     using System;

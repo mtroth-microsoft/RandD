@@ -7,7 +7,7 @@
 // </copyright>
 //---------------------------------------------------------------------
 
-namespace Microsoft.OData {
+namespace Infrastructure.Parser {
     using System;
     using System.Globalization;
     using System.Reflection;
@@ -812,9 +812,9 @@ namespace Microsoft.OData {
 
         internal TextRes() {
 #if !PORTABLELIB
-            resources = new System.Resources.ResourceManager("Microsoft.OData.Core", this.GetType().Assembly);
+            resources = new System.Resources.ResourceManager("Infrastructure.Parser", this.GetType().Assembly);
 #else
-            resources = new System.Resources.ResourceManager("Microsoft.OData.Core", this.GetType().GetTypeInfo().Assembly);
+            resources = new System.Resources.ResourceManager("Infrastructure.Parser", this.GetType().GetTypeInfo().Assembly);
 #endif
         }
 

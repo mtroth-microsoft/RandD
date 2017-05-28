@@ -4,7 +4,7 @@
 // </copyright>
 //---------------------------------------------------------------------
 
-namespace Microsoft.OData
+namespace Infrastructure.Parser
 {
     #region Namespaces
     using System.Diagnostics.CodeAnalysis;

@@ -4,7 +4,7 @@
 // </copyright>
 //---------------------------------------------------------------------
 
-namespace Microsoft.OData.UriParser
+namespace Infrastructure.Parser.UriParser
 {
     #region Namespaces
 

@@ -7,7 +7,7 @@
 // </copyright>
 //---------------------------------------------------------------------
 
-namespace Microsoft.OData {
+namespace Infrastructure.Parser {
     using System;
     using System.Resources;
 
@@ -20,7 +20,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ExceptionUtils_ArgumentStringEmpty {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ExceptionUtils_ArgumentStringEmpty);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ExceptionUtils_ArgumentStringEmpty);
             }
         }
 
@@ -29,7 +29,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataRequestMessage_AsyncNotAvailable {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataRequestMessage_AsyncNotAvailable);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataRequestMessage_AsyncNotAvailable);
             }
         }
 
@@ -38,7 +38,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataRequestMessage_StreamTaskIsNull {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataRequestMessage_StreamTaskIsNull);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataRequestMessage_StreamTaskIsNull);
             }
         }
 
@@ -47,7 +47,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataRequestMessage_MessageStreamIsNull {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataRequestMessage_MessageStreamIsNull);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataRequestMessage_MessageStreamIsNull);
             }
         }
 
@@ -56,7 +56,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataResponseMessage_AsyncNotAvailable {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataResponseMessage_AsyncNotAvailable);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataResponseMessage_AsyncNotAvailable);
             }
         }
 
@@ -65,7 +65,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataResponseMessage_StreamTaskIsNull {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataResponseMessage_StreamTaskIsNull);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataResponseMessage_StreamTaskIsNull);
             }
         }
 
@@ -74,7 +74,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataResponseMessage_MessageStreamIsNull {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataResponseMessage_MessageStreamIsNull);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataResponseMessage_MessageStreamIsNull);
             }
         }
 
@@ -83,7 +83,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string AsyncBufferedStream_WriterDisposedWithoutFlush {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.AsyncBufferedStream_WriterDisposedWithoutFlush);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.AsyncBufferedStream_WriterDisposedWithoutFlush);
             }
         }
 
@@ -92,7 +92,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataFormat_AtomFormatObsoleted {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataFormat_AtomFormatObsoleted);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataFormat_AtomFormatObsoleted);
             }
         }
 
@@ -100,14 +100,14 @@ namespace Microsoft.OData {
         /// A string like "The format '{0}' does not support writing a payload of kind '{1}'."
         /// </summary>
         internal static string ODataOutputContext_UnsupportedPayloadKindForFormat(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataOutputContext_UnsupportedPayloadKindForFormat, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataOutputContext_UnsupportedPayloadKindForFormat, p0, p1);
         }
 
         /// <summary>
         /// A string like "The format '{0}' does not support reading a payload of kind '{1}'."
         /// </summary>
         internal static string ODataInputContext_UnsupportedPayloadKindForFormat(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataInputContext_UnsupportedPayloadKindForFormat, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataInputContext_UnsupportedPayloadKindForFormat, p0, p1);
         }
 
         /// <summary>
@@ -115,7 +115,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataOutputContext_MetadataDocumentUriMissing {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataOutputContext_MetadataDocumentUriMissing);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataOutputContext_MetadataDocumentUriMissing);
             }
         }
 
@@ -123,105 +123,105 @@ namespace Microsoft.OData {
         /// A string like "A relative URI value '{0}' was specified in the data to write, but the metadata document URI or the metadata for the item to be written was not specified for the writer. The metadata document URI and the metadata for the item to be written must be provided to the writer when using relative URI values."
         /// </summary>
         internal static string ODataJsonLightSerializer_RelativeUriUsedWithoutMetadataDocumentUriOrMetadata(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightSerializer_RelativeUriUsedWithoutMetadataDocumentUriOrMetadata, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightSerializer_RelativeUriUsedWithoutMetadataDocumentUriOrMetadata, p0);
         }
 
         /// <summary>
         /// A string like "A relative URI value '{0}' was specified in the data to write, but a base URI was not specified for the writer. A base URI must be set when using relative URI values."
         /// </summary>
         internal static string ODataWriter_RelativeUriUsedWithoutBaseUriSpecified(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataWriter_RelativeUriUsedWithoutBaseUriSpecified, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataWriter_RelativeUriUsedWithoutBaseUriSpecified, p0);
         }
 
         /// <summary>
         /// A string like "The property '{0}' is a stream property, but it is not a property of an ODataResource instance. In OData, stream properties must be properties of ODataResource instances."
         /// </summary>
         internal static string ODataWriter_StreamPropertiesMustBePropertiesOfODataResource(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataWriter_StreamPropertiesMustBePropertiesOfODataResource, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataWriter_StreamPropertiesMustBePropertiesOfODataResource, p0);
         }
 
         /// <summary>
         /// A string like "An invalid state transition has been detected in an OData writer. Cannot transition from state '{0}' to state '{1}'."
         /// </summary>
         internal static string ODataWriterCore_InvalidStateTransition(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataWriterCore_InvalidStateTransition, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataWriterCore_InvalidStateTransition, p0, p1);
         }
 
         /// <summary>
         /// A string like "Cannot transition from state '{0}' to state '{1}'. The only valid actions in state '{0}' are to write a resource or a resource set."
         /// </summary>
         internal static string ODataWriterCore_InvalidTransitionFromStart(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataWriterCore_InvalidTransitionFromStart, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataWriterCore_InvalidTransitionFromStart, p0, p1);
         }
 
         /// <summary>
         /// A string like "Cannot transition from state '{0}' to state '{1}'. The only valid action in state '{0}' is to write a nested resource."
         /// </summary>
         internal static string ODataWriterCore_InvalidTransitionFromResource(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataWriterCore_InvalidTransitionFromResource, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataWriterCore_InvalidTransitionFromResource, p0, p1);
         }
 
         /// <summary>
         /// A string like "Cannot transition from state '{0}' to state '{1}'. You must first call ODataWriter.WriteEnd to finish writing a null ODataResource."
         /// </summary>
         internal static string ODataWriterCore_InvalidTransitionFromNullResource(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataWriterCore_InvalidTransitionFromNullResource, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataWriterCore_InvalidTransitionFromNullResource, p0, p1);
         }
 
         /// <summary>
         /// A string like "Cannot transition from state '{0}' to state '{1}'. The only valid action in state '{0}' is to write a resource."
         /// </summary>
         internal static string ODataWriterCore_InvalidTransitionFromResourceSet(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataWriterCore_InvalidTransitionFromResourceSet, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataWriterCore_InvalidTransitionFromResourceSet, p0, p1);
         }
 
         /// <summary>
         /// A string like "Cannot transition from state '{0}' to state '{1}'. The only valid actions in state '{0}' are to write a resource or a resource set."
         /// </summary>
         internal static string ODataWriterCore_InvalidTransitionFromExpandedLink(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataWriterCore_InvalidTransitionFromExpandedLink, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataWriterCore_InvalidTransitionFromExpandedLink, p0, p1);
         }
 
         /// <summary>
         /// A string like "Cannot transition from state '{0}' to state '{1}'. Nothing further can be written once the writer has completed."
         /// </summary>
         internal static string ODataWriterCore_InvalidTransitionFromCompleted(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataWriterCore_InvalidTransitionFromCompleted, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataWriterCore_InvalidTransitionFromCompleted, p0, p1);
         }
 
         /// <summary>
         /// A string like "Cannot transition from state '{0}' to state '{1}'. Nothing can be written once the writer entered the error state."
         /// </summary>
         internal static string ODataWriterCore_InvalidTransitionFromError(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataWriterCore_InvalidTransitionFromError, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataWriterCore_InvalidTransitionFromError, p0, p1);
         }
 
         /// <summary>
         /// A string like "Cannot transition from state '{0}' to state '{1}'. State transition is not allowed while writing an expanded navigation property, complex property or complex collection property."
         /// </summary>
         internal static string ODataJsonLightDeltaWriter_InvalidTransitionFromNestedResource(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightDeltaWriter_InvalidTransitionFromNestedResource, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightDeltaWriter_InvalidTransitionFromNestedResource, p0, p1);
         }
 
         /// <summary>
         /// A string like "Cannot transition from state '{0}' to state '{1}'. Nested resource can only be written within a delta resource."
         /// </summary>
         internal static string ODataJsonLightDeltaWriter_InvalidTransitionToNestedResource(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightDeltaWriter_InvalidTransitionToNestedResource, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightDeltaWriter_InvalidTransitionToNestedResource, p0, p1);
         }
 
         /// <summary>
         /// A string like "WriteStart(expandedResourceSet) was called in an invalid state ('{0}'); WriteStart(expandedResourceSet) is only supported in state 'ExpandedNavigationProperty'."
         /// </summary>
         internal static string ODataJsonLightDeltaWriter_WriteStartExpandedResourceSetCalledInInvalidState(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightDeltaWriter_WriteStartExpandedResourceSetCalledInInvalidState, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightDeltaWriter_WriteStartExpandedResourceSetCalledInInvalidState, p0);
         }
 
         /// <summary>
         /// A string like "ODataWriter.WriteEnd was called in an invalid state ('{0}'); WriteEnd is only supported in states 'Resource', 'ResourceSet', 'NavigationLink', and 'NavigationLinkWithContent'."
         /// </summary>
         internal static string ODataWriterCore_WriteEndCalledInInvalidState(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataWriterCore_WriteEndCalledInInvalidState, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataWriterCore_WriteEndCalledInInvalidState, p0);
         }
 
         /// <summary>
@@ -229,7 +229,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataWriterCore_QueryCountInRequest {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataWriterCore_QueryCountInRequest);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataWriterCore_QueryCountInRequest);
             }
         }
 
@@ -238,7 +238,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataWriterCore_CannotWriteTopLevelResourceSetWithResourceWriter {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataWriterCore_CannotWriteTopLevelResourceSetWithResourceWriter);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataWriterCore_CannotWriteTopLevelResourceSetWithResourceWriter);
             }
         }
 
@@ -247,7 +247,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataWriterCore_CannotWriteTopLevelResourceWithResourceSetWriter {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataWriterCore_CannotWriteTopLevelResourceWithResourceSetWriter);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataWriterCore_CannotWriteTopLevelResourceWithResourceSetWriter);
             }
         }
 
@@ -256,7 +256,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataWriterCore_SyncCallOnAsyncWriter {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataWriterCore_SyncCallOnAsyncWriter);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataWriterCore_SyncCallOnAsyncWriter);
             }
         }
 
@@ -265,7 +265,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataWriterCore_AsyncCallOnSyncWriter {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataWriterCore_AsyncCallOnSyncWriter);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataWriterCore_AsyncCallOnSyncWriter);
             }
         }
 
@@ -274,7 +274,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataWriterCore_EntityReferenceLinkWithoutNavigationLink {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataWriterCore_EntityReferenceLinkWithoutNavigationLink);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataWriterCore_EntityReferenceLinkWithoutNavigationLink);
             }
         }
 
@@ -283,7 +283,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataWriterCore_EntityReferenceLinkInResponse {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataWriterCore_EntityReferenceLinkInResponse);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataWriterCore_EntityReferenceLinkInResponse);
             }
         }
 
@@ -292,7 +292,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataWriterCore_DeferredLinkInRequest {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataWriterCore_DeferredLinkInRequest);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataWriterCore_DeferredLinkInRequest);
             }
         }
 
@@ -301,7 +301,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataWriterCore_MultipleItemsInNestedResourceInfoWithContent {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataWriterCore_MultipleItemsInNestedResourceInfoWithContent);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataWriterCore_MultipleItemsInNestedResourceInfoWithContent);
             }
         }
 
@@ -310,7 +310,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataWriterCore_DeltaLinkNotSupportedOnExpandedResourceSet {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataWriterCore_DeltaLinkNotSupportedOnExpandedResourceSet);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataWriterCore_DeltaLinkNotSupportedOnExpandedResourceSet);
             }
         }
 
@@ -319,7 +319,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataWriterCore_PathInODataUriMustBeSetWhenWritingContainedElement {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataWriterCore_PathInODataUriMustBeSetWhenWritingContainedElement);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataWriterCore_PathInODataUriMustBeSetWhenWritingContainedElement);
             }
         }
 
@@ -327,49 +327,49 @@ namespace Microsoft.OData {
         /// A string like "Multiple properties with the name '{0}' were detected in a resource or a complex value. In OData, duplicate property names are not allowed."
         /// </summary>
         internal static string DuplicatePropertyNamesNotAllowed(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.DuplicatePropertyNamesNotAllowed, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.DuplicatePropertyNamesNotAllowed, p0);
         }
 
         /// <summary>
         /// A string like "Multiple annotations with the name '{0}' were detected. In OData, duplicate annotations are not allowed."
         /// </summary>
         internal static string DuplicateAnnotationNotAllowed(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.DuplicateAnnotationNotAllowed, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.DuplicateAnnotationNotAllowed, p0);
         }
 
         /// <summary>
         /// A string like "Multiple annotations with the name '{0}' were detected for the property with name '{1}'. In OData, duplicate annotations are not allowed."
         /// </summary>
         internal static string DuplicateAnnotationForPropertyNotAllowed(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.DuplicateAnnotationForPropertyNotAllowed, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.DuplicateAnnotationForPropertyNotAllowed, p0, p1);
         }
 
         /// <summary>
         /// A string like "Multiple annotations with the name '{0}' were detected for the instance annotation with name '{1}'. In OData, duplicate annotations are not allowed."
         /// </summary>
         internal static string DuplicateAnnotationForInstanceAnnotationNotAllowed(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.DuplicateAnnotationForInstanceAnnotationNotAllowed, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.DuplicateAnnotationForInstanceAnnotationNotAllowed, p0, p1);
         }
 
         /// <summary>
         /// A string like "An annotation with name '{0}' for property '{1}' was detected after the property, or after an annotation for another property. In OData, annotations for a property must be in a single group and must appear before the property they annotate."
         /// </summary>
         internal static string PropertyAnnotationAfterTheProperty(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.PropertyAnnotationAfterTheProperty, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.PropertyAnnotationAfterTheProperty, p0, p1);
         }
 
         /// <summary>
         /// A string like "Cannot convert a value of type '{0}' to the string representation of an Atom primitive value."
         /// </summary>
         internal static string AtomValueUtils_CannotConvertValueToAtomPrimitive(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.AtomValueUtils_CannotConvertValueToAtomPrimitive, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.AtomValueUtils_CannotConvertValueToAtomPrimitive, p0);
         }
 
         /// <summary>
         /// A string like "The value of type '{0}' is not supported and cannot be converted to a JSON representation."
         /// </summary>
         internal static string ODataJsonWriter_UnsupportedValueType(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonWriter_UnsupportedValueType, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonWriter_UnsupportedValueType, p0);
         }
 
         /// <summary>
@@ -377,7 +377,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataException_GeneralError {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataException_GeneralError);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataException_GeneralError);
             }
         }
 
@@ -386,7 +386,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataErrorException_GeneralError {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataErrorException_GeneralError);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataErrorException_GeneralError);
             }
         }
 
@@ -395,7 +395,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataUriParserException_GeneralError {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataUriParserException_GeneralError);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataUriParserException_GeneralError);
             }
         }
 
@@ -404,7 +404,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataMessageWriter_WriterAlreadyUsed {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataMessageWriter_WriterAlreadyUsed);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataMessageWriter_WriterAlreadyUsed);
             }
         }
 
@@ -413,7 +413,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataMessageWriter_EntityReferenceLinksInRequestNotAllowed {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataMessageWriter_EntityReferenceLinksInRequestNotAllowed);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataMessageWriter_EntityReferenceLinksInRequestNotAllowed);
             }
         }
 
@@ -422,7 +422,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataMessageWriter_ErrorPayloadInRequest {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataMessageWriter_ErrorPayloadInRequest);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataMessageWriter_ErrorPayloadInRequest);
             }
         }
 
@@ -431,7 +431,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataMessageWriter_ServiceDocumentInRequest {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataMessageWriter_ServiceDocumentInRequest);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataMessageWriter_ServiceDocumentInRequest);
             }
         }
 
@@ -440,7 +440,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataMessageWriter_MetadataDocumentInRequest {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataMessageWriter_MetadataDocumentInRequest);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataMessageWriter_MetadataDocumentInRequest);
             }
         }
 
@@ -449,7 +449,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataMessageWriter_DeltaInRequest {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataMessageWriter_DeltaInRequest);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataMessageWriter_DeltaInRequest);
             }
         }
 
@@ -458,7 +458,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataMessageWriter_AsyncInRequest {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataMessageWriter_AsyncInRequest);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataMessageWriter_AsyncInRequest);
             }
         }
 
@@ -467,7 +467,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataMessageWriter_CannotWriteNullInRawFormat {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataMessageWriter_CannotWriteNullInRawFormat);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataMessageWriter_CannotWriteNullInRawFormat);
             }
         }
 
@@ -475,21 +475,21 @@ namespace Microsoft.OData {
         /// A string like "Cannot set message headers for the invalid payload kind '{0}'."
         /// </summary>
         internal static string ODataMessageWriter_CannotSetHeadersWithInvalidPayloadKind(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataMessageWriter_CannotSetHeadersWithInvalidPayloadKind, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataMessageWriter_CannotSetHeadersWithInvalidPayloadKind, p0);
         }
 
         /// <summary>
         /// A string like "The payload kind '{0}' used in the last call to ODataUtils.SetHeadersForPayload is incompatible with the payload being written, which is of kind '{1}'."
         /// </summary>
         internal static string ODataMessageWriter_IncompatiblePayloadKinds(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataMessageWriter_IncompatiblePayloadKinds, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataMessageWriter_IncompatiblePayloadKinds, p0, p1);
         }
 
         /// <summary>
         /// A string like "The stream property '{0}' cannot be written to the payload as a top level property."
         /// </summary>
         internal static string ODataMessageWriter_CannotWriteStreamPropertyAsTopLevelProperty(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataMessageWriter_CannotWriteStreamPropertyAsTopLevelProperty, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataMessageWriter_CannotWriteStreamPropertyAsTopLevelProperty, p0);
         }
 
         /// <summary>
@@ -497,7 +497,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataMessageWriter_WriteErrorAlreadyCalled {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataMessageWriter_WriteErrorAlreadyCalled);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataMessageWriter_WriteErrorAlreadyCalled);
             }
         }
 
@@ -506,7 +506,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataMessageWriter_CannotWriteInStreamErrorForRawValues {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataMessageWriter_CannotWriteInStreamErrorForRawValues);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataMessageWriter_CannotWriteInStreamErrorForRawValues);
             }
         }
 
@@ -515,7 +515,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataMessageWriter_CannotWriteMetadataWithoutModel {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataMessageWriter_CannotWriteMetadataWithoutModel);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataMessageWriter_CannotWriteMetadataWithoutModel);
             }
         }
 
@@ -524,7 +524,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataMessageWriter_CannotSpecifyOperationWithoutModel {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataMessageWriter_CannotSpecifyOperationWithoutModel);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataMessageWriter_CannotSpecifyOperationWithoutModel);
             }
         }
 
@@ -532,14 +532,14 @@ namespace Microsoft.OData {
         /// A string like "A JsonPaddingFunctionName was specified, but the content-type '{0}' is not supported with Json Padding."
         /// </summary>
         internal static string ODataMessageWriter_JsonPaddingOnInvalidContentType(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataMessageWriter_JsonPaddingOnInvalidContentType, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataMessageWriter_JsonPaddingOnInvalidContentType, p0);
         }
 
         /// <summary>
         /// A string like "The type '{0}' specified as the collection's item type is not primitive, enum or complex. An ODataCollectionWriter can only write collections of primitive, enum or complex values."
         /// </summary>
         internal static string ODataMessageWriter_NonCollectionType(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataMessageWriter_NonCollectionType, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataMessageWriter_NonCollectionType, p0);
         }
 
         /// <summary>
@@ -547,7 +547,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataMessageWriterSettings_MessageWriterSettingsXmlCustomizationCallbacksMustBeSpecifiedBoth {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataMessageWriterSettings_MessageWriterSettingsXmlCustomizationCallbacksMustBeSpecifiedBoth);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataMessageWriterSettings_MessageWriterSettingsXmlCustomizationCallbacksMustBeSpecifiedBoth);
             }
         }
 
@@ -555,28 +555,28 @@ namespace Microsoft.OData {
         /// A string like "Cannot transition from state '{0}' to state '{1}'. The only valid actions in state '{0}' are to write the collection or to write nothing at all."
         /// </summary>
         internal static string ODataCollectionWriterCore_InvalidTransitionFromStart(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataCollectionWriterCore_InvalidTransitionFromStart, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataCollectionWriterCore_InvalidTransitionFromStart, p0, p1);
         }
 
         /// <summary>
         /// A string like "Cannot transition from state '{0}' to state '{1}'. The only valid actions in state '{0}' are to write an item or to write the end of the collection."
         /// </summary>
         internal static string ODataCollectionWriterCore_InvalidTransitionFromCollection(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataCollectionWriterCore_InvalidTransitionFromCollection, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataCollectionWriterCore_InvalidTransitionFromCollection, p0, p1);
         }
 
         /// <summary>
         /// A string like "Cannot transition from state '{0}' to state '{1}'. The only valid actions in state '{0}' are to write an item or the end of the collection."
         /// </summary>
         internal static string ODataCollectionWriterCore_InvalidTransitionFromItem(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataCollectionWriterCore_InvalidTransitionFromItem, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataCollectionWriterCore_InvalidTransitionFromItem, p0, p1);
         }
 
         /// <summary>
         /// A string like "ODataCollectionWriter.WriteEnd was called in an invalid state ('{0}'); WriteEnd is only supported in states 'Start', 'Collection', and 'Item'."
         /// </summary>
         internal static string ODataCollectionWriterCore_WriteEndCalledInInvalidState(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataCollectionWriterCore_WriteEndCalledInInvalidState, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataCollectionWriterCore_WriteEndCalledInInvalidState, p0);
         }
 
         /// <summary>
@@ -584,7 +584,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataCollectionWriterCore_SyncCallOnAsyncWriter {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataCollectionWriterCore_SyncCallOnAsyncWriter);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataCollectionWriterCore_SyncCallOnAsyncWriter);
             }
         }
 
@@ -593,7 +593,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataCollectionWriterCore_AsyncCallOnSyncWriter {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataCollectionWriterCore_AsyncCallOnSyncWriter);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataCollectionWriterCore_AsyncCallOnSyncWriter);
             }
         }
 
@@ -601,21 +601,21 @@ namespace Microsoft.OData {
         /// A string like "An invalid HTTP method '{0}' was detected for a request in a change set. Requests in change sets only support the HTTP methods 'POST', 'PUT', 'DELETE', and 'PATCH'."
         /// </summary>
         internal static string ODataBatch_InvalidHttpMethodForChangeSetRequest(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataBatch_InvalidHttpMethodForChangeSetRequest, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataBatch_InvalidHttpMethodForChangeSetRequest, p0);
         }
 
         /// <summary>
         /// A string like "The header with name '{0}' was not present in the header collection of the batch operation."
         /// </summary>
         internal static string ODataBatchOperationHeaderDictionary_KeyNotFound(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataBatchOperationHeaderDictionary_KeyNotFound, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataBatchOperationHeaderDictionary_KeyNotFound, p0);
         }
 
         /// <summary>
         /// A string like "Multiple headers with names that match '{0}', when using a case insensitive comparison, have been added. When case-insensitive header names are used, at most one header can be added for each name."
         /// </summary>
         internal static string ODataBatchOperationHeaderDictionary_DuplicateCaseInsensitiveKeys(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataBatchOperationHeaderDictionary_DuplicateCaseInsensitiveKeys, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataBatchOperationHeaderDictionary_DuplicateCaseInsensitiveKeys, p0);
         }
 
         /// <summary>
@@ -623,7 +623,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataParameterWriter_InStreamErrorNotSupported {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataParameterWriter_InStreamErrorNotSupported);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataParameterWriter_InStreamErrorNotSupported);
             }
         }
 
@@ -632,7 +632,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataParameterWriter_CannotCreateParameterWriterOnResponseMessage {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataParameterWriter_CannotCreateParameterWriterOnResponseMessage);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataParameterWriter_CannotCreateParameterWriterOnResponseMessage);
             }
         }
 
@@ -641,7 +641,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataParameterWriterCore_SyncCallOnAsyncWriter {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataParameterWriterCore_SyncCallOnAsyncWriter);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataParameterWriterCore_SyncCallOnAsyncWriter);
             }
         }
 
@@ -650,7 +650,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataParameterWriterCore_AsyncCallOnSyncWriter {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataParameterWriterCore_AsyncCallOnSyncWriter);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataParameterWriterCore_AsyncCallOnSyncWriter);
             }
         }
 
@@ -659,7 +659,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataParameterWriterCore_CannotWriteStart {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataParameterWriterCore_CannotWriteStart);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataParameterWriterCore_CannotWriteStart);
             }
         }
 
@@ -668,7 +668,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataParameterWriterCore_CannotWriteParameter {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataParameterWriterCore_CannotWriteParameter);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataParameterWriterCore_CannotWriteParameter);
             }
         }
 
@@ -677,7 +677,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataParameterWriterCore_CannotWriteEnd {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataParameterWriterCore_CannotWriteEnd);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataParameterWriterCore_CannotWriteEnd);
             }
         }
 
@@ -686,7 +686,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataParameterWriterCore_CannotWriteInErrorOrCompletedState {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataParameterWriterCore_CannotWriteInErrorOrCompletedState);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataParameterWriterCore_CannotWriteInErrorOrCompletedState);
             }
         }
 
@@ -694,56 +694,56 @@ namespace Microsoft.OData {
         /// A string like "The parameter '{0}' has already been written. Duplicate parameter names are not allowed in the parameter payload."
         /// </summary>
         internal static string ODataParameterWriterCore_DuplicatedParameterNameNotAllowed(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataParameterWriterCore_DuplicatedParameterNameNotAllowed, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataParameterWriterCore_DuplicatedParameterNameNotAllowed, p0);
         }
 
         /// <summary>
         /// A string like "The parameter '{0}' is of Edm type kind '{1}'. You cannot call WriteValue on a parameter that is not of Edm type kinds 'Primitive', 'Enum' or 'Complex'."
         /// </summary>
         internal static string ODataParameterWriterCore_CannotWriteValueOnNonValueTypeKind(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataParameterWriterCore_CannotWriteValueOnNonValueTypeKind, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataParameterWriterCore_CannotWriteValueOnNonValueTypeKind, p0, p1);
         }
 
         /// <summary>
         /// A string like "The value for parameter '{0}' is of type '{1}'. WriteValue can only write null, ODataEnumValue and primitive types that are not Stream type."
         /// </summary>
         internal static string ODataParameterWriterCore_CannotWriteValueOnNonSupportedValueType(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataParameterWriterCore_CannotWriteValueOnNonSupportedValueType, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataParameterWriterCore_CannotWriteValueOnNonSupportedValueType, p0, p1);
         }
 
         /// <summary>
         /// A string like "The parameter '{0}' is of Edm type kind '{1}'. You cannot call CreateCollectionWriter on a parameter that is not of Edm type kind 'Collection'."
         /// </summary>
         internal static string ODataParameterWriterCore_CannotCreateCollectionWriterOnNonCollectionTypeKind(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataParameterWriterCore_CannotCreateCollectionWriterOnNonCollectionTypeKind, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataParameterWriterCore_CannotCreateCollectionWriterOnNonCollectionTypeKind, p0, p1);
         }
 
         /// <summary>
         /// A string like "The parameter '{0}' is of Edm type kind '{1}'. You cannot call CreateResourceWriter on a parameter that is not of Edm type kind 'Entity' or 'Complex'."
         /// </summary>
         internal static string ODataParameterWriterCore_CannotCreateResourceWriterOnNonEntityOrComplexTypeKind(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataParameterWriterCore_CannotCreateResourceWriterOnNonEntityOrComplexTypeKind, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataParameterWriterCore_CannotCreateResourceWriterOnNonEntityOrComplexTypeKind, p0, p1);
         }
 
         /// <summary>
         /// A string like "The parameter '{0}' is of Edm type kind '{1}'. You cannot call CreateResourceSetWriter on a parameter that is not of Edm type kind 'Collection(Entity)' or 'Collection(Complex)'."
         /// </summary>
         internal static string ODataParameterWriterCore_CannotCreateResourceSetWriterOnNonStructuredCollectionTypeKind(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataParameterWriterCore_CannotCreateResourceSetWriterOnNonStructuredCollectionTypeKind, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataParameterWriterCore_CannotCreateResourceSetWriterOnNonStructuredCollectionTypeKind, p0, p1);
         }
 
         /// <summary>
         /// A string like "The name '{0}' is not a recognized parameter name for operation '{1}'."
         /// </summary>
         internal static string ODataParameterWriterCore_ParameterNameNotFoundInOperation(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataParameterWriterCore_ParameterNameNotFoundInOperation, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataParameterWriterCore_ParameterNameNotFoundInOperation, p0, p1);
         }
 
         /// <summary>
         /// A string like "The parameters {0} of the operation '{1}' could not be found when writing the parameter payload. All parameters present in the operation must be written to the parameter payload."
         /// </summary>
         internal static string ODataParameterWriterCore_MissingParameterInParameterPayload(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataParameterWriterCore_MissingParameterInParameterPayload, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataParameterWriterCore_MissingParameterInParameterPayload, p0, p1);
         }
 
         /// <summary>
@@ -751,7 +751,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataBatchWriter_FlushOrFlushAsyncCalledInStreamRequestedState {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataBatchWriter_FlushOrFlushAsyncCalledInStreamRequestedState);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataBatchWriter_FlushOrFlushAsyncCalledInStreamRequestedState);
             }
         }
 
@@ -760,7 +760,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataBatchWriter_CannotCompleteBatchWithActiveChangeSet {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataBatchWriter_CannotCompleteBatchWithActiveChangeSet);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataBatchWriter_CannotCompleteBatchWithActiveChangeSet);
             }
         }
 
@@ -769,7 +769,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataBatchWriter_CannotStartChangeSetWithActiveChangeSet {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataBatchWriter_CannotStartChangeSetWithActiveChangeSet);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataBatchWriter_CannotStartChangeSetWithActiveChangeSet);
             }
         }
 
@@ -778,7 +778,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataBatchWriter_CannotCompleteChangeSetWithoutActiveChangeSet {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataBatchWriter_CannotCompleteChangeSetWithoutActiveChangeSet);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataBatchWriter_CannotCompleteChangeSetWithoutActiveChangeSet);
             }
         }
 
@@ -787,7 +787,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataBatchWriter_InvalidTransitionFromStart {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataBatchWriter_InvalidTransitionFromStart);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataBatchWriter_InvalidTransitionFromStart);
             }
         }
 
@@ -796,7 +796,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataBatchWriter_InvalidTransitionFromBatchStarted {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataBatchWriter_InvalidTransitionFromBatchStarted);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataBatchWriter_InvalidTransitionFromBatchStarted);
             }
         }
 
@@ -805,7 +805,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataBatchWriter_InvalidTransitionFromChangeSetStarted {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataBatchWriter_InvalidTransitionFromChangeSetStarted);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataBatchWriter_InvalidTransitionFromChangeSetStarted);
             }
         }
 
@@ -814,7 +814,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataBatchWriter_InvalidTransitionFromOperationCreated {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataBatchWriter_InvalidTransitionFromOperationCreated);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataBatchWriter_InvalidTransitionFromOperationCreated);
             }
         }
 
@@ -823,7 +823,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataBatchWriter_InvalidTransitionFromOperationContentStreamRequested {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataBatchWriter_InvalidTransitionFromOperationContentStreamRequested);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataBatchWriter_InvalidTransitionFromOperationContentStreamRequested);
             }
         }
 
@@ -832,7 +832,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataBatchWriter_InvalidTransitionFromOperationContentStreamDisposed {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataBatchWriter_InvalidTransitionFromOperationContentStreamDisposed);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataBatchWriter_InvalidTransitionFromOperationContentStreamDisposed);
             }
         }
 
@@ -841,7 +841,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataBatchWriter_InvalidTransitionFromChangeSetCompleted {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataBatchWriter_InvalidTransitionFromChangeSetCompleted);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataBatchWriter_InvalidTransitionFromChangeSetCompleted);
             }
         }
 
@@ -850,7 +850,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataBatchWriter_InvalidTransitionFromBatchCompleted {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataBatchWriter_InvalidTransitionFromBatchCompleted);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataBatchWriter_InvalidTransitionFromBatchCompleted);
             }
         }
 
@@ -859,7 +859,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataBatchWriter_CannotCreateRequestOperationWhenWritingResponse {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataBatchWriter_CannotCreateRequestOperationWhenWritingResponse);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataBatchWriter_CannotCreateRequestOperationWhenWritingResponse);
             }
         }
 
@@ -868,7 +868,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataBatchWriter_CannotCreateResponseOperationWhenWritingRequest {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataBatchWriter_CannotCreateResponseOperationWhenWritingRequest);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataBatchWriter_CannotCreateResponseOperationWhenWritingRequest);
             }
         }
 
@@ -876,14 +876,14 @@ namespace Microsoft.OData {
         /// A string like "The current batch message contains too many parts. Only batch messages with a maximum number of '{0}' query operations and change sets are allowed."
         /// </summary>
         internal static string ODataBatchWriter_MaxBatchSizeExceeded(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataBatchWriter_MaxBatchSizeExceeded, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataBatchWriter_MaxBatchSizeExceeded, p0);
         }
 
         /// <summary>
         /// A string like "The current change set contains too many operations. Only change sets with a maximum number of '{0}' operations are allowed."
         /// </summary>
         internal static string ODataBatchWriter_MaxChangeSetSizeExceeded(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataBatchWriter_MaxChangeSetSizeExceeded, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataBatchWriter_MaxChangeSetSizeExceeded, p0);
         }
 
         /// <summary>
@@ -891,7 +891,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataBatchWriter_SyncCallOnAsyncWriter {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataBatchWriter_SyncCallOnAsyncWriter);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataBatchWriter_SyncCallOnAsyncWriter);
             }
         }
 
@@ -900,7 +900,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataBatchWriter_AsyncCallOnSyncWriter {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataBatchWriter_AsyncCallOnSyncWriter);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataBatchWriter_AsyncCallOnSyncWriter);
             }
         }
 
@@ -908,7 +908,7 @@ namespace Microsoft.OData {
         /// A string like "The content ID '{0}' was found more than once in the same change set. Content IDs have to be unique across all operations of a change set."
         /// </summary>
         internal static string ODataBatchWriter_DuplicateContentIDsNotAllowed(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataBatchWriter_DuplicateContentIDsNotAllowed, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataBatchWriter_DuplicateContentIDsNotAllowed, p0);
         }
 
         /// <summary>
@@ -916,7 +916,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataBatchWriter_CannotWriteInStreamErrorForBatch {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataBatchWriter_CannotWriteInStreamErrorForBatch);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataBatchWriter_CannotWriteInStreamErrorForBatch);
             }
         }
 
@@ -924,14 +924,14 @@ namespace Microsoft.OData {
         /// A string like "The relative URI '{0}' was specified in a batch operation, but a base URI was not specified for the batch writer or batch reader."
         /// </summary>
         internal static string ODataBatchUtils_RelativeUriUsedWithoutBaseUriSpecified(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataBatchUtils_RelativeUriUsedWithoutBaseUriSpecified, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataBatchUtils_RelativeUriUsedWithoutBaseUriSpecified, p0);
         }
 
         /// <summary>
         /// A string like "The relative URI '{0}' was specified in a batch operation, but a base URI was not specified for the batch writer or batch reader. When the relative URI is a reference to a content ID, the content ID does not exist in the current change set."
         /// </summary>
         internal static string ODataBatchUtils_RelativeUriStartingWithDollarUsedWithoutBaseUriSpecified(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataBatchUtils_RelativeUriStartingWithDollarUsedWithoutBaseUriSpecified, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataBatchUtils_RelativeUriStartingWithDollarUsedWithoutBaseUriSpecified, p0);
         }
 
         /// <summary>
@@ -939,7 +939,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataBatchOperationMessage_VerifyNotCompleted {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataBatchOperationMessage_VerifyNotCompleted);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataBatchOperationMessage_VerifyNotCompleted);
             }
         }
 
@@ -948,7 +948,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataBatchOperationStream_Disposed {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataBatchOperationStream_Disposed);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataBatchOperationStream_Disposed);
             }
         }
 
@@ -957,7 +957,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataBatchReader_CannotCreateRequestOperationWhenReadingResponse {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataBatchReader_CannotCreateRequestOperationWhenReadingResponse);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataBatchReader_CannotCreateRequestOperationWhenReadingResponse);
             }
         }
 
@@ -966,7 +966,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataBatchReader_CannotCreateResponseOperationWhenReadingRequest {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataBatchReader_CannotCreateResponseOperationWhenReadingRequest);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataBatchReader_CannotCreateResponseOperationWhenReadingRequest);
             }
         }
 
@@ -974,7 +974,7 @@ namespace Microsoft.OData {
         /// A string like "The method CreateOperationRequestMessage was called in state '{0}', which is not allowed. CreateOperationRequestMessage can only be called in state 'Operation'."
         /// </summary>
         internal static string ODataBatchReader_InvalidStateForCreateOperationRequestMessage(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataBatchReader_InvalidStateForCreateOperationRequestMessage, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataBatchReader_InvalidStateForCreateOperationRequestMessage, p0);
         }
 
         /// <summary>
@@ -982,7 +982,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataBatchReader_OperationRequestMessageAlreadyCreated {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataBatchReader_OperationRequestMessageAlreadyCreated);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataBatchReader_OperationRequestMessageAlreadyCreated);
             }
         }
 
@@ -991,7 +991,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataBatchReader_OperationResponseMessageAlreadyCreated {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataBatchReader_OperationResponseMessageAlreadyCreated);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataBatchReader_OperationResponseMessageAlreadyCreated);
             }
         }
 
@@ -999,7 +999,7 @@ namespace Microsoft.OData {
         /// A string like "The method CreateOperationResponseMessage was called in state '{0}', which is not allowed. CreateOperationResponseMessage can only be called in state 'Operation'."
         /// </summary>
         internal static string ODataBatchReader_InvalidStateForCreateOperationResponseMessage(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataBatchReader_InvalidStateForCreateOperationResponseMessage, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataBatchReader_InvalidStateForCreateOperationResponseMessage, p0);
         }
 
         /// <summary>
@@ -1007,7 +1007,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataBatchReader_CannotUseReaderWhileOperationStreamActive {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataBatchReader_CannotUseReaderWhileOperationStreamActive);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataBatchReader_CannotUseReaderWhileOperationStreamActive);
             }
         }
 
@@ -1016,7 +1016,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataBatchReader_SyncCallOnAsyncReader {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataBatchReader_SyncCallOnAsyncReader);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataBatchReader_SyncCallOnAsyncReader);
             }
         }
 
@@ -1025,7 +1025,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataBatchReader_AsyncCallOnSyncReader {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataBatchReader_AsyncCallOnSyncReader);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataBatchReader_AsyncCallOnSyncReader);
             }
         }
 
@@ -1033,21 +1033,21 @@ namespace Microsoft.OData {
         /// A string like "ODataBatchReader.ReadAsync or ODataBatchReader.Read was called in an invalid state. No further calls can be made to the reader in state '{0}'."
         /// </summary>
         internal static string ODataBatchReader_ReadOrReadAsyncCalledInInvalidState(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataBatchReader_ReadOrReadAsyncCalledInInvalidState, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataBatchReader_ReadOrReadAsyncCalledInInvalidState, p0);
         }
 
         /// <summary>
         /// A string like "The current batch message contains too many parts. A maximum number of '{0}' query operations and change sets are allowed in a batch message."
         /// </summary>
         internal static string ODataBatchReader_MaxBatchSizeExceeded(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataBatchReader_MaxBatchSizeExceeded, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataBatchReader_MaxBatchSizeExceeded, p0);
         }
 
         /// <summary>
         /// A string like "The current change set contains too many operations. A maximum number of '{0}' operations are allowed in a change set."
         /// </summary>
         internal static string ODataBatchReader_MaxChangeSetSizeExceeded(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataBatchReader_MaxChangeSetSizeExceeded, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataBatchReader_MaxChangeSetSizeExceeded, p0);
         }
 
         /// <summary>
@@ -1055,7 +1055,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataBatchReader_NoMessageWasCreatedForOperation {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataBatchReader_NoMessageWasCreatedForOperation);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataBatchReader_NoMessageWasCreatedForOperation);
             }
         }
 
@@ -1063,42 +1063,42 @@ namespace Microsoft.OData {
         /// A string like "The content ID '{0}' was found more than once in the same change set. Content IDs have to be unique across all operations of a change set."
         /// </summary>
         internal static string ODataBatchReader_DuplicateContentIDsNotAllowed(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataBatchReader_DuplicateContentIDsNotAllowed, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataBatchReader_DuplicateContentIDsNotAllowed, p0);
         }
 
         /// <summary>
         /// A string like "The message header '{0}' is invalid. The header value must be of the format '&lt;header name&gt;: &lt;header value&gt;'."
         /// </summary>
         internal static string ODataBatchReaderStream_InvalidHeaderSpecified(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataBatchReaderStream_InvalidHeaderSpecified, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataBatchReaderStream_InvalidHeaderSpecified, p0);
         }
 
         /// <summary>
         /// A string like "The request line '{0}' is invalid. The request line at the start of each operation must be of the format 'HttpMethod RequestUrl HttpVersion'."
         /// </summary>
         internal static string ODataBatchReaderStream_InvalidRequestLine(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataBatchReaderStream_InvalidRequestLine, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataBatchReaderStream_InvalidRequestLine, p0);
         }
 
         /// <summary>
         /// A string like "The response line '{0}' is invalid. The response line at the start of each operation must be of the format 'HttpVersion StatusCode StatusCodeString'."
         /// </summary>
         internal static string ODataBatchReaderStream_InvalidResponseLine(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataBatchReaderStream_InvalidResponseLine, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataBatchReaderStream_InvalidResponseLine, p0);
         }
 
         /// <summary>
         /// A string like "The HTTP version '{0}' used in a batch operation request or response is not valid. The value must be '{1}'."
         /// </summary>
         internal static string ODataBatchReaderStream_InvalidHttpVersionSpecified(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataBatchReaderStream_InvalidHttpVersionSpecified, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataBatchReaderStream_InvalidHttpVersionSpecified, p0, p1);
         }
 
         /// <summary>
         /// A string like " The HTTP status code '{0}' is invalid. An HTTP status code must be an integer value."
         /// </summary>
         internal static string ODataBatchReaderStream_NonIntegerHttpStatusCode(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataBatchReaderStream_NonIntegerHttpStatusCode, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataBatchReaderStream_NonIntegerHttpStatusCode, p0);
         }
 
         /// <summary>
@@ -1106,7 +1106,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataBatchReaderStream_MissingContentTypeHeader {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataBatchReaderStream_MissingContentTypeHeader);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataBatchReaderStream_MissingContentTypeHeader);
             }
         }
 
@@ -1114,28 +1114,28 @@ namespace Microsoft.OData {
         /// A string like "A missing or invalid '{0}' header was found. The '{0}' header must be specified for each batch operation, and its value must be '{1}'."
         /// </summary>
         internal static string ODataBatchReaderStream_MissingOrInvalidContentEncodingHeader(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataBatchReaderStream_MissingOrInvalidContentEncodingHeader, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataBatchReaderStream_MissingOrInvalidContentEncodingHeader, p0, p1);
         }
 
         /// <summary>
         /// A string like "The '{0}' header value '{1}' is invalid. When this is the start of the change set, the value must be '{2}'; otherwise it must be '{3}'."
         /// </summary>
         internal static string ODataBatchReaderStream_InvalidContentTypeSpecified(object p0, object p1, object p2, object p3) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataBatchReaderStream_InvalidContentTypeSpecified, p0, p1, p2, p3);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataBatchReaderStream_InvalidContentTypeSpecified, p0, p1, p2, p3);
         }
 
         /// <summary>
         /// A string like "The content length header '{0}' is not valid. The content length header must be a valid Int32 literal and must be greater than or equal to 0."
         /// </summary>
         internal static string ODataBatchReaderStream_InvalidContentLengthSpecified(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataBatchReaderStream_InvalidContentLengthSpecified, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataBatchReaderStream_InvalidContentLengthSpecified, p0);
         }
 
         /// <summary>
         /// A string like "The header '{0}' was specified multiple times. Each header must appear only once in a batch part."
         /// </summary>
         internal static string ODataBatchReaderStream_DuplicateHeaderFound(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataBatchReaderStream_DuplicateHeaderFound, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataBatchReaderStream_DuplicateHeaderFound, p0);
         }
 
         /// <summary>
@@ -1143,7 +1143,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataBatchReaderStream_NestedChangesetsAreNotSupported {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataBatchReaderStream_NestedChangesetsAreNotSupported);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataBatchReaderStream_NestedChangesetsAreNotSupported);
             }
         }
 
@@ -1151,7 +1151,7 @@ namespace Microsoft.OData {
         /// A string like "Invalid multi-byte encoding '{0}' detected. Multi-byte encodings other than UTF-8 are only supported for operation payloads. They are not supported in batch or change set parts."
         /// </summary>
         internal static string ODataBatchReaderStream_MultiByteEncodingsNotSupported(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataBatchReaderStream_MultiByteEncodingsNotSupported, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataBatchReaderStream_MultiByteEncodingsNotSupported, p0);
         }
 
         /// <summary>
@@ -1159,7 +1159,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataBatchReaderStream_UnexpectedEndOfInput {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataBatchReaderStream_UnexpectedEndOfInput);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataBatchReaderStream_UnexpectedEndOfInput);
             }
         }
 
@@ -1167,7 +1167,7 @@ namespace Microsoft.OData {
         /// A string like "Too many white spaces after a boundary delimiter and before the terminating line resource set. For security reasons, the total number of characters for a boundary including white spaces must not exceed {0}."
         /// </summary>
         internal static string ODataBatchReaderStreamBuffer_BoundaryLineSecurityLimitReached(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataBatchReaderStreamBuffer_BoundaryLineSecurityLimitReached, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataBatchReaderStreamBuffer_BoundaryLineSecurityLimitReached, p0);
         }
 
         /// <summary>
@@ -1175,7 +1175,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataAsyncWriter_CannotCreateResponseWhenNotWritingResponse {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataAsyncWriter_CannotCreateResponseWhenNotWritingResponse);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataAsyncWriter_CannotCreateResponseWhenNotWritingResponse);
             }
         }
 
@@ -1184,7 +1184,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataAsyncWriter_CannotCreateResponseMoreThanOnce {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataAsyncWriter_CannotCreateResponseMoreThanOnce);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataAsyncWriter_CannotCreateResponseMoreThanOnce);
             }
         }
 
@@ -1193,7 +1193,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataAsyncWriter_SyncCallOnAsyncWriter {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataAsyncWriter_SyncCallOnAsyncWriter);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataAsyncWriter_SyncCallOnAsyncWriter);
             }
         }
 
@@ -1202,7 +1202,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataAsyncWriter_AsyncCallOnSyncWriter {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataAsyncWriter_AsyncCallOnSyncWriter);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataAsyncWriter_AsyncCallOnSyncWriter);
             }
         }
 
@@ -1211,7 +1211,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataAsyncWriter_CannotWriteInStreamErrorForAsync {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataAsyncWriter_CannotWriteInStreamErrorForAsync);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataAsyncWriter_CannotWriteInStreamErrorForAsync);
             }
         }
 
@@ -1219,7 +1219,7 @@ namespace Microsoft.OData {
         /// A string like "The message header '{0}' is invalid. The header value must be of the format '&lt;header name&gt;: &lt;header value&gt;'."
         /// </summary>
         internal static string ODataAsyncReader_InvalidHeaderSpecified(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataAsyncReader_InvalidHeaderSpecified, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataAsyncReader_InvalidHeaderSpecified, p0);
         }
 
         /// <summary>
@@ -1227,7 +1227,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataAsyncReader_CannotCreateResponseWhenNotReadingResponse {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataAsyncReader_CannotCreateResponseWhenNotReadingResponse);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataAsyncReader_CannotCreateResponseWhenNotReadingResponse);
             }
         }
 
@@ -1235,42 +1235,42 @@ namespace Microsoft.OData {
         /// A string like "The response line '{0}' is invalid. The response line at the start of the async response must be of the format 'HttpVersion StatusCode StatusCodeString'."
         /// </summary>
         internal static string ODataAsyncReader_InvalidResponseLine(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataAsyncReader_InvalidResponseLine, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataAsyncReader_InvalidResponseLine, p0);
         }
 
         /// <summary>
         /// A string like "The HTTP version '{0}' used in an async response is not valid. The value must be '{1}'."
         /// </summary>
         internal static string ODataAsyncReader_InvalidHttpVersionSpecified(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataAsyncReader_InvalidHttpVersionSpecified, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataAsyncReader_InvalidHttpVersionSpecified, p0, p1);
         }
 
         /// <summary>
         /// A string like "The HTTP status code '{0}' is invalid. An HTTP status code must be an integer value."
         /// </summary>
         internal static string ODataAsyncReader_NonIntegerHttpStatusCode(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataAsyncReader_NonIntegerHttpStatusCode, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataAsyncReader_NonIntegerHttpStatusCode, p0);
         }
 
         /// <summary>
         /// A string like "The header '{0}' was specified multiple times. Each header must appear only once."
         /// </summary>
         internal static string ODataAsyncReader_DuplicateHeaderFound(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataAsyncReader_DuplicateHeaderFound, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataAsyncReader_DuplicateHeaderFound, p0);
         }
 
         /// <summary>
         /// A string like "Invalid multi-byte encoding '{0}' detected. Multi-byte encodings other than UTF-8 are only supported for async payloads. They are not supported in batch or change set parts."
         /// </summary>
         internal static string ODataAsyncReader_MultiByteEncodingsNotSupported(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataAsyncReader_MultiByteEncodingsNotSupported, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataAsyncReader_MultiByteEncodingsNotSupported, p0);
         }
 
         /// <summary>
         /// A string like "Invalid new line '{0}' encountered. Should be '\r\n'."
         /// </summary>
         internal static string ODataAsyncReader_InvalidNewLineEncountered(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataAsyncReader_InvalidNewLineEncountered, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataAsyncReader_InvalidNewLineEncountered, p0);
         }
 
         /// <summary>
@@ -1278,7 +1278,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataAsyncReader_UnexpectedEndOfInput {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataAsyncReader_UnexpectedEndOfInput);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataAsyncReader_UnexpectedEndOfInput);
             }
         }
 
@@ -1287,7 +1287,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataAsyncReader_SyncCallOnAsyncReader {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataAsyncReader_SyncCallOnAsyncReader);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataAsyncReader_SyncCallOnAsyncReader);
             }
         }
 
@@ -1296,7 +1296,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataAsyncReader_AsyncCallOnSyncReader {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataAsyncReader_AsyncCallOnSyncReader);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataAsyncReader_AsyncCallOnSyncReader);
             }
         }
 
@@ -1304,28 +1304,28 @@ namespace Microsoft.OData {
         /// A string like "The MIME type '{0}' is invalid or unspecified."
         /// </summary>
         internal static string HttpUtils_MediaTypeUnspecified(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.HttpUtils_MediaTypeUnspecified, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.HttpUtils_MediaTypeUnspecified, p0);
         }
 
         /// <summary>
         /// A string like "The MIME type '{0}' requires a '/' character between type and subtype, such as 'text/plain'."
         /// </summary>
         internal static string HttpUtils_MediaTypeRequiresSlash(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.HttpUtils_MediaTypeRequiresSlash, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.HttpUtils_MediaTypeRequiresSlash, p0);
         }
 
         /// <summary>
         /// A string like "The MIME type '{0}' requires a subtype definition."
         /// </summary>
         internal static string HttpUtils_MediaTypeRequiresSubType(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.HttpUtils_MediaTypeRequiresSubType, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.HttpUtils_MediaTypeRequiresSubType, p0);
         }
 
         /// <summary>
         /// A string like "The MIME type is missing a parameter value for a parameter with the name '{0}'."
         /// </summary>
         internal static string HttpUtils_MediaTypeMissingParameterValue(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.HttpUtils_MediaTypeMissingParameterValue, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.HttpUtils_MediaTypeMissingParameterValue, p0);
         }
 
         /// <summary>
@@ -1333,7 +1333,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string HttpUtils_MediaTypeMissingParameterName {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.HttpUtils_MediaTypeMissingParameterName);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.HttpUtils_MediaTypeMissingParameterName);
             }
         }
 
@@ -1341,28 +1341,28 @@ namespace Microsoft.OData {
         /// A string like "An error occurred when parsing the HTTP header '{0}'. The header value '{1}' is incorrect at position '{2}' because the escape character '{3}' is not inside a quoted-string."
         /// </summary>
         internal static string HttpUtils_EscapeCharWithoutQuotes(object p0, object p1, object p2, object p3) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.HttpUtils_EscapeCharWithoutQuotes, p0, p1, p2, p3);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.HttpUtils_EscapeCharWithoutQuotes, p0, p1, p2, p3);
         }
 
         /// <summary>
         /// A string like "An error occurred when parsing the HTTP header '{0}'. The header value '{1}' is incorrect at position '{2}' because it terminates with the escape character '{3}'. In a quoted-string, the escape characters must always be followed by a character."
         /// </summary>
         internal static string HttpUtils_EscapeCharAtEnd(object p0, object p1, object p2, object p3) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.HttpUtils_EscapeCharAtEnd, p0, p1, p2, p3);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.HttpUtils_EscapeCharAtEnd, p0, p1, p2, p3);
         }
 
         /// <summary>
         /// A string like "An error occurred when parsing the HTTP header '{0}'. The header value '{1}' is incorrect at position '{2}' because the closing quote character was not found for the quoted-string."
         /// </summary>
         internal static string HttpUtils_ClosingQuoteNotFound(object p0, object p1, object p2) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.HttpUtils_ClosingQuoteNotFound, p0, p1, p2);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.HttpUtils_ClosingQuoteNotFound, p0, p1, p2);
         }
 
         /// <summary>
         /// A string like "An error occurred when parsing the HTTP header '{0}'. The header value '{1}' is incorrect at position '{2}' because the character '{3}' is not allowed in a quoted-string. For more information, see RFC 2616, Sections 3.6 and 2.2."
         /// </summary>
         internal static string HttpUtils_InvalidCharacterInQuotedParameterValue(object p0, object p1, object p2, object p3) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.HttpUtils_InvalidCharacterInQuotedParameterValue, p0, p1, p2, p3);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.HttpUtils_InvalidCharacterInQuotedParameterValue, p0, p1, p2, p3);
         }
 
         /// <summary>
@@ -1370,7 +1370,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string HttpUtils_ContentTypeMissing {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.HttpUtils_ContentTypeMissing);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.HttpUtils_ContentTypeMissing);
             }
         }
 
@@ -1378,161 +1378,161 @@ namespace Microsoft.OData {
         /// A string like "The MIME type '{0}' requires a semi-colon character (';') before a parameter definition."
         /// </summary>
         internal static string HttpUtils_MediaTypeRequiresSemicolonBeforeParameter(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.HttpUtils_MediaTypeRequiresSemicolonBeforeParameter, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.HttpUtils_MediaTypeRequiresSemicolonBeforeParameter, p0);
         }
 
         /// <summary>
         /// A string like "An invalid quality value was detected in the header string '{0}'; quality values must start with '0' or '1' but not with '{1}'."
         /// </summary>
         internal static string HttpUtils_InvalidQualityValueStartChar(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.HttpUtils_InvalidQualityValueStartChar, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.HttpUtils_InvalidQualityValueStartChar, p0, p1);
         }
 
         /// <summary>
         /// A string like "An invalid quality value '{0}' was detected in the header string '{1}'; quality values must be in the range [0, 1]."
         /// </summary>
         internal static string HttpUtils_InvalidQualityValue(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.HttpUtils_InvalidQualityValue, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.HttpUtils_InvalidQualityValue, p0, p1);
         }
 
         /// <summary>
         /// A string like "An error occurred when converting the character '{0}' to an integer."
         /// </summary>
         internal static string HttpUtils_CannotConvertCharToInt(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.HttpUtils_CannotConvertCharToInt, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.HttpUtils_CannotConvertCharToInt, p0);
         }
 
         /// <summary>
         /// A string like "The separator ',' was missing between charset values in the header '{0}'."
         /// </summary>
         internal static string HttpUtils_MissingSeparatorBetweenCharsets(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.HttpUtils_MissingSeparatorBetweenCharsets, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.HttpUtils_MissingSeparatorBetweenCharsets, p0);
         }
 
         /// <summary>
         /// A string like "A separator character was missing between charset values in the header '{0}'."
         /// </summary>
         internal static string HttpUtils_InvalidSeparatorBetweenCharsets(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.HttpUtils_InvalidSeparatorBetweenCharsets, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.HttpUtils_InvalidSeparatorBetweenCharsets, p0);
         }
 
         /// <summary>
         /// A string like "An invalid (empty) charset name found in the header '{0}'."
         /// </summary>
         internal static string HttpUtils_InvalidCharsetName(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.HttpUtils_InvalidCharsetName, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.HttpUtils_InvalidCharsetName, p0);
         }
 
         /// <summary>
         /// A string like "An unexpected end of the q-Value was detected in the header '{0}'."
         /// </summary>
         internal static string HttpUtils_UnexpectedEndOfQValue(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.HttpUtils_UnexpectedEndOfQValue, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.HttpUtils_UnexpectedEndOfQValue, p0);
         }
 
         /// <summary>
         /// A string like "The expected literal '{0}' was not found at position '{1}' in the string '{2}'."
         /// </summary>
         internal static string HttpUtils_ExpectedLiteralNotFoundInString(object p0, object p1, object p2) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.HttpUtils_ExpectedLiteralNotFoundInString, p0, p1, p2);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.HttpUtils_ExpectedLiteralNotFoundInString, p0, p1, p2);
         }
 
         /// <summary>
         /// A string like "The string '{0}' cannot be converted into a supported HTTP method. The only supported HTTP methods are GET, DELETE, PUT, POST and PATCH."
         /// </summary>
         internal static string HttpUtils_InvalidHttpMethodString(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.HttpUtils_InvalidHttpMethodString, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.HttpUtils_InvalidHttpMethodString, p0);
         }
 
         /// <summary>
         /// A string like "The specified content type '{0}' contains either no media type or more than one media type, which is not allowed. You must specify exactly one media type as the content type."
         /// </summary>
         internal static string HttpUtils_NoOrMoreThanOneContentTypeSpecified(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.HttpUtils_NoOrMoreThanOneContentTypeSpecified, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.HttpUtils_NoOrMoreThanOneContentTypeSpecified, p0);
         }
 
         /// <summary>
         /// A string like "An error occurred when parsing the HTTP header '{0}'. The header value '{1}' is incorrect at position '{2}' because '{3}' is not a recognized separator. The supported separators are ',', ';', and '='."
         /// </summary>
         internal static string HttpHeaderValueLexer_UnrecognizedSeparator(object p0, object p1, object p2, object p3) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.HttpHeaderValueLexer_UnrecognizedSeparator, p0, p1, p2, p3);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.HttpHeaderValueLexer_UnrecognizedSeparator, p0, p1, p2, p3);
         }
 
         /// <summary>
         /// A string like "An error occurred when parsing the HTTP header '{0}'. The header value '{1}' is incorrect at position '{2}' because a token is expected but a quoted-string is found instead."
         /// </summary>
         internal static string HttpHeaderValueLexer_TokenExpectedButFoundQuotedString(object p0, object p1, object p2) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.HttpHeaderValueLexer_TokenExpectedButFoundQuotedString, p0, p1, p2);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.HttpHeaderValueLexer_TokenExpectedButFoundQuotedString, p0, p1, p2);
         }
 
         /// <summary>
         /// A string like "An error occurred when parsing the HTTP header '{0}'. The header value '{1}' is incorrect at position '{2}' because a token or a quoted-string is expected at this position but were not found."
         /// </summary>
         internal static string HttpHeaderValueLexer_FailedToReadTokenOrQuotedString(object p0, object p1, object p2) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.HttpHeaderValueLexer_FailedToReadTokenOrQuotedString, p0, p1, p2);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.HttpHeaderValueLexer_FailedToReadTokenOrQuotedString, p0, p1, p2);
         }
 
         /// <summary>
         /// A string like "An error occurred when parsing the HTTP header '{0}'. The header value '{1}' is incorrect at position '{2}' because '{3}' is not a valid separator after a quoted-string."
         /// </summary>
         internal static string HttpHeaderValueLexer_InvalidSeparatorAfterQuotedString(object p0, object p1, object p2, object p3) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.HttpHeaderValueLexer_InvalidSeparatorAfterQuotedString, p0, p1, p2, p3);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.HttpHeaderValueLexer_InvalidSeparatorAfterQuotedString, p0, p1, p2, p3);
         }
 
         /// <summary>
         /// A string like "An error occurred when parsing the HTTP header '{0}'. The header value '{1}' is incorrect at position '{2}' because the header value should not end with the separator '{3}'."
         /// </summary>
         internal static string HttpHeaderValueLexer_EndOfFileAfterSeparator(object p0, object p1, object p2, object p3) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.HttpHeaderValueLexer_EndOfFileAfterSeparator, p0, p1, p2, p3);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.HttpHeaderValueLexer_EndOfFileAfterSeparator, p0, p1, p2, p3);
         }
 
         /// <summary>
         /// A string like "The character set '{0}' is not supported."
         /// </summary>
         internal static string MediaType_EncodingNotSupported(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.MediaType_EncodingNotSupported, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.MediaType_EncodingNotSupported, p0);
         }
 
         /// <summary>
         /// A string like "A supported MIME type could not be found that matches the acceptable MIME types for the request. The supported type(s) '{0}' do not match any of the acceptable MIME types '{1}'."
         /// </summary>
         internal static string MediaTypeUtils_DidNotFindMatchingMediaType(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.MediaTypeUtils_DidNotFindMatchingMediaType, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.MediaTypeUtils_DidNotFindMatchingMediaType, p0, p1);
         }
 
         /// <summary>
         /// A string like "A supported MIME type could not be found that matches the content type of the response. None of the supported type(s) '{0}' matches the content type '{1}'."
         /// </summary>
         internal static string MediaTypeUtils_CannotDetermineFormatFromContentType(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.MediaTypeUtils_CannotDetermineFormatFromContentType, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.MediaTypeUtils_CannotDetermineFormatFromContentType, p0, p1);
         }
 
         /// <summary>
         /// A string like "The specified content type '{0}' contains either no media type or more than one media type, which is not allowed. You must specify exactly one media type as the content type."
         /// </summary>
         internal static string MediaTypeUtils_NoOrMoreThanOneContentTypeSpecified(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.MediaTypeUtils_NoOrMoreThanOneContentTypeSpecified, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.MediaTypeUtils_NoOrMoreThanOneContentTypeSpecified, p0);
         }
 
         /// <summary>
         /// A string like "The content type '{0}' specifies a batch payload; however, the payload either does not include a batch boundary or includes more than one boundary. In OData, batch payload content types must specify exactly one batch boundary in the '{1}' parameter of the content type."
         /// </summary>
         internal static string MediaTypeUtils_BoundaryMustBeSpecifiedForBatchPayloads(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.MediaTypeUtils_BoundaryMustBeSpecifiedForBatchPayloads, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.MediaTypeUtils_BoundaryMustBeSpecifiedForBatchPayloads, p0, p1);
         }
 
         /// <summary>
         /// A string like "Expected literal type token but found token '{0}'."
         /// </summary>
         internal static string ExpressionLexer_ExpectedLiteralToken(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ExpressionLexer_ExpectedLiteralToken, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ExpressionLexer_ExpectedLiteralToken, p0);
         }
 
         /// <summary>
         /// A string like "The type '{0}' is not supported when converting to a URI literal."
         /// </summary>
         internal static string ODataUriUtils_ConvertToUriLiteralUnsupportedType(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataUriUtils_ConvertToUriLiteralUnsupportedType, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataUriUtils_ConvertToUriLiteralUnsupportedType, p0);
         }
 
         /// <summary>
@@ -1540,7 +1540,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataUriUtils_ConvertFromUriLiteralTypeRefWithoutModel {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataUriUtils_ConvertFromUriLiteralTypeRefWithoutModel);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataUriUtils_ConvertFromUriLiteralTypeRefWithoutModel);
             }
         }
 
@@ -1548,42 +1548,42 @@ namespace Microsoft.OData {
         /// A string like "Type verification failed. Expected type '{0}' but received the value '{1}'."
         /// </summary>
         internal static string ODataUriUtils_ConvertFromUriLiteralTypeVerificationFailure(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataUriUtils_ConvertFromUriLiteralTypeVerificationFailure, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataUriUtils_ConvertFromUriLiteralTypeVerificationFailure, p0, p1);
         }
 
         /// <summary>
         /// A string like "Type verification failed. Expected type '{0}' but received non-matching null value with associated type '{1}'."
         /// </summary>
         internal static string ODataUriUtils_ConvertFromUriLiteralNullTypeVerificationFailure(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataUriUtils_ConvertFromUriLiteralNullTypeVerificationFailure, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataUriUtils_ConvertFromUriLiteralNullTypeVerificationFailure, p0, p1);
         }
 
         /// <summary>
         /// A string like "Type verification failed. Expected non-nullable type '{0}' but received a null value."
         /// </summary>
         internal static string ODataUriUtils_ConvertFromUriLiteralNullOnNonNullableType(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataUriUtils_ConvertFromUriLiteralNullOnNonNullableType, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataUriUtils_ConvertFromUriLiteralNullOnNonNullableType, p0);
         }
 
         /// <summary>
         /// A string like "The value of type '{0}' could not be converted to a raw string."
         /// </summary>
         internal static string ODataUtils_CannotConvertValueToRawString(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataUtils_CannotConvertValueToRawString, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataUtils_CannotConvertValueToRawString, p0);
         }
 
         /// <summary>
         /// A string like "A default MIME type could not be found for the requested payload in format '{0}'."
         /// </summary>
         internal static string ODataUtils_DidNotFindDefaultMediaType(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataUtils_DidNotFindDefaultMediaType, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataUtils_DidNotFindDefaultMediaType, p0);
         }
 
         /// <summary>
         /// A string like "The value '{0}' of the OData-Version HTTP header is invalid. Only '4.0' is supported as values for the OData-Version header."
         /// </summary>
         internal static string ODataUtils_UnsupportedVersionHeader(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataUtils_UnsupportedVersionHeader, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataUtils_UnsupportedVersionHeader, p0);
         }
 
         /// <summary>
@@ -1591,7 +1591,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataUtils_UnsupportedVersionNumber {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataUtils_UnsupportedVersionNumber);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataUtils_UnsupportedVersionNumber);
             }
         }
 
@@ -1600,7 +1600,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataUtils_ModelDoesNotHaveContainer {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataUtils_ModelDoesNotHaveContainer);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataUtils_ModelDoesNotHaveContainer);
             }
         }
 
@@ -1608,21 +1608,21 @@ namespace Microsoft.OData {
         /// A string like "The value returned by the '{0}' property cannot be modified until the end of the owning resource is reported by the reader."
         /// </summary>
         internal static string ReaderUtils_EnumerableModified(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ReaderUtils_EnumerableModified, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ReaderUtils_EnumerableModified, p0);
         }
 
         /// <summary>
         /// A string like "A null value was found with the expected type '{0}[Nullable=False]'. The expected type '{0}[Nullable=False]' does not allow null values."
         /// </summary>
         internal static string ReaderValidationUtils_NullValueForNonNullableType(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ReaderValidationUtils_NullValueForNonNullableType, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ReaderValidationUtils_NullValueForNonNullableType, p0);
         }
 
         /// <summary>
         /// A string like "A null value was found for the property named '{0}', which has the expected type '{1}[Nullable=False]'. The expected type '{1}[Nullable=False]' does not allow null values."
         /// </summary>
         internal static string ReaderValidationUtils_NullNamedValueForNonNullableType(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ReaderValidationUtils_NullNamedValueForNonNullableType, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ReaderValidationUtils_NullNamedValueForNonNullableType, p0, p1);
         }
 
         /// <summary>
@@ -1630,7 +1630,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ReaderValidationUtils_EntityReferenceLinkMissingUri {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ReaderValidationUtils_EntityReferenceLinkMissingUri);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ReaderValidationUtils_EntityReferenceLinkMissingUri);
             }
         }
 
@@ -1639,7 +1639,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ReaderValidationUtils_ValueWithoutType {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ReaderValidationUtils_ValueWithoutType);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ReaderValidationUtils_ValueWithoutType);
             }
         }
 
@@ -1648,7 +1648,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ReaderValidationUtils_ResourceWithoutType {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ReaderValidationUtils_ResourceWithoutType);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ReaderValidationUtils_ResourceWithoutType);
             }
         }
 
@@ -1656,14 +1656,14 @@ namespace Microsoft.OData {
         /// A string like "Cannot convert the literal '{0}' to the expected type '{1}'."
         /// </summary>
         internal static string ReaderValidationUtils_CannotConvertPrimitiveValue(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ReaderValidationUtils_CannotConvertPrimitiveValue, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ReaderValidationUtils_CannotConvertPrimitiveValue, p0, p1);
         }
 
         /// <summary>
         /// A string like "The base URI '{0}' specified in ODataMessageReaderSettings.BaseUri is invalid; it must be either null or an absolute URI."
         /// </summary>
         internal static string ReaderValidationUtils_MessageReaderSettingsBaseUriMustBeNullOrAbsolute(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ReaderValidationUtils_MessageReaderSettingsBaseUriMustBeNullOrAbsolute, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ReaderValidationUtils_MessageReaderSettingsBaseUriMustBeNullOrAbsolute, p0);
         }
 
         /// <summary>
@@ -1671,7 +1671,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ReaderValidationUtils_UndeclaredPropertyBehaviorKindSpecifiedOnRequest {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ReaderValidationUtils_UndeclaredPropertyBehaviorKindSpecifiedOnRequest);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ReaderValidationUtils_UndeclaredPropertyBehaviorKindSpecifiedOnRequest);
             }
         }
 
@@ -1679,49 +1679,49 @@ namespace Microsoft.OData {
         /// A string like "The context URI '{0}' references the entity set with name '{1}'; however, the name of the expected entity set is '{2}' and does not match the entity set referenced in the context URI."
         /// </summary>
         internal static string ReaderValidationUtils_ContextUriValidationInvalidExpectedEntitySet(object p0, object p1, object p2) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ReaderValidationUtils_ContextUriValidationInvalidExpectedEntitySet, p0, p1, p2);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ReaderValidationUtils_ContextUriValidationInvalidExpectedEntitySet, p0, p1, p2);
         }
 
         /// <summary>
         /// A string like "The context URI '{0}' references the entity type with name '{1}'; however, the name of the expected entity type is '{2}' which is not compatible with the entity type with name '{1}'."
         /// </summary>
         internal static string ReaderValidationUtils_ContextUriValidationInvalidExpectedEntityType(object p0, object p1, object p2) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ReaderValidationUtils_ContextUriValidationInvalidExpectedEntityType, p0, p1, p2);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ReaderValidationUtils_ContextUriValidationInvalidExpectedEntityType, p0, p1, p2);
         }
 
         /// <summary>
         /// A string like "The context URI '{0}' references the property with name '{1}' on type '{2}'; however, the name of the expected property is '{3}'."
         /// </summary>
         internal static string ReaderValidationUtils_ContextUriValidationNonMatchingPropertyNames(object p0, object p1, object p2, object p3) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ReaderValidationUtils_ContextUriValidationNonMatchingPropertyNames, p0, p1, p2, p3);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ReaderValidationUtils_ContextUriValidationNonMatchingPropertyNames, p0, p1, p2, p3);
         }
 
         /// <summary>
         /// A string like "The context URI '{0}' references the property with name '{1}' on type '{2}'; however, the declaring type of the expected property is '{3}'."
         /// </summary>
         internal static string ReaderValidationUtils_ContextUriValidationNonMatchingDeclaringTypes(object p0, object p1, object p2, object p3) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ReaderValidationUtils_ContextUriValidationNonMatchingDeclaringTypes, p0, p1, p2, p3);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ReaderValidationUtils_ContextUriValidationNonMatchingDeclaringTypes, p0, p1, p2, p3);
         }
 
         /// <summary>
         /// A string like "The property or operation import name '{0}' was read from the payload; however, the name of the expected property or operation import is '{1}'."
         /// </summary>
         internal static string ReaderValidationUtils_NonMatchingPropertyNames(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ReaderValidationUtils_NonMatchingPropertyNames, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ReaderValidationUtils_NonMatchingPropertyNames, p0, p1);
         }
 
         /// <summary>
         /// A string like "The context URI '{0}' references the type '{1}'; however the expected type is '{2}'."
         /// </summary>
         internal static string ReaderValidationUtils_TypeInContextUriDoesNotMatchExpectedType(object p0, object p1, object p2) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ReaderValidationUtils_TypeInContextUriDoesNotMatchExpectedType, p0, p1, p2);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ReaderValidationUtils_TypeInContextUriDoesNotMatchExpectedType, p0, p1, p2);
         }
 
         /// <summary>
         /// A string like "The context URI '{0}' refers to the item type '{1}' which is not assignable to the expected item type '{2}'."
         /// </summary>
         internal static string ReaderValidationUtils_ContextUriDoesNotReferTypeAssignableToExpectedType(object p0, object p1, object p2) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ReaderValidationUtils_ContextUriDoesNotReferTypeAssignableToExpectedType, p0, p1, p2);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ReaderValidationUtils_ContextUriDoesNotReferTypeAssignableToExpectedType, p0, p1, p2);
         }
 
         /// <summary>
@@ -1729,7 +1729,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataMessageReader_ReaderAlreadyUsed {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataMessageReader_ReaderAlreadyUsed);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataMessageReader_ReaderAlreadyUsed);
             }
         }
 
@@ -1738,7 +1738,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataMessageReader_ErrorPayloadInRequest {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataMessageReader_ErrorPayloadInRequest);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataMessageReader_ErrorPayloadInRequest);
             }
         }
 
@@ -1747,7 +1747,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataMessageReader_ServiceDocumentInRequest {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataMessageReader_ServiceDocumentInRequest);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataMessageReader_ServiceDocumentInRequest);
             }
         }
 
@@ -1756,7 +1756,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataMessageReader_MetadataDocumentInRequest {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataMessageReader_MetadataDocumentInRequest);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataMessageReader_MetadataDocumentInRequest);
             }
         }
 
@@ -1765,7 +1765,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataMessageReader_DeltaInRequest {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataMessageReader_DeltaInRequest);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataMessageReader_DeltaInRequest);
             }
         }
 
@@ -1773,35 +1773,35 @@ namespace Microsoft.OData {
         /// A string like "The parameter '{0}' is specified with a non-null value, but no metadata is available for the reader. The expected type can only be specified if metadata is made available to the reader."
         /// </summary>
         internal static string ODataMessageReader_ExpectedTypeSpecifiedWithoutMetadata(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataMessageReader_ExpectedTypeSpecifiedWithoutMetadata, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataMessageReader_ExpectedTypeSpecifiedWithoutMetadata, p0);
         }
 
         /// <summary>
         /// A string like "The parameter '{0}' is specified with a non-null value, but no metadata is available for the reader. The entity set can only be specified if metadata is made available to the reader."
         /// </summary>
         internal static string ODataMessageReader_EntitySetSpecifiedWithoutMetadata(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataMessageReader_EntitySetSpecifiedWithoutMetadata, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataMessageReader_EntitySetSpecifiedWithoutMetadata, p0);
         }
 
         /// <summary>
         /// A string like "The parameter '{0}' is specified with a non-null value, but no metadata is available for the reader. The operation import can only be specified if metadata is made available to the reader."
         /// </summary>
         internal static string ODataMessageReader_OperationImportSpecifiedWithoutMetadata(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataMessageReader_OperationImportSpecifiedWithoutMetadata, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataMessageReader_OperationImportSpecifiedWithoutMetadata, p0);
         }
 
         /// <summary>
         /// A string like "The parameter '{0}' is specified with a non-null value, but no metadata is available for the reader. The operation can only be specified if metadata is made available to the reader."
         /// </summary>
         internal static string ODataMessageReader_OperationSpecifiedWithoutMetadata(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataMessageReader_OperationSpecifiedWithoutMetadata, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataMessageReader_OperationSpecifiedWithoutMetadata, p0);
         }
 
         /// <summary>
         /// A string like "The expected type for a collection reader is of kind '{0}'. Only types of Primitive or ComplexType kind can be specified as the expected type for a collection reader."
         /// </summary>
         internal static string ODataMessageReader_ExpectedCollectionTypeWrongKind(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataMessageReader_ExpectedCollectionTypeWrongKind, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataMessageReader_ExpectedCollectionTypeWrongKind, p0);
         }
 
         /// <summary>
@@ -1809,7 +1809,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataMessageReader_ExpectedPropertyTypeEntityCollectionKind {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataMessageReader_ExpectedPropertyTypeEntityCollectionKind);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataMessageReader_ExpectedPropertyTypeEntityCollectionKind);
             }
         }
 
@@ -1818,7 +1818,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataMessageReader_ExpectedPropertyTypeEntityKind {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataMessageReader_ExpectedPropertyTypeEntityKind);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataMessageReader_ExpectedPropertyTypeEntityKind);
             }
         }
 
@@ -1827,7 +1827,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataMessageReader_ExpectedPropertyTypeStream {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataMessageReader_ExpectedPropertyTypeStream);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataMessageReader_ExpectedPropertyTypeStream);
             }
         }
 
@@ -1835,7 +1835,7 @@ namespace Microsoft.OData {
         /// A string like "The expected type for a value is of kind '{0}'. Only types of Primitive kind can be specified as the expected type for reading a value."
         /// </summary>
         internal static string ODataMessageReader_ExpectedValueTypeWrongKind(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataMessageReader_ExpectedValueTypeWrongKind, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataMessageReader_ExpectedValueTypeWrongKind, p0);
         }
 
         /// <summary>
@@ -1843,7 +1843,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataMessageReader_NoneOrEmptyContentTypeHeader {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataMessageReader_NoneOrEmptyContentTypeHeader);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataMessageReader_NoneOrEmptyContentTypeHeader);
             }
         }
 
@@ -1851,7 +1851,7 @@ namespace Microsoft.OData {
         /// A string like "The wildcard '*' was detected in the value '{0}' of the content type header. The value of the content type header cannot contain wildcards."
         /// </summary>
         internal static string ODataMessageReader_WildcardInContentType(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataMessageReader_WildcardInContentType, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataMessageReader_WildcardInContentType, p0);
         }
 
         /// <summary>
@@ -1859,7 +1859,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataMessageReader_GetFormatCalledBeforeReadingStarted {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataMessageReader_GetFormatCalledBeforeReadingStarted);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataMessageReader_GetFormatCalledBeforeReadingStarted);
             }
         }
 
@@ -1868,7 +1868,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataMessageReader_DetectPayloadKindMultipleTimes {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataMessageReader_DetectPayloadKindMultipleTimes);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataMessageReader_DetectPayloadKindMultipleTimes);
             }
         }
 
@@ -1877,7 +1877,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataMessageReader_PayloadKindDetectionRunning {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataMessageReader_PayloadKindDetectionRunning);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataMessageReader_PayloadKindDetectionRunning);
             }
         }
 
@@ -1886,7 +1886,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataMessageReader_PayloadKindDetectionInServerMode {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataMessageReader_PayloadKindDetectionInServerMode);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataMessageReader_PayloadKindDetectionInServerMode);
             }
         }
 
@@ -1895,7 +1895,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataMessageReader_ParameterPayloadInResponse {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataMessageReader_ParameterPayloadInResponse);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataMessageReader_ParameterPayloadInResponse);
             }
         }
 
@@ -1903,7 +1903,7 @@ namespace Microsoft.OData {
         /// A string like "The navigation property '{0}' with singleton cardinality on type '{1}' was specified for reading a collection of entity reference links. A navigation property with collection cardinality has to be provided."
         /// </summary>
         internal static string ODataMessageReader_SingletonNavigationPropertyForEntityReferenceLinks(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataMessageReader_SingletonNavigationPropertyForEntityReferenceLinks, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataMessageReader_SingletonNavigationPropertyForEntityReferenceLinks, p0, p1);
         }
 
         /// <summary>
@@ -1911,7 +1911,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataAsyncResponseMessage_MustNotModifyMessage {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataAsyncResponseMessage_MustNotModifyMessage);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataAsyncResponseMessage_MustNotModifyMessage);
             }
         }
 
@@ -1920,7 +1920,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataMessage_MustNotModifyMessage {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataMessage_MustNotModifyMessage);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataMessage_MustNotModifyMessage);
             }
         }
 
@@ -1929,7 +1929,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataReaderCore_SyncCallOnAsyncReader {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataReaderCore_SyncCallOnAsyncReader);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataReaderCore_SyncCallOnAsyncReader);
             }
         }
 
@@ -1938,7 +1938,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataReaderCore_AsyncCallOnSyncReader {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataReaderCore_AsyncCallOnSyncReader);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataReaderCore_AsyncCallOnSyncReader);
             }
         }
 
@@ -1946,112 +1946,112 @@ namespace Microsoft.OData {
         /// A string like "ODataReader.ReadAsync or ODataReader.Read was called in an invalid state. No further calls can be made to the reader in state '{0}'."
         /// </summary>
         internal static string ODataReaderCore_ReadOrReadAsyncCalledInInvalidState(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataReaderCore_ReadOrReadAsyncCalledInInvalidState, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataReaderCore_ReadOrReadAsyncCalledInInvalidState, p0);
         }
 
         /// <summary>
         /// A string like "Calling Read or ReadAsync on an ODataReader instance is not allowed in state '{0}'."
         /// </summary>
         internal static string ODataReaderCore_NoReadCallsAllowed(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataReaderCore_NoReadCallsAllowed, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataReaderCore_NoReadCallsAllowed, p0);
         }
 
         /// <summary>
         /// A string like "A node of type '{0}' was read from the JSON reader when trying to read the resources of a resource set. A 'StartObject' or 'EndArray' node was expected."
         /// </summary>
         internal static string ODataJsonReader_CannotReadResourcesOfResourceSet(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonReader_CannotReadResourcesOfResourceSet, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonReader_CannotReadResourcesOfResourceSet, p0);
         }
 
         /// <summary>
         /// A string like "Cannot convert a value of type 'Edm.Int32' to the expected target type '{0}'."
         /// </summary>
         internal static string ODataJsonReaderUtils_CannotConvertInt32(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonReaderUtils_CannotConvertInt32, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonReaderUtils_CannotConvertInt32, p0);
         }
 
         /// <summary>
         /// A string like "Cannot convert a value of type 'Edm.Double' to the expected target type '{0}'."
         /// </summary>
         internal static string ODataJsonReaderUtils_CannotConvertDouble(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonReaderUtils_CannotConvertDouble, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonReaderUtils_CannotConvertDouble, p0);
         }
 
         /// <summary>
         /// A string like "Cannot convert a value of type 'Edm.Boolean' to the expected target type '{0}'."
         /// </summary>
         internal static string ODataJsonReaderUtils_CannotConvertBoolean(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonReaderUtils_CannotConvertBoolean, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonReaderUtils_CannotConvertBoolean, p0);
         }
 
         /// <summary>
         /// A string like "Cannot convert a value of type 'Edm.Decimal' to the expected target type '{0}'."
         /// </summary>
         internal static string ODataJsonReaderUtils_CannotConvertDecimal(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonReaderUtils_CannotConvertDecimal, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonReaderUtils_CannotConvertDecimal, p0);
         }
 
         /// <summary>
         /// A string like "Cannot convert a value of type 'Edm.DateTime' to the expected target type '{0}'."
         /// </summary>
         internal static string ODataJsonReaderUtils_CannotConvertDateTime(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonReaderUtils_CannotConvertDateTime, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonReaderUtils_CannotConvertDateTime, p0);
         }
 
         /// <summary>
         /// A string like "Cannot convert a value of type 'Edm.DateTimeOffset' to the expected target type '{0}'."
         /// </summary>
         internal static string ODataJsonReaderUtils_CannotConvertDateTimeOffset(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonReaderUtils_CannotConvertDateTimeOffset, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonReaderUtils_CannotConvertDateTimeOffset, p0);
         }
 
         /// <summary>
         /// A string like "Cannot convert a value to target type '{0}' because of conflict between input format string/number and parameter 'IEEE754Compatible' false/true."
         /// </summary>
         internal static string ODataJsonReaderUtils_ConflictBetweenInputFormatAndParameter(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonReaderUtils_ConflictBetweenInputFormatAndParameter, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonReaderUtils_ConflictBetweenInputFormatAndParameter, p0);
         }
 
         /// <summary>
         /// A string like "Multiple '{0}' properties were found in an error or inner error object. In OData, an error or inner error must have at most one '{0}' property."
         /// </summary>
         internal static string ODataJsonReaderUtils_MultipleErrorPropertiesWithSameName(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonReaderUtils_MultipleErrorPropertiesWithSameName, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonReaderUtils_MultipleErrorPropertiesWithSameName, p0);
         }
 
         /// <summary>
         /// A string like "Multiple operations have the same 'Metadata' property value of '{0}'. The 'Target' property value of these operations must be set to a non-null value."
         /// </summary>
         internal static string ODataJsonLightResourceSerializer_ActionsAndFunctionsGroupMustSpecifyTarget(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightResourceSerializer_ActionsAndFunctionsGroupMustSpecifyTarget, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightResourceSerializer_ActionsAndFunctionsGroupMustSpecifyTarget, p0);
         }
 
         /// <summary>
         /// A string like "Multiple operations have the same 'Metadata' property value of '{0}' and the same 'Target' property value of '{1}'. When multiple operations have the same 'Metadata' property value, their 'Target' property values must be unique."
         /// </summary>
         internal static string ODataJsonLightResourceSerializer_ActionsAndFunctionsGroupMustNotHaveDuplicateTarget(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightResourceSerializer_ActionsAndFunctionsGroupMustNotHaveDuplicateTarget, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightResourceSerializer_ActionsAndFunctionsGroupMustNotHaveDuplicateTarget, p0, p1);
         }
 
         /// <summary>
         /// A string like "A property with name '{0}' was found in the error object when reading a top-level error. In OData, a top-level error object must have exactly one property with name 'error'."
         /// </summary>
         internal static string ODataJsonErrorDeserializer_TopLevelErrorWithInvalidProperty(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonErrorDeserializer_TopLevelErrorWithInvalidProperty, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonErrorDeserializer_TopLevelErrorWithInvalidProperty, p0);
         }
 
         /// <summary>
         /// A string like "A property with name '{0}' was found in the message value of a top-level error. In OData, the message value of a top-level error value can only have properties with name 'lang' or 'value'."
         /// </summary>
         internal static string ODataJsonErrorDeserializer_TopLevelErrorMessageValueWithInvalidProperty(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonErrorDeserializer_TopLevelErrorMessageValueWithInvalidProperty, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonErrorDeserializer_TopLevelErrorMessageValueWithInvalidProperty, p0);
         }
 
         /// <summary>
         /// A string like "ODataCollectionReader.ReadAsync or ODataCollectionReader.Read was called in an invalid state. No further calls can be made to the reader in state '{0}'."
         /// </summary>
         internal static string ODataCollectionReaderCore_ReadOrReadAsyncCalledInInvalidState(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataCollectionReaderCore_ReadOrReadAsyncCalledInInvalidState, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataCollectionReaderCore_ReadOrReadAsyncCalledInInvalidState, p0);
         }
 
         /// <summary>
@@ -2059,7 +2059,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataCollectionReaderCore_SyncCallOnAsyncReader {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataCollectionReaderCore_SyncCallOnAsyncReader);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataCollectionReaderCore_SyncCallOnAsyncReader);
             }
         }
 
@@ -2068,7 +2068,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataCollectionReaderCore_AsyncCallOnSyncReader {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataCollectionReaderCore_AsyncCallOnSyncReader);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataCollectionReaderCore_AsyncCallOnSyncReader);
             }
         }
 
@@ -2076,14 +2076,14 @@ namespace Microsoft.OData {
         /// A string like "The current state of the collection reader is '{0}'; however, the expected item type of a collection reader can only be set in state '{1}'."
         /// </summary>
         internal static string ODataCollectionReaderCore_ExpectedItemTypeSetInInvalidState(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataCollectionReaderCore_ExpectedItemTypeSetInInvalidState, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataCollectionReaderCore_ExpectedItemTypeSetInInvalidState, p0, p1);
         }
 
         /// <summary>
         /// A string like "ODataParameterReader.ReadAsync or ODataParameterReader.Read was called in an invalid state. No further calls can be made to the reader in state '{0}'."
         /// </summary>
         internal static string ODataParameterReaderCore_ReadOrReadAsyncCalledInInvalidState(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataParameterReaderCore_ReadOrReadAsyncCalledInInvalidState, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataParameterReaderCore_ReadOrReadAsyncCalledInInvalidState, p0);
         }
 
         /// <summary>
@@ -2091,7 +2091,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataParameterReaderCore_SyncCallOnAsyncReader {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataParameterReaderCore_SyncCallOnAsyncReader);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataParameterReaderCore_SyncCallOnAsyncReader);
             }
         }
 
@@ -2100,7 +2100,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataParameterReaderCore_AsyncCallOnSyncReader {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataParameterReaderCore_AsyncCallOnSyncReader);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataParameterReaderCore_AsyncCallOnSyncReader);
             }
         }
 
@@ -2108,70 +2108,70 @@ namespace Microsoft.OData {
         /// A string like "ODataParameterReader.ReadAsync or ODataParameterReader.Read was called in the '{0}' state. '{1}' must be called in this state, and the created reader must be in the 'Completed' state before the next ODataParameterReader.ReadAsync or ODataParameterReader.Read can be called."
         /// </summary>
         internal static string ODataParameterReaderCore_SubReaderMustBeCreatedAndReadToCompletionBeforeTheNextReadOrReadAsyncCall(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataParameterReaderCore_SubReaderMustBeCreatedAndReadToCompletionBeforeTheNextReadOrReadAsyncCall, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataParameterReaderCore_SubReaderMustBeCreatedAndReadToCompletionBeforeTheNextReadOrReadAsyncCall, p0, p1);
         }
 
         /// <summary>
         /// A string like "ODataParameterReader.ReadAsync or ODataParameterReader.Read was called in the '{0}' state and '{1}' was called but the created reader is not in the 'Completed' state. The created reader must be in 'Completed' state before the next ODataParameterReader.ReadAsync or ODataParameterReader.Read can be called."
         /// </summary>
         internal static string ODataParameterReaderCore_SubReaderMustBeInCompletedStateBeforeTheNextReadOrReadAsyncCall(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataParameterReaderCore_SubReaderMustBeInCompletedStateBeforeTheNextReadOrReadAsyncCall, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataParameterReaderCore_SubReaderMustBeInCompletedStateBeforeTheNextReadOrReadAsyncCall, p0, p1);
         }
 
         /// <summary>
         /// A string like "You cannot call the method '{0}' in state '{1}'."
         /// </summary>
         internal static string ODataParameterReaderCore_InvalidCreateReaderMethodCalledForState(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataParameterReaderCore_InvalidCreateReaderMethodCalledForState, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataParameterReaderCore_InvalidCreateReaderMethodCalledForState, p0, p1);
         }
 
         /// <summary>
         /// A string like "The '{0}' method has already been called for the parameter '{1}'. Only one create reader method call is allowed for each resource, resource set, or collection parameter."
         /// </summary>
         internal static string ODataParameterReaderCore_CreateReaderAlreadyCalled(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataParameterReaderCore_CreateReaderAlreadyCalled, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataParameterReaderCore_CreateReaderAlreadyCalled, p0, p1);
         }
 
         /// <summary>
         /// A string like "The parameter '{0}' in the request payload is not a valid parameter for the operation '{1}'."
         /// </summary>
         internal static string ODataParameterReaderCore_ParameterNameNotInMetadata(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataParameterReaderCore_ParameterNameNotInMetadata, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataParameterReaderCore_ParameterNameNotInMetadata, p0, p1);
         }
 
         /// <summary>
         /// A string like "Multiple parameters with the name '{0}' were found in the request payload."
         /// </summary>
         internal static string ODataParameterReaderCore_DuplicateParametersInPayload(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataParameterReaderCore_DuplicateParametersInPayload, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataParameterReaderCore_DuplicateParametersInPayload, p0);
         }
 
         /// <summary>
         /// A string like "One or more parameters of the operation '{0}' are missing from the request payload. The missing parameters are: {1}."
         /// </summary>
         internal static string ODataParameterReaderCore_ParametersMissingInPayload(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataParameterReaderCore_ParametersMissingInPayload, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataParameterReaderCore_ParametersMissingInPayload, p0, p1);
         }
 
         /// <summary>
         /// A string like "The 'Metadata' property on an {0} must be set to a non-null value."
         /// </summary>
         internal static string ValidationUtils_ActionsAndFunctionsMustSpecifyMetadata(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ValidationUtils_ActionsAndFunctionsMustSpecifyMetadata, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ValidationUtils_ActionsAndFunctionsMustSpecifyMetadata, p0);
         }
 
         /// <summary>
         /// A string like "The 'Target' property on an {0} must be set to a non-null value."
         /// </summary>
         internal static string ValidationUtils_ActionsAndFunctionsMustSpecifyTarget(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ValidationUtils_ActionsAndFunctionsMustSpecifyTarget, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ValidationUtils_ActionsAndFunctionsMustSpecifyTarget, p0);
         }
 
         /// <summary>
         /// A string like "The '{0}' enumerable contains a null item. This enumerable cannot contain null items."
         /// </summary>
         internal static string ValidationUtils_EnumerableContainsANullItem(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ValidationUtils_EnumerableContainsANullItem, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ValidationUtils_EnumerableContainsANullItem, p0);
         }
 
         /// <summary>
@@ -2179,7 +2179,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ValidationUtils_AssociationLinkMustSpecifyName {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ValidationUtils_AssociationLinkMustSpecifyName);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ValidationUtils_AssociationLinkMustSpecifyName);
             }
         }
 
@@ -2188,7 +2188,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ValidationUtils_AssociationLinkMustSpecifyUrl {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ValidationUtils_AssociationLinkMustSpecifyUrl);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ValidationUtils_AssociationLinkMustSpecifyUrl);
             }
         }
 
@@ -2197,7 +2197,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ValidationUtils_TypeNameMustNotBeEmpty {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ValidationUtils_TypeNameMustNotBeEmpty);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ValidationUtils_TypeNameMustNotBeEmpty);
             }
         }
 
@@ -2205,7 +2205,7 @@ namespace Microsoft.OData {
         /// A string like "The property '{0}' does not exist on type '{1}'. Make sure to only use property names that are defined by the type or mark the type as open type."
         /// </summary>
         internal static string ValidationUtils_PropertyDoesNotExistOnType(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ValidationUtils_PropertyDoesNotExistOnType, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ValidationUtils_PropertyDoesNotExistOnType, p0, p1);
         }
 
         /// <summary>
@@ -2213,7 +2213,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ValidationUtils_ResourceMustSpecifyUrl {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ValidationUtils_ResourceMustSpecifyUrl);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ValidationUtils_ResourceMustSpecifyUrl);
             }
         }
 
@@ -2221,7 +2221,7 @@ namespace Microsoft.OData {
         /// A string like "The 'Name' property on a resource collection with the 'Url' '{0}' must be set to a non-null value."
         /// </summary>
         internal static string ValidationUtils_ResourceMustSpecifyName(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ValidationUtils_ResourceMustSpecifyName, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ValidationUtils_ResourceMustSpecifyName, p0);
         }
 
         /// <summary>
@@ -2229,7 +2229,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ValidationUtils_ServiceDocumentElementUrlMustNotBeNull {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ValidationUtils_ServiceDocumentElementUrlMustNotBeNull);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ValidationUtils_ServiceDocumentElementUrlMustNotBeNull);
             }
         }
 
@@ -2237,21 +2237,21 @@ namespace Microsoft.OData {
         /// A string like "A primitive value was specified; however, a value of the non-primitive type '{0}' was expected."
         /// </summary>
         internal static string ValidationUtils_NonPrimitiveTypeForPrimitiveValue(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ValidationUtils_NonPrimitiveTypeForPrimitiveValue, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ValidationUtils_NonPrimitiveTypeForPrimitiveValue, p0);
         }
 
         /// <summary>
         /// A string like "Unsupported primitive type. A primitive type could not be determined for an instance of type '{0}'."
         /// </summary>
         internal static string ValidationUtils_UnsupportedPrimitiveType(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ValidationUtils_UnsupportedPrimitiveType, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ValidationUtils_UnsupportedPrimitiveType, p0);
         }
 
         /// <summary>
         /// A string like "An incompatible primitive type '{0}[Nullable={1}]' was found for an item that was expected to be of type '{2}[Nullable={3}]'."
         /// </summary>
         internal static string ValidationUtils_IncompatiblePrimitiveItemType(object p0, object p1, object p2, object p3) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ValidationUtils_IncompatiblePrimitiveItemType, p0, p1, p2, p3);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ValidationUtils_IncompatiblePrimitiveItemType, p0, p1, p2, p3);
         }
 
         /// <summary>
@@ -2259,7 +2259,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ValidationUtils_NonNullableCollectionElementsMustNotBeNull {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ValidationUtils_NonNullableCollectionElementsMustNotBeNull);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ValidationUtils_NonNullableCollectionElementsMustNotBeNull);
             }
         }
 
@@ -2267,35 +2267,35 @@ namespace Microsoft.OData {
         /// A string like "Type name '{0}' is an invalid collection type name; a collection type name must be in the format 'Collection(&lt;itemTypeName&gt;)'."
         /// </summary>
         internal static string ValidationUtils_InvalidCollectionTypeName(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ValidationUtils_InvalidCollectionTypeName, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ValidationUtils_InvalidCollectionTypeName, p0);
         }
 
         /// <summary>
         /// A string like "A type named '{0}' could not be resolved by the model. When a model is available, each type name must resolve to a valid type."
         /// </summary>
         internal static string ValidationUtils_UnrecognizedTypeName(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ValidationUtils_UnrecognizedTypeName, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ValidationUtils_UnrecognizedTypeName, p0);
         }
 
         /// <summary>
         /// A string like "Incompatible type kinds were found. The type '{0}' was found to be of kind '{2}' instead of the expected kind '{1}'."
         /// </summary>
         internal static string ValidationUtils_IncorrectTypeKind(object p0, object p1, object p2) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ValidationUtils_IncorrectTypeKind, p0, p1, p2);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ValidationUtils_IncorrectTypeKind, p0, p1, p2);
         }
 
         /// <summary>
         /// A string like "Incompatible type kinds were found. Found type kind '{0}' instead of the expected kind '{1}'."
         /// </summary>
         internal static string ValidationUtils_IncorrectTypeKindNoTypeName(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ValidationUtils_IncorrectTypeKindNoTypeName, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ValidationUtils_IncorrectTypeKindNoTypeName, p0, p1);
         }
 
         /// <summary>
         /// A string like "A value with type '{0}' was found, which is of kind '{1}'. Value can only be of kind 'Primitive', 'Complex' or 'Collection'."
         /// </summary>
         internal static string ValidationUtils_IncorrectValueTypeKind(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ValidationUtils_IncorrectValueTypeKind, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ValidationUtils_IncorrectValueTypeKind, p0, p1);
         }
 
         /// <summary>
@@ -2303,7 +2303,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ValidationUtils_LinkMustSpecifyName {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ValidationUtils_LinkMustSpecifyName);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ValidationUtils_LinkMustSpecifyName);
             }
         }
 
@@ -2311,7 +2311,7 @@ namespace Microsoft.OData {
         /// A string like "The property '{0}' cannot be a stream property because it is not of kind EdmPrimitiveTypeKind.Stream."
         /// </summary>
         internal static string ValidationUtils_MismatchPropertyKindForStreamProperty(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ValidationUtils_MismatchPropertyKindForStreamProperty, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ValidationUtils_MismatchPropertyKindForStreamProperty, p0);
         }
 
         /// <summary>
@@ -2319,7 +2319,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ValidationUtils_NestedCollectionsAreNotSupported {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ValidationUtils_NestedCollectionsAreNotSupported);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ValidationUtils_NestedCollectionsAreNotSupported);
             }
         }
 
@@ -2328,7 +2328,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ValidationUtils_StreamReferenceValuesNotSupportedInCollections {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ValidationUtils_StreamReferenceValuesNotSupportedInCollections);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ValidationUtils_StreamReferenceValuesNotSupportedInCollections);
             }
         }
 
@@ -2336,91 +2336,91 @@ namespace Microsoft.OData {
         /// A string like "A value was encountered that has a type name that is incompatible with the metadata. The value specified its type as '{0}', but the type specified in the metadata is '{1}'."
         /// </summary>
         internal static string ValidationUtils_IncompatibleType(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ValidationUtils_IncompatibleType, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ValidationUtils_IncompatibleType, p0, p1);
         }
 
         /// <summary>
         /// A string like "An open collection property '{0}' was found. In OData, open collection properties are not supported."
         /// </summary>
         internal static string ValidationUtils_OpenCollectionProperty(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ValidationUtils_OpenCollectionProperty, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ValidationUtils_OpenCollectionProperty, p0);
         }
 
         /// <summary>
         /// A string like "An open stream property '{0}' was found. In OData, open stream properties are not supported."
         /// </summary>
         internal static string ValidationUtils_OpenStreamProperty(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ValidationUtils_OpenStreamProperty, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ValidationUtils_OpenStreamProperty, p0);
         }
 
         /// <summary>
         /// A string like "An invalid collection type kind '{0}' was found. In OData, collection types must be of kind 'Collection'."
         /// </summary>
         internal static string ValidationUtils_InvalidCollectionTypeReference(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ValidationUtils_InvalidCollectionTypeReference, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ValidationUtils_InvalidCollectionTypeReference, p0);
         }
 
         /// <summary>
         /// A string like "An resource with type '{0}' was found with a media resource, but this entity type is not a media link resource (MLE). When the type is not an MLE entity, the resource cannot have a media resource."
         /// </summary>
         internal static string ValidationUtils_ResourceWithMediaResourceAndNonMLEType(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ValidationUtils_ResourceWithMediaResourceAndNonMLEType, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ValidationUtils_ResourceWithMediaResourceAndNonMLEType, p0);
         }
 
         /// <summary>
         /// A string like "An resource with type '{0}' was found without a media resource, but this entity type is a media link resource (MLE). When the type is an MLE entity, the resource must have a media resource."
         /// </summary>
         internal static string ValidationUtils_ResourceWithoutMediaResourceAndMLEType(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ValidationUtils_ResourceWithoutMediaResourceAndMLEType, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ValidationUtils_ResourceWithoutMediaResourceAndMLEType, p0);
         }
 
         /// <summary>
         /// A string like "An resource with type '{0}' was found, but it is not assignable to the expected type '{1}'. The type specified in the resource must be equal to either the expected type or a derived type."
         /// </summary>
         internal static string ValidationUtils_ResourceTypeNotAssignableToExpectedType(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ValidationUtils_ResourceTypeNotAssignableToExpectedType, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ValidationUtils_ResourceTypeNotAssignableToExpectedType, p0, p1);
         }
 
         /// <summary>
         /// A string like "A property with name '{0}' on type '{1}' has kind '{2}', but it is expected to be of kind 'Navigation'."
         /// </summary>
         internal static string ValidationUtils_NavigationPropertyExpected(object p0, object p1, object p2) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ValidationUtils_NavigationPropertyExpected, p0, p1, p2);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ValidationUtils_NavigationPropertyExpected, p0, p1, p2);
         }
 
         /// <summary>
         /// A string like "The boundary delimiter '{0}' is invalid. A boundary delimiter must be non-null, be non-empty, and have a maximum of {1} characters."
         /// </summary>
         internal static string ValidationUtils_InvalidBatchBoundaryDelimiterLength(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ValidationUtils_InvalidBatchBoundaryDelimiterLength, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ValidationUtils_InvalidBatchBoundaryDelimiterLength, p0, p1);
         }
 
         /// <summary>
         /// A string like "The maximum recursion depth limit was reached. The depth of nested values in a single property cannot exceed {0}."
         /// </summary>
         internal static string ValidationUtils_RecursionDepthLimitReached(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ValidationUtils_RecursionDepthLimitReached, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ValidationUtils_RecursionDepthLimitReached, p0);
         }
 
         /// <summary>
         /// A string like "The depth limit for entries in nested expanded navigation links was reached. The number of nested expanded entries cannot exceed {0}."
         /// </summary>
         internal static string ValidationUtils_MaxDepthOfNestedEntriesExceeded(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ValidationUtils_MaxDepthOfNestedEntriesExceeded, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ValidationUtils_MaxDepthOfNestedEntriesExceeded, p0);
         }
 
         /// <summary>
         /// A string like "A null value was found in a collection, but the expected collection item type '{0}' does not allow null values."
         /// </summary>
         internal static string ValidationUtils_NullCollectionItemForNonNullableType(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ValidationUtils_NullCollectionItemForNonNullableType, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ValidationUtils_NullCollectionItemForNonNullableType, p0);
         }
 
         /// <summary>
         /// A string like "The property name '{0}' is invalid; property names must not contain any of the reserved characters {1}."
         /// </summary>
         internal static string ValidationUtils_PropertiesMustNotContainReservedChars(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ValidationUtils_PropertiesMustNotContainReservedChars, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ValidationUtils_PropertiesMustNotContainReservedChars, p0, p1);
         }
 
         /// <summary>
@@ -2428,7 +2428,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ValidationUtils_WorkspaceResourceMustNotContainNullItem {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ValidationUtils_WorkspaceResourceMustNotContainNullItem);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ValidationUtils_WorkspaceResourceMustNotContainNullItem);
             }
         }
 
@@ -2436,7 +2436,7 @@ namespace Microsoft.OData {
         /// A string like "Encountered a property '{0}' that was expected to be a reference to a location in the $metadata document but does not contain a '#' character or is otherwise not a valid metadata reference property. A metadata reference property must contain a '#' and be a valid absolute URI or begin with a '#' and be a valid URI fragment."
         /// </summary>
         internal static string ValidationUtils_InvalidMetadataReferenceProperty(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ValidationUtils_InvalidMetadataReferenceProperty, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ValidationUtils_InvalidMetadataReferenceProperty, p0);
         }
 
         /// <summary>
@@ -2444,7 +2444,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string WriterValidationUtils_PropertyMustNotBeNull {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.WriterValidationUtils_PropertyMustNotBeNull);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.WriterValidationUtils_PropertyMustNotBeNull);
             }
         }
 
@@ -2453,7 +2453,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string WriterValidationUtils_PropertiesMustHaveNonEmptyName {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.WriterValidationUtils_PropertiesMustHaveNonEmptyName);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.WriterValidationUtils_PropertiesMustHaveNonEmptyName);
             }
         }
 
@@ -2462,7 +2462,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string WriterValidationUtils_MissingTypeNameWithMetadata {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.WriterValidationUtils_MissingTypeNameWithMetadata);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.WriterValidationUtils_MissingTypeNameWithMetadata);
             }
         }
 
@@ -2471,7 +2471,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string WriterValidationUtils_NextPageLinkInRequest {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.WriterValidationUtils_NextPageLinkInRequest);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.WriterValidationUtils_NextPageLinkInRequest);
             }
         }
 
@@ -2480,7 +2480,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string WriterValidationUtils_DefaultStreamWithContentTypeWithoutReadLink {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.WriterValidationUtils_DefaultStreamWithContentTypeWithoutReadLink);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.WriterValidationUtils_DefaultStreamWithContentTypeWithoutReadLink);
             }
         }
 
@@ -2489,7 +2489,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string WriterValidationUtils_DefaultStreamWithReadLinkWithoutContentType {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.WriterValidationUtils_DefaultStreamWithReadLinkWithoutContentType);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.WriterValidationUtils_DefaultStreamWithReadLinkWithoutContentType);
             }
         }
 
@@ -2498,7 +2498,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string WriterValidationUtils_StreamReferenceValueMustHaveEditLinkOrReadLink {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.WriterValidationUtils_StreamReferenceValueMustHaveEditLinkOrReadLink);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.WriterValidationUtils_StreamReferenceValueMustHaveEditLinkOrReadLink);
             }
         }
 
@@ -2507,7 +2507,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string WriterValidationUtils_StreamReferenceValueMustHaveEditLinkToHaveETag {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.WriterValidationUtils_StreamReferenceValueMustHaveEditLinkToHaveETag);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.WriterValidationUtils_StreamReferenceValueMustHaveEditLinkToHaveETag);
             }
         }
 
@@ -2516,7 +2516,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string WriterValidationUtils_StreamReferenceValueEmptyContentType {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.WriterValidationUtils_StreamReferenceValueEmptyContentType);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.WriterValidationUtils_StreamReferenceValueEmptyContentType);
             }
         }
 
@@ -2525,7 +2525,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string WriterValidationUtils_EntriesMustHaveNonEmptyId {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.WriterValidationUtils_EntriesMustHaveNonEmptyId);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.WriterValidationUtils_EntriesMustHaveNonEmptyId);
             }
         }
 
@@ -2533,7 +2533,7 @@ namespace Microsoft.OData {
         /// A string like "The base URI '{0}' specified in ODataMessageWriterSettings.BaseUri is invalid; it must either be null or an absolute URI."
         /// </summary>
         internal static string WriterValidationUtils_MessageWriterSettingsBaseUriMustBeNullOrAbsolute(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.WriterValidationUtils_MessageWriterSettingsBaseUriMustBeNullOrAbsolute, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.WriterValidationUtils_MessageWriterSettingsBaseUriMustBeNullOrAbsolute, p0);
         }
 
         /// <summary>
@@ -2541,7 +2541,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string WriterValidationUtils_EntityReferenceLinkUrlMustNotBeNull {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.WriterValidationUtils_EntityReferenceLinkUrlMustNotBeNull);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.WriterValidationUtils_EntityReferenceLinkUrlMustNotBeNull);
             }
         }
 
@@ -2550,7 +2550,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string WriterValidationUtils_EntityReferenceLinksLinkMustNotBeNull {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.WriterValidationUtils_EntityReferenceLinksLinkMustNotBeNull);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.WriterValidationUtils_EntityReferenceLinksLinkMustNotBeNull);
             }
         }
 
@@ -2558,112 +2558,112 @@ namespace Microsoft.OData {
         /// A string like "The type '{0}' of a resource in an expanded link is not compatible with the element type '{1}' of the expanded link. Entries in an expanded link must have entity types that are assignable to the element type of the expanded link."
         /// </summary>
         internal static string WriterValidationUtils_NestedResourceTypeNotCompatibleWithParentPropertyType(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.WriterValidationUtils_NestedResourceTypeNotCompatibleWithParentPropertyType, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.WriterValidationUtils_NestedResourceTypeNotCompatibleWithParentPropertyType, p0, p1);
         }
 
         /// <summary>
         /// A string like "The ODataNestedResourceInfo with the URL value '{0}' specifies in its 'IsCollection' property that its payload is a resource set, but the actual payload is a resource."
         /// </summary>
         internal static string WriterValidationUtils_ExpandedLinkIsCollectionTrueWithResourceContent(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.WriterValidationUtils_ExpandedLinkIsCollectionTrueWithResourceContent, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.WriterValidationUtils_ExpandedLinkIsCollectionTrueWithResourceContent, p0);
         }
 
         /// <summary>
         /// A string like "The ODataNestedResourceInfo with the URL value '{0}' specifies in its 'IsCollection' property that its payload is a resource, but the actual payload is a resource set."
         /// </summary>
         internal static string WriterValidationUtils_ExpandedLinkIsCollectionFalseWithResourceSetContent(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.WriterValidationUtils_ExpandedLinkIsCollectionFalseWithResourceSetContent, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.WriterValidationUtils_ExpandedLinkIsCollectionFalseWithResourceSetContent, p0);
         }
 
         /// <summary>
         /// A string like "The ODataNestedResourceInfo with the URL value '{0}' specifies in its 'IsCollection' property that its payload is a resource set, but the metadata declares it as a resource."
         /// </summary>
         internal static string WriterValidationUtils_ExpandedLinkIsCollectionTrueWithResourceMetadata(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.WriterValidationUtils_ExpandedLinkIsCollectionTrueWithResourceMetadata, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.WriterValidationUtils_ExpandedLinkIsCollectionTrueWithResourceMetadata, p0);
         }
 
         /// <summary>
         /// A string like "The ODataNestedResourceInfo with the URL value '{0}' specifies in its 'IsCollection' property that its payload is a resource, but the metadata declares it as resource set."
         /// </summary>
         internal static string WriterValidationUtils_ExpandedLinkIsCollectionFalseWithResourceSetMetadata(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.WriterValidationUtils_ExpandedLinkIsCollectionFalseWithResourceSetMetadata, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.WriterValidationUtils_ExpandedLinkIsCollectionFalseWithResourceSetMetadata, p0);
         }
 
         /// <summary>
         /// A string like "The content of the ODataNestedResourceInfo with the URL value '{0}' is a resource set, but the metadata declares it as a resource."
         /// </summary>
         internal static string WriterValidationUtils_ExpandedLinkWithResourceSetPayloadAndResourceMetadata(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.WriterValidationUtils_ExpandedLinkWithResourceSetPayloadAndResourceMetadata, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.WriterValidationUtils_ExpandedLinkWithResourceSetPayloadAndResourceMetadata, p0);
         }
 
         /// <summary>
         /// A string like "The content of the ODataNestedResourceInfo with the URL value '{0}' is a resource, but the metadata declares it as resource set."
         /// </summary>
         internal static string WriterValidationUtils_ExpandedLinkWithResourcePayloadAndResourceSetMetadata(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.WriterValidationUtils_ExpandedLinkWithResourcePayloadAndResourceSetMetadata, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.WriterValidationUtils_ExpandedLinkWithResourcePayloadAndResourceSetMetadata, p0);
         }
 
         /// <summary>
         /// A string like "The collection property '{0}' has a null value, which is not allowed. In OData, collection properties cannot have null values."
         /// </summary>
         internal static string WriterValidationUtils_CollectionPropertiesMustNotHaveNullValue(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.WriterValidationUtils_CollectionPropertiesMustNotHaveNullValue, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.WriterValidationUtils_CollectionPropertiesMustNotHaveNullValue, p0);
         }
 
         /// <summary>
         /// A string like "The property '{0}[Nullable=False]' of type '{1}' has a null value, which is not allowed."
         /// </summary>
         internal static string WriterValidationUtils_NonNullablePropertiesMustNotHaveNullValue(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.WriterValidationUtils_NonNullablePropertiesMustNotHaveNullValue, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.WriterValidationUtils_NonNullablePropertiesMustNotHaveNullValue, p0, p1);
         }
 
         /// <summary>
         /// A string like "The stream property '{0}' has a null value, which is not allowed. In OData, stream properties cannot have null values."
         /// </summary>
         internal static string WriterValidationUtils_StreamPropertiesMustNotHaveNullValue(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.WriterValidationUtils_StreamPropertiesMustNotHaveNullValue, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.WriterValidationUtils_StreamPropertiesMustNotHaveNullValue, p0);
         }
 
         /// <summary>
         /// A string like "An action or a function with metadata '{0}' was detected when writing a request; actions and functions are only supported in responses."
         /// </summary>
         internal static string WriterValidationUtils_OperationInRequest(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.WriterValidationUtils_OperationInRequest, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.WriterValidationUtils_OperationInRequest, p0);
         }
 
         /// <summary>
         /// A string like "An association link with name '{0}' could not be written to the request payload. Association links are only supported in responses."
         /// </summary>
         internal static string WriterValidationUtils_AssociationLinkInRequest(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.WriterValidationUtils_AssociationLinkInRequest, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.WriterValidationUtils_AssociationLinkInRequest, p0);
         }
 
         /// <summary>
         /// A string like "An stream property with name '{0}' could not be written to the request payload. Stream properties are only supported in responses."
         /// </summary>
         internal static string WriterValidationUtils_StreamPropertyInRequest(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.WriterValidationUtils_StreamPropertyInRequest, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.WriterValidationUtils_StreamPropertyInRequest, p0);
         }
 
         /// <summary>
         /// A string like "The service document URI '{0}' specified is invalid; it must be either null or an absolute URI."
         /// </summary>
         internal static string WriterValidationUtils_MessageWriterSettingsServiceDocumentUriMustBeNullOrAbsolute(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.WriterValidationUtils_MessageWriterSettingsServiceDocumentUriMustBeNullOrAbsolute, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.WriterValidationUtils_MessageWriterSettingsServiceDocumentUriMustBeNullOrAbsolute, p0);
         }
 
         /// <summary>
         /// A string like "The ODataNestedResourceInfo.Url property on an navigation link '{0}' is null. The ODataNestedResourceInfo.Url property must be set to a non-null value that represents the entity or entities the navigation link references."
         /// </summary>
         internal static string WriterValidationUtils_NavigationLinkMustSpecifyUrl(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.WriterValidationUtils_NavigationLinkMustSpecifyUrl, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.WriterValidationUtils_NavigationLinkMustSpecifyUrl, p0);
         }
 
         /// <summary>
         /// A string like "The ODataNestedResourceInfo.IsCollection property on a nested resource info '{0}' is null. The ODataNestedResourceInfo.IsCollection property must be specified when writing a nested resource into a request."
         /// </summary>
         internal static string WriterValidationUtils_NestedResourceInfoMustSpecifyIsCollection(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.WriterValidationUtils_NestedResourceInfoMustSpecifyIsCollection, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.WriterValidationUtils_NestedResourceInfoMustSpecifyIsCollection, p0);
         }
 
         /// <summary>
@@ -2671,7 +2671,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string WriterValidationUtils_MessageWriterSettingsJsonPaddingOnRequestMessage {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.WriterValidationUtils_MessageWriterSettingsJsonPaddingOnRequestMessage);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.WriterValidationUtils_MessageWriterSettingsJsonPaddingOnRequestMessage);
             }
         }
 
@@ -2679,210 +2679,210 @@ namespace Microsoft.OData {
         /// A string like "An XML node of type '{0}' was found in a string value. An element with a string value can only contain Text, CDATA, SignificantWhitespace, Whitespace or Comment nodes."
         /// </summary>
         internal static string XmlReaderExtension_InvalidNodeInStringValue(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.XmlReaderExtension_InvalidNodeInStringValue, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.XmlReaderExtension_InvalidNodeInStringValue, p0);
         }
 
         /// <summary>
         /// A string like "An XML node of type '{0}' was found at the root level. The root level of an OData payload must contain a single XML element and no text nodes."
         /// </summary>
         internal static string XmlReaderExtension_InvalidRootNode(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.XmlReaderExtension_InvalidRootNode, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.XmlReaderExtension_InvalidRootNode, p0);
         }
 
         /// <summary>
         /// A string like "The metadata document could not be read from the message content.\r\n{0}"
         /// </summary>
         internal static string ODataMetadataInputContext_ErrorReadingMetadata(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataMetadataInputContext_ErrorReadingMetadata, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataMetadataInputContext_ErrorReadingMetadata, p0);
         }
 
         /// <summary>
         /// A string like "The metadata document could not be written as specified.\r\n{0}"
         /// </summary>
         internal static string ODataMetadataOutputContext_ErrorWritingMetadata(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataMetadataOutputContext_ErrorWritingMetadata, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataMetadataOutputContext_ErrorWritingMetadata, p0);
         }
 
         /// <summary>
         /// A string like "A relative URI value '{0}' was specified in the payload, but no base URI for it was found. When the payload contains a relative URI, there must be an xml:base in the payload or else a base URI must specified in the reader settings."
         /// </summary>
         internal static string ODataAtomDeserializer_RelativeUriUsedWithoutBaseUriSpecified(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataAtomDeserializer_RelativeUriUsedWithoutBaseUriSpecified, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataAtomDeserializer_RelativeUriUsedWithoutBaseUriSpecified, p0);
         }
 
         /// <summary>
         /// A string like "The element with name '{0}' is not a valid collection item. The name of the collection item element must be 'element' and it must belong to the '{1}' namespace."
         /// </summary>
         internal static string ODataAtomPropertyAndValueDeserializer_InvalidCollectionElement(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataAtomPropertyAndValueDeserializer_InvalidCollectionElement, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataAtomPropertyAndValueDeserializer_InvalidCollectionElement, p0, p1);
         }
 
         /// <summary>
         /// A string like "The property '{0}' on type '{1}' was found in the {{http://docs.oasis-open.org/odata/ns/metadata}}:properties element, and it is declared as a navigation property. Navigation properties in ATOM must be represented as {{http://www.w3.org/2005/Atom}}:link elements."
         /// </summary>
         internal static string ODataAtomPropertyAndValueDeserializer_NavigationPropertyInProperties(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataAtomPropertyAndValueDeserializer_NavigationPropertyInProperties, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataAtomPropertyAndValueDeserializer_NavigationPropertyInProperties, p0, p1);
         }
 
         /// <summary>
         /// A string like "Writing null value for the instance annotation '{0}' is not allowed. The instance annotation '{0}' has the expected type '{1}[Nullable=False]'."
         /// </summary>
         internal static string JsonLightInstanceAnnotationWriter_NullValueNotAllowedForInstanceAnnotation(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.JsonLightInstanceAnnotationWriter_NullValueNotAllowedForInstanceAnnotation, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.JsonLightInstanceAnnotationWriter_NullValueNotAllowedForInstanceAnnotation, p0, p1);
         }
 
         /// <summary>
         /// A string like "When resolving operations '{0}' the group returned has both actions and functions with an invalid IEdmModel."
         /// </summary>
         internal static string EdmLibraryExtensions_OperationGroupReturningActionsAndFunctionsModelInvalid(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.EdmLibraryExtensions_OperationGroupReturningActionsAndFunctionsModelInvalid, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.EdmLibraryExtensions_OperationGroupReturningActionsAndFunctionsModelInvalid, p0);
         }
 
         /// <summary>
         /// A string like "Invalid implementation of an IEdmModel, an operation '{0}' was found using the IEdmModel method 'FindDeclaredBoundOperations' should never return non-bound operations."
         /// </summary>
         internal static string EdmLibraryExtensions_UnBoundOperationsFoundFromIEdmModelFindMethodIsInvalid(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.EdmLibraryExtensions_UnBoundOperationsFoundFromIEdmModelFindMethodIsInvalid, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.EdmLibraryExtensions_UnBoundOperationsFoundFromIEdmModelFindMethodIsInvalid, p0);
         }
 
         /// <summary>
         /// A string like "Invalid implementation of an IEdmModel, an operation '{0}' was found using the IEdmModel method 'FindDeclaredBoundOperations' should never return bound operations without any parameters."
         /// </summary>
         internal static string EdmLibraryExtensions_NoParameterBoundOperationsFoundFromIEdmModelFindMethodIsInvalid(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.EdmLibraryExtensions_NoParameterBoundOperationsFoundFromIEdmModelFindMethodIsInvalid, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.EdmLibraryExtensions_NoParameterBoundOperationsFoundFromIEdmModelFindMethodIsInvalid, p0);
         }
 
         /// <summary>
         /// A string like "Value '{0}' was either too large or too small for a '{1}'."
         /// </summary>
         internal static string EdmLibraryExtensions_ValueOverflowForUnderlyingType(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.EdmLibraryExtensions_ValueOverflowForUnderlyingType, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.EdmLibraryExtensions_ValueOverflowForUnderlyingType, p0, p1);
         }
 
         /// <summary>
         /// A string like "The 'type' attribute on element {{http://www.w3.org/2005/Atom}}:content is either missing or has an invalid value '{0}'. Only 'application/xml' and 'application/atom+xml' are supported as the value of the 'type' attribute on the {{http://www.w3.org/2005/Atom}}:content element."
         /// </summary>
         internal static string ODataAtomResourceDeserializer_ContentWithWrongType(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataAtomResourceDeserializer_ContentWithWrongType, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataAtomResourceDeserializer_ContentWithWrongType, p0);
         }
 
         /// <summary>
         /// A string like "Multiple '{{http://docs.oasis-open.org/odata/ns/metadata}}:{0}' elements were found in a top-level error value. In OData, the value of a top-level error value can have no more than one '{{http://docs.oasis-open.org/odata/ns/metadata}}:{0}' element"
         /// </summary>
         internal static string ODataAtomErrorDeserializer_MultipleErrorElementsWithSameName(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataAtomErrorDeserializer_MultipleErrorElementsWithSameName, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataAtomErrorDeserializer_MultipleErrorElementsWithSameName, p0);
         }
 
         /// <summary>
         /// A string like "Multiple '{{http://docs.oasis-open.org/odata/ns/metadata}}:{0}' elements were found in an inner error value. In OData, the value of an inner error value can have at most one '{{http://docs.oasis-open.org/odata/ns/metadata}}:{0}' element."
         /// </summary>
         internal static string ODataAtomErrorDeserializer_MultipleInnerErrorElementsWithSameName(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataAtomErrorDeserializer_MultipleInnerErrorElementsWithSameName, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataAtomErrorDeserializer_MultipleInnerErrorElementsWithSameName, p0);
         }
 
         /// <summary>
         /// A string like "An invalid item type kind '{0}' was found. Items in a collection can only be of type kind 'Primitive' or 'Complex', but not of type kind '{0}'."
         /// </summary>
         internal static string CollectionWithoutExpectedTypeValidator_InvalidItemTypeKind(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.CollectionWithoutExpectedTypeValidator_InvalidItemTypeKind, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.CollectionWithoutExpectedTypeValidator_InvalidItemTypeKind, p0);
         }
 
         /// <summary>
         /// A string like "An item of type kind '{0}' was found in a collection that otherwise has items of type kind '{1}'. In OData, all items in a collection must have the same type kind."
         /// </summary>
         internal static string CollectionWithoutExpectedTypeValidator_IncompatibleItemTypeKind(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.CollectionWithoutExpectedTypeValidator_IncompatibleItemTypeKind, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.CollectionWithoutExpectedTypeValidator_IncompatibleItemTypeKind, p0, p1);
         }
 
         /// <summary>
         /// A string like "An item with type name '{0}' was found in a collection of items with type name '{1}'. In OData, all items in a collection must have the same type name."
         /// </summary>
         internal static string CollectionWithoutExpectedTypeValidator_IncompatibleItemTypeName(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.CollectionWithoutExpectedTypeValidator_IncompatibleItemTypeName, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.CollectionWithoutExpectedTypeValidator_IncompatibleItemTypeName, p0, p1);
         }
 
         /// <summary>
         /// A string like "An resource of type '{0}' was found in a resource set that otherwise has entries of type '{1}'. In OData, all entries in a resource set must have a common base type."
         /// </summary>
         internal static string ResourceSetWithoutExpectedTypeValidator_IncompatibleTypes(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ResourceSetWithoutExpectedTypeValidator_IncompatibleTypes, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ResourceSetWithoutExpectedTypeValidator_IncompatibleTypes, p0, p1);
         }
 
         /// <summary>
         /// A string like "The maximum number of bytes allowed to be read from the stream has been exceeded. After the last read operation, a total of {0} bytes has been read from the stream; however a maximum of {1} bytes is allowed."
         /// </summary>
         internal static string MessageStreamWrappingStream_ByteLimitExceeded(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.MessageStreamWrappingStream_ByteLimitExceeded, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.MessageStreamWrappingStream_ByteLimitExceeded, p0, p1);
         }
 
         /// <summary>
         /// A string like "The custom type resolver set in ODataMessageWriterSettings.EnableWcfDataServicesClientBehavior returned 'null' when resolving the type '{0}'. When a custom type resolver is specified, it cannot return null."
         /// </summary>
         internal static string MetadataUtils_ResolveTypeName(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.MetadataUtils_ResolveTypeName, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.MetadataUtils_ResolveTypeName, p0);
         }
 
         /// <summary>
         /// A string like "The method 'FindDeclaredBoundOperations' on the IEdmModel has thrown an exception when looking for operations with a binding type {0}. See inner exception for more details."
         /// </summary>
         internal static string MetadataUtils_CalculateBindableOperationsForType(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.MetadataUtils_CalculateBindableOperationsForType, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.MetadataUtils_CalculateBindableOperationsForType, p0);
         }
 
         /// <summary>
         /// A string like "The type '{0}' was found for a primitive value. In OData, the type '{0}' is not a supported primitive type."
         /// </summary>
         internal static string EdmValueUtils_UnsupportedPrimitiveType(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.EdmValueUtils_UnsupportedPrimitiveType, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.EdmValueUtils_UnsupportedPrimitiveType, p0);
         }
 
         /// <summary>
         /// A string like "Incompatible primitive type kinds were found. The type '{0}' was found to be of kind '{2}' instead of the expected kind '{1}'."
         /// </summary>
         internal static string EdmValueUtils_IncorrectPrimitiveTypeKind(object p0, object p1, object p2) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.EdmValueUtils_IncorrectPrimitiveTypeKind, p0, p1, p2);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.EdmValueUtils_IncorrectPrimitiveTypeKind, p0, p1, p2);
         }
 
         /// <summary>
         /// A string like "Incompatible primitive type kinds were found. Found type kind '{0}' instead of the expected kind '{1}'."
         /// </summary>
         internal static string EdmValueUtils_IncorrectPrimitiveTypeKindNoTypeName(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.EdmValueUtils_IncorrectPrimitiveTypeKindNoTypeName, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.EdmValueUtils_IncorrectPrimitiveTypeKindNoTypeName, p0, p1);
         }
 
         /// <summary>
         /// A string like "A value with primitive kind '{0}' cannot be converted into a primitive object value."
         /// </summary>
         internal static string EdmValueUtils_CannotConvertTypeToClrValue(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.EdmValueUtils_CannotConvertTypeToClrValue, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.EdmValueUtils_CannotConvertTypeToClrValue, p0);
         }
 
         /// <summary>
         /// A string like "The property '{0}' is not declared on the non-open type '{1}'."
         /// </summary>
         internal static string ODataEdmStructuredValue_UndeclaredProperty(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataEdmStructuredValue_UndeclaredProperty, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataEdmStructuredValue_UndeclaredProperty, p0, p1);
         }
 
         /// <summary>
         /// A string like "The entity set '{0}' doesn't have the 'OData.EntitySetUri' annotation. This annotation is required."
         /// </summary>
         internal static string ODataMetadataBuilder_MissingEntitySetUri(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataMetadataBuilder_MissingEntitySetUri, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataMetadataBuilder_MissingEntitySetUri, p0);
         }
 
         /// <summary>
         /// A string like "The entity set '{0}' has a URI '{1}' which has no path segments. An entity set URI suffix cannot be appended to a URI without path segments."
         /// </summary>
         internal static string ODataMetadataBuilder_MissingSegmentForEntitySetUriSuffix(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataMetadataBuilder_MissingSegmentForEntitySetUriSuffix, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataMetadataBuilder_MissingSegmentForEntitySetUriSuffix, p0, p1);
         }
 
         /// <summary>
         /// A string like "Neither the 'OData.EntityInstanceUri' nor the 'OData.EntitySetUriSuffix' annotation was found for entity set '{0}'. One of these annotations is required."
         /// </summary>
         internal static string ODataMetadataBuilder_MissingEntityInstanceUri(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataMetadataBuilder_MissingEntityInstanceUri, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataMetadataBuilder_MissingEntityInstanceUri, p0);
         }
 
         /// <summary>
@@ -2890,7 +2890,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataMetadataBuilder_MissingParentIdOrContextUrl {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataMetadataBuilder_MissingParentIdOrContextUrl);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataMetadataBuilder_MissingParentIdOrContextUrl);
             }
         }
 
@@ -2898,14 +2898,14 @@ namespace Microsoft.OData {
         /// A string like "The Id cannot be computed, since the navigation source '{0}' cannot be resolved to a known entity set from model."
         /// </summary>
         internal static string ODataMetadataBuilder_UnknownEntitySet(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataMetadataBuilder_UnknownEntitySet, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataMetadataBuilder_UnknownEntitySet, p0);
         }
 
         /// <summary>
         /// A string like "The entity type '{0}' is not compatible with the base type '{1}' of the provided entity set '{2}'. When an entity type is specified for an OData resource set or resource reader, it has to be the same or a subtype of the base type of the specified entity set."
         /// </summary>
         internal static string ODataJsonLightInputContext_EntityTypeMustBeCompatibleWithEntitySetBaseType(object p0, object p1, object p2) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightInputContext_EntityTypeMustBeCompatibleWithEntitySetBaseType, p0, p1, p2);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightInputContext_EntityTypeMustBeCompatibleWithEntitySetBaseType, p0, p1, p2);
         }
 
         /// <summary>
@@ -2913,7 +2913,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataJsonLightInputContext_PayloadKindDetectionForRequest {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightInputContext_PayloadKindDetectionForRequest);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightInputContext_PayloadKindDetectionForRequest);
             }
         }
 
@@ -2921,7 +2921,7 @@ namespace Microsoft.OData {
         /// A string like "The parameter '{0}' is specified with a null value. For JSON Light, the '{0}' argument to the 'CreateParameterReader' method cannot be null."
         /// </summary>
         internal static string ODataJsonLightInputContext_OperationCannotBeNullForCreateParameterReader(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightInputContext_OperationCannotBeNullForCreateParameterReader, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightInputContext_OperationCannotBeNullForCreateParameterReader, p0);
         }
 
         /// <summary>
@@ -2929,7 +2929,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataJsonLightInputContext_NoEntitySetForRequest {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightInputContext_NoEntitySetForRequest);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightInputContext_NoEntitySetForRequest);
             }
         }
 
@@ -2938,7 +2938,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataJsonLightInputContext_ModelRequiredForReading {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightInputContext_ModelRequiredForReading);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightInputContext_ModelRequiredForReading);
             }
         }
 
@@ -2947,7 +2947,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataJsonLightInputContext_ItemTypeRequiredForCollectionReaderInRequests {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightInputContext_ItemTypeRequiredForCollectionReaderInRequests);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightInputContext_ItemTypeRequiredForCollectionReaderInRequests);
             }
         }
 
@@ -2956,7 +2956,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataJsonLightDeserializer_ContextLinkNotFoundAsFirstProperty {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightDeserializer_ContextLinkNotFoundAsFirstProperty);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightDeserializer_ContextLinkNotFoundAsFirstProperty);
             }
         }
 
@@ -2964,14 +2964,14 @@ namespace Microsoft.OData {
         /// A string like "The annotation '{0}' was targeting the instance annotation '{1}'. Only the '{2}' annotation is allowed to target an instance annotation."
         /// </summary>
         internal static string ODataJsonLightDeserializer_OnlyODataTypeAnnotationCanTargetInstanceAnnotation(object p0, object p1, object p2) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightDeserializer_OnlyODataTypeAnnotationCanTargetInstanceAnnotation, p0, p1, p2);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightDeserializer_OnlyODataTypeAnnotationCanTargetInstanceAnnotation, p0, p1, p2);
         }
 
         /// <summary>
         /// A string like "The annotation '{0}' is found targeting the instance annotation '{1}'. However the value for the instance annotation '{1}' is not found immediately after. In JSON Light, an annotation targeting an instance annotation must be immediately followed by the value of the targeted instance annotation."
         /// </summary>
         internal static string ODataJsonLightDeserializer_AnnotationTargetingInstanceAnnotationWithoutValue(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightDeserializer_AnnotationTargetingInstanceAnnotationWithoutValue, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightDeserializer_AnnotationTargetingInstanceAnnotationWithoutValue, p0, p1);
         }
 
         /// <summary>
@@ -2979,7 +2979,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataJsonLightWriter_EntityReferenceLinkAfterResourceSetInRequest {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightWriter_EntityReferenceLinkAfterResourceSetInRequest);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightWriter_EntityReferenceLinkAfterResourceSetInRequest);
             }
         }
 
@@ -2988,7 +2988,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataJsonLightWriter_InstanceAnnotationNotSupportedOnExpandedResourceSet {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightWriter_InstanceAnnotationNotSupportedOnExpandedResourceSet);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightWriter_InstanceAnnotationNotSupportedOnExpandedResourceSet);
             }
         }
 
@@ -2997,7 +2997,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataJsonLightPropertyAndValueSerializer_NoExpectedTypeOrTypeNameSpecifiedForComplexValueRequest {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightPropertyAndValueSerializer_NoExpectedTypeOrTypeNameSpecifiedForComplexValueRequest);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightPropertyAndValueSerializer_NoExpectedTypeOrTypeNameSpecifiedForComplexValueRequest);
             }
         }
 
@@ -3006,7 +3006,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataJsonLightPropertyAndValueSerializer_NoExpectedTypeOrTypeNameSpecifiedForCollectionValueInRequest {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightPropertyAndValueSerializer_NoExpectedTypeOrTypeNameSpecifiedForCollectionValueInRequest);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightPropertyAndValueSerializer_NoExpectedTypeOrTypeNameSpecifiedForCollectionValueInRequest);
             }
         }
 
@@ -3015,7 +3015,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataResourceTypeContext_MetadataOrSerializationInfoMissing {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataResourceTypeContext_MetadataOrSerializationInfoMissing);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataResourceTypeContext_MetadataOrSerializationInfoMissing);
             }
         }
 
@@ -3024,7 +3024,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataResourceTypeContext_ODataResourceTypeNameMissing {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataResourceTypeContext_ODataResourceTypeNameMissing);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataResourceTypeContext_ODataResourceTypeNameMissing);
             }
         }
 
@@ -3032,7 +3032,7 @@ namespace Microsoft.OData {
         /// A string like "The base type '{0}' of the entity set specified for writing a payload is not assignable from the specified entity type '{1}'. When an entity type is specified it has to be the same or derived from the base type of the entity set."
         /// </summary>
         internal static string ODataContextUriBuilder_ValidateDerivedType(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataContextUriBuilder_ValidateDerivedType, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataContextUriBuilder_ValidateDerivedType, p0, p1);
         }
 
         /// <summary>
@@ -3040,7 +3040,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataContextUriBuilder_TypeNameMissingForTopLevelCollection {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataContextUriBuilder_TypeNameMissingForTopLevelCollection);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataContextUriBuilder_TypeNameMissingForTopLevelCollection);
             }
         }
 
@@ -3048,7 +3048,7 @@ namespace Microsoft.OData {
         /// A string like "Context URL for payload kind '{0}' is not supported."
         /// </summary>
         internal static string ODataContextUriBuilder_UnsupportedPayloadKind(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataContextUriBuilder_UnsupportedPayloadKind, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataContextUriBuilder_UnsupportedPayloadKind, p0);
         }
 
         /// <summary>
@@ -3056,7 +3056,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataContextUriBuilder_StreamValueMustBePropertiesOfODataResource {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataContextUriBuilder_StreamValueMustBePropertiesOfODataResource);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataContextUriBuilder_StreamValueMustBePropertiesOfODataResource);
             }
         }
 
@@ -3065,7 +3065,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataContextUriBuilder_NavigationSourceOrTypeNameMissingForResourceOrResourceSet {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataContextUriBuilder_NavigationSourceOrTypeNameMissingForResourceOrResourceSet);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataContextUriBuilder_NavigationSourceOrTypeNameMissingForResourceOrResourceSet);
             }
         }
 
@@ -3074,7 +3074,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataContextUriBuilder_ODataUriMissingForIndividualProperty {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataContextUriBuilder_ODataUriMissingForIndividualProperty);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataContextUriBuilder_ODataUriMissingForIndividualProperty);
             }
         }
 
@@ -3083,7 +3083,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataContextUriBuilder_TypeNameMissingForProperty {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataContextUriBuilder_TypeNameMissingForProperty);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataContextUriBuilder_TypeNameMissingForProperty);
             }
         }
 
@@ -3091,35 +3091,35 @@ namespace Microsoft.OData {
         /// A string like "The Path property '{0}' of ODataMessageWriterSetting.ODataUri must end with the navigation property which the contained elements being written belong to."
         /// </summary>
         internal static string ODataContextUriBuilder_ODataPathInvalidForContainedElement(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataContextUriBuilder_ODataPathInvalidForContainedElement, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataContextUriBuilder_ODataPathInvalidForContainedElement, p0);
         }
 
         /// <summary>
         /// A string like "The annotation '{0}' was found. This annotation is either not recognized or not expected at the current position."
         /// </summary>
         internal static string ODataJsonLightPropertyAndValueDeserializer_UnexpectedAnnotationProperties(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightPropertyAndValueDeserializer_UnexpectedAnnotationProperties, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightPropertyAndValueDeserializer_UnexpectedAnnotationProperties, p0);
         }
 
         /// <summary>
         /// A string like "The property '{0}' has a property annotation '{1}'. This annotation is either not recognized or not expected at the current position."
         /// </summary>
         internal static string ODataJsonLightPropertyAndValueDeserializer_UnexpectedPropertyAnnotation(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightPropertyAndValueDeserializer_UnexpectedPropertyAnnotation, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightPropertyAndValueDeserializer_UnexpectedPropertyAnnotation, p0, p1);
         }
 
         /// <summary>
         /// A string like "An OData property annotation '{0}' was found. This property annotation is either not recognized or not expected at the current position."
         /// </summary>
         internal static string ODataJsonLightPropertyAndValueDeserializer_UnexpectedODataPropertyAnnotation(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightPropertyAndValueDeserializer_UnexpectedODataPropertyAnnotation, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightPropertyAndValueDeserializer_UnexpectedODataPropertyAnnotation, p0);
         }
 
         /// <summary>
         /// A string like "A property with name '{0}' was found. This property is either not recognized or not expected at the current position."
         /// </summary>
         internal static string ODataJsonLightPropertyAndValueDeserializer_UnexpectedProperty(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightPropertyAndValueDeserializer_UnexpectedProperty, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightPropertyAndValueDeserializer_UnexpectedProperty, p0);
         }
 
         /// <summary>
@@ -3127,7 +3127,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataJsonLightPropertyAndValueDeserializer_InvalidTopLevelPropertyPayload {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightPropertyAndValueDeserializer_InvalidTopLevelPropertyPayload);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightPropertyAndValueDeserializer_InvalidTopLevelPropertyPayload);
             }
         }
 
@@ -3135,35 +3135,35 @@ namespace Microsoft.OData {
         /// A string like "A top-level property with name '{0}' was found in the payload; however, property and collection payloads must always have a top-level property with name '{1}'."
         /// </summary>
         internal static string ODataJsonLightPropertyAndValueDeserializer_InvalidTopLevelPropertyName(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightPropertyAndValueDeserializer_InvalidTopLevelPropertyName, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightPropertyAndValueDeserializer_InvalidTopLevelPropertyName, p0, p1);
         }
 
         /// <summary>
         /// A string like "The 'odata.type' instance annotation value '{0}' is not a valid type name. The value of the 'odata.type' instance annotation must be a non-empty string."
         /// </summary>
         internal static string ODataJsonLightPropertyAndValueDeserializer_InvalidTypeName(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightPropertyAndValueDeserializer_InvalidTypeName, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightPropertyAndValueDeserializer_InvalidTypeName, p0);
         }
 
         /// <summary>
         /// A string like "One or more property annotations for property '{0}' were found in the top-level property or collection payload without the property to annotate. Top-level property and collection payloads must contain a single property, with optional annotations for this property."
         /// </summary>
         internal static string ODataJsonLightPropertyAndValueDeserializer_TopLevelPropertyAnnotationWithoutProperty(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightPropertyAndValueDeserializer_TopLevelPropertyAnnotationWithoutProperty, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightPropertyAndValueDeserializer_TopLevelPropertyAnnotationWithoutProperty, p0);
         }
 
         /// <summary>
         /// A string like "One or more property annotations for property '{0}' were found in the complex value without the property to annotate. Complex values must only contain property annotations for existing properties."
         /// </summary>
         internal static string ODataJsonLightPropertyAndValueDeserializer_ComplexValuePropertyAnnotationWithoutProperty(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightPropertyAndValueDeserializer_ComplexValuePropertyAnnotationWithoutProperty, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightPropertyAndValueDeserializer_ComplexValuePropertyAnnotationWithoutProperty, p0);
         }
 
         /// <summary>
         /// A string like "A complex property with an '{0}' property annotation was found. Complex properties must not have the '{0}' property annotation, instead the '{0}' should be specified as an instance annotation in the complex value."
         /// </summary>
         internal static string ODataJsonLightPropertyAndValueDeserializer_ComplexValueWithPropertyTypeAnnotation(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightPropertyAndValueDeserializer_ComplexValueWithPropertyTypeAnnotation, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightPropertyAndValueDeserializer_ComplexValueWithPropertyTypeAnnotation, p0);
         }
 
         /// <summary>
@@ -3171,7 +3171,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataJsonLightPropertyAndValueDeserializer_ComplexTypeAnnotationNotFirst {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightPropertyAndValueDeserializer_ComplexTypeAnnotationNotFirst);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightPropertyAndValueDeserializer_ComplexTypeAnnotationNotFirst);
             }
         }
 
@@ -3179,42 +3179,42 @@ namespace Microsoft.OData {
         /// A string like "The property '{0}' has a property annotation '{1}'. Primitive, complex, collection or open properties can only have an 'odata.type' property annotation."
         /// </summary>
         internal static string ODataJsonLightPropertyAndValueDeserializer_UnexpectedDataPropertyAnnotation(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightPropertyAndValueDeserializer_UnexpectedDataPropertyAnnotation, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightPropertyAndValueDeserializer_UnexpectedDataPropertyAnnotation, p0, p1);
         }
 
         /// <summary>
         /// A string like "The property with name '{0}' was found after the data property with name '{1}'. If a type is specified for a data property, it must appear before the data property."
         /// </summary>
         internal static string ODataJsonLightPropertyAndValueDeserializer_TypePropertyAfterValueProperty(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightPropertyAndValueDeserializer_TypePropertyAfterValueProperty, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightPropertyAndValueDeserializer_TypePropertyAfterValueProperty, p0, p1);
         }
 
         /// <summary>
         /// A string like "An '{0}' annotation was read inside a JSON object representing a primitive value; type annotations for primitive values have to be property annotations of the owning property."
         /// </summary>
         internal static string ODataJsonLightPropertyAndValueDeserializer_ODataTypeAnnotationInPrimitiveValue(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightPropertyAndValueDeserializer_ODataTypeAnnotationInPrimitiveValue, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightPropertyAndValueDeserializer_ODataTypeAnnotationInPrimitiveValue, p0);
         }
 
         /// <summary>
         /// A string like "A top-level property with an invalid primitive null value was found. In OData, top-level properties with null value have to be serialized as JSON object with an '{0}' annotation that has the value '{1}'."
         /// </summary>
         internal static string ODataJsonLightPropertyAndValueDeserializer_TopLevelPropertyWithPrimitiveNullValue(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightPropertyAndValueDeserializer_TopLevelPropertyWithPrimitiveNullValue, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightPropertyAndValueDeserializer_TopLevelPropertyWithPrimitiveNullValue, p0, p1);
         }
 
         /// <summary>
         /// A string like "Encountered a metadata reference property '{0}' in a scope other than a resource. In OData, a property name with a '#' character indicates a reference into the metadata and is only supported for describing operations bound to a resource."
         /// </summary>
         internal static string ODataJsonLightPropertyAndValueDeserializer_UnexpectedMetadataReferenceProperty(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightPropertyAndValueDeserializer_UnexpectedMetadataReferenceProperty, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightPropertyAndValueDeserializer_UnexpectedMetadataReferenceProperty, p0);
         }
 
         /// <summary>
         /// A string like "The property with name '{0}' was found in a null payload. In OData, no properties or OData annotations can appear in a null payload."
         /// </summary>
         internal static string ODataJsonLightPropertyAndValueDeserializer_NoPropertyAndAnnotationAllowedInNullPayload(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightPropertyAndValueDeserializer_NoPropertyAndAnnotationAllowedInNullPayload, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightPropertyAndValueDeserializer_NoPropertyAndAnnotationAllowedInNullPayload, p0);
         }
 
         /// <summary>
@@ -3222,7 +3222,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataJsonReaderCoreUtils_CannotReadSpatialPropertyValue {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonReaderCoreUtils_CannotReadSpatialPropertyValue);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonReaderCoreUtils_CannotReadSpatialPropertyValue);
             }
         }
 
@@ -3231,7 +3231,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataJsonLightReader_UnexpectedPrimitiveValueForODataResource {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightReader_UnexpectedPrimitiveValueForODataResource);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightReader_UnexpectedPrimitiveValueForODataResource);
             }
         }
 
@@ -3239,21 +3239,21 @@ namespace Microsoft.OData {
         /// A string like "The '{0}' instance or property annotation has a null value. In OData, the '{0}' instance or property annotation must have a non-null string value."
         /// </summary>
         internal static string ODataJsonLightReaderUtils_AnnotationWithNullValue(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightReaderUtils_AnnotationWithNullValue, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightReaderUtils_AnnotationWithNullValue, p0);
         }
 
         /// <summary>
         /// A string like "An '{0}' annotation was found with an invalid value. In OData, the only valid value for the '{0}' annotation is '{1}'."
         /// </summary>
         internal static string ODataJsonLightReaderUtils_InvalidValueForODataNullAnnotation(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightReaderUtils_InvalidValueForODataNullAnnotation, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightReaderUtils_InvalidValueForODataNullAnnotation, p0, p1);
         }
 
         /// <summary>
         /// A string like "The InstanceAnnotations collection has more than one instance annotations with the name '{0}'. All instance annotation names must be unique within the collection."
         /// </summary>
         internal static string JsonLightInstanceAnnotationWriter_DuplicateAnnotationNameInCollection(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.JsonLightInstanceAnnotationWriter_DuplicateAnnotationNameInCollection, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.JsonLightInstanceAnnotationWriter_DuplicateAnnotationNameInCollection, p0);
         }
 
         /// <summary>
@@ -3261,7 +3261,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataJsonLightContextUriParser_NullMetadataDocumentUri {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightContextUriParser_NullMetadataDocumentUri);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightContextUriParser_NullMetadataDocumentUri);
             }
         }
 
@@ -3269,21 +3269,21 @@ namespace Microsoft.OData {
         /// A string like "The context URI '{0}' is not valid for the expected payload kind '{1}'."
         /// </summary>
         internal static string ODataJsonLightContextUriParser_ContextUriDoesNotMatchExpectedPayloadKind(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightContextUriParser_ContextUriDoesNotMatchExpectedPayloadKind, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightContextUriParser_ContextUriDoesNotMatchExpectedPayloadKind, p0, p1);
         }
 
         /// <summary>
         /// A string like "The context URI '{0}' references the entity set or type '{1}'. However, no entity set or type with name '{1}' is declared in the metadata."
         /// </summary>
         internal static string ODataJsonLightContextUriParser_InvalidEntitySetNameOrTypeName(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightContextUriParser_InvalidEntitySetNameOrTypeName, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightContextUriParser_InvalidEntitySetNameOrTypeName, p0, p1);
         }
 
         /// <summary>
         /// A string like "A '$select' query option was found for the payload kind '{0}'. In OData, a '$select' query option is only supported for payload kinds 'Resource' and 'ResourceSet'."
         /// </summary>
         internal static string ODataJsonLightContextUriParser_InvalidPayloadKindWithSelectQueryOption(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightContextUriParser_InvalidPayloadKindWithSelectQueryOption, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightContextUriParser_InvalidPayloadKindWithSelectQueryOption, p0);
         }
 
         /// <summary>
@@ -3291,7 +3291,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataJsonLightContextUriParser_NoModel {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightContextUriParser_NoModel);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightContextUriParser_NoModel);
             }
         }
 
@@ -3299,21 +3299,21 @@ namespace Microsoft.OData {
         /// A string like "The context URL '{0}' is invalid."
         /// </summary>
         internal static string ODataJsonLightContextUriParser_InvalidContextUrl(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightContextUriParser_InvalidContextUrl, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightContextUriParser_InvalidContextUrl, p0);
         }
 
         /// <summary>
         /// A string like "Last segment in context URL '{0}' should not be KeySegment."
         /// </summary>
         internal static string ODataJsonLightContextUriParser_LastSegmentIsKeySegment(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightContextUriParser_LastSegmentIsKeySegment, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightContextUriParser_LastSegmentIsKeySegment, p0);
         }
 
         /// <summary>
         /// A string like "The top level context URL '{0}' should be an absolute Uri."
         /// </summary>
         internal static string ODataJsonLightContextUriParser_TopLevelContextUrlShouldBeAbsolute(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightContextUriParser_TopLevelContextUrlShouldBeAbsolute, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightContextUriParser_TopLevelContextUrlShouldBeAbsolute, p0);
         }
 
         /// <summary>
@@ -3321,7 +3321,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataJsonLightResourceDeserializer_ResourceTypeAnnotationNotFirst {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightResourceDeserializer_ResourceTypeAnnotationNotFirst);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightResourceDeserializer_ResourceTypeAnnotationNotFirst);
             }
         }
 
@@ -3329,56 +3329,56 @@ namespace Microsoft.OData {
         /// A string like "The '{0}' instance annotation in a resource object is preceded by a property or property annotation. In OData, the '{0}' instance annotation must be before any property or property annotation in a resource object."
         /// </summary>
         internal static string ODataJsonLightResourceDeserializer_ResourceInstanceAnnotationPrecededByProperty(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightResourceDeserializer_ResourceInstanceAnnotationPrecededByProperty, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightResourceDeserializer_ResourceInstanceAnnotationPrecededByProperty, p0);
         }
 
         /// <summary>
         /// A string like "A node of type '{0}' was read from the JSON reader when trying to read the start of the content of a resource set; however, a node of type 'StartArray' was expected."
         /// </summary>
         internal static string ODataJsonLightResourceDeserializer_CannotReadResourceSetContentStart(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightResourceDeserializer_CannotReadResourceSetContentStart, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightResourceDeserializer_CannotReadResourceSetContentStart, p0);
         }
 
         /// <summary>
         /// A string like "Did not find the required '{0}' property for the expected resource set."
         /// </summary>
         internal static string ODataJsonLightResourceDeserializer_ExpectedResourceSetPropertyNotFound(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightResourceDeserializer_ExpectedResourceSetPropertyNotFound, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightResourceDeserializer_ExpectedResourceSetPropertyNotFound, p0);
         }
 
         /// <summary>
         /// A string like "A node of type '{0}' was read from the JSON reader when trying to read the entries of a resource set; however, a node of type 'StartObject' or 'EndArray' was expected."
         /// </summary>
         internal static string ODataJsonLightResourceDeserializer_InvalidNodeTypeForItemsInResourceSet(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightResourceDeserializer_InvalidNodeTypeForItemsInResourceSet, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightResourceDeserializer_InvalidNodeTypeForItemsInResourceSet, p0);
         }
 
         /// <summary>
         /// A string like "A property annotation for a property with name '{0}' was found when reading a top-level resource set. No property annotations, only instance annotations are allowed when reading top-level resource sets."
         /// </summary>
         internal static string ODataJsonLightResourceDeserializer_InvalidPropertyAnnotationInTopLevelResourceSet(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightResourceDeserializer_InvalidPropertyAnnotationInTopLevelResourceSet, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightResourceDeserializer_InvalidPropertyAnnotationInTopLevelResourceSet, p0);
         }
 
         /// <summary>
         /// A string like "A property with name '{0}' was found when reading a top-level resource set. No properties other than the resource set property with name '{1}' are allowed."
         /// </summary>
         internal static string ODataJsonLightResourceDeserializer_InvalidPropertyInTopLevelResourceSet(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightResourceDeserializer_InvalidPropertyInTopLevelResourceSet, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightResourceDeserializer_InvalidPropertyInTopLevelResourceSet, p0, p1);
         }
 
         /// <summary>
         /// A string like "A property '{0}' which only has property annotations in the payload but no property value is declared to be of type '{1}'. In OData, only navigation properties and named streams can be represented as properties without values."
         /// </summary>
         internal static string ODataJsonLightResourceDeserializer_PropertyWithoutValueWithWrongType(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightResourceDeserializer_PropertyWithoutValueWithWrongType, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightResourceDeserializer_PropertyWithoutValueWithWrongType, p0, p1);
         }
 
         /// <summary>
         /// A string like "A property '{0}' which only has property annotations in the payload but no property value is an open property. In OData, open property must be represented as a property with value."
         /// </summary>
         internal static string ODataJsonLightResourceDeserializer_OpenPropertyWithoutValue(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightResourceDeserializer_OpenPropertyWithoutValue, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightResourceDeserializer_OpenPropertyWithoutValue, p0);
         }
 
         /// <summary>
@@ -3386,7 +3386,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataJsonLightResourceDeserializer_StreamPropertyInRequest {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightResourceDeserializer_StreamPropertyInRequest);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightResourceDeserializer_StreamPropertyInRequest);
             }
         }
 
@@ -3394,147 +3394,147 @@ namespace Microsoft.OData {
         /// A string like "The stream property '{0}' has a property annotation '{1}'. Stream property can only have the 'odata.mediaEditLink', 'odata.mediaReadLink', 'odata.mediaEtag' and 'odata.mediaContentType' property annotations."
         /// </summary>
         internal static string ODataJsonLightResourceDeserializer_UnexpectedStreamPropertyAnnotation(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightResourceDeserializer_UnexpectedStreamPropertyAnnotation, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightResourceDeserializer_UnexpectedStreamPropertyAnnotation, p0, p1);
         }
 
         /// <summary>
         /// A string like "A stream property '{0}' has a value in the payload. In OData, stream property must not have a value, it must only use property annotations."
         /// </summary>
         internal static string ODataJsonLightResourceDeserializer_StreamPropertyWithValue(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightResourceDeserializer_StreamPropertyWithValue, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightResourceDeserializer_StreamPropertyWithValue, p0);
         }
 
         /// <summary>
         /// A string like "The navigation property '{0}' has a property annotation '{1}'. Deferred navigation links can only have the 'odata.navigationLink' and 'odata.associationLink' property annotations."
         /// </summary>
         internal static string ODataJsonLightResourceDeserializer_UnexpectedDeferredLinkPropertyAnnotation(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightResourceDeserializer_UnexpectedDeferredLinkPropertyAnnotation, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightResourceDeserializer_UnexpectedDeferredLinkPropertyAnnotation, p0, p1);
         }
 
         /// <summary>
         /// A string like "A node of type '{0}' was read from the JSON reader when trying to read the contents of the property '{1}'; however, a 'StartObject' node or 'PrimitiveValue' node with null value was expected."
         /// </summary>
         internal static string ODataJsonLightResourceDeserializer_CannotReadSingletonNestedResource(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightResourceDeserializer_CannotReadSingletonNestedResource, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightResourceDeserializer_CannotReadSingletonNestedResource, p0, p1);
         }
 
         /// <summary>
         /// A string like "A node of type '{0}' was read from the JSON reader when trying to read the contents of the property '{1}'; however, a 'StartArray' node was expected."
         /// </summary>
         internal static string ODataJsonLightResourceDeserializer_CannotReadCollectionNestedResource(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightResourceDeserializer_CannotReadCollectionNestedResource, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightResourceDeserializer_CannotReadCollectionNestedResource, p0, p1);
         }
 
         /// <summary>
         /// A string like "A 'PrimitiveValue' node with non-null value was found when trying to read the value of the property '{0}'; however, a 'StartArray' node, a 'StartObject' node, or a 'PrimitiveValue' node with null value was expected."
         /// </summary>
         internal static string ODataJsonLightResourceDeserializer_CannotReadNestedResource(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightResourceDeserializer_CannotReadNestedResource, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightResourceDeserializer_CannotReadNestedResource, p0);
         }
 
         /// <summary>
         /// A string like "The navigation property '{0}' has a property annotation '{1}'. Expanded resource navigation links can only have the 'odata.context', 'odata.navigationLink' and 'odata.associationLink' property annotations."
         /// </summary>
         internal static string ODataJsonLightResourceDeserializer_UnexpectedExpandedSingletonNavigationLinkPropertyAnnotation(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightResourceDeserializer_UnexpectedExpandedSingletonNavigationLinkPropertyAnnotation, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightResourceDeserializer_UnexpectedExpandedSingletonNavigationLinkPropertyAnnotation, p0, p1);
         }
 
         /// <summary>
         /// A string like "The navigation property '{0}' has a property annotation '{1}'. Expanded resource set navigation links can only have the 'odata.context', 'odata.navigationLink', 'odata.associationLink' and 'odata.nextLink' property annotations"
         /// </summary>
         internal static string ODataJsonLightResourceDeserializer_UnexpectedExpandedCollectionNavigationLinkPropertyAnnotation(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightResourceDeserializer_UnexpectedExpandedCollectionNavigationLinkPropertyAnnotation, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightResourceDeserializer_UnexpectedExpandedCollectionNavigationLinkPropertyAnnotation, p0, p1);
         }
 
         /// <summary>
         /// A string like "The property '{0}' has a property annotation '{1}'. The complex collection property can only have the 'odata.count', 'odata.type' and 'odata.nextLink' property annotations."
         /// </summary>
         internal static string ODataJsonLightResourceDeserializer_UnexpectedComplexCollectionPropertyAnnotation(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightResourceDeserializer_UnexpectedComplexCollectionPropertyAnnotation, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightResourceDeserializer_UnexpectedComplexCollectionPropertyAnnotation, p0, p1);
         }
 
         /// <summary>
         /// A string like "Multiple property annotations '{0}' were found when reading the nested resource '{1}'. Only a single property annotation '{0}' can be specified for a nested resource."
         /// </summary>
         internal static string ODataJsonLightResourceDeserializer_DuplicateNestedResourceSetAnnotation(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightResourceDeserializer_DuplicateNestedResourceSetAnnotation, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightResourceDeserializer_DuplicateNestedResourceSetAnnotation, p0, p1);
         }
 
         /// <summary>
         /// A string like "A property annotation '{0}' was found after the property '{1}' it is annotating. Only the 'odata.nextLink' property annotation can be used after the property it is annotating."
         /// </summary>
         internal static string ODataJsonLightResourceDeserializer_UnexpectedPropertyAnnotationAfterExpandedResourceSet(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightResourceDeserializer_UnexpectedPropertyAnnotationAfterExpandedResourceSet, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightResourceDeserializer_UnexpectedPropertyAnnotationAfterExpandedResourceSet, p0, p1);
         }
 
         /// <summary>
         /// A string like "The navigation property '{0}' has a property annotation '{1}'. Navigation links in request payloads can only have the '{2}' property annotation."
         /// </summary>
         internal static string ODataJsonLightResourceDeserializer_UnexpectedNavigationLinkInRequestPropertyAnnotation(object p0, object p1, object p2) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightResourceDeserializer_UnexpectedNavigationLinkInRequestPropertyAnnotation, p0, p1, p2);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightResourceDeserializer_UnexpectedNavigationLinkInRequestPropertyAnnotation, p0, p1, p2);
         }
 
         /// <summary>
         /// A string like "The resource reference navigation property '{0}' has a property annotation '{1}' with an array value. Resource reference navigation properties can only have a property annotation '{1}' with a string value."
         /// </summary>
         internal static string ODataJsonLightResourceDeserializer_ArrayValueForSingletonBindPropertyAnnotation(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightResourceDeserializer_ArrayValueForSingletonBindPropertyAnnotation, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightResourceDeserializer_ArrayValueForSingletonBindPropertyAnnotation, p0, p1);
         }
 
         /// <summary>
         /// A string like "The resource set reference navigation property '{0}' has a property annotation '{1}' with a string value. Resource set reference navigation properties can only have a property annotation '{1}' with an array value."
         /// </summary>
         internal static string ODataJsonLightResourceDeserializer_StringValueForCollectionBindPropertyAnnotation(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightResourceDeserializer_StringValueForCollectionBindPropertyAnnotation, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightResourceDeserializer_StringValueForCollectionBindPropertyAnnotation, p0, p1);
         }
 
         /// <summary>
         /// A string like "The value of '{0}' property annotation is an empty array. The '{0}' property annotation must have a non-empty array as its value."
         /// </summary>
         internal static string ODataJsonLightResourceDeserializer_EmptyBindArray(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightResourceDeserializer_EmptyBindArray, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightResourceDeserializer_EmptyBindArray, p0);
         }
 
         /// <summary>
         /// A string like "The navigation property '{0}' has no expanded value and no '{1}' property annotation. Navigation property in request without expanded value must have the '{1}' property annotation."
         /// </summary>
         internal static string ODataJsonLightResourceDeserializer_NavigationPropertyWithoutValueAndEntityReferenceLink(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightResourceDeserializer_NavigationPropertyWithoutValueAndEntityReferenceLink, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightResourceDeserializer_NavigationPropertyWithoutValueAndEntityReferenceLink, p0, p1);
         }
 
         /// <summary>
         /// A string like "The resource reference navigation property '{0}' has both the '{1}' property annotation as well as a value. Resource reference navigation properties can have either '{1}' property annotations or values, but not both."
         /// </summary>
         internal static string ODataJsonLightResourceDeserializer_SingletonNavigationPropertyWithBindingAndValue(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightResourceDeserializer_SingletonNavigationPropertyWithBindingAndValue, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightResourceDeserializer_SingletonNavigationPropertyWithBindingAndValue, p0, p1);
         }
 
         /// <summary>
         /// A string like "An undeclared property '{0}' which only has property annotations in the payload but no property value was found in the payload. In OData, only declared navigation properties and declared named streams can be represented as properties without values."
         /// </summary>
         internal static string ODataJsonLightResourceDeserializer_PropertyWithoutValueWithUnknownType(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightResourceDeserializer_PropertyWithoutValueWithUnknownType, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightResourceDeserializer_PropertyWithoutValueWithUnknownType, p0);
         }
 
         /// <summary>
         /// A string like "Encountered the operation '{0}' which can not be resolved to an ODataAction or ODataFunction."
         /// </summary>
         internal static string ODataJsonLightResourceDeserializer_OperationIsNotActionOrFunction(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightResourceDeserializer_OperationIsNotActionOrFunction, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightResourceDeserializer_OperationIsNotActionOrFunction, p0);
         }
 
         /// <summary>
         /// A string like "Multiple '{0}' properties were found for an operation '{1}'. In OData, an operation can have at most one '{0}' property."
         /// </summary>
         internal static string ODataJsonLightResourceDeserializer_MultipleOptionalPropertiesInOperation(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightResourceDeserializer_MultipleOptionalPropertiesInOperation, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightResourceDeserializer_MultipleOptionalPropertiesInOperation, p0, p1);
         }
 
         /// <summary>
         /// A string like "Multiple target bindings encountered for the operation '{0}' but the 'target' property was not found in an operation value. To differentiate between multiple target bindings, each operation value must have exactly one 'target' property."
         /// </summary>
         internal static string ODataJsonLightResourceDeserializer_OperationMissingTargetProperty(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightResourceDeserializer_OperationMissingTargetProperty, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightResourceDeserializer_OperationMissingTargetProperty, p0);
         }
 
         /// <summary>
@@ -3542,7 +3542,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataJsonLightResourceDeserializer_MetadataReferencePropertyInRequest {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightResourceDeserializer_MetadataReferencePropertyInRequest);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightResourceDeserializer_MetadataReferencePropertyInRequest);
             }
         }
 
@@ -3550,105 +3550,105 @@ namespace Microsoft.OData {
         /// A string like "The '{0}' property of the operation '{1}' cannot have a null value."
         /// </summary>
         internal static string ODataJsonLightValidationUtils_OperationPropertyCannotBeNull(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightValidationUtils_OperationPropertyCannotBeNull, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightValidationUtils_OperationPropertyCannotBeNull, p0, p1);
         }
 
         /// <summary>
         /// A string like "Encountered a reference into metadata '{0}' which does not refer to the known metadata url '{1}'. Open metadata reference properties are not supported."
         /// </summary>
         internal static string ODataJsonLightValidationUtils_OpenMetadataReferencePropertyNotSupported(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightValidationUtils_OpenMetadataReferencePropertyNotSupported, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightValidationUtils_OpenMetadataReferencePropertyNotSupported, p0, p1);
         }
 
         /// <summary>
         /// A string like "A relative URI value '{0}' was specified in the payload, but the {1} annotation is missing from the payload. The payload must only contain absolute URIs or the {1} annotation must be on the payload."
         /// </summary>
         internal static string ODataJsonLightDeserializer_RelativeUriUsedWithouODataMetadataAnnotation(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightDeserializer_RelativeUriUsedWithouODataMetadataAnnotation, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightDeserializer_RelativeUriUsedWithouODataMetadataAnnotation, p0, p1);
         }
 
         /// <summary>
         /// A string like "The {0} annotation is missing from the payload."
         /// </summary>
         internal static string ODataJsonLightResourceMetadataContext_MetadataAnnotationMustBeInPayload(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightResourceMetadataContext_MetadataAnnotationMustBeInPayload, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightResourceMetadataContext_MetadataAnnotationMustBeInPayload, p0);
         }
 
         /// <summary>
         /// A string like "When trying to read the start of a collection, the expected collection property with name '{0}' was not found."
         /// </summary>
         internal static string ODataJsonLightCollectionDeserializer_ExpectedCollectionPropertyNotFound(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightCollectionDeserializer_ExpectedCollectionPropertyNotFound, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightCollectionDeserializer_ExpectedCollectionPropertyNotFound, p0);
         }
 
         /// <summary>
         /// A string like "A node of type '{0}' was read from the JSON reader when trying to read the items of a collection; however, a 'StartArray' node was expected."
         /// </summary>
         internal static string ODataJsonLightCollectionDeserializer_CannotReadCollectionContentStart(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightCollectionDeserializer_CannotReadCollectionContentStart, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightCollectionDeserializer_CannotReadCollectionContentStart, p0);
         }
 
         /// <summary>
         /// A string like "A property or annotation for a property with name '{0}' or an instance annotation with name '{0}' was found after reading the items of a top-level collection. No additional properties or annotations are allowed after the collection property."
         /// </summary>
         internal static string ODataJsonLightCollectionDeserializer_CannotReadCollectionEnd(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightCollectionDeserializer_CannotReadCollectionEnd, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightCollectionDeserializer_CannotReadCollectionEnd, p0);
         }
 
         /// <summary>
         /// A string like "An 'odata.type' annotation with value '{0}' was found for a top-level collection payload; however, top-level collections must specify a collection type."
         /// </summary>
         internal static string ODataJsonLightCollectionDeserializer_InvalidCollectionTypeName(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightCollectionDeserializer_InvalidCollectionTypeName, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightCollectionDeserializer_InvalidCollectionTypeName, p0);
         }
 
         /// <summary>
         /// A string like "A node of type '{0}' was read from the JSON reader when trying to read the start of an entity reference link. In JSON Light, entity reference links must be objects."
         /// </summary>
         internal static string ODataJsonLightEntityReferenceLinkDeserializer_EntityReferenceLinkMustBeObjectValue(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightEntityReferenceLinkDeserializer_EntityReferenceLinkMustBeObjectValue, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightEntityReferenceLinkDeserializer_EntityReferenceLinkMustBeObjectValue, p0);
         }
 
         /// <summary>
         /// A string like "A property annotation with name '{0}' was detected when reading an entity reference link; entity reference links do not support property annotations."
         /// </summary>
         internal static string ODataJsonLightEntityReferenceLinkDeserializer_PropertyAnnotationForEntityReferenceLink(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightEntityReferenceLinkDeserializer_PropertyAnnotationForEntityReferenceLink, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightEntityReferenceLinkDeserializer_PropertyAnnotationForEntityReferenceLink, p0);
         }
 
         /// <summary>
         /// A string like "An instance annotation with name '{0}' or a property annotation for the property with name '{0}' was found when reading an entity reference link. No OData property or instance annotations are allowed when reading entity reference links."
         /// </summary>
         internal static string ODataJsonLightEntityReferenceLinkDeserializer_InvalidAnnotationInEntityReferenceLink(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightEntityReferenceLinkDeserializer_InvalidAnnotationInEntityReferenceLink, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightEntityReferenceLinkDeserializer_InvalidAnnotationInEntityReferenceLink, p0);
         }
 
         /// <summary>
         /// A string like "A property with name '{0}' was found when reading an entity reference link. No properties other than the entity reference link property with name '{1}' are allowed."
         /// </summary>
         internal static string ODataJsonLightEntityReferenceLinkDeserializer_InvalidPropertyInEntityReferenceLink(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightEntityReferenceLinkDeserializer_InvalidPropertyInEntityReferenceLink, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightEntityReferenceLinkDeserializer_InvalidPropertyInEntityReferenceLink, p0, p1);
         }
 
         /// <summary>
         /// A string like "The required property '{0}' for an entity reference link was not found."
         /// </summary>
         internal static string ODataJsonLightEntityReferenceLinkDeserializer_MissingEntityReferenceLinkProperty(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightEntityReferenceLinkDeserializer_MissingEntityReferenceLinkProperty, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightEntityReferenceLinkDeserializer_MissingEntityReferenceLinkProperty, p0);
         }
 
         /// <summary>
         /// A string like "Multiple '{0}' properties were found in an entity reference link object; however, a single '{0}' property was expected."
         /// </summary>
         internal static string ODataJsonLightEntityReferenceLinkDeserializer_MultipleUriPropertiesInEntityReferenceLink(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightEntityReferenceLinkDeserializer_MultipleUriPropertiesInEntityReferenceLink, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightEntityReferenceLinkDeserializer_MultipleUriPropertiesInEntityReferenceLink, p0);
         }
 
         /// <summary>
         /// A string like "The '{0}' property of an entity reference link object cannot have a null value."
         /// </summary>
         internal static string ODataJsonLightEntityReferenceLinkDeserializer_EntityReferenceLinkUrlCannotBeNull(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightEntityReferenceLinkDeserializer_EntityReferenceLinkUrlCannotBeNull, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightEntityReferenceLinkDeserializer_EntityReferenceLinkUrlCannotBeNull, p0);
         }
 
         /// <summary>
@@ -3656,7 +3656,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataJsonLightEntityReferenceLinkDeserializer_PropertyAnnotationForEntityReferenceLinks {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightEntityReferenceLinkDeserializer_PropertyAnnotationForEntityReferenceLinks);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightEntityReferenceLinkDeserializer_PropertyAnnotationForEntityReferenceLinks);
             }
         }
 
@@ -3664,112 +3664,112 @@ namespace Microsoft.OData {
         /// A string like "A property with name '{0}' or a property annotation for a property with name '{0}' was found when trying to read a collection of entity reference links; however, a property with name '{1}' was expected."
         /// </summary>
         internal static string ODataJsonLightEntityReferenceLinkDeserializer_InvalidEntityReferenceLinksPropertyFound(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightEntityReferenceLinkDeserializer_InvalidEntityReferenceLinksPropertyFound, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightEntityReferenceLinkDeserializer_InvalidEntityReferenceLinksPropertyFound, p0, p1);
         }
 
         /// <summary>
         /// A string like "A property annotation for a property with name '{0}' was found when reading an entity reference links payload. No property annotations, only instance annotations are allowed when reading entity reference links."
         /// </summary>
         internal static string ODataJsonLightEntityReferenceLinkDeserializer_InvalidPropertyAnnotationInEntityReferenceLinks(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightEntityReferenceLinkDeserializer_InvalidPropertyAnnotationInEntityReferenceLinks, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightEntityReferenceLinkDeserializer_InvalidPropertyAnnotationInEntityReferenceLinks, p0);
         }
 
         /// <summary>
         /// A string like "Did not find the required '{0}' property for an entity reference links payload."
         /// </summary>
         internal static string ODataJsonLightEntityReferenceLinkDeserializer_ExpectedEntityReferenceLinksPropertyNotFound(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightEntityReferenceLinkDeserializer_ExpectedEntityReferenceLinksPropertyNotFound, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightEntityReferenceLinkDeserializer_ExpectedEntityReferenceLinksPropertyNotFound, p0);
         }
 
         /// <summary>
         /// A string like "The '{0}' property of an operation '{1}' in '{2}' cannot have a null value."
         /// </summary>
         internal static string ODataJsonOperationsDeserializerUtils_OperationPropertyCannotBeNull(object p0, object p1, object p2) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonOperationsDeserializerUtils_OperationPropertyCannotBeNull, p0, p1, p2);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonOperationsDeserializerUtils_OperationPropertyCannotBeNull, p0, p1, p2);
         }
 
         /// <summary>
         /// A string like "Found a node of type '{1}' when starting to read the '{0}' operations value, however a node of type 'StartObject' was expected. The '{0}' operations value must have an object value."
         /// </summary>
         internal static string ODataJsonOperationsDeserializerUtils_OperationsPropertyMustHaveObjectValue(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonOperationsDeserializerUtils_OperationsPropertyMustHaveObjectValue, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonOperationsDeserializerUtils_OperationsPropertyMustHaveObjectValue, p0, p1);
         }
 
         /// <summary>
         /// A string like "Multiple '{0}' properties were found in a service document. In OData, a service document must have exactly one '{0}' property."
         /// </summary>
         internal static string ODataJsonLightServiceDocumentDeserializer_DuplicatePropertiesInServiceDocument(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightServiceDocumentDeserializer_DuplicatePropertiesInServiceDocument, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightServiceDocumentDeserializer_DuplicatePropertiesInServiceDocument, p0);
         }
 
         /// <summary>
         /// A string like "Multiple '{0}' properties were found in a service document element. In OData, a service document element must have exactly one '{0}' property."
         /// </summary>
         internal static string ODataJsonLightServiceDocumentDeserializer_DuplicatePropertiesInServiceDocumentElement(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightServiceDocumentDeserializer_DuplicatePropertiesInServiceDocumentElement, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightServiceDocumentDeserializer_DuplicatePropertiesInServiceDocumentElement, p0);
         }
 
         /// <summary>
         /// A string like "No '{0}' property was found for a service document. In OData, a service document must have exactly one '{0}' property."
         /// </summary>
         internal static string ODataJsonLightServiceDocumentDeserializer_MissingValuePropertyInServiceDocument(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightServiceDocumentDeserializer_MissingValuePropertyInServiceDocument, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightServiceDocumentDeserializer_MissingValuePropertyInServiceDocument, p0);
         }
 
         /// <summary>
         /// A string like "Encountered a service document element without a '{0}' property. In service documents, service document elements must contain a '{0}' property."
         /// </summary>
         internal static string ODataJsonLightServiceDocumentDeserializer_MissingRequiredPropertyInServiceDocumentElement(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightServiceDocumentDeserializer_MissingRequiredPropertyInServiceDocumentElement, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightServiceDocumentDeserializer_MissingRequiredPropertyInServiceDocumentElement, p0);
         }
 
         /// <summary>
         /// A string like "An unrecognized property annotation '{0}' was found in a '{1}' object in a service document. OData property annotations are not allowed in workspaces."
         /// </summary>
         internal static string ODataJsonLightServiceDocumentDeserializer_PropertyAnnotationInServiceDocument(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightServiceDocumentDeserializer_PropertyAnnotationInServiceDocument, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightServiceDocumentDeserializer_PropertyAnnotationInServiceDocument, p0, p1);
         }
 
         /// <summary>
         /// A string like "An unrecognized instance annotation '{0}' was found in a '{1}' object in a service document. OData instance annotations are not allowed in workspaces."
         /// </summary>
         internal static string ODataJsonLightServiceDocumentDeserializer_InstanceAnnotationInServiceDocument(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightServiceDocumentDeserializer_InstanceAnnotationInServiceDocument, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightServiceDocumentDeserializer_InstanceAnnotationInServiceDocument, p0, p1);
         }
 
         /// <summary>
         /// A string like "An unrecognized property annotation '{0}' was found in a service document element. OData property annotations are not allowed in service document elements."
         /// </summary>
         internal static string ODataJsonLightServiceDocumentDeserializer_PropertyAnnotationInServiceDocumentElement(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightServiceDocumentDeserializer_PropertyAnnotationInServiceDocumentElement, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightServiceDocumentDeserializer_PropertyAnnotationInServiceDocumentElement, p0);
         }
 
         /// <summary>
         /// A string like "An unrecognized instance annotation '{0}' was found in a service document element. OData instance annotations are not allowed in service document elements."
         /// </summary>
         internal static string ODataJsonLightServiceDocumentDeserializer_InstanceAnnotationInServiceDocumentElement(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightServiceDocumentDeserializer_InstanceAnnotationInServiceDocumentElement, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightServiceDocumentDeserializer_InstanceAnnotationInServiceDocumentElement, p0);
         }
 
         /// <summary>
         /// A string like "Encountered unexpected property '{0}' in a service document element. In service documents, service document element may only have '{1}' and '{2}' properties."
         /// </summary>
         internal static string ODataJsonLightServiceDocumentDeserializer_UnexpectedPropertyInServiceDocumentElement(object p0, object p1, object p2) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightServiceDocumentDeserializer_UnexpectedPropertyInServiceDocumentElement, p0, p1, p2);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightServiceDocumentDeserializer_UnexpectedPropertyInServiceDocumentElement, p0, p1, p2);
         }
 
         /// <summary>
         /// A string like "Encountered unexpected property '{0}' in a service document. The top level object of a service document may only have a '{1}' property."
         /// </summary>
         internal static string ODataJsonLightServiceDocumentDeserializer_UnexpectedPropertyInServiceDocument(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightServiceDocumentDeserializer_UnexpectedPropertyInServiceDocument, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightServiceDocumentDeserializer_UnexpectedPropertyInServiceDocument, p0, p1);
         }
 
         /// <summary>
         /// A string like "Encountered a property annotation for the property '{0}' which wasn't immediately followed by the property. Property annotations must occur directly before the property being annotated."
         /// </summary>
         internal static string ODataJsonLightServiceDocumentDeserializer_PropertyAnnotationWithoutProperty(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightServiceDocumentDeserializer_PropertyAnnotationWithoutProperty, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightServiceDocumentDeserializer_PropertyAnnotationWithoutProperty, p0);
         }
 
         /// <summary>
@@ -3777,7 +3777,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataJsonLightParameterDeserializer_PropertyAnnotationForParameters {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightParameterDeserializer_PropertyAnnotationForParameters);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightParameterDeserializer_PropertyAnnotationForParameters);
             }
         }
 
@@ -3785,28 +3785,28 @@ namespace Microsoft.OData {
         /// A string like "One or more property annotations for property '{0}' were found in a parameter payload without the property to annotate. Parameter payloads must not contain property annotations for properties that are not in the payload."
         /// </summary>
         internal static string ODataJsonLightParameterDeserializer_PropertyAnnotationWithoutPropertyForParameters(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightParameterDeserializer_PropertyAnnotationWithoutPropertyForParameters, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightParameterDeserializer_PropertyAnnotationWithoutPropertyForParameters, p0);
         }
 
         /// <summary>
         /// A string like "The parameter '{0}' is of the '{1}' primitive type, which is not supported in JSON Light."
         /// </summary>
         internal static string ODataJsonLightParameterDeserializer_UnsupportedPrimitiveParameterType(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightParameterDeserializer_UnsupportedPrimitiveParameterType, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightParameterDeserializer_UnsupportedPrimitiveParameterType, p0, p1);
         }
 
         /// <summary>
         /// A string like "When trying to read a null collection parameter value in JSON Light, a node of type '{0}' with the value '{1}' was read from the JSON reader; however, a primitive 'null' value was expected."
         /// </summary>
         internal static string ODataJsonLightParameterDeserializer_NullCollectionExpected(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightParameterDeserializer_NullCollectionExpected, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightParameterDeserializer_NullCollectionExpected, p0, p1);
         }
 
         /// <summary>
         /// A string like "The parameter '{0}' is of an unsupported type kind '{1}'. Only primitive, enum, complex, primitive collection, enum collection and complex collection types are supported."
         /// </summary>
         internal static string ODataJsonLightParameterDeserializer_UnsupportedParameterTypeKind(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightParameterDeserializer_UnsupportedParameterTypeKind, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightParameterDeserializer_UnsupportedParameterTypeKind, p0, p1);
         }
 
         /// <summary>
@@ -3814,7 +3814,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string SelectedPropertiesNode_StarSegmentNotLastSegment {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.SelectedPropertiesNode_StarSegmentNotLastSegment);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.SelectedPropertiesNode_StarSegmentNotLastSegment);
             }
         }
 
@@ -3823,7 +3823,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string SelectedPropertiesNode_StarSegmentAfterTypeSegment {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.SelectedPropertiesNode_StarSegmentAfterTypeSegment);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.SelectedPropertiesNode_StarSegmentAfterTypeSegment);
             }
         }
 
@@ -3831,77 +3831,77 @@ namespace Microsoft.OData {
         /// A string like "An OData property annotation '{0}' was found in an error payload; however, error payloads do not support OData property annotations."
         /// </summary>
         internal static string ODataJsonLightErrorDeserializer_PropertyAnnotationNotAllowedInErrorPayload(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightErrorDeserializer_PropertyAnnotationNotAllowedInErrorPayload, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightErrorDeserializer_PropertyAnnotationNotAllowedInErrorPayload, p0);
         }
 
         /// <summary>
         /// A string like "An OData instance annotation '{0}' was found in an error payload; however, error payloads do not support OData instance annotations."
         /// </summary>
         internal static string ODataJsonLightErrorDeserializer_InstanceAnnotationNotAllowedInErrorPayload(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightErrorDeserializer_InstanceAnnotationNotAllowedInErrorPayload, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightErrorDeserializer_InstanceAnnotationNotAllowedInErrorPayload, p0);
         }
 
         /// <summary>
         /// A string like "One or more property annotations for property '{0}' were found in an error payload without the property to annotate. Error payloads must not contain property annotations for properties that are not in the payload."
         /// </summary>
         internal static string ODataJsonLightErrorDeserializer_PropertyAnnotationWithoutPropertyForError(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightErrorDeserializer_PropertyAnnotationWithoutPropertyForError, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightErrorDeserializer_PropertyAnnotationWithoutPropertyForError, p0);
         }
 
         /// <summary>
         /// A string like "A property with name '{0}' was found in the error value of a top-level error. In OData, a top-level error value can only have properties with name 'code', 'message', or 'innererror', or custom instance annotations."
         /// </summary>
         internal static string ODataJsonLightErrorDeserializer_TopLevelErrorValueWithInvalidProperty(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightErrorDeserializer_TopLevelErrorValueWithInvalidProperty, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightErrorDeserializer_TopLevelErrorValueWithInvalidProperty, p0);
         }
 
         /// <summary>
         /// A string like "The entity type '{0}' has no key properties. Entity types must define at least one key property."
         /// </summary>
         internal static string ODataConventionalUriBuilder_EntityTypeWithNoKeyProperties(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataConventionalUriBuilder_EntityTypeWithNoKeyProperties, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataConventionalUriBuilder_EntityTypeWithNoKeyProperties, p0);
         }
 
         /// <summary>
         /// A string like "The key property '{0}' on type '{1}' has a null value. Key properties must not have null values."
         /// </summary>
         internal static string ODataConventionalUriBuilder_NullKeyValue(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataConventionalUriBuilder_NullKeyValue, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataConventionalUriBuilder_NullKeyValue, p0, p1);
         }
 
         /// <summary>
         /// A string like "An ODataResource of type '{0}' is found without key properties. When writing without a user model, each resource must contain at least one property whose 'ODataProperty.SerializationInfo.PropertyKind' set to 'ODataPropertyKind.Key'. When writing with a user model, the entity type '{0}' defined in the model must define at least one key property."
         /// </summary>
         internal static string ODataResourceMetadataContext_EntityTypeWithNoKeyProperties(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataResourceMetadataContext_EntityTypeWithNoKeyProperties, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataResourceMetadataContext_EntityTypeWithNoKeyProperties, p0);
         }
 
         /// <summary>
         /// A string like "The key property '{0}' on type '{1}' has a null value. Key properties must not have null values."
         /// </summary>
         internal static string ODataResourceMetadataContext_NullKeyValue(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataResourceMetadataContext_NullKeyValue, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataResourceMetadataContext_NullKeyValue, p0, p1);
         }
 
         /// <summary>
         /// A string like "The property '{0}' on type '{1}' is a non-primitive value. All key and etag properties must be of primitive types."
         /// </summary>
         internal static string ODataResourceMetadataContext_KeyOrETagValuesMustBePrimitiveValues(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataResourceMetadataContext_KeyOrETagValuesMustBePrimitiveValues, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataResourceMetadataContext_KeyOrETagValuesMustBePrimitiveValues, p0, p1);
         }
 
         /// <summary>
         /// A string like "The primitive property '{0}' on type '{1}' has a value which is not a primitive value."
         /// </summary>
         internal static string EdmValueUtils_NonPrimitiveValue(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.EdmValueUtils_NonPrimitiveValue, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.EdmValueUtils_NonPrimitiveValue, p0, p1);
         }
 
         /// <summary>
         /// A string like "The entity instance value of type '{0}' doesn't have a value for property '{1}'. To compute an entity's metadata, its key and concurrency-token property values must be provided."
         /// </summary>
         internal static string EdmValueUtils_PropertyDoesntExist(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.EdmValueUtils_PropertyDoesntExist, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.EdmValueUtils_PropertyDoesntExist, p0, p1);
         }
 
         /// <summary>
@@ -3909,7 +3909,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataPrimitiveValue_CannotCreateODataPrimitiveValueFromNull {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataPrimitiveValue_CannotCreateODataPrimitiveValueFromNull);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataPrimitiveValue_CannotCreateODataPrimitiveValueFromNull);
             }
         }
 
@@ -3917,28 +3917,28 @@ namespace Microsoft.OData {
         /// A string like "An ODataPrimitiveValue was instantiated with a value of type '{0}'. ODataPrimitiveValue can only wrap values which can be represented as primitive EDM types."
         /// </summary>
         internal static string ODataPrimitiveValue_CannotCreateODataPrimitiveValueFromUnsupportedValueType(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataPrimitiveValue_CannotCreateODataPrimitiveValueFromUnsupportedValueType, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataPrimitiveValue_CannotCreateODataPrimitiveValueFromUnsupportedValueType, p0);
         }
 
         /// <summary>
         /// A string like "'{0}' is an invalid instance annotation name. An instance annotation name must contain a period that is not at the start or end of the name."
         /// </summary>
         internal static string ODataInstanceAnnotation_NeedPeriodInName(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataInstanceAnnotation_NeedPeriodInName, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataInstanceAnnotation_NeedPeriodInName, p0);
         }
 
         /// <summary>
         /// A string like "'{0}' is a reserved instance annotation name because it starts with '{1}'. Reserved names are not allowed for custom instance annotations."
         /// </summary>
         internal static string ODataInstanceAnnotation_ReservedNamesNotAllowed(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataInstanceAnnotation_ReservedNamesNotAllowed, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataInstanceAnnotation_ReservedNamesNotAllowed, p0, p1);
         }
 
         /// <summary>
         /// A string like "'{0}' is an invalid instance annotation name."
         /// </summary>
         internal static string ODataInstanceAnnotation_BadTermName(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataInstanceAnnotation_BadTermName, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataInstanceAnnotation_BadTermName, p0);
         }
 
         /// <summary>
@@ -3946,7 +3946,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataInstanceAnnotation_ValueCannotBeODataStreamReferenceValue {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataInstanceAnnotation_ValueCannotBeODataStreamReferenceValue);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataInstanceAnnotation_ValueCannotBeODataStreamReferenceValue);
             }
         }
 
@@ -3955,7 +3955,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataJsonLightValueSerializer_MissingTypeNameOnCollection {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightValueSerializer_MissingTypeNameOnCollection);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightValueSerializer_MissingTypeNameOnCollection);
             }
         }
 
@@ -3964,7 +3964,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataJsonLightValueSerializer_MissingRawValueOnUntyped {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataJsonLightValueSerializer_MissingRawValueOnUntyped);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataJsonLightValueSerializer_MissingRawValueOnUntyped);
             }
         }
 
@@ -3973,7 +3973,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string AtomInstanceAnnotation_MissingTermAttributeOnAnnotationElement {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.AtomInstanceAnnotation_MissingTermAttributeOnAnnotationElement);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.AtomInstanceAnnotation_MissingTermAttributeOnAnnotationElement);
             }
         }
 
@@ -3981,14 +3981,14 @@ namespace Microsoft.OData {
         /// A string like "The value of the 'type' attribute on an 'annotation' element was '{0}', which is incompatible with the '{1}' attribute."
         /// </summary>
         internal static string AtomInstanceAnnotation_AttributeValueNotationUsedWithIncompatibleType(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.AtomInstanceAnnotation_AttributeValueNotationUsedWithIncompatibleType, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.AtomInstanceAnnotation_AttributeValueNotationUsedWithIncompatibleType, p0, p1);
         }
 
         /// <summary>
         /// A string like "Encountered the attribute '{0}' on a non-empty 'annotation' element. If attribute value notation is used to specify the annotation's value, then there can be no body to the element."
         /// </summary>
         internal static string AtomInstanceAnnotation_AttributeValueNotationUsedOnNonEmptyElement(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.AtomInstanceAnnotation_AttributeValueNotationUsedOnNonEmptyElement, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.AtomInstanceAnnotation_AttributeValueNotationUsedOnNonEmptyElement, p0);
         }
 
         /// <summary>
@@ -3996,7 +3996,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string AtomInstanceAnnotation_MultipleAttributeValueNotationAttributes {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.AtomInstanceAnnotation_MultipleAttributeValueNotationAttributes);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.AtomInstanceAnnotation_MultipleAttributeValueNotationAttributes);
             }
         }
 
@@ -4004,35 +4004,35 @@ namespace Microsoft.OData {
         /// A string like "The pattern '{0}' is not a valid pattern to match an annotation. It must contain at least one '.' separating the namespace and the name segments of an annotation."
         /// </summary>
         internal static string AnnotationFilterPattern_InvalidPatternMissingDot(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.AnnotationFilterPattern_InvalidPatternMissingDot, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.AnnotationFilterPattern_InvalidPatternMissingDot, p0);
         }
 
         /// <summary>
         /// A string like "The pattern '{0}' is not a valid pattern to match an annotation. It must not contain a namespace or name segment that is empty."
         /// </summary>
         internal static string AnnotationFilterPattern_InvalidPatternEmptySegment(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.AnnotationFilterPattern_InvalidPatternEmptySegment, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.AnnotationFilterPattern_InvalidPatternEmptySegment, p0);
         }
 
         /// <summary>
         /// A string like "The pattern '{0}' is not a supported pattern to match an annotation. It must not contain '*' as part of a segment."
         /// </summary>
         internal static string AnnotationFilterPattern_InvalidPatternWildCardInSegment(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.AnnotationFilterPattern_InvalidPatternWildCardInSegment, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.AnnotationFilterPattern_InvalidPatternWildCardInSegment, p0);
         }
 
         /// <summary>
         /// A string like "The pattern '{0}' is not a supported pattern to match an annotation. '*' must be the last segment of the pattern."
         /// </summary>
         internal static string AnnotationFilterPattern_InvalidPatternWildCardMustBeInLastSegment(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.AnnotationFilterPattern_InvalidPatternWildCardMustBeInLastSegment, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.AnnotationFilterPattern_InvalidPatternWildCardMustBeInLastSegment, p0);
         }
 
         /// <summary>
         /// A string like "The specified URI '{0}' must be absolute."
         /// </summary>
         internal static string SyntacticTree_UriMustBeAbsolute(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.SyntacticTree_UriMustBeAbsolute, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.SyntacticTree_UriMustBeAbsolute, p0);
         }
 
         /// <summary>
@@ -4040,7 +4040,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string SyntacticTree_MaxDepthInvalid {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.SyntacticTree_MaxDepthInvalid);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.SyntacticTree_MaxDepthInvalid);
             }
         }
 
@@ -4048,42 +4048,42 @@ namespace Microsoft.OData {
         /// A string like "Invalid value '{0}' for $skip query option found. The $skip query option requires a non-negative integer value."
         /// </summary>
         internal static string SyntacticTree_InvalidSkipQueryOptionValue(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.SyntacticTree_InvalidSkipQueryOptionValue, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.SyntacticTree_InvalidSkipQueryOptionValue, p0);
         }
 
         /// <summary>
         /// A string like "Invalid value '{0}' for $top query option found. The $top query option requires a non-negative integer value."
         /// </summary>
         internal static string SyntacticTree_InvalidTopQueryOptionValue(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.SyntacticTree_InvalidTopQueryOptionValue, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.SyntacticTree_InvalidTopQueryOptionValue, p0);
         }
 
         /// <summary>
         /// A string like "Invalid value '{0}' for $count query option found. Valid values are '{1}'."
         /// </summary>
         internal static string SyntacticTree_InvalidCountQueryOptionValue(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.SyntacticTree_InvalidCountQueryOptionValue, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.SyntacticTree_InvalidCountQueryOptionValue, p0, p1);
         }
 
         /// <summary>
         /// A string like "Query option '{0}' was specified more than once, but it must be specified at most once."
         /// </summary>
         internal static string QueryOptionUtils_QueryParameterMustBeSpecifiedOnce(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.QueryOptionUtils_QueryParameterMustBeSpecifiedOnce, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.QueryOptionUtils_QueryParameterMustBeSpecifiedOnce, p0);
         }
 
         /// <summary>
         /// A string like "The CLR literal of type '{0}' is not supported to be written as a Uri part."
         /// </summary>
         internal static string UriBuilder_NotSupportedClrLiteral(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.UriBuilder_NotSupportedClrLiteral, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.UriBuilder_NotSupportedClrLiteral, p0);
         }
 
         /// <summary>
         /// A string like "QueryToken '{0}' is not supported to be written as a Uri part."
         /// </summary>
         internal static string UriBuilder_NotSupportedQueryToken(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.UriBuilder_NotSupportedQueryToken, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.UriBuilder_NotSupportedQueryToken, p0);
         }
 
         /// <summary>
@@ -4091,7 +4091,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string UriQueryExpressionParser_TooDeep {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.UriQueryExpressionParser_TooDeep);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.UriQueryExpressionParser_TooDeep);
             }
         }
 
@@ -4099,84 +4099,84 @@ namespace Microsoft.OData {
         /// A string like "Expression expected at position {0} in '{1}'."
         /// </summary>
         internal static string UriQueryExpressionParser_ExpressionExpected(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.UriQueryExpressionParser_ExpressionExpected, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.UriQueryExpressionParser_ExpressionExpected, p0, p1);
         }
 
         /// <summary>
         /// A string like "'(' expected at position {0} in '{1}'."
         /// </summary>
         internal static string UriQueryExpressionParser_OpenParenExpected(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.UriQueryExpressionParser_OpenParenExpected, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.UriQueryExpressionParser_OpenParenExpected, p0, p1);
         }
 
         /// <summary>
         /// A string like "')' or ',' expected at position {0} in '{1}'."
         /// </summary>
         internal static string UriQueryExpressionParser_CloseParenOrCommaExpected(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.UriQueryExpressionParser_CloseParenOrCommaExpected, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.UriQueryExpressionParser_CloseParenOrCommaExpected, p0, p1);
         }
 
         /// <summary>
         /// A string like "')' or operator expected at position {0} in '{1}'."
         /// </summary>
         internal static string UriQueryExpressionParser_CloseParenOrOperatorExpected(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.UriQueryExpressionParser_CloseParenOrOperatorExpected, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.UriQueryExpressionParser_CloseParenOrOperatorExpected, p0, p1);
         }
 
         /// <summary>
         /// A string like "Expecting a Star token but got: '{0}'."
         /// </summary>
         internal static string UriQueryExpressionParser_CannotCreateStarTokenFromNonStar(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.UriQueryExpressionParser_CannotCreateStarTokenFromNonStar, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.UriQueryExpressionParser_CannotCreateStarTokenFromNonStar, p0);
         }
 
         /// <summary>
         /// A string like "The range variable '{0}' has already been declared."
         /// </summary>
         internal static string UriQueryExpressionParser_RangeVariableAlreadyDeclared(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.UriQueryExpressionParser_RangeVariableAlreadyDeclared, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.UriQueryExpressionParser_RangeVariableAlreadyDeclared, p0);
         }
 
         /// <summary>
         /// A string like "'as' expected at position {0} in '{1}'."
         /// </summary>
         internal static string UriQueryExpressionParser_AsExpected(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.UriQueryExpressionParser_AsExpected, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.UriQueryExpressionParser_AsExpected, p0, p1);
         }
 
         /// <summary>
         /// A string like "'with' expected at position {0} in '{1}'."
         /// </summary>
         internal static string UriQueryExpressionParser_WithExpected(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.UriQueryExpressionParser_WithExpected, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.UriQueryExpressionParser_WithExpected, p0, p1);
         }
 
         /// <summary>
         /// A string like "Unrecognized with '{0}' at '{1}' in '{2}'."
         /// </summary>
         internal static string UriQueryExpressionParser_UnrecognizedWithMethod(object p0, object p1, object p2) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.UriQueryExpressionParser_UnrecognizedWithMethod, p0, p1, p2);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.UriQueryExpressionParser_UnrecognizedWithMethod, p0, p1, p2);
         }
 
         /// <summary>
         /// A string like "Expression expected at position {0} in '{1}'."
         /// </summary>
         internal static string UriQueryExpressionParser_PropertyPathExpected(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.UriQueryExpressionParser_PropertyPathExpected, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.UriQueryExpressionParser_PropertyPathExpected, p0, p1);
         }
 
         /// <summary>
         /// A string like "'{0}' expected at position {1} in '{2}'."
         /// </summary>
         internal static string UriQueryExpressionParser_KeywordOrIdentifierExpected(object p0, object p1, object p2) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.UriQueryExpressionParser_KeywordOrIdentifierExpected, p0, p1, p2);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.UriQueryExpressionParser_KeywordOrIdentifierExpected, p0, p1, p2);
         }
 
         /// <summary>
         /// A string like "The URI '{0}' is not valid because it is not based on '{1}'."
         /// </summary>
         internal static string UriQueryPathParser_RequestUriDoesNotHaveTheCorrectBaseUri(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.UriQueryPathParser_RequestUriDoesNotHaveTheCorrectBaseUri, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.UriQueryPathParser_RequestUriDoesNotHaveTheCorrectBaseUri, p0, p1);
         }
 
         /// <summary>
@@ -4184,7 +4184,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string UriQueryPathParser_SyntaxError {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.UriQueryPathParser_SyntaxError);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.UriQueryPathParser_SyntaxError);
             }
         }
 
@@ -4193,7 +4193,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string UriQueryPathParser_TooManySegments {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.UriQueryPathParser_TooManySegments);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.UriQueryPathParser_TooManySegments);
             }
         }
 
@@ -4201,7 +4201,7 @@ namespace Microsoft.OData {
         /// A string like "The DateTimeOffset text '{0}' should be in format 'yyyy-mm-ddThh:mm:ss('.'s+)?(zzzzzz)?' and each field value is within valid range."
         /// </summary>
         internal static string UriUtils_DateTimeOffsetInvalidFormat(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.UriUtils_DateTimeOffsetInvalidFormat, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.UriUtils_DateTimeOffsetInvalidFormat, p0);
         }
 
         /// <summary>
@@ -4209,7 +4209,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string SelectionItemBinder_NonNavigationPathToken {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.SelectionItemBinder_NonNavigationPathToken);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.SelectionItemBinder_NonNavigationPathToken);
             }
         }
 
@@ -4217,56 +4217,56 @@ namespace Microsoft.OData {
         /// A string like "An unsupported query token kind '{0}' was found."
         /// </summary>
         internal static string MetadataBinder_UnsupportedQueryTokenKind(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.MetadataBinder_UnsupportedQueryTokenKind, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.MetadataBinder_UnsupportedQueryTokenKind, p0);
         }
 
         /// <summary>
         /// A string like "Could not find a property named '{1}' on type '{0}'."
         /// </summary>
         internal static string MetadataBinder_PropertyNotDeclared(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.MetadataBinder_PropertyNotDeclared, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.MetadataBinder_PropertyNotDeclared, p0, p1);
         }
 
         /// <summary>
         /// A string like "Property '{0}' is not declared on type '{1}' or is not a key property. Only key properties can be used in key lookups."
         /// </summary>
         internal static string MetadataBinder_PropertyNotDeclaredOrNotKeyInKeyValue(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.MetadataBinder_PropertyNotDeclaredOrNotKeyInKeyValue, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.MetadataBinder_PropertyNotDeclaredOrNotKeyInKeyValue, p0, p1);
         }
 
         /// <summary>
         /// A string like "Could not find a function named '{0}' with parameters '{1}'."
         /// </summary>
         internal static string MetadataBinder_QualifiedFunctionNameWithParametersNotDeclared(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.MetadataBinder_QualifiedFunctionNameWithParametersNotDeclared, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.MetadataBinder_QualifiedFunctionNameWithParametersNotDeclared, p0, p1);
         }
 
         /// <summary>
         /// A string like "An unnamed key value was used in a key lookup on a type '{0}' which has more than one key property. Unnamed key value can only be used on a type with one key property."
         /// </summary>
         internal static string MetadataBinder_UnnamedKeyValueOnTypeWithMultipleKeyProperties(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.MetadataBinder_UnnamedKeyValueOnTypeWithMultipleKeyProperties, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.MetadataBinder_UnnamedKeyValueOnTypeWithMultipleKeyProperties, p0);
         }
 
         /// <summary>
         /// A string like "A key property '{0}' was found twice in a key lookup. Each key property can be specified just once in a key lookup."
         /// </summary>
         internal static string MetadataBinder_DuplicitKeyPropertyInKeyValues(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.MetadataBinder_DuplicitKeyPropertyInKeyValues, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.MetadataBinder_DuplicitKeyPropertyInKeyValues, p0);
         }
 
         /// <summary>
         /// A string like "A key lookup on type '{0}' didn't specify values for all key properties. All key properties must be specified in a key lookup."
         /// </summary>
         internal static string MetadataBinder_NotAllKeyPropertiesSpecifiedInKeyValues(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.MetadataBinder_NotAllKeyPropertiesSpecifiedInKeyValues, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.MetadataBinder_NotAllKeyPropertiesSpecifiedInKeyValues, p0);
         }
 
         /// <summary>
         /// A string like "Expression of type '{0}' cannot be converted to type '{1}'."
         /// </summary>
         internal static string MetadataBinder_CannotConvertToType(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.MetadataBinder_CannotConvertToType, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.MetadataBinder_CannotConvertToType, p0, p1);
         }
 
         /// <summary>
@@ -4274,7 +4274,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string MetadataBinder_FilterExpressionNotSingleValue {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.MetadataBinder_FilterExpressionNotSingleValue);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.MetadataBinder_FilterExpressionNotSingleValue);
             }
         }
 
@@ -4283,7 +4283,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string MetadataBinder_OrderByExpressionNotSingleValue {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.MetadataBinder_OrderByExpressionNotSingleValue);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.MetadataBinder_OrderByExpressionNotSingleValue);
             }
         }
 
@@ -4292,7 +4292,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string MetadataBinder_PropertyAccessWithoutParentParameter {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.MetadataBinder_PropertyAccessWithoutParentParameter);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.MetadataBinder_PropertyAccessWithoutParentParameter);
             }
         }
 
@@ -4300,84 +4300,84 @@ namespace Microsoft.OData {
         /// A string like "The operand for a binary operator '{0}' is not a single value. Binary operators require both operands to be single values."
         /// </summary>
         internal static string MetadataBinder_BinaryOperatorOperandNotSingleValue(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.MetadataBinder_BinaryOperatorOperandNotSingleValue, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.MetadataBinder_BinaryOperatorOperandNotSingleValue, p0);
         }
 
         /// <summary>
         /// A string like "The operand for a unary operator '{0}' is not a single value. Unary operators require the operand to be a single value."
         /// </summary>
         internal static string MetadataBinder_UnaryOperatorOperandNotSingleValue(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.MetadataBinder_UnaryOperatorOperandNotSingleValue, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.MetadataBinder_UnaryOperatorOperandNotSingleValue, p0);
         }
 
         /// <summary>
         /// A string like "The parent value for a property access of a property '{0}' is not a single value. Property access can only be applied to a single value."
         /// </summary>
         internal static string MetadataBinder_PropertyAccessSourceNotSingleValue(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.MetadataBinder_PropertyAccessSourceNotSingleValue, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.MetadataBinder_PropertyAccessSourceNotSingleValue, p0);
         }
 
         /// <summary>
         /// A string like "A binary operator with incompatible types was detected. Found operand types '{0}' and '{1}' for operator kind '{2}'."
         /// </summary>
         internal static string MetadataBinder_IncompatibleOperandsError(object p0, object p1, object p2) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.MetadataBinder_IncompatibleOperandsError, p0, p1, p2);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.MetadataBinder_IncompatibleOperandsError, p0, p1, p2);
         }
 
         /// <summary>
         /// A string like "A unary operator with an incompatible type was detected. Found operand type '{0}' for operator kind '{1}'."
         /// </summary>
         internal static string MetadataBinder_IncompatibleOperandError(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.MetadataBinder_IncompatibleOperandError, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.MetadataBinder_IncompatibleOperandError, p0, p1);
         }
 
         /// <summary>
         /// A string like "An unknown function with name '{0}' was found. This may also be a function import or a key lookup on a navigation property, which is not allowed."
         /// </summary>
         internal static string MetadataBinder_UnknownFunction(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.MetadataBinder_UnknownFunction, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.MetadataBinder_UnknownFunction, p0);
         }
 
         /// <summary>
         /// A string like "The argument for an invocation of a function with name '{0}' is not a single value. All arguments for this function must be single values."
         /// </summary>
         internal static string MetadataBinder_FunctionArgumentNotSingleValue(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.MetadataBinder_FunctionArgumentNotSingleValue, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.MetadataBinder_FunctionArgumentNotSingleValue, p0);
         }
 
         /// <summary>
         /// A string like "No function signature for the function with name '{0}' matches the specified arguments. The function signatures considered are: {1}."
         /// </summary>
         internal static string MetadataBinder_NoApplicableFunctionFound(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.MetadataBinder_NoApplicableFunctionFound, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.MetadataBinder_NoApplicableFunctionFound, p0, p1);
         }
 
         /// <summary>
         /// A string like "A token of kind '{0}' was bound to the value null; this is invalid. A query token must always be bound to a non-null query node."
         /// </summary>
         internal static string MetadataBinder_BoundNodeCannotBeNull(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.MetadataBinder_BoundNodeCannotBeNull, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.MetadataBinder_BoundNodeCannotBeNull, p0);
         }
 
         /// <summary>
         /// A string like "The value '{0}' is not a non-negative integer value. In OData, the $top query option must specify a non-negative integer value."
         /// </summary>
         internal static string MetadataBinder_TopRequiresNonNegativeInteger(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.MetadataBinder_TopRequiresNonNegativeInteger, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.MetadataBinder_TopRequiresNonNegativeInteger, p0);
         }
 
         /// <summary>
         /// A string like "The value '{0}' is not a non-negative integer value. In OData, the $skip query option must specify a non-negative integer value."
         /// </summary>
         internal static string MetadataBinder_SkipRequiresNonNegativeInteger(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.MetadataBinder_SkipRequiresNonNegativeInteger, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.MetadataBinder_SkipRequiresNonNegativeInteger, p0);
         }
 
         /// <summary>
         /// A string like "Encountered invalid type cast. '{0}' is not assignable from '{1}'."
         /// </summary>
         internal static string MetadataBinder_HierarchyNotFollowed(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.MetadataBinder_HierarchyNotFollowed, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.MetadataBinder_HierarchyNotFollowed, p0, p1);
         }
 
         /// <summary>
@@ -4385,7 +4385,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string MetadataBinder_LambdaParentMustBeCollection {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.MetadataBinder_LambdaParentMustBeCollection);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.MetadataBinder_LambdaParentMustBeCollection);
             }
         }
 
@@ -4393,7 +4393,7 @@ namespace Microsoft.OData {
         /// A string like "The parameter '{0}' is not in scope."
         /// </summary>
         internal static string MetadataBinder_ParameterNotInScope(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.MetadataBinder_ParameterNotInScope, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.MetadataBinder_ParameterNotInScope, p0);
         }
 
         /// <summary>
@@ -4401,7 +4401,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string MetadataBinder_NavigationPropertyNotFollowingSingleEntityType {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.MetadataBinder_NavigationPropertyNotFollowingSingleEntityType);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.MetadataBinder_NavigationPropertyNotFollowingSingleEntityType);
             }
         }
 
@@ -4410,7 +4410,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string MetadataBinder_AnyAllExpressionNotSingleValue {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.MetadataBinder_AnyAllExpressionNotSingleValue);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.MetadataBinder_AnyAllExpressionNotSingleValue);
             }
         }
 
@@ -4418,7 +4418,7 @@ namespace Microsoft.OData {
         /// A string like "The Cast or IsOf expression has an invalid number of operands: number of operands is '{0}' and it should be 1 or 2."
         /// </summary>
         internal static string MetadataBinder_CastOrIsOfExpressionWithWrongNumberOfOperands(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.MetadataBinder_CastOrIsOfExpressionWithWrongNumberOfOperands, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.MetadataBinder_CastOrIsOfExpressionWithWrongNumberOfOperands, p0);
         }
 
         /// <summary>
@@ -4426,7 +4426,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string MetadataBinder_CastOrIsOfFunctionWithoutATypeArgument {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.MetadataBinder_CastOrIsOfFunctionWithoutATypeArgument);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.MetadataBinder_CastOrIsOfFunctionWithoutATypeArgument);
             }
         }
 
@@ -4435,7 +4435,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string MetadataBinder_CastOrIsOfCollectionsNotSupported {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.MetadataBinder_CastOrIsOfCollectionsNotSupported);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.MetadataBinder_CastOrIsOfCollectionsNotSupported);
             }
         }
 
@@ -4444,7 +4444,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string MetadataBinder_CollectionOpenPropertiesNotSupportedInThisRelease {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.MetadataBinder_CollectionOpenPropertiesNotSupportedInThisRelease);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.MetadataBinder_CollectionOpenPropertiesNotSupportedInThisRelease);
             }
         }
 
@@ -4452,77 +4452,77 @@ namespace Microsoft.OData {
         /// A string like "Can only bind segments that are Navigation, Structural, Complex, or Collections. We found a segment '{0}' that isn't any of those. Please revise the query."
         /// </summary>
         internal static string MetadataBinder_IllegalSegmentType(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.MetadataBinder_IllegalSegmentType, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.MetadataBinder_IllegalSegmentType, p0);
         }
 
         /// <summary>
         /// A string like "The '{0}' option cannot be applied to the query path. '{0}' can only be applied to a collection of entities."
         /// </summary>
         internal static string MetadataBinder_QueryOptionNotApplicable(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.MetadataBinder_QueryOptionNotApplicable, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.MetadataBinder_QueryOptionNotApplicable, p0);
         }
 
         /// <summary>
         /// A string like "$apply/aggregate expression '{0}' operation does not support value type '{1}'."
         /// </summary>
         internal static string ApplyBinder_AggregateExpressionIncompatibleTypeForMethod(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ApplyBinder_AggregateExpressionIncompatibleTypeForMethod, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ApplyBinder_AggregateExpressionIncompatibleTypeForMethod, p0, p1);
         }
 
         /// <summary>
         /// A string like "$apply/aggregate does not support method '{0}'."
         /// </summary>
         internal static string ApplyBinder_UnsupportedAggregateMethod(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ApplyBinder_UnsupportedAggregateMethod, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ApplyBinder_UnsupportedAggregateMethod, p0);
         }
 
         /// <summary>
         /// A string like "$apply/aggregate expression '{0}' must evaluate to a single value."
         /// </summary>
         internal static string ApplyBinder_AggregateExpressionNotSingleValue(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ApplyBinder_AggregateExpressionNotSingleValue, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ApplyBinder_AggregateExpressionNotSingleValue, p0);
         }
 
         /// <summary>
         /// A string like "$apply/groupby grouping expression '{0}' must evaluate to a property access value."
         /// </summary>
         internal static string ApplyBinder_GroupByPropertyNotPropertyAccessValue(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ApplyBinder_GroupByPropertyNotPropertyAccessValue, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ApplyBinder_GroupByPropertyNotPropertyAccessValue, p0);
         }
 
         /// <summary>
         /// A string like "$apply clause does not support type '{0}'."
         /// </summary>
         internal static string ApplyBinder_UnsupportedType(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ApplyBinder_UnsupportedType, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ApplyBinder_UnsupportedType, p0);
         }
 
         /// <summary>
         /// A string like "$apply/groupby not support '{0}' as child transformation"
         /// </summary>
         internal static string ApplyBinder_UnsupportedGroupByChild(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ApplyBinder_UnsupportedGroupByChild, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ApplyBinder_UnsupportedGroupByChild, p0);
         }
 
         /// <summary>
         /// A string like "Cannot find a suitable overload for function '{0}' that takes '{1}' arguments."
         /// </summary>
         internal static string FunctionCallBinder_CannotFindASuitableOverload(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.FunctionCallBinder_CannotFindASuitableOverload, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.FunctionCallBinder_CannotFindASuitableOverload, p0, p1);
         }
 
         /// <summary>
         /// A string like "Found a Uri function '{0}' with a parent token. Uri functions cannot have parent tokens."
         /// </summary>
         internal static string FunctionCallBinder_UriFunctionMustHaveHaveNullParent(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.FunctionCallBinder_UriFunctionMustHaveHaveNullParent, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.FunctionCallBinder_UriFunctionMustHaveHaveNullParent, p0);
         }
 
         /// <summary>
         /// A string like "Found a function '{0}' on an open property. Functions on open properties are not supported."
         /// </summary>
         internal static string FunctionCallBinder_CallingFunctionOnOpenProperty(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.FunctionCallBinder_CallingFunctionOnOpenProperty, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.FunctionCallBinder_CallingFunctionOnOpenProperty, p0);
         }
 
         /// <summary>
@@ -4530,7 +4530,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string FunctionCallParser_DuplicateParameterOrEntityKeyName {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.FunctionCallParser_DuplicateParameterOrEntityKeyName);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.FunctionCallParser_DuplicateParameterOrEntityKeyName);
             }
         }
 
@@ -4538,14 +4538,14 @@ namespace Microsoft.OData {
         /// A string like "'{0}' is not a valid count option."
         /// </summary>
         internal static string ODataUriParser_InvalidCount(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataUriParser_InvalidCount, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataUriParser_InvalidCount, p0);
         }
 
         /// <summary>
         /// A string like "The child type '{0}' in a cast was not an entity type. Casts can only be performed on entity types."
         /// </summary>
         internal static string CastBinder_ChildTypeIsNotEntity(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.CastBinder_ChildTypeIsNotEntity, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.CastBinder_ChildTypeIsNotEntity, p0);
         }
 
         /// <summary>
@@ -4553,7 +4553,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string CastBinder_EnumOnlyCastToOrFromString {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.CastBinder_EnumOnlyCastToOrFromString);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.CastBinder_EnumOnlyCastToOrFromString);
             }
         }
 
@@ -4561,42 +4561,42 @@ namespace Microsoft.OData {
         /// A string like "The string '{0}' is not a valid enumeration type constant."
         /// </summary>
         internal static string Binder_IsNotValidEnumConstant(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.Binder_IsNotValidEnumConstant, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.Binder_IsNotValidEnumConstant, p0);
         }
 
         /// <summary>
         /// A string like "Invalid content-id '{0}' for batch reference segment."
         /// </summary>
         internal static string BatchReferenceSegment_InvalidContentID(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.BatchReferenceSegment_InvalidContentID, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.BatchReferenceSegment_InvalidContentID, p0);
         }
 
         /// <summary>
         /// A string like "Property '{0}' is of an unrecognized EdmPropertyKind."
         /// </summary>
         internal static string SelectExpandBinder_UnknownPropertyType(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.SelectExpandBinder_UnknownPropertyType, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.SelectExpandBinder_UnknownPropertyType, p0);
         }
 
         /// <summary>
         /// A string like "Only properties specified in $expand can be traversed in $select query options. Selected item was '{0}'."
         /// </summary>
         internal static string SelectionItemBinder_NoExpandForSelectedProperty(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.SelectionItemBinder_NoExpandForSelectedProperty, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.SelectionItemBinder_NoExpandForSelectedProperty, p0);
         }
 
         /// <summary>
         /// A string like "Trying to follow type segments on a segment that isn't a type. Segment was '{0}'."
         /// </summary>
         internal static string SelectExpandPathBinder_FollowNonTypeSegment(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.SelectExpandPathBinder_FollowNonTypeSegment, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.SelectExpandPathBinder_FollowNonTypeSegment, p0);
         }
 
         /// <summary>
         /// A string like "Found a system token, '{0}', while parsing a select clause."
         /// </summary>
         internal static string SelectPropertyVisitor_SystemTokenInSelect(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.SelectPropertyVisitor_SystemTokenInSelect, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.SelectPropertyVisitor_SystemTokenInSelect, p0);
         }
 
         /// <summary>
@@ -4604,7 +4604,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string SelectPropertyVisitor_DisparateTypeSegmentsInSelectExpand {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.SelectPropertyVisitor_DisparateTypeSegmentsInSelectExpand);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.SelectPropertyVisitor_DisparateTypeSegmentsInSelectExpand);
             }
         }
 
@@ -4613,7 +4613,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string SelectBinder_MultiLevelPathInSelect {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.SelectBinder_MultiLevelPathInSelect);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.SelectBinder_MultiLevelPathInSelect);
             }
         }
 
@@ -4622,7 +4622,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ExpandItemBinder_TraversingANonNormalizedTree {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ExpandItemBinder_TraversingANonNormalizedTree);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ExpandItemBinder_TraversingANonNormalizedTree);
             }
         }
 
@@ -4630,14 +4630,14 @@ namespace Microsoft.OData {
         /// A string like "The type '{0}' is not defined in the model."
         /// </summary>
         internal static string ExpandItemBinder_CannotFindType(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ExpandItemBinder_CannotFindType, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ExpandItemBinder_CannotFindType, p0);
         }
 
         /// <summary>
         /// A string like "Property '{0}' on type '{1}' is not a navigation property or complex property. Only navigation properties can be expanded."
         /// </summary>
         internal static string ExpandItemBinder_PropertyIsNotANavigationPropertyOrComplexProperty(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ExpandItemBinder_PropertyIsNotANavigationPropertyOrComplexProperty, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ExpandItemBinder_PropertyIsNotANavigationPropertyOrComplexProperty, p0, p1);
         }
 
         /// <summary>
@@ -4645,7 +4645,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ExpandItemBinder_TypeSegmentNotFollowedByPath {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ExpandItemBinder_TypeSegmentNotFollowedByPath);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ExpandItemBinder_TypeSegmentNotFollowedByPath);
             }
         }
 
@@ -4654,7 +4654,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ExpandItemBinder_PathTooDeep {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ExpandItemBinder_PathTooDeep);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ExpandItemBinder_PathTooDeep);
             }
         }
 
@@ -4663,7 +4663,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ExpandItemBinder_TraversingMultipleNavPropsInTheSamePath {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ExpandItemBinder_TraversingMultipleNavPropsInTheSamePath);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ExpandItemBinder_TraversingMultipleNavPropsInTheSamePath);
             }
         }
 
@@ -4671,14 +4671,14 @@ namespace Microsoft.OData {
         /// A string like "The $level option on navigation property '{0}' is not allowed, because the related entity type '{1}' could not be cast to source entity type '{2}'."
         /// </summary>
         internal static string ExpandItemBinder_LevelsNotAllowedOnIncompatibleRelatedType(object p0, object p1, object p2) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ExpandItemBinder_LevelsNotAllowedOnIncompatibleRelatedType, p0, p1, p2);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ExpandItemBinder_LevelsNotAllowedOnIncompatibleRelatedType, p0, p1, p2);
         }
 
         /// <summary>
         /// A string like "Segment '{0}' is not valid in expand path. Before navigation property, only type segment or entity or complex property can exist."
         /// </summary>
         internal static string ExpandItemBinder_InvaidSegmentInExpand(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ExpandItemBinder_InvaidSegmentInExpand, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ExpandItemBinder_InvaidSegmentInExpand, p0);
         }
 
         /// <summary>
@@ -4686,7 +4686,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string Nodes_CollectionNavigationNode_MustHaveSingleMultiplicity {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.Nodes_CollectionNavigationNode_MustHaveSingleMultiplicity);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.Nodes_CollectionNavigationNode_MustHaveSingleMultiplicity);
             }
         }
 
@@ -4694,7 +4694,7 @@ namespace Microsoft.OData {
         /// A string like "An entity type '{0}' was given to NonEntityParameterQueryNode. Use EntityParameterQueryNode instead."
         /// </summary>
         internal static string Nodes_NonentityParameterQueryNodeWithEntityType(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.Nodes_NonentityParameterQueryNodeWithEntityType, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.Nodes_NonentityParameterQueryNodeWithEntityType, p0);
         }
 
         /// <summary>
@@ -4702,7 +4702,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string Nodes_CollectionNavigationNode_MustHaveManyMultiplicity {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.Nodes_CollectionNavigationNode_MustHaveManyMultiplicity);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.Nodes_CollectionNavigationNode_MustHaveManyMultiplicity);
             }
         }
 
@@ -4710,21 +4710,21 @@ namespace Microsoft.OData {
         /// A string like "A node of this kind requires the associated property to be a structural, non-collection type, but property '{0}' is not structural."
         /// </summary>
         internal static string Nodes_PropertyAccessShouldBeNonEntityProperty(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.Nodes_PropertyAccessShouldBeNonEntityProperty, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.Nodes_PropertyAccessShouldBeNonEntityProperty, p0);
         }
 
         /// <summary>
         /// A string like "A node of this kind requires the associated property to be a structural, non-collection type, but property '{0}' is a collection."
         /// </summary>
         internal static string Nodes_PropertyAccessTypeShouldNotBeCollection(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.Nodes_PropertyAccessTypeShouldNotBeCollection, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.Nodes_PropertyAccessTypeShouldNotBeCollection, p0);
         }
 
         /// <summary>
         /// A string like "A node of this kind requires the associated property to be a structural, collection type, but property '{0}' is not a collection."
         /// </summary>
         internal static string Nodes_PropertyAccessTypeMustBeCollection(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.Nodes_PropertyAccessTypeMustBeCollection, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.Nodes_PropertyAccessTypeMustBeCollection, p0);
         }
 
         /// <summary>
@@ -4732,7 +4732,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string Nodes_NonStaticEntitySetExpressionsAreNotSupportedInThisRelease {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.Nodes_NonStaticEntitySetExpressionsAreNotSupportedInThisRelease);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.Nodes_NonStaticEntitySetExpressionsAreNotSupportedInThisRelease);
             }
         }
 
@@ -4741,7 +4741,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string Nodes_CollectionFunctionCallNode_ItemTypeMustBePrimitiveOrComplexOrEnum {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.Nodes_CollectionFunctionCallNode_ItemTypeMustBePrimitiveOrComplexOrEnum);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.Nodes_CollectionFunctionCallNode_ItemTypeMustBePrimitiveOrComplexOrEnum);
             }
         }
 
@@ -4750,7 +4750,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string Nodes_EntityCollectionFunctionCallNode_ItemTypeMustBeAnEntity {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.Nodes_EntityCollectionFunctionCallNode_ItemTypeMustBeAnEntity);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.Nodes_EntityCollectionFunctionCallNode_ItemTypeMustBeAnEntity);
             }
         }
 
@@ -4759,7 +4759,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string Nodes_SingleValueFunctionCallNode_ItemTypeMustBePrimitiveOrComplexOrEnum {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.Nodes_SingleValueFunctionCallNode_ItemTypeMustBePrimitiveOrComplexOrEnum);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.Nodes_SingleValueFunctionCallNode_ItemTypeMustBePrimitiveOrComplexOrEnum);
             }
         }
 
@@ -4768,7 +4768,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ExpandTreeNormalizer_NonPathInPropertyChain {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ExpandTreeNormalizer_NonPathInPropertyChain);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ExpandTreeNormalizer_NonPathInPropertyChain);
             }
         }
 
@@ -4776,77 +4776,77 @@ namespace Microsoft.OData {
         /// A string like "Term '{0}' is not valid in a $expand expression, as only $level option is allowed when the expanded navigation property is star."
         /// </summary>
         internal static string UriExpandParser_TermIsNotValidForStar(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.UriExpandParser_TermIsNotValidForStar, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.UriExpandParser_TermIsNotValidForStar, p0);
         }
 
         /// <summary>
         /// A string like "Term '{0}' is not valid in a $expand expression, no option is allowed when the expanded navigation property is */$ref."
         /// </summary>
         internal static string UriExpandParser_TermIsNotValidForStarRef(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.UriExpandParser_TermIsNotValidForStarRef, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.UriExpandParser_TermIsNotValidForStarRef, p0);
         }
 
         /// <summary>
         /// A string like "Cannot get parent entity type for term '{0}' to auto populate all navigation properties."
         /// </summary>
         internal static string UriExpandParser_ParentEntityIsNull(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.UriExpandParser_ParentEntityIsNull, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.UriExpandParser_ParentEntityIsNull, p0);
         }
 
         /// <summary>
         /// A string like "Term '{0}' is not valid in a $expand expression as multiple stars are not allowed."
         /// </summary>
         internal static string UriExpandParser_TermWithMultipleStarNotAllowed(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.UriExpandParser_TermWithMultipleStarNotAllowed, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.UriExpandParser_TermWithMultipleStarNotAllowed, p0);
         }
 
         /// <summary>
         /// A string like "Term '{0}' is not valid in a $select or $expand expression."
         /// </summary>
         internal static string UriSelectParser_TermIsNotValid(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.UriSelectParser_TermIsNotValid, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.UriSelectParser_TermIsNotValid, p0);
         }
 
         /// <summary>
         /// A string like "Top option must be a non-negative integer, it is set to '{0}' instead."
         /// </summary>
         internal static string UriSelectParser_InvalidTopOption(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.UriSelectParser_InvalidTopOption, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.UriSelectParser_InvalidTopOption, p0);
         }
 
         /// <summary>
         /// A string like "Skip option must be a non-negative integer, it is set to '{0}' instead."
         /// </summary>
         internal static string UriSelectParser_InvalidSkipOption(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.UriSelectParser_InvalidSkipOption, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.UriSelectParser_InvalidSkipOption, p0);
         }
 
         /// <summary>
         /// A string like "Count option must be a boolean value, it is set to '{0}' instead."
         /// </summary>
         internal static string UriSelectParser_InvalidCountOption(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.UriSelectParser_InvalidCountOption, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.UriSelectParser_InvalidCountOption, p0);
         }
 
         /// <summary>
         /// A string like "Levels option must be a non-negative integer or 'max', it is set to '{0}' instead."
         /// </summary>
         internal static string UriSelectParser_InvalidLevelsOption(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.UriSelectParser_InvalidLevelsOption, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.UriSelectParser_InvalidLevelsOption, p0);
         }
 
         /// <summary>
         /// A string like "Found system token '{0}' in select or expand clause '{1}'."
         /// </summary>
         internal static string UriSelectParser_SystemTokenInSelectExpand(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.UriSelectParser_SystemTokenInSelectExpand, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.UriSelectParser_SystemTokenInSelectExpand, p0, p1);
         }
 
         /// <summary>
         /// A string like "Missing expand option on navigation property '{0}'. If a parenthesis expression follows an expanded navigation property, then at least one expand option must be provided."
         /// </summary>
         internal static string UriParser_MissingExpandOption(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.UriParser_MissingExpandOption, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.UriParser_MissingExpandOption, p0);
         }
 
         /// <summary>
@@ -4854,7 +4854,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string UriParser_RelativeUriMustBeRelative {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.UriParser_RelativeUriMustBeRelative);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.UriParser_RelativeUriMustBeRelative);
             }
         }
 
@@ -4863,7 +4863,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string UriParser_NeedServiceRootForThisOverload {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.UriParser_NeedServiceRootForThisOverload);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.UriParser_NeedServiceRootForThisOverload);
             }
         }
 
@@ -4871,7 +4871,7 @@ namespace Microsoft.OData {
         /// A string like "The URI '{0}' must be an absolute URI."
         /// </summary>
         internal static string UriParser_UriMustBeAbsolute(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.UriParser_UriMustBeAbsolute, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.UriParser_UriMustBeAbsolute, p0);
         }
 
         /// <summary>
@@ -4879,7 +4879,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string UriParser_NegativeLimit {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.UriParser_NegativeLimit);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.UriParser_NegativeLimit);
             }
         }
 
@@ -4887,70 +4887,70 @@ namespace Microsoft.OData {
         /// A string like "The result of parsing $expand contained at least {0} items, but the maximum allowed is {1}."
         /// </summary>
         internal static string UriParser_ExpandCountExceeded(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.UriParser_ExpandCountExceeded, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.UriParser_ExpandCountExceeded, p0, p1);
         }
 
         /// <summary>
         /// A string like "The result of parsing $expand was at least {0} items deep, but the maximum allowed is {1}."
         /// </summary>
         internal static string UriParser_ExpandDepthExceeded(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.UriParser_ExpandDepthExceeded, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.UriParser_ExpandDepthExceeded, p0, p1);
         }
 
         /// <summary>
         /// A string like "The type '{0}' is not valid for $select or $expand, only structured types are allowed."
         /// </summary>
         internal static string UriParser_TypeInvalidForSelectExpand(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.UriParser_TypeInvalidForSelectExpand, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.UriParser_TypeInvalidForSelectExpand, p0);
         }
 
         /// <summary>
         /// A string like "The handler property for context '{0}' should not return null."
         /// </summary>
         internal static string UriParser_ContextHandlerCanNotBeNull(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.UriParser_ContextHandlerCanNotBeNull, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.UriParser_ContextHandlerCanNotBeNull, p0);
         }
 
         /// <summary>
         /// A string like "More than one properties match the name '{0}' were found in type '{1}'."
         /// </summary>
         internal static string UriParserMetadata_MultipleMatchingPropertiesFound(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.UriParserMetadata_MultipleMatchingPropertiesFound, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.UriParserMetadata_MultipleMatchingPropertiesFound, p0, p1);
         }
 
         /// <summary>
         /// A string like "More than one navigation sources match the name '{0}' were found in model."
         /// </summary>
         internal static string UriParserMetadata_MultipleMatchingNavigationSourcesFound(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.UriParserMetadata_MultipleMatchingNavigationSourcesFound, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.UriParserMetadata_MultipleMatchingNavigationSourcesFound, p0);
         }
 
         /// <summary>
         /// A string like "More than one types match the name '{0}' were found in model."
         /// </summary>
         internal static string UriParserMetadata_MultipleMatchingTypesFound(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.UriParserMetadata_MultipleMatchingTypesFound, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.UriParserMetadata_MultipleMatchingTypesFound, p0);
         }
 
         /// <summary>
         /// A string like "More than one keys match the name '{0}' were found."
         /// </summary>
         internal static string UriParserMetadata_MultipleMatchingKeysFound(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.UriParserMetadata_MultipleMatchingKeysFound, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.UriParserMetadata_MultipleMatchingKeysFound, p0);
         }
 
         /// <summary>
         /// A string like "More than one parameters match the name '{0}' were found."
         /// </summary>
         internal static string UriParserMetadata_MultipleMatchingParametersFound(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.UriParserMetadata_MultipleMatchingParametersFound, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.UriParserMetadata_MultipleMatchingParametersFound, p0);
         }
 
         /// <summary>
         /// A string like "The request URI is not valid. $ref cannot be applied to the segment '{0}' since $ref can only follow an entity segment or entity collection segment."
         /// </summary>
         internal static string PathParser_EntityReferenceNotSupported(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.PathParser_EntityReferenceNotSupported, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.PathParser_EntityReferenceNotSupported, p0);
         }
 
         /// <summary>
@@ -4958,7 +4958,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string PathParser_CannotUseValueOnCollection {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.PathParser_CannotUseValueOnCollection);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.PathParser_CannotUseValueOnCollection);
             }
         }
 
@@ -4966,14 +4966,14 @@ namespace Microsoft.OData {
         /// A string like "The type '{0}' does not inherit from and is not a base type of '{1}'. The type of '{2}' must be related to the Type of the EntitySet."
         /// </summary>
         internal static string PathParser_TypeMustBeRelatedToSet(object p0, object p1, object p2) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.PathParser_TypeMustBeRelatedToSet, p0, p1, p2);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.PathParser_TypeMustBeRelatedToSet, p0, p1, p2);
         }
 
         /// <summary>
         /// A string like "Type cast segment '{0}' after a collection which is not of entity or complex type is not allowed."
         /// </summary>
         internal static string PathParser_TypeCastOnlyAllowedAfterStructuralCollection(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.PathParser_TypeCastOnlyAllowedAfterStructuralCollection, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.PathParser_TypeCastOnlyAllowedAfterStructuralCollection, p0);
         }
 
         /// <summary>
@@ -4981,7 +4981,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataResourceSet_MustNotContainBothNextPageLinkAndDeltaLink {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataResourceSet_MustNotContainBothNextPageLinkAndDeltaLink);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataResourceSet_MustNotContainBothNextPageLinkAndDeltaLink);
             }
         }
 
@@ -4990,7 +4990,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataExpandPath_OnlyLastSegmentMustBeNavigationProperty {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataExpandPath_OnlyLastSegmentMustBeNavigationProperty);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataExpandPath_OnlyLastSegmentMustBeNavigationProperty);
             }
         }
 
@@ -4998,7 +4998,7 @@ namespace Microsoft.OData {
         /// A string like "Found a segment of type '{0} in an expand path, but only NavigationProperty, Property and Type segments are allowed."
         /// </summary>
         internal static string ODataExpandPath_InvalidExpandPathSegment(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataExpandPath_InvalidExpandPathSegment, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataExpandPath_InvalidExpandPathSegment, p0);
         }
 
         /// <summary>
@@ -5006,7 +5006,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataSelectPath_CannotOnlyHaveTypeSegment {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataSelectPath_CannotOnlyHaveTypeSegment);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataSelectPath_CannotOnlyHaveTypeSegment);
             }
         }
 
@@ -5014,7 +5014,7 @@ namespace Microsoft.OData {
         /// A string like "Found a segment of type '{0} in a select path, but only TypeSegment, NavigationPropertySegment, PropertySegment, OperationSegment or OpenPropertySegments are allowed."
         /// </summary>
         internal static string ODataSelectPath_InvalidSelectPathSegmentType(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataSelectPath_InvalidSelectPathSegmentType, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataSelectPath_InvalidSelectPathSegmentType, p0);
         }
 
         /// <summary>
@@ -5022,7 +5022,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataSelectPath_OperationSegmentCanOnlyBeLastSegment {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataSelectPath_OperationSegmentCanOnlyBeLastSegment);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataSelectPath_OperationSegmentCanOnlyBeLastSegment);
             }
         }
 
@@ -5031,7 +5031,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ODataSelectPath_NavPropSegmentCanOnlyBeLastSegment {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ODataSelectPath_NavPropSegmentCanOnlyBeLastSegment);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ODataSelectPath_NavPropSegmentCanOnlyBeLastSegment);
             }
         }
 
@@ -5039,14 +5039,14 @@ namespace Microsoft.OData {
         /// A string like "The target Entity Set of Navigation Property '{0}' could not be found. This is most likely an error in the IEdmModel."
         /// </summary>
         internal static string RequestUriProcessor_TargetEntitySetNotFound(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.RequestUriProcessor_TargetEntitySetNotFound, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.RequestUriProcessor_TargetEntitySetNotFound, p0);
         }
 
         /// <summary>
         /// A string like "The function overloads matching '{0}' are invalid. This is most likely an error in the IEdmModel."
         /// </summary>
         internal static string RequestUriProcessor_FoundInvalidFunctionImport(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.RequestUriProcessor_FoundInvalidFunctionImport, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.RequestUriProcessor_FoundInvalidFunctionImport, p0);
         }
 
         /// <summary>
@@ -5054,7 +5054,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string OperationSegment_ReturnTypeForMultipleOverloads {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.OperationSegment_ReturnTypeForMultipleOverloads);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.OperationSegment_ReturnTypeForMultipleOverloads);
             }
         }
 
@@ -5063,7 +5063,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string OperationSegment_CannotReturnNull {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.OperationSegment_CannotReturnNull);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.OperationSegment_CannotReturnNull);
             }
         }
 
@@ -5071,84 +5071,84 @@ namespace Microsoft.OData {
         /// A string like "Unable to resolve function overloads to a single function. There was more than one function in the model with name '{0}' and parameter names '{1}'."
         /// </summary>
         internal static string FunctionOverloadResolver_NoSingleMatchFound(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.FunctionOverloadResolver_NoSingleMatchFound, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.FunctionOverloadResolver_NoSingleMatchFound, p0, p1);
         }
 
         /// <summary>
         /// A string like "Multiple action overloads were found with the same binding parameter for '{0}'."
         /// </summary>
         internal static string FunctionOverloadResolver_MultipleActionOverloads(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.FunctionOverloadResolver_MultipleActionOverloads, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.FunctionOverloadResolver_MultipleActionOverloads, p0);
         }
 
         /// <summary>
         /// A string like "Multiple action import overloads were found with the same binding parameter for '{0}'."
         /// </summary>
         internal static string FunctionOverloadResolver_MultipleActionImportOverloads(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.FunctionOverloadResolver_MultipleActionImportOverloads, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.FunctionOverloadResolver_MultipleActionImportOverloads, p0);
         }
 
         /// <summary>
         /// A string like "Multiple action import and function import overloads for '{0}' were found."
         /// </summary>
         internal static string FunctionOverloadResolver_MultipleOperationImportOverloads(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.FunctionOverloadResolver_MultipleOperationImportOverloads, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.FunctionOverloadResolver_MultipleOperationImportOverloads, p0);
         }
 
         /// <summary>
         /// A string like "Multiple action and function overloads for '{0}' were found."
         /// </summary>
         internal static string FunctionOverloadResolver_MultipleOperationOverloads(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.FunctionOverloadResolver_MultipleOperationOverloads, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.FunctionOverloadResolver_MultipleOperationOverloads, p0);
         }
 
         /// <summary>
         /// A string like "The operation overloads matching '{0}' are invalid. This is most likely an error in the IEdmModel."
         /// </summary>
         internal static string FunctionOverloadResolver_FoundInvalidOperation(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.FunctionOverloadResolver_FoundInvalidOperation, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.FunctionOverloadResolver_FoundInvalidOperation, p0);
         }
 
         /// <summary>
         /// A string like "The operation import overloads matching '{0}' are invalid. This is most likely an error in the IEdmModel."
         /// </summary>
         internal static string FunctionOverloadResolver_FoundInvalidOperationImport(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.FunctionOverloadResolver_FoundInvalidOperationImport, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.FunctionOverloadResolver_FoundInvalidOperationImport, p0);
         }
 
         /// <summary>
         /// A string like "The given custom function '{0}' already exists as a Built-In function. Consider use 'addAsOverloadToBuiltInFunction = true' parameter."
         /// </summary>
         internal static string CustomUriFunctions_AddCustomUriFunction_BuiltInExistsNotAddingAsOverload(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.CustomUriFunctions_AddCustomUriFunction_BuiltInExistsNotAddingAsOverload, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.CustomUriFunctions_AddCustomUriFunction_BuiltInExistsNotAddingAsOverload, p0);
         }
 
         /// <summary>
         /// A string like "The given custom function '{0}' already exists as a Built-In function in one of it's overloads. Thus cannot override the Built-In function."
         /// </summary>
         internal static string CustomUriFunctions_AddCustomUriFunction_BuiltInExistsFullSignature(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.CustomUriFunctions_AddCustomUriFunction_BuiltInExistsFullSignature, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.CustomUriFunctions_AddCustomUriFunction_BuiltInExistsFullSignature, p0);
         }
 
         /// <summary>
         /// A string like "The given function name '{0}' already exists as a custom function with the same overload."
         /// </summary>
         internal static string CustomUriFunctions_AddCustomUriFunction_CustomFunctionOverloadExists(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.CustomUriFunctions_AddCustomUriFunction_CustomFunctionOverloadExists, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.CustomUriFunctions_AddCustomUriFunction_CustomFunctionOverloadExists, p0);
         }
 
         /// <summary>
         /// A string like "The ODataPathSegment provided (Id = {0}) is not an EntitySetSegment."
         /// </summary>
         internal static string RequestUriProcessor_InvalidValueForEntitySegment(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.RequestUriProcessor_InvalidValueForEntitySegment, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.RequestUriProcessor_InvalidValueForEntitySegment, p0);
         }
 
         /// <summary>
         /// A string like "The KeySegment provided (Id = {0}) is either null, having no keys, or does not target a single resource."
         /// </summary>
         internal static string RequestUriProcessor_InvalidValueForKeySegment(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.RequestUriProcessor_InvalidValueForKeySegment, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.RequestUriProcessor_InvalidValueForKeySegment, p0);
         }
 
         /// <summary>
@@ -5156,7 +5156,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string RequestUriProcessor_EmptySegmentInRequestUrl {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.RequestUriProcessor_EmptySegmentInRequestUrl);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.RequestUriProcessor_EmptySegmentInRequestUrl);
             }
         }
 
@@ -5165,7 +5165,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string RequestUriProcessor_SyntaxError {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.RequestUriProcessor_SyntaxError);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.RequestUriProcessor_SyntaxError);
             }
         }
 
@@ -5174,7 +5174,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string RequestUriProcessor_CountOnRoot {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.RequestUriProcessor_CountOnRoot);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.RequestUriProcessor_CountOnRoot);
             }
         }
 
@@ -5182,63 +5182,63 @@ namespace Microsoft.OData {
         /// A string like "The request URI is not valid. The segment '{0}' must be the last segment in the URI because it is one of the following: $ref, $batch, $count, $value, $metadata, a named media resource, an action, a noncomposable function, an action import, a noncomposable function import, an operation with void return type, or an operation import with void return type."
         /// </summary>
         internal static string RequestUriProcessor_MustBeLeafSegment(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.RequestUriProcessor_MustBeLeafSegment, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.RequestUriProcessor_MustBeLeafSegment, p0);
         }
 
         /// <summary>
         /// A string like "The request URI is not valid. The segment '{0}' must refer to a navigation property since the previous segment identifier is '{1}'."
         /// </summary>
         internal static string RequestUriProcessor_LinkSegmentMustBeFollowedByEntitySegment(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.RequestUriProcessor_LinkSegmentMustBeFollowedByEntitySegment, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.RequestUriProcessor_LinkSegmentMustBeFollowedByEntitySegment, p0, p1);
         }
 
         /// <summary>
         /// A string like "The request URI is not valid. There must a segment specified after the '{0}' segment and the segment must refer to a entity resource."
         /// </summary>
         internal static string RequestUriProcessor_MissingSegmentAfterLink(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.RequestUriProcessor_MissingSegmentAfterLink, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.RequestUriProcessor_MissingSegmentAfterLink, p0);
         }
 
         /// <summary>
         /// A string like "The request URI is not valid. $count cannot be applied to the segment '{0}' since $count can only follow an entity set, a collection navigation property, a structural property of collection type, an operation returning collection type or an operation import returning collection type."
         /// </summary>
         internal static string RequestUriProcessor_CountNotSupported(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.RequestUriProcessor_CountNotSupported, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.RequestUriProcessor_CountNotSupported, p0);
         }
 
         /// <summary>
         /// A string like "The request URI is not valid. Since the segment '{0}' refers to a collection, this must be the last segment in the request URI or it must be followed by an function or action that can be bound to it otherwise all intermediate segments must refer to a single resource."
         /// </summary>
         internal static string RequestUriProcessor_CannotQueryCollections(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.RequestUriProcessor_CannotQueryCollections, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.RequestUriProcessor_CannotQueryCollections, p0);
         }
 
         /// <summary>
         /// A string like "The request URI is not valid. The segment '{0}' cannot include key predicates, however it may end with empty parenthesis."
         /// </summary>
         internal static string RequestUriProcessor_SegmentDoesNotSupportKeyPredicates(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.RequestUriProcessor_SegmentDoesNotSupportKeyPredicates, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.RequestUriProcessor_SegmentDoesNotSupportKeyPredicates, p0);
         }
 
         /// <summary>
         /// A string like "The segment '{1}' in the request URI is not valid. The segment '{0}' refers to a primitive property, function, or service operation, so the only supported value from the next segment is '$value'."
         /// </summary>
         internal static string RequestUriProcessor_ValueSegmentAfterScalarPropertySegment(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.RequestUriProcessor_ValueSegmentAfterScalarPropertySegment, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.RequestUriProcessor_ValueSegmentAfterScalarPropertySegment, p0, p1);
         }
 
         /// <summary>
         /// A string like "The type '{0}' specified in the URI is neither a base type nor a sub-type of the previously-specified type '{1}'."
         /// </summary>
         internal static string RequestUriProcessor_InvalidTypeIdentifier_UnrelatedType(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.RequestUriProcessor_InvalidTypeIdentifier_UnrelatedType, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.RequestUriProcessor_InvalidTypeIdentifier_UnrelatedType, p0, p1);
         }
 
         /// <summary>
         /// A string like "Open navigation properties are not supported on OpenTypes. Property name: '{0}'."
         /// </summary>
         internal static string OpenNavigationPropertiesNotSupportedOnOpenTypes(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.OpenNavigationPropertiesNotSupportedOnOpenTypes, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.OpenNavigationPropertiesNotSupportedOnOpenTypes, p0);
         }
 
         /// <summary>
@@ -5246,7 +5246,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string BadRequest_ResourceCanBeCrossReferencedOnlyForBindOperation {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.BadRequest_ResourceCanBeCrossReferencedOnlyForBindOperation);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.BadRequest_ResourceCanBeCrossReferencedOnlyForBindOperation);
             }
         }
 
@@ -5254,14 +5254,14 @@ namespace Microsoft.OData {
         /// A string like "The response requires that version {0} of the protocol be used, but the MaxProtocolVersion of the data service is set to {1}."
         /// </summary>
         internal static string DataServiceConfiguration_ResponseVersionIsBiggerThanProtocolVersion(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.DataServiceConfiguration_ResponseVersionIsBiggerThanProtocolVersion, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.DataServiceConfiguration_ResponseVersionIsBiggerThanProtocolVersion, p0, p1);
         }
 
         /// <summary>
         /// A string like "The number of keys specified in the URI does not match number of key properties for the resource '{0}'."
         /// </summary>
         internal static string BadRequest_KeyCountMismatch(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.BadRequest_KeyCountMismatch, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.BadRequest_KeyCountMismatch, p0);
         }
 
         /// <summary>
@@ -5269,7 +5269,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string RequestUriProcessor_KeysMustBeNamed {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.RequestUriProcessor_KeysMustBeNamed);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.RequestUriProcessor_KeysMustBeNamed);
             }
         }
 
@@ -5277,14 +5277,14 @@ namespace Microsoft.OData {
         /// A string like "Resource not found for the segment '{0}'."
         /// </summary>
         internal static string RequestUriProcessor_ResourceNotFound(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.RequestUriProcessor_ResourceNotFound, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.RequestUriProcessor_ResourceNotFound, p0);
         }
 
         /// <summary>
         /// A string like "Batched service action '{0}' cannot be invoked because it was bound to an entity created in the same changeset."
         /// </summary>
         internal static string RequestUriProcessor_BatchedActionOnEntityCreatedInSameChangeset(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.RequestUriProcessor_BatchedActionOnEntityCreatedInSameChangeset, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.RequestUriProcessor_BatchedActionOnEntityCreatedInSameChangeset, p0);
         }
 
         /// <summary>
@@ -5292,7 +5292,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string RequestUriProcessor_Forbidden {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.RequestUriProcessor_Forbidden);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.RequestUriProcessor_Forbidden);
             }
         }
 
@@ -5301,7 +5301,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string RequestUriProcessor_OperationSegmentBoundToANonEntityType {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.RequestUriProcessor_OperationSegmentBoundToANonEntityType);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.RequestUriProcessor_OperationSegmentBoundToANonEntityType);
             }
         }
 
@@ -5309,28 +5309,28 @@ namespace Microsoft.OData {
         /// A string like "An internal error '{0}' occurred."
         /// </summary>
         internal static string General_InternalError(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.General_InternalError, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.General_InternalError, p0);
         }
 
         /// <summary>
         /// A string like "A non-negative integer value was expected, but the value '{0}' is not a valid non-negative integer."
         /// </summary>
         internal static string ExceptionUtils_CheckIntegerNotNegative(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ExceptionUtils_CheckIntegerNotNegative, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ExceptionUtils_CheckIntegerNotNegative, p0);
         }
 
         /// <summary>
         /// A string like "A positive integer value was expected, but the value '{0}' is not a valid positive integer."
         /// </summary>
         internal static string ExceptionUtils_CheckIntegerPositive(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ExceptionUtils_CheckIntegerPositive, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ExceptionUtils_CheckIntegerPositive, p0);
         }
 
         /// <summary>
         /// A string like "A positive long value was expected; however, the value '{0}' is not a valid positive long value."
         /// </summary>
         internal static string ExceptionUtils_CheckLongPositive(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ExceptionUtils_CheckLongPositive, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ExceptionUtils_CheckLongPositive, p0);
         }
 
         /// <summary>
@@ -5338,7 +5338,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ExceptionUtils_ArgumentStringNullOrEmpty {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ExceptionUtils_ArgumentStringNullOrEmpty);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ExceptionUtils_ArgumentStringNullOrEmpty);
             }
         }
 
@@ -5347,7 +5347,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ExpressionToken_OnlyRefAllowWithStarInExpand {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ExpressionToken_OnlyRefAllowWithStarInExpand);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ExpressionToken_OnlyRefAllowWithStarInExpand);
             }
         }
 
@@ -5356,7 +5356,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ExpressionToken_NoPropAllowedAfterRef {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ExpressionToken_NoPropAllowedAfterRef);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ExpressionToken_NoPropAllowedAfterRef);
             }
         }
 
@@ -5365,7 +5365,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ExpressionToken_NoSegmentAllowedBeforeStarInExpand {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ExpressionToken_NoSegmentAllowedBeforeStarInExpand);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ExpressionToken_NoSegmentAllowedBeforeStarInExpand);
             }
         }
 
@@ -5373,42 +5373,42 @@ namespace Microsoft.OData {
         /// A string like "An identifier was expected at position {0}."
         /// </summary>
         internal static string ExpressionToken_IdentifierExpected(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ExpressionToken_IdentifierExpected, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ExpressionToken_IdentifierExpected, p0);
         }
 
         /// <summary>
         /// A string like "There is an unterminated string literal at position {0} in '{1}'."
         /// </summary>
         internal static string ExpressionLexer_UnterminatedStringLiteral(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ExpressionLexer_UnterminatedStringLiteral, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ExpressionLexer_UnterminatedStringLiteral, p0, p1);
         }
 
         /// <summary>
         /// A string like "Syntax error: character '{0}' is not valid at position {1} in '{2}'."
         /// </summary>
         internal static string ExpressionLexer_InvalidCharacter(object p0, object p1, object p2) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ExpressionLexer_InvalidCharacter, p0, p1, p2);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ExpressionLexer_InvalidCharacter, p0, p1, p2);
         }
 
         /// <summary>
         /// A string like "Syntax error at position {0} in '{1}'."
         /// </summary>
         internal static string ExpressionLexer_SyntaxError(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ExpressionLexer_SyntaxError, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ExpressionLexer_SyntaxError, p0, p1);
         }
 
         /// <summary>
         /// A string like "There is an unterminated literal at position {0} in '{1}'."
         /// </summary>
         internal static string ExpressionLexer_UnterminatedLiteral(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ExpressionLexer_UnterminatedLiteral, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ExpressionLexer_UnterminatedLiteral, p0, p1);
         }
 
         /// <summary>
         /// A string like "A digit was expected at position {0} in '{1}'."
         /// </summary>
         internal static string ExpressionLexer_DigitExpected(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ExpressionLexer_DigitExpected, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ExpressionLexer_DigitExpected, p0, p1);
         }
 
         /// <summary>
@@ -5416,7 +5416,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string ExpressionLexer_UnbalancedBracketExpression {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ExpressionLexer_UnbalancedBracketExpression);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ExpressionLexer_UnbalancedBracketExpression);
             }
         }
 
@@ -5424,35 +5424,35 @@ namespace Microsoft.OData {
         /// A string like "Numeric string '{0}' is not a valid Int32/Int64/Double/Decimal."
         /// </summary>
         internal static string ExpressionLexer_InvalidNumericString(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ExpressionLexer_InvalidNumericString, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ExpressionLexer_InvalidNumericString, p0);
         }
 
         /// <summary>
         /// A string like "An unrecognized escape sequence '\\{0}' was found at position {1} in '{2}'."
         /// </summary>
         internal static string ExpressionLexer_InvalidEscapeSequence(object p0, object p1, object p2) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ExpressionLexer_InvalidEscapeSequence, p0, p1, p2);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ExpressionLexer_InvalidEscapeSequence, p0, p1, p2);
         }
 
         /// <summary>
         /// A string like "Unrecognized '{0}' literal '{1}' at '{2}' in '{3}'."
         /// </summary>
         internal static string UriQueryExpressionParser_UnrecognizedLiteral(object p0, object p1, object p2, object p3) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.UriQueryExpressionParser_UnrecognizedLiteral, p0, p1, p2, p3);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.UriQueryExpressionParser_UnrecognizedLiteral, p0, p1, p2, p3);
         }
 
         /// <summary>
         /// A string like "Unrecognized '{0}' literal '{1}' at '{2}' in '{3}' with reason '{4}'."
         /// </summary>
         internal static string UriQueryExpressionParser_UnrecognizedLiteralWithReason(object p0, object p1, object p2, object p3, object p4) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.UriQueryExpressionParser_UnrecognizedLiteralWithReason, p0, p1, p2, p3, p4);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.UriQueryExpressionParser_UnrecognizedLiteralWithReason, p0, p1, p2, p3, p4);
         }
 
         /// <summary>
         /// A string like "Failed to parse '{0}' of Edm type '{1}' to primitive type."
         /// </summary>
         internal static string UriPrimitiveTypeParsers_FailedToParseTextToPrimitiveValue(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.UriPrimitiveTypeParsers_FailedToParseTextToPrimitiveValue, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.UriPrimitiveTypeParsers_FailedToParseTextToPrimitiveValue, p0, p1);
         }
 
         /// <summary>
@@ -5460,7 +5460,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string UriPrimitiveTypeParsers_FailedToParseStringToGeography {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.UriPrimitiveTypeParsers_FailedToParseStringToGeography);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.UriPrimitiveTypeParsers_FailedToParseStringToGeography);
             }
         }
 
@@ -5469,7 +5469,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string UriCustomTypeParsers_AddCustomUriTypeParserAlreadyExists {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.UriCustomTypeParsers_AddCustomUriTypeParserAlreadyExists);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.UriCustomTypeParsers_AddCustomUriTypeParserAlreadyExists);
             }
         }
 
@@ -5477,42 +5477,42 @@ namespace Microsoft.OData {
         /// A string like "An existing custom UriTypeParser is already registered to the given EdmTypeReference '{0}'."
         /// </summary>
         internal static string UriCustomTypeParsers_AddCustomUriTypeParserEdmTypeExists(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.UriCustomTypeParsers_AddCustomUriTypeParserEdmTypeExists, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.UriCustomTypeParsers_AddCustomUriTypeParserEdmTypeExists, p0);
         }
 
         /// <summary>
         /// A string like "The given type prefix literal name '{0}' must contain letters or '.' only."
         /// </summary>
         internal static string UriParserHelper_InvalidPrefixLiteral(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.UriParserHelper_InvalidPrefixLiteral, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.UriParserHelper_InvalidPrefixLiteral, p0);
         }
 
         /// <summary>
         /// A string like "The given type literal prefix '{0}' already exists as a custom uri type literal prefix."
         /// </summary>
         internal static string CustomUriTypePrefixLiterals_AddCustomUriTypePrefixLiteralAlreadyExists(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.CustomUriTypePrefixLiterals_AddCustomUriTypePrefixLiteralAlreadyExists, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.CustomUriTypePrefixLiterals_AddCustomUriTypePrefixLiteralAlreadyExists, p0);
         }
 
         /// <summary>
         /// A string like "The value '{0}' is not a valid duration value."
         /// </summary>
         internal static string ValueParser_InvalidDuration(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ValueParser_InvalidDuration, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ValueParser_InvalidDuration, p0);
         }
 
         /// <summary>
         /// A string like "The time zone information is missing on the DateTimeOffset value '{0}'. A DateTimeOffset value must contain the time zone information."
         /// </summary>
         internal static string PlatformHelper_DateTimeOffsetMustContainTimeZone(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.PlatformHelper_DateTimeOffsetMustContainTimeZone, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.PlatformHelper_DateTimeOffsetMustContainTimeZone, p0);
         }
 
         /// <summary>
         /// A string like "Invalid JSON. An unexpected comma was found in scope '{0}'. A comma is only valid between properties of an object or between elements of an array."
         /// </summary>
         internal static string JsonReader_UnexpectedComma(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.JsonReader_UnexpectedComma, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.JsonReader_UnexpectedComma, p0);
         }
 
         /// <summary>
@@ -5520,7 +5520,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string JsonReader_MultipleTopLevelValues {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.JsonReader_MultipleTopLevelValues);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.JsonReader_MultipleTopLevelValues);
             }
         }
 
@@ -5529,7 +5529,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string JsonReader_EndOfInputWithOpenScope {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.JsonReader_EndOfInputWithOpenScope);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.JsonReader_EndOfInputWithOpenScope);
             }
         }
 
@@ -5537,7 +5537,7 @@ namespace Microsoft.OData {
         /// A string like "Invalid JSON. Unexpected token '{0}'."
         /// </summary>
         internal static string JsonReader_UnexpectedToken(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.JsonReader_UnexpectedToken, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.JsonReader_UnexpectedToken, p0);
         }
 
         /// <summary>
@@ -5545,7 +5545,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string JsonReader_UnrecognizedToken {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.JsonReader_UnrecognizedToken);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.JsonReader_UnrecognizedToken);
             }
         }
 
@@ -5553,14 +5553,14 @@ namespace Microsoft.OData {
         /// A string like "Invalid JSON. A colon character ':' is expected after the property name '{0}', but none was found."
         /// </summary>
         internal static string JsonReader_MissingColon(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.JsonReader_MissingColon, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.JsonReader_MissingColon, p0);
         }
 
         /// <summary>
         /// A string like "Invalid JSON. An unrecognized escape sequence '{0}' was found in a JSON string value."
         /// </summary>
         internal static string JsonReader_UnrecognizedEscapeSequence(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.JsonReader_UnrecognizedEscapeSequence, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.JsonReader_UnrecognizedEscapeSequence, p0);
         }
 
         /// <summary>
@@ -5568,7 +5568,7 @@ namespace Microsoft.OData {
         /// </summary>
         internal static string JsonReader_UnexpectedEndOfString {
             get {
-                return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.JsonReader_UnexpectedEndOfString);
+                return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.JsonReader_UnexpectedEndOfString);
             }
         }
 
@@ -5576,70 +5576,70 @@ namespace Microsoft.OData {
         /// A string like "Invalid JSON. The value '{0}' is not a valid number."
         /// </summary>
         internal static string JsonReader_InvalidNumberFormat(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.JsonReader_InvalidNumberFormat, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.JsonReader_InvalidNumberFormat, p0);
         }
 
         /// <summary>
         /// A string like "Invalid JSON. A comma character ',' was expected in scope '{0}'. Every two elements in an array and properties of an object must be separated by commas."
         /// </summary>
         internal static string JsonReader_MissingComma(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.JsonReader_MissingComma, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.JsonReader_MissingComma, p0);
         }
 
         /// <summary>
         /// A string like "Invalid JSON. The property name '{0}' is not valid. The name of a property cannot be empty."
         /// </summary>
         internal static string JsonReader_InvalidPropertyNameOrUnexpectedComma(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.JsonReader_InvalidPropertyNameOrUnexpectedComma, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.JsonReader_InvalidPropertyNameOrUnexpectedComma, p0);
         }
 
         /// <summary>
         /// A string like "An unexpected '{1}' node was found when reading from the JSON reader. A '{0}' node was expected."
         /// </summary>
         internal static string JsonReaderExtensions_UnexpectedNodeDetected(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.JsonReaderExtensions_UnexpectedNodeDetected, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.JsonReaderExtensions_UnexpectedNodeDetected, p0, p1);
         }
 
         /// <summary>
         /// A string like "An unexpected '{1}' node was found for property named '{2}' when reading from the JSON reader. A '{0}' node was expected."
         /// </summary>
         internal static string JsonReaderExtensions_UnexpectedNodeDetectedWithPropertyName(object p0, object p1, object p2) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.JsonReaderExtensions_UnexpectedNodeDetectedWithPropertyName, p0, p1, p2);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.JsonReaderExtensions_UnexpectedNodeDetectedWithPropertyName, p0, p1, p2);
         }
 
         /// <summary>
         /// A string like "Cannot read the value '{0}' for the property '{1}' as a quoted JSON string value."
         /// </summary>
         internal static string JsonReaderExtensions_CannotReadPropertyValueAsString(object p0, object p1) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.JsonReaderExtensions_CannotReadPropertyValueAsString, p0, p1);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.JsonReaderExtensions_CannotReadPropertyValueAsString, p0, p1);
         }
 
         /// <summary>
         /// A string like "Cannot read the value '{0}' as a quoted JSON string value."
         /// </summary>
         internal static string JsonReaderExtensions_CannotReadValueAsString(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.JsonReaderExtensions_CannotReadValueAsString, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.JsonReaderExtensions_CannotReadValueAsString, p0);
         }
 
         /// <summary>
         /// A string like "Cannot read the value '{0}' as a double numeric value."
         /// </summary>
         internal static string JsonReaderExtensions_CannotReadValueAsDouble(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.JsonReaderExtensions_CannotReadValueAsDouble, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.JsonReaderExtensions_CannotReadValueAsDouble, p0);
         }
 
         /// <summary>
         /// A string like "An unexpected instance annotation name '{0}' was found when reading from the JSON reader, In OData, Instance annotation name must start with @."
         /// </summary>
         internal static string JsonReaderExtensions_UnexpectedInstanceAnnotationName(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.JsonReaderExtensions_UnexpectedInstanceAnnotationName, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.JsonReaderExtensions_UnexpectedInstanceAnnotationName, p0);
         }
 
         /// <summary>
         /// A string like "No service for type '{0}' has been registered."
         /// </summary>
         internal static string ServiceProviderExtensions_NoServiceRegistered(object p0) {
-            return Microsoft.OData.TextRes.GetString(Microsoft.OData.TextRes.ServiceProviderExtensions_NoServiceRegistered, p0);
+            return Infrastructure.Parser.TextRes.GetString(Infrastructure.Parser.TextRes.ServiceProviderExtensions_NoServiceRegistered, p0);
         }
 
     }

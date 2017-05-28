@@ -6,28 +6,9 @@
 
 using System.Globalization;
 using System.Text.RegularExpressions;
-
-#if !SPATIAL
 using Microsoft.OData.Edm;
-#endif
 
-#if ODATA_SERVICE
-namespace Microsoft.OData.Service
-#else
-#if ODATA_CLIENT
-namespace Microsoft.OData.Client
-#else
-#if SPATIAL
-namespace Microsoft.Spatial
-#else
-#if ODATA_CORE
-namespace Microsoft.OData
-#else
-namespace Microsoft.OData.Edm
-#endif
-#endif
-#endif
-#endif
+namespace Infrastructure.Parser
 {
     using System;
     using System.Collections.Generic;

@@ -11,7 +11,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.Serialization;
 #endif
 
-namespace Microsoft.OData
+namespace Infrastructure.Parser
 {
     /// <summary>
     /// Exception type representing exceptions in the OData library.

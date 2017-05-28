@@ -4,7 +4,7 @@
 // </copyright>
 //---------------------------------------------------------------------
 
-namespace Microsoft.OData
+namespace Infrastructure.Parser
 {
     /// <summary>This type provides constants used in URI query expressions.</summary>
     internal static class ExpressionConstants

@@ -4,7 +4,7 @@
 // </copyright>
 //---------------------------------------------------------------------
 
-namespace Microsoft.OData
+namespace Infrastructure.Parser
 {
     /// <summary>
     /// Enumeration representing the OData protocol version.
