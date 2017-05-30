@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Infrastructure.Parser.UriParser;
 
 namespace ConsoleApplication1
@@ -19,6 +20,9 @@ namespace ConsoleApplication1
 
                 tokens.Add(token);
             }
+
+            Uri url = new Uri("http://server/service/Entities?$filter=(foo eq true) or ('yes' eq tolower(bar)) or foobars/any()&$orderby=bar desc,foo&$top=1&$compute=bar as computedBar");
+            List <CustomQueryOptionToken> options = QueryOptionUtils.ParseQueryOptions(url);
 
             return;
         }
