@@ -35,6 +35,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\sln\packages\Microsoft.OData.Edm.7.2.0\lib\netstandard1.1\Microsoft.OData.Edm.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Spatial">
+      <HintPath>..\..\sln\packages\Microsoft.Spatial.7.2.0\lib\netstandard1.1\Microsoft.Spatial.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.XML" />
   </ItemGroup>
@@ -42,6 +45,9 @@
     <Compile Include="..\..\PlatformHelper.cs">
       <Link>PlatformHelper.cs</Link>
     </Compile>
+    <Compile Include="EdmValueParser.cs" />
+    <Compile Include="Metadata\EdmConstants.cs" />
+    <Compile Include="Metadata\MetadataUtilsCommon.cs" />
     <Compile Include="UriParser\Aggregation\AggregateExpressionToken.cs" />
     <Compile Include="UriParser\Aggregation\AggregateToken.cs" />
     <Compile Include="UriParser\Aggregation\AggregationMethod.cs" />
@@ -49,8 +55,21 @@
     <Compile Include="UriParser\Aggregation\GroupByToken.cs" />
     <Compile Include="UriParser\CustomUriLiteralPrefixes.cs" />
     <Compile Include="ExceptionUtils.cs" />
+    <Compile Include="UriParser\InternalErrorCodes.cs" />
+    <Compile Include="UriParser\LiteralUtils.cs" />
     <Compile Include="UriParser\NamedValue.cs" />
+    <Compile Include="UriParser\ODataUriParserSettings.cs" />
     <Compile Include="UriParser\OrderByDirection.cs" />
+    <Compile Include="UriParser\Parsers\CustomUriLiteralParsers.cs" />
+    <Compile Include="UriParser\Parsers\DefaultUriLiteralParser.cs" />
+    <Compile Include="UriParser\Parsers\FunctionCallParser.cs" />
+    <Compile Include="UriParser\Parsers\FunctionParameterParser.cs" />
+    <Compile Include="UriParser\Parsers\IdentifierTokenizer.cs" />
+    <Compile Include="UriParser\Parsers\IFunctionCallParser.cs" />
+    <Compile Include="UriParser\Parsers\IUriLiteralParser.cs" />
+    <Compile Include="UriParser\Parsers\UriLiteralParsingException.cs" />
+    <Compile Include="UriParser\Parsers\UriPrimitiveTypeParser.cs" />
+    <Compile Include="UriParser\Parsers\UriQueryExpressionParser.cs" />
     <Compile Include="UriParser\QueryOptionUtils.cs" />
     <Compile Include="UriParser\ReadOnlyEnumerableForUriParser.cs" />
     <Compile Include="UriParser\SyntacticAst\AllToken.cs" />
@@ -62,6 +81,7 @@
     <Compile Include="UriParser\SyntacticAst\ExpandTermToken.cs" />
     <Compile Include="UriParser\SyntacticAst\ExpandToken.cs" />
     <Compile Include="UriParser\SyntacticAst\FunctionCallToken.cs" />
+    <Compile Include="UriParser\SyntacticAst\FunctionParameterAliasToken.cs" />
     <Compile Include="UriParser\SyntacticAst\FunctionParameterToken.cs" />
     <Compile Include="UriParser\SyntacticAst\InnerPathToken.cs" />
     <Compile Include="UriParser\SyntacticAst\LambdaToken.cs" />
@@ -75,10 +95,12 @@
     <Compile Include="UriParser\SyntacticAst\RangeVariableToken.cs" />
     <Compile Include="UriParser\SyntacticAst\SelectToken.cs" />
     <Compile Include="UriParser\SyntacticAst\StarToken.cs" />
+    <Compile Include="UriParser\SyntacticAst\StringLiteralToken.cs" />
     <Compile Include="UriParser\SyntacticAst\SystemToken.cs" />
     <Compile Include="UriParser\SyntacticAst\UnaryOperatorToken.cs" />
     <Compile Include="UriParser\TreeNodeKinds\BinaryOperatorKind.cs" />
     <Compile Include="UriParser\TreeNodeKinds\UnaryOperatorKind.cs" />
+    <Compile Include="UriParser\UriQueryConstants.cs" />
     <Compile Include="UriParser\Visitors\IPathSegmentTokenVisitor.cs" />
     <Compile Include="UriParser\Visitors\ISyntacticTreeVisitor.cs" />
     <Compile Include="UriParser\Visitors\PathSegmentTokenVisitor.cs" />
@@ -122,6 +144,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

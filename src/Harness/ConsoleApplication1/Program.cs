@@ -24,6 +24,9 @@ namespace ConsoleApplication1
             Uri url = new Uri("http://server/service/Entities?$filter=(foo eq true) or ('yes' eq tolower(bar)) or foobars/any()&$orderby=bar desc,foo&$top=1&$compute=bar as computedBar");
             List <CustomQueryOptionToken> options = QueryOptionUtils.ParseQueryOptions(url);
 
+            UriQueryExpressionParser parser = new UriQueryExpressionParser(ODataUriParserSettings.DefaultFilterLimit);
+            QueryToken qt = parser.ParseFilter("(foo eq true) or ('yes' eq tolower(bar))");
+
             return;
         }
     }
