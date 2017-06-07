@@ -125,6 +125,11 @@ namespace Infrastructure.Parser.UriParser
         /// <summary>
         /// $apply groupby token
         /// </summary>
-        AggregateGroupBy = 26
+        AggregateGroupBy = 26,
+
+        /// <summary>
+        /// $compute token
+        /// </summary>
+        Compute = 27
     }
 }

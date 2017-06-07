@@ -48,6 +48,7 @@
     <Compile Include="EdmValueParser.cs" />
     <Compile Include="Metadata\EdmConstants.cs" />
     <Compile Include="Metadata\MetadataUtilsCommon.cs" />
+    <Compile Include="ODataSimplifiedOptions.cs" />
     <Compile Include="ServicePrototype.cs" />
     <Compile Include="ServiceProviderExtensions.cs" />
     <Compile Include="UriParser\Aggregation\AggregateExpressionToken.cs" />
@@ -62,6 +63,7 @@
     <Compile Include="UriParser\LiteralUtils.cs" />
     <Compile Include="UriParser\NamedValue.cs" />
     <Compile Include="UriParser\ODataUnrecognizedPathException.cs" />
+    <Compile Include="UriParser\ODataUriParserConfiguration.cs" />
     <Compile Include="UriParser\ODataUriParserSettings.cs" />
     <Compile Include="UriParser\OrderByDirection.cs" />
     <Compile Include="UriParser\Parsers\CustomUriLiteralParsers.cs" />
@@ -85,6 +87,7 @@
     <Compile Include="UriParser\SyntacticAst\AllToken.cs" />
     <Compile Include="UriParser\SyntacticAst\AnyToken.cs" />
     <Compile Include="UriParser\SyntacticAst\BinaryOperatorToken.cs" />
+    <Compile Include="UriParser\SyntacticAst\ComputeToken.cs" />
     <Compile Include="UriParser\SyntacticAst\CustomQueryOptionToken.cs" />
     <Compile Include="UriParser\SyntacticAst\DottedIdentifierToken.cs" />
     <Compile Include="UriParser\SyntacticAst\EndPathToken.cs" />
@@ -138,6 +141,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UriParser\Parsers\UriParserHelper.cs" />
     <Compile Include="UriUtils.cs" />
+    <Compile Include="Uri\ODataUrlKeyDelimiter.cs" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -156,7 +160,10 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="UriParser\Binders\" />
+    <Folder Include="UriParser\SemanticAst\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

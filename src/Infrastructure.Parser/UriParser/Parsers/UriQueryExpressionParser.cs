@@ -205,6 +205,38 @@ namespace Infrastructure.Parser.UriParser
             }
         }
 
+        // parses $compute query option.
+        internal IEnumerable<QueryToken> ParseCompute(string compute)
+        {
+            Debug.Assert(compute != null, "compute != null");
+
+            List<QueryToken> transformationTokens = new List<QueryToken>();
+
+            if (string.IsNullOrEmpty(compute))
+            {
+                return transformationTokens;
+            }
+
+            this.recursionDepth = 0;
+            this.lexer = CreateLexerForFilterOrOrderByOrApplyExpression(compute);
+
+            while (true)
+            {
+                ComputeToken computed = this.ParseComputeExpression();
+                transformationTokens.Add(computed);
+                if (this.lexer.CurrentToken.Kind != ExpressionTokenKind.Comma)
+                {
+                    break;
+                }
+
+                this.lexer.NextToken();
+            }
+
+            this.lexer.ValidateToken(ExpressionTokenKind.End);
+
+            return new ReadOnlyCollection<QueryToken>(transformationTokens);
+        }
+
         internal IEnumerable<QueryToken> ParseApply(string apply)
         {
             Debug.Assert(apply != null, "apply != null");
@@ -402,6 +434,21 @@ namespace Infrastructure.Parser.UriParser
 
             // '(' expression ')'
             return this.ParseParenExpression();
+        }
+
+        /// <summary>
+        /// Parse compute expression text into a token.
+        /// </summary>
+        /// <returns>The lexical token representing the compute expression text.</returns>
+        internal ComputeToken ParseComputeExpression()
+        {
+            // expression
+            QueryToken expression = this.ParseExpression();
+
+            // "as" alias
+            StringLiteralToken alias = this.ParseAggregateAs();
+
+            return new ComputeToken(expression, alias.Text);
         }
 
         /// <summary>

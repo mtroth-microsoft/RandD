@@ -79,5 +79,8 @@ namespace Infrastructure.Parser.UriParser
 
         /// <summary>Dollar sign.</summary>
         internal const string DollarSign = "$";
+
+        /// <summary>A compute query option name.</summary>
+        internal const string ComputeQueryOption = "$compute";
     }
 }

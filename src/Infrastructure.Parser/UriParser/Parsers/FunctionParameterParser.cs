@@ -35,20 +35,20 @@ namespace Infrastructure.Parser.UriParser
         /// <param name="configuration">The ODataUriParserConfiguration to create a UriQueryExpressionParser.</param>
         /// <param name="splitParameters">The parameters if they were successfully split.</param>
         /// <returns>Whether the parameters could be split.</returns>
-        //internal static bool TrySplitOperationParameters(string parenthesisExpression, ODataUriParserConfiguration configuration, out ICollection<FunctionParameterToken> splitParameters)
-        //{
-        //    ExpressionLexer lexer = new ExpressionLexer(parenthesisExpression, true /*moveToFirstToken*/, false /*useSemicolonDelimeter*/, true /*parsingFunctionParameters*/);
-        //    UriQueryExpressionParser parser = new UriQueryExpressionParser(configuration.Settings.FilterLimit, lexer);
-        //    var ret = parser.TrySplitOperationParameters(ExpressionTokenKind.End, out splitParameters);
+        internal static bool TrySplitOperationParameters(string parenthesisExpression, ODataUriParserConfiguration configuration, out ICollection<FunctionParameterToken> splitParameters)
+        {
+            ExpressionLexer lexer = new ExpressionLexer(parenthesisExpression, true /*moveToFirstToken*/, false /*useSemicolonDelimeter*/, true /*parsingFunctionParameters*/);
+            UriQueryExpressionParser parser = new UriQueryExpressionParser(configuration.Settings.FilterLimit, lexer);
+            var ret = parser.TrySplitOperationParameters(ExpressionTokenKind.End, out splitParameters);
 
-        //    // check duplicate names
-        //    if (splitParameters.Select(t => t.ParameterName).Distinct().Count() != splitParameters.Count)
-        //    {
-        //        throw new ODataException(ODataErrorStrings.FunctionCallParser_DuplicateParameterOrEntityKeyName);
-        //    }
+            // check duplicate names
+            if (splitParameters.Select(t => t.ParameterName).Distinct().Count() != splitParameters.Count)
+            {
+                throw new ODataException(ODataErrorStrings.FunctionCallParser_DuplicateParameterOrEntityKeyName);
+            }
 
-        //    return ret;
-        //}
+            return ret;
+        }
 
         /// <summary>
         /// Tries to parse a collection of function parameters. Allows path and filter to share the core algorithm while representing parameters differently.
