@@ -13,15 +13,17 @@ namespace DevHarness
         static void Main(string[] args)
         {
             Uri root = new Uri("http://server/");
-            Uri url = new Uri("/Entities?$compute=cast(Prop1, 'Edm.String') as Property1AsString, tolower(Prop1) as Property1Lower&$expand=Nav1($compute=cast(Prop1, 'Edm.String') as NavProperty1AsString)", UriKind.Relative);
+            Uri url = new Uri("/Entities?$compute=cast(Prop1, 'Edm.String') as Property1AsString, tolower(Prop1) as Property1Lower&$expand=Nav1($compute=cast(Prop1, 'Edm.String') as NavProperty1AsString;$expand=SubNav1($compute=cast(Prop1, 'Edm.String') as SubNavProperty1AsString))", UriKind.Relative);
 
             EdmModel model = new EdmModel();
             EdmEntityType elementType = model.AddEntityType("DevHarness", "Entity");
             EdmEntityType targetType = model.AddEntityType("DevHarness", "Navigation");
-            
+            EdmEntityType subTargetType = model.AddEntityType("DevHarness", "SubNavigation");
+
             EdmTypeReference typeReference = new EdmStringTypeReference(EdmCoreModel.Instance.GetPrimitiveType(EdmPrimitiveTypeKind.String), false);
             elementType.AddProperty(new EdmStructuralProperty(elementType, "Prop1", typeReference));
             targetType.AddProperty(new EdmStructuralProperty(targetType, "Prop1", typeReference));
+            subTargetType.AddProperty(new EdmStructuralProperty(subTargetType, "Prop1", typeReference));
 
             EdmNavigationPropertyInfo propertyInfo = new EdmNavigationPropertyInfo();
             propertyInfo.Name = "Nav1";
@@ -29,6 +31,13 @@ namespace DevHarness
             propertyInfo.TargetMultiplicity = EdmMultiplicity.One;
             EdmProperty navigation = EdmNavigationProperty.CreateNavigationProperty(elementType, propertyInfo);
             elementType.AddProperty(navigation);
+
+            EdmNavigationPropertyInfo subPropertyInfo = new EdmNavigationPropertyInfo();
+            subPropertyInfo.Name = "SubNav1";
+            subPropertyInfo.Target = subTargetType;
+            subPropertyInfo.TargetMultiplicity = EdmMultiplicity.One;
+            EdmProperty subnavigation = EdmNavigationProperty.CreateNavigationProperty(targetType, subPropertyInfo);
+            targetType.AddProperty(subnavigation);
 
             EdmEntityContainer container = model.AddEntityContainer("Default", "Container");
             container.AddEntitySet("Entities", elementType);
