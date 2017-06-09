@@ -45,6 +45,11 @@ namespace DevHarness
             ODataUriParser parser = new ODataUriParser(model, root, url);
             ComputeClause clause = parser.ParseCompute();
             SelectExpandClause se = parser.ParseSelectAndExpand();
+
+            string compute = "Prop1 mul Prop2 as Product,Prop1 div Prop2 as Ratio,Prop2 mod Prop2 as Remainder";
+            UriQueryExpressionParser uqep = new UriQueryExpressionParser(1000);
+            var method = uqep.GetType().GetMethod("ParseCompute", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+            var output = method.Invoke(uqep, new object[] { compute });
         }
     }
 }
