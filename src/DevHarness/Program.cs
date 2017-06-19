@@ -14,19 +14,29 @@ namespace DevHarness
         {
             Uri root = new Uri("http://server/");
             Uri url = new Uri("http://server/Entities?$select=Prop1/Edm.String&$filter=Prop2/Edm.String eq 'sdb'&$orderby=Prop2/Edm.String");
-            url = new Uri("http://server/Entities?$filter=cast(Prop2, Edm.String) eq 'sdb'");
+            //url = new Uri("http://server/Entities?$orderby=Prop1/$");
+            //url = new Uri("http://server/Entities?$filter=Prop1/Test.IsPrime");
+            //url = new Uri("http://server/Entities?$filter=Prop1/IsPrime()");
+            //url = new Uri("http://server/Entities?$filter=Prop1/any(x:x/Edm.String eq 'Bob')");
+            url = new Uri("http://server/Entities?$filter=Prop5/any(x:x/Edm.String eq 'foo')");
+            //url = new Uri("http://server/Entities?$filter=Prop1/Edm.String eq 'foo'");
+            //url = new Uri("http://server/Entities?$orderby=Prop1/Edm.String");
+            //url = new Uri("http://server/Entities?$select=OpenProperty/Edm.String");
+            //url = new Uri("http://server/Entities?$select=ComplexOpenProperty/OpenProperty/Edm.String");
 
             EdmModel model = new EdmModel();
-            EdmEntityType elementType = model.AddEntityType("DevHarness", "Entity");
+            EdmEntityType elementType = model.AddEntityType("DevHarness", "Entity", null, false, true);
             EdmComplexType complexType = model.AddComplexType("DevHarness", "Complex", null, true);
             EdmComplexType derivedType = model.AddComplexType("DevHarness", "Derived", complexType, false);
 
             EdmComplexTypeReference complexTypeReference = new EdmComplexTypeReference(complexType, false);
             EdmTypeReference typeReference = new EdmStringTypeReference(EdmCoreModel.Instance.GetPrimitiveType(EdmPrimitiveTypeKind.String), false);
+            EdmCollectionTypeReference collectionTypeReference = new EdmCollectionTypeReference(new EdmCollectionType(typeReference));
             elementType.AddProperty(new EdmStructuralProperty(elementType, "Prop1", typeReference));
             elementType.AddProperty(new EdmStructuralProperty(elementType, "Prop2", typeReference));
             elementType.AddProperty(new EdmStructuralProperty(elementType, "Prop3", complexTypeReference));
             derivedType.AddProperty(new EdmStructuralProperty(derivedType, "Prop4", typeReference));
+            elementType.AddProperty(new EdmStructuralProperty(elementType, "Prop5", collectionTypeReference));
 
             EdmEntityContainer container = model.AddEntityContainer("Default", "Container");
             container.AddEntitySet("Entities", elementType);
@@ -70,7 +80,7 @@ namespace DevHarness
             container.AddEntitySet("Entities", elementType);
 
             ODataUriParser parser = new ODataUriParser(model, root, url);
-            ComputeClause clause = parser.ParseCompute();
+            //ComputeClause clause = parser.ParseCompute();
             SelectExpandClause se = parser.ParseSelectAndExpand();
 
             string compute = "Prop1 mul Prop2 as Product,Prop1 div Prop2 as Ratio,Prop2 mod Prop2 as Remainder";
