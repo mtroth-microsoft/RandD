@@ -18,11 +18,14 @@ namespace DevHarness
             //url = new Uri("http://server/Entities?$filter=Prop1/Test.IsPrime");
             //url = new Uri("http://server/Entities?$filter=Prop1/IsPrime()");
             //url = new Uri("http://server/Entities?$filter=Prop1/any(x:x/Edm.String eq 'Bob')");
-            url = new Uri("http://server/Entities?$filter=Prop5/any(x:x/Edm.String eq 'foo')");
+            //url = new Uri("http://server/Entities?$filter=Prop5/any(x:x/Edm.String eq 'foo')");
             //url = new Uri("http://server/Entities?$filter=Prop1/Edm.String eq 'foo'");
             //url = new Uri("http://server/Entities?$orderby=Prop1/Edm.String");
             //url = new Uri("http://server/Entities?$select=OpenProperty/Edm.String");
             //url = new Uri("http://server/Entities?$select=ComplexOpenProperty/OpenProperty/Edm.String");
+
+            url = new Uri("http://server/Entities?$filter=ClosedCollection/any(x:x/Prop6/Edm.String eq 'foo')");
+            url = new Uri("http://server/Entities?$filter=OpenCollection/any(x:x/OpenProperty/Edm.String eq 'foo')");
 
             EdmModel model = new EdmModel();
             EdmEntityType elementType = model.AddEntityType("DevHarness", "Entity", null, false, true);
@@ -37,6 +40,10 @@ namespace DevHarness
             elementType.AddProperty(new EdmStructuralProperty(elementType, "Prop3", complexTypeReference));
             derivedType.AddProperty(new EdmStructuralProperty(derivedType, "Prop4", typeReference));
             elementType.AddProperty(new EdmStructuralProperty(elementType, "Prop5", collectionTypeReference));
+            complexType.AddProperty(new EdmStructuralProperty(complexType, "Prop6", typeReference));
+
+            EdmCollectionTypeReference closedCollection = new EdmCollectionTypeReference(new EdmCollectionType(complexTypeReference));
+            elementType.AddProperty(new EdmStructuralProperty(elementType, "ClosedCollection", closedCollection));
 
             EdmEntityContainer container = model.AddEntityContainer("Default", "Container");
             container.AddEntitySet("Entities", elementType);
