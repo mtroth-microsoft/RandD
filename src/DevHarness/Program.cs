@@ -12,6 +12,12 @@ namespace DevHarness
     {
         static void Main(string[] args)
         {
+            //TestCompute();
+            TestPrimitiveTypeCast();
+        }
+
+        private static void TestPrimitiveTypeCast()
+        {
             Uri root = new Uri("http://server/");
             Uri url = new Uri("http://server/Entities?$select=Prop1/Edm.String&$filter=Prop2/Edm.String eq 'sdb'&$orderby=Prop2/Edm.String");
             //url = new Uri("http://server/Entities?$orderby=Prop1/$");
@@ -19,24 +25,44 @@ namespace DevHarness
             //url = new Uri("http://server/Entities?$filter=Prop1/IsPrime()");
             //url = new Uri("http://server/Entities?$filter=Prop1/any(x:x/Edm.String eq 'Bob')");
             url = new Uri("http://server/Entities?$filter=Prop5/any(x:x/Edm.String eq 'foo')");
+            url = new Uri("http://server/Entities?$filter=Open/any(x:x/Edm.String eq 'foo')");
             //url = new Uri("http://server/Entities?$filter=Prop1/Edm.String eq 'foo'");
             //url = new Uri("http://server/Entities?$orderby=Prop1/Edm.String");
             //url = new Uri("http://server/Entities?$select=OpenProperty/Edm.String");
             //url = new Uri("http://server/Entities?$select=ComplexOpenProperty/OpenProperty/Edm.String");
+            //url = new Uri("http://server/Entities?$select=ComplexOpenProperty/Edm.String");
+            url = new Uri("http://server/Entities?$filter=Prop3/Edm.String eq 'foo'");
+
+            //url = new Uri("http://server/Entities?$filter=Members/any(x:x/Prop6 eq 'foo')");
+            //url = new Uri("http://server/Entities?$filter=Customs/any(x:x/Open eq 'foo')");
+
+            url = new Uri("http://server/Entities(1)/Products");
 
             EdmModel model = new EdmModel();
             EdmEntityType elementType = model.AddEntityType("DevHarness", "Entity", null, false, true);
             EdmComplexType complexType = model.AddComplexType("DevHarness", "Complex", null, true);
             EdmComplexType derivedType = model.AddComplexType("DevHarness", "Derived", complexType, false);
+            EdmEntityType navigationType = model.AddEntityType("DevHarness", "Product", null);
 
             EdmComplexTypeReference complexTypeReference = new EdmComplexTypeReference(complexType, false);
             EdmTypeReference typeReference = new EdmStringTypeReference(EdmCoreModel.Instance.GetPrimitiveType(EdmPrimitiveTypeKind.String), false);
             EdmCollectionTypeReference collectionTypeReference = new EdmCollectionTypeReference(new EdmCollectionType(typeReference));
+            EdmCollectionTypeReference complexCollectionReference = new EdmCollectionTypeReference(new EdmCollectionType(complexTypeReference));
+
+            //EdmTypeReference navigationTypeReference = new EdmEntityTypeReference(navigationType, false);
+            //EdmCollectionTypeReference navigationReference = new EdmCollectionTypeReference(new EdmCollectionType(navigationTypeReference));
+            navigationType.AddKeys(new EdmStructuralProperty(navigationType, "Id", new EdmStringTypeReference(EdmCoreModel.Instance.GetPrimitiveType(EdmPrimitiveTypeKind.Int32), false)));
+
             elementType.AddProperty(new EdmStructuralProperty(elementType, "Prop1", typeReference));
             elementType.AddProperty(new EdmStructuralProperty(elementType, "Prop2", typeReference));
             elementType.AddProperty(new EdmStructuralProperty(elementType, "Prop3", complexTypeReference));
             derivedType.AddProperty(new EdmStructuralProperty(derivedType, "Prop4", typeReference));
             elementType.AddProperty(new EdmStructuralProperty(elementType, "Prop5", collectionTypeReference));
+            complexType.AddProperty(new EdmStructuralProperty(complexType, "Prop6", typeReference));
+            elementType.AddProperty(new EdmStructuralProperty(elementType, "Members", complexCollectionReference));
+            elementType.AddKeys(new EdmStructuralProperty(elementType, "Id", new EdmStringTypeReference(EdmCoreModel.Instance.GetPrimitiveType(EdmPrimitiveTypeKind.Int32), false)));
+
+            elementType.AddUnidirectionalNavigation(new EdmNavigationPropertyInfo() { Name = "Products", Target = navigationType, TargetMultiplicity = EdmMultiplicity.Many });
 
             EdmEntityContainer container = model.AddEntityContainer("Default", "Container");
             container.AddEntitySet("Entities", elementType);
@@ -44,13 +70,18 @@ namespace DevHarness
             ODataUriParser parser = new ODataUriParser(model, root, url);
             //OrderByClause orderby = parser.ParseOrderBy();
             //SelectExpandClause select = parser.ParseSelectAndExpand();
-            FilterClause filter = parser.ParseFilter();
+            //FilterClause filter = parser.ParseFilter();
+            ODataPath path = parser.ParsePath();
+
+            NavigationPropertySegment segment = path.LastSegment as NavigationPropertySegment;
+            string fullTypeName = segment.NavigationProperty.DeclaringType.FullTypeName();
         }
 
         private static void TestCompute()
         {
             Uri root = new Uri("http://server/");
             Uri url = new Uri("/Entities?$compute=cast(Prop1, 'Edm.String') as Property1AsString, tolower(Prop1) as Property1Lower&$expand=Nav1($compute=cast(Prop1, 'Edm.String') as NavProperty1AsString;$expand=SubNav1($compute=cast(Prop1, 'Edm.String') as SubNavProperty1AsString))", UriKind.Relative);
+            url = new Uri("/Entities?$compute=ckdajfsak as %//%$", UriKind.Relative);
 
             EdmModel model = new EdmModel();
             EdmEntityType elementType = model.AddEntityType("DevHarness", "Entity");
@@ -81,7 +112,7 @@ namespace DevHarness
 
             ODataUriParser parser = new ODataUriParser(model, root, url);
             //ComputeClause clause = parser.ParseCompute();
-            SelectExpandClause se = parser.ParseSelectAndExpand();
+            //SelectExpandClause se = parser.ParseSelectAndExpand();
 
             string compute = "Prop1 mul Prop2 as Product,Prop1 div Prop2 as Ratio,Prop2 mod Prop2 as Remainder";
             UriQueryExpressionParser uqep = new UriQueryExpressionParser(1000);
