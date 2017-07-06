@@ -38,6 +38,9 @@ namespace DevHarness
 
             url = new Uri("http://server/Entities(1)/Products");
 
+            url = new Uri("http://server/Entities?$filter=ClosedCollection/any(x:x/Prop6/Edm.String eq 'foo')");
+            url = new Uri("http://server/Entities?$filter=OpenCollection/any(x:x/OpenProperty/Edm.String eq 'foo')");
+
             EdmModel model = new EdmModel();
             EdmEntityType elementType = model.AddEntityType("DevHarness", "Entity", null, false, true);
             EdmComplexType complexType = model.AddComplexType("DevHarness", "Complex", null, true);
@@ -63,6 +66,9 @@ namespace DevHarness
             elementType.AddKeys(new EdmStructuralProperty(elementType, "Id", new EdmStringTypeReference(EdmCoreModel.Instance.GetPrimitiveType(EdmPrimitiveTypeKind.Int32), false)));
 
             elementType.AddUnidirectionalNavigation(new EdmNavigationPropertyInfo() { Name = "Products", Target = navigationType, TargetMultiplicity = EdmMultiplicity.Many });
+
+            EdmCollectionTypeReference closedCollection = new EdmCollectionTypeReference(new EdmCollectionType(complexTypeReference));
+            elementType.AddProperty(new EdmStructuralProperty(elementType, "ClosedCollection", closedCollection));
 
             EdmEntityContainer container = model.AddEntityContainer("Default", "Container");
             container.AddEntitySet("Entities", elementType);
