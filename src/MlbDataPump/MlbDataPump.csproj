@@ -33,41 +33,41 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework">
-      <HintPath>E:\Documents\VSO\DataAccess\Service\Infrastructure.DataAccessService\bin\EntityFramework.dll</HintPath>
+      <HintPath>..\..\sln\packages\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer">
-      <HintPath>E:\Documents\VSO\DataAccess\Service\Infrastructure.DataAccessService\bin\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\..\sln\packages\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Infrastructure.DataAccess">
-      <HintPath>E:\Documents\VSO\DataAccess\Service\Infrastructure.DataAccess\bin\Debug\Infrastructure.DataAccess.dll</HintPath>
+      <HintPath>..\..\sln\packages\Infrastructure.DataAccess.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Azure.KeyVault">
-      <HintPath>E:\Documents\VSO\DataAccess\Service\Infrastructure.DataAccessService\bin\Microsoft.Azure.KeyVault.dll</HintPath>
+      <HintPath>..\..\sln\packages\Microsoft.Azure.KeyVault.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.IdentityModel.Clients.ActiveDirectory">
-      <HintPath>E:\Documents\VSO\DataAccess\Service\Infrastructure.DataAccessService\bin\Microsoft.IdentityModel.Clients.ActiveDirectory.dll</HintPath>
+      <HintPath>..\..\sln\packages\Microsoft.IdentityModel.Clients.ActiveDirectory.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.OData.Edm, Version=7.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>E:\Documents\VSO\DataAccess\Service\Infrastructure.DataAccessService\bin\Microsoft.OData.Edm.dll</HintPath>
+      <HintPath>..\..\sln\packages\Microsoft.OData.Edm.dll</HintPath>
     </Reference>
     <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>E:\Documents\VSO\DataAccess\Service\Infrastructure.DataAccessService\bin\MySql.Data.dll</HintPath>
+      <HintPath>..\..\sln\packages\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>E:\Documents\VSO\DataAccess\Service\Infrastructure.DataAccessService\bin\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\..\sln\packages\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Ninject">
-      <HintPath>E:\Documents\VSO\DataAccess\Service\Infrastructure.DataAccessService\bin\Ninject.dll</HintPath>
+      <HintPath>..\..\sln\packages\Ninject.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Web.OData, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>E:\Documents\VSO\DataAccess\Service\Infrastructure.DataAccessService\bin\System.Web.OData.dll</HintPath>
+      <HintPath>..\..\sln\packages\System.Web.OData.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data" />
