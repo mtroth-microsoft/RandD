@@ -33,46 +33,46 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\..\sln\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\..\sln\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Infrastructure.DataAccess">
       <HintPath>..\..\..\..\DataAccess\Service\Infrastructure.DataAccess\bin\Debug\Infrastructure.DataAccess.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Azure.KeyVault">
-      <HintPath>..\packages\Microsoft.Azure.KeyVault.1.0.0\lib\net45\Microsoft.Azure.KeyVault.dll</HintPath>
+      <HintPath>..\..\sln\packages\Microsoft.Azure.KeyVault.1.0.0\lib\net45\Microsoft.Azure.KeyVault.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.IdentityModel.Clients.ActiveDirectory">
-      <HintPath>..\packages\Microsoft.IdentityModel.Clients.ActiveDirectory.2.21.301221612\lib\net45\Microsoft.IdentityModel.Clients.ActiveDirectory.dll</HintPath>
+      <HintPath>..\..\sln\packages\Microsoft.IdentityModel.Clients.ActiveDirectory.2.21.301221612\lib\net45\Microsoft.IdentityModel.Clients.ActiveDirectory.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.OData.Core, Version=7.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.OData.Core.7.2.0\lib\portable-net45+win8+wpa81\Microsoft.OData.Core.dll</HintPath>
+      <HintPath>..\..\sln\packages\Microsoft.OData.Core.7.2.0\lib\portable-net45+win8+wpa81\Microsoft.OData.Core.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.OData.Edm, Version=7.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.OData.Edm.7.2.0\lib\portable-net45+win8+wpa81\Microsoft.OData.Edm.dll</HintPath>
+      <HintPath>..\..\sln\packages\Microsoft.OData.Edm.7.2.0\lib\portable-net45+win8+wpa81\Microsoft.OData.Edm.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Spatial, Version=7.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Spatial.7.2.0\lib\portable-net45+win8+wpa81\Microsoft.Spatial.dll</HintPath>
+      <HintPath>..\..\sln\packages\Microsoft.Spatial.7.2.0\lib\portable-net45+win8+wpa81\Microsoft.Spatial.dll</HintPath>
     </Reference>
     <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\MySql.Data.6.9.9\lib\net45\MySql.Data.dll</HintPath>
+      <HintPath>..\..\sln\packages\MySql.Data.6.9.9\lib\net45\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\netcore45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\..\sln\packages\Newtonsoft.Json.6.0.8\lib\netcore45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Ninject">
-      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+      <HintPath>..\..\sln\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Web.OData, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.AspNet.OData.6.0.0\lib\net45\System.Web.OData.dll</HintPath>
+      <HintPath>..\..\sln\packages\Microsoft.AspNet.OData.6.0.0\lib\net45\System.Web.OData.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data" />
