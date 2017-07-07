@@ -71,14 +71,14 @@ namespace MlbDataPump
             game.GameId = id.Value;
             game.Date = date;
             game.GameType = (GameType)char.Parse(gameType.Value);
-            game.AwayTeam = new Team() { Id = int.Parse(awayId.Value), Name = awayName.Value, City = awayCity.Value, Code = awayCode.Value };
-            game.HomeTeam = new Team() { Id = int.Parse(homeId.Value), Name = homeName.Value, City = homeCity.Value, Code = homeCode.Value };
+            game.AwayTeam = new Team() { Id = ParseInt(awayId), Name = awayName.Value, City = awayCity.Value, Code = awayCode.Value };
+            game.HomeTeam = new Team() { Id = ParseInt(homeId), Name = homeName.Value, City = homeCity.Value, Code = homeCode.Value };
             game.HomeRecord = new Record();
-            game.HomeRecord.Wins = child.Attribute("home_win") == null ? (int?)null : int.Parse(child.Attribute("home_win").Value);
-            game.HomeRecord.Losses = child.Attribute("home_loss") == null ? (int?)null : int.Parse(child.Attribute("home_loss").Value);
+            game.HomeRecord.Wins = ParseNullableInt(child.Attribute("home_win"));
+            game.HomeRecord.Losses = ParseNullableInt(child.Attribute("home_loss"));
             game.AwayRecord = new Record();
-            game.AwayRecord.Wins = child.Attribute("away_win") == null ? (int?)null : int.Parse(child.Attribute("away_win").Value);
-            game.AwayRecord.Losses = child.Attribute("away_loss") == null ? (int?)null : int.Parse(child.Attribute("away_loss").Value);
+            game.AwayRecord.Wins = ParseNullableInt(child.Attribute("away_win"));
+            game.AwayRecord.Losses = ParseNullableInt(child.Attribute("away_loss"));
 
             foreach (XElement sub in child.Elements())
             {
@@ -86,7 +86,7 @@ namespace MlbDataPump
                 {
                     if (sub.Attribute("status").Value == "Final")
                     {
-                        game.Innings = int.Parse(sub.Attribute("inning").Value);
+                        game.Innings = ParseInt(sub.Attribute("inning"));
                     }
                 }
                 else if (sub.Name.LocalName == "linescore")
@@ -153,11 +153,11 @@ namespace MlbDataPump
                 game.SavingPitcher.Team = game.HomeScore.Runs > game.AwayScore.Runs ? game.HomeTeam : game.AwayTeam;
                 game.SavingPitcherRecord = new Record()
                 {
-                    Wins = sub.Attribute("wins") == null ? (int?)null : int.Parse(sub.Attribute("wins").Value),
-                    Losses = sub.Attribute("losses") == null ? (int?)null : int.Parse(sub.Attribute("losses").Value),
-                    Era = sub.Attribute("era") == null ? (decimal?)null : decimal.Parse(sub.Attribute("era").Value),
-                    Saves = sub.Attribute("saves") == null ? (int?)null : int.Parse(sub.Attribute("saves").Value),
-                    Opportunities = sub.Attribute("svo") == null ? (int?)null : int.Parse(sub.Attribute("svo").Value)
+                    Wins = ParseNullableInt(sub.Attribute("wins")),
+                    Losses = ParseNullableInt(sub.Attribute("losses")),
+                    Era = ParseNullableDecimal(sub.Attribute("era")),
+                    Saves = ParseNullableInt(sub.Attribute("saves")),
+                    Opportunities = ParseNullableInt(sub.Attribute("svo"))
                 };
             }
         }
@@ -174,9 +174,9 @@ namespace MlbDataPump
                 game.LosingPitcher.Team = game.HomeScore.Runs > game.AwayScore.Runs ? game.AwayTeam : game.HomeTeam;
                 game.LosingPitcherRecord = new Record()
                 {
-                    Wins = sub.Attribute("wins") == null ? (int?)null : int.Parse(sub.Attribute("wins").Value),
-                    Losses = sub.Attribute("losses") == null ? (int?)null : int.Parse(sub.Attribute("losses").Value),
-                    Era = sub.Attribute("era") == null ? (decimal?)null : decimal.Parse(sub.Attribute("era").Value)
+                    Wins = ParseNullableInt(sub.Attribute("wins")),
+                    Losses = ParseNullableInt(sub.Attribute("losses")),
+                    Era = ParseNullableDecimal(sub.Attribute("era"))
                 };
             }
         }
@@ -193,9 +193,9 @@ namespace MlbDataPump
                 game.WinningPitcher.Team = game.HomeScore.Runs > game.AwayScore.Runs ? game.HomeTeam : game.AwayTeam;
                 game.WinningPitcherRecord = new Record()
                 {
-                    Wins = sub.Attribute("wins") == null ? (int?)null : int.Parse(sub.Attribute("wins").Value),
-                    Losses = sub.Attribute("losses") == null ? (int?)null : int.Parse(sub.Attribute("losses").Value),
-                    Era = sub.Attribute("era") == null ? (decimal?)null : decimal.Parse(sub.Attribute("era").Value)
+                    Wins = ParseNullableInt(sub.Attribute("wins")),
+                    Losses = ParseNullableInt(sub.Attribute("losses")),
+                    Era = ParseNullableDecimal(sub.Attribute("era"))
                 };
             }
         }
@@ -208,34 +208,75 @@ namespace MlbDataPump
             {
                 if (line.Name.LocalName == "r")
                 {
-                    game.HomeScore.Runs = int.Parse(line.Attribute("home").Value);
-                    game.AwayScore.Runs = int.Parse(line.Attribute("away").Value);
+                    game.HomeScore.Runs = ParseInt(line.Attribute("home"));
+                    game.AwayScore.Runs = ParseInt(line.Attribute("away"));
                 }
                 else if (line.Name.LocalName == "h")
                 {
-                    game.HomeScore.Hits = int.Parse(line.Attribute("home").Value);
-                    game.AwayScore.Hits = int.Parse(line.Attribute("away").Value);
+                    game.HomeScore.Hits = ParseInt(line.Attribute("home"));
+                    game.AwayScore.Hits = ParseInt(line.Attribute("away"));
                 }
                 else if (line.Name.LocalName == "e")
                 {
-                    game.HomeScore.Errors = int.Parse(line.Attribute("home").Value);
-                    game.AwayScore.Errors = int.Parse(line.Attribute("away").Value);
+                    game.HomeScore.Errors = ParseInt(line.Attribute("home"));
+                    game.AwayScore.Errors = ParseInt(line.Attribute("away"));
                 }
                 else if (line.Name.LocalName == "so")
                 {
-                    game.HomeScore.StrikeOuts = int.Parse(line.Attribute("home").Value);
-                    game.AwayScore.StrikeOuts = int.Parse(line.Attribute("away").Value);
+                    game.HomeScore.StrikeOuts = ParseInt(line.Attribute("home"));
+                    game.AwayScore.StrikeOuts = ParseInt(line.Attribute("away"));
                 }
                 else if (line.Name.LocalName == "sb")
                 {
-                    game.HomeScore.StolenBases = int.Parse(line.Attribute("home").Value);
-                    game.AwayScore.StolenBases = int.Parse(line.Attribute("away").Value);
+                    game.HomeScore.StolenBases = ParseInt(line.Attribute("home"));
+                    game.AwayScore.StolenBases = ParseInt(line.Attribute("away"));
                 }
                 else if (line.Name.LocalName == "hr")
                 {
-                    game.HomeScore.HomeRuns = int.Parse(line.Attribute("home").Value);
-                    game.AwayScore.HomeRuns = int.Parse(line.Attribute("away").Value);
+                    game.HomeScore.HomeRuns = ParseInt(line.Attribute("home"));
+                    game.AwayScore.HomeRuns = ParseInt(line.Attribute("away"));
                 }
+            }
+        }
+
+        private static int ParseInt(XAttribute att)
+        {
+            if (att == null || string.IsNullOrEmpty(att.Value) == true)
+            {
+                return default(int);
+            }
+            else
+            {
+                return int.Parse(att.Value);
+            }
+        }
+
+        private static int? ParseNullableInt(XAttribute att)
+        {
+            if (att == null || string.IsNullOrEmpty(att.Value) == true)
+            {
+                return null;
+            }
+            else
+            {
+                return int.Parse(att.Value);
+            }
+        }
+
+        private static decimal? ParseNullableDecimal(XAttribute att)
+        {
+            decimal value;
+            if (att == null || string.IsNullOrEmpty(att.Value) == true)
+            {
+                return null;
+            }
+            else if (decimal.TryParse(att.Value, out value) == true)
+            {
+                return value;
+            }
+            else
+            {
+                return null;
             }
         }
     }

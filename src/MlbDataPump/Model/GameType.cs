@@ -3,10 +3,13 @@ namespace MlbDataPump.Model
 {
     public enum GameType
     {
+        Exhibition = 'E',
+        AllStar = 'A',
         Spring = 'S',
         Regular = 'R',
         WildCard = 'F',
-        PlayOff = 'L',
+        DivisionalPlayoff = 'D',
+        LeaguePlayOff = 'L',
         WorldSeries = 'W'
     }
 }
