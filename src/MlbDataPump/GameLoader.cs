@@ -17,6 +17,9 @@ namespace MlbDataPump
     {
         internal static void Transform(FileMetadata metadata)
         {
+            JsonSerializerSettings settings = new JsonSerializerSettings() { Formatting = Formatting.Indented };
+            BulkWriterSettings bulkWriteSettings = new BulkWriterSettings() { Store = new MlbType() };
+
             Model.FileStaging result = QueryHelper
                 .Read<Model.FileStaging>(string.Format("Address eq '{0}'", metadata.Address))
                 .ToList()
@@ -27,29 +30,22 @@ namespace MlbDataPump
             XAttribute day = xml.Attribute("day");
             DateTime dt = new DateTime(int.Parse(year.Value), int.Parse(month.Value), int.Parse(day.Value));
 
-            List<Game> games = new List<Game>();
+            List<object> executes = new List<object>();
             foreach (XElement child in xml.Elements())
             {
                 if (child.Name.LocalName == "game")
                 {
                     Game game = TransformGame(child, dt);
-                    games.Add(game);
+                    string json = JsonConvert.SerializeObject(game, settings);
+                    JObject jobject = JObject.Parse(json);
+
+                    WriterReader reader = new WriterReader(typeof(Game));
+                    reader.Add(jobject);
+
+                    SequenceExecutor<Game> sequencer = new SequenceExecutor<Game>(reader, bulkWriteSettings);
+                    executes.Add(new ExecuteQuery(sequencer.Execute));
                 }
             }
-
-            JsonSerializerSettings settings = new JsonSerializerSettings() { Formatting = Formatting.Indented };
-            string json = JsonConvert.SerializeObject(games, settings);
-            WriterReader reader = new WriterReader(typeof(Game));
-            JArray array = JArray.Parse(json);
-            foreach (JObject jobject in array)
-            {
-                reader.Add(jobject);
-            }
-
-            BulkWriterSettings bulkWriteSettings = new BulkWriterSettings() { Store = new MlbType() };
-            SequenceExecutor<Game> sequencer = new SequenceExecutor<Game>(reader, bulkWriteSettings);
-            List<object> executes = new List<object>();
-            executes.Add(new ExecuteQuery(sequencer.Execute));
 
             SqlBulkWriter writer = new SqlBulkWriter();
             writer.LoadAndMergeInTransaction(executes, bulkWriteSettings);
