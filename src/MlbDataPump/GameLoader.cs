@@ -46,8 +46,13 @@ namespace MlbDataPump
                 reader.Add(jobject);
             }
 
+            BulkWriterSettings bulkWriteSettings = new BulkWriterSettings() { Store = new MlbType() };
+            SequenceExecutor<Game> sequencer = new SequenceExecutor<Game>(reader, bulkWriteSettings);
+            List<object> executes = new List<object>();
+            executes.Add(new ExecuteQuery(sequencer.Execute));
+
             SqlBulkWriter writer = new SqlBulkWriter();
-            writer.LoadAndMerge(reader, new BulkWriterSettings() { Store = new MlbType() });
+            writer.LoadAndMergeInTransaction(executes, bulkWriteSettings);
         }
 
         private static Game TransformGame(XElement child, DateTime date)
@@ -114,7 +119,7 @@ namespace MlbDataPump
             {
                 string code = player.Attribute("team_code").Value;
                 HomeRun hr = new HomeRun();
-                hr.GameId = game.GameId;
+                hr.RawGameId = game.GameId;
                 hr.Inning = int.Parse(player.Attribute("inning").Value);
                 hr.Runners = int.Parse(player.Attribute("runners").Value);
                 hr.Team = game.HomeTeam.Code == code ? game.HomeTeam : game.AwayTeam;

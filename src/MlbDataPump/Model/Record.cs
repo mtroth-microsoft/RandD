@@ -3,31 +3,31 @@ namespace MlbDataPump.Model
 {
     internal sealed class Record
     {
-        public int Wins
+        public int? Wins
         {
             get;
             set;
         }
 
-        public int Losses
+        public int? Losses
         {
             get;
             set;
         }
 
-        public decimal Era
+        public decimal? Era
         {
             get;
             set;
         }
 
-        public int Saves
+        public int? Saves
         {
             get;
             set;
         }
 
-        public int Opportunities
+        public int? Opportunities
         {
             get;
             set;

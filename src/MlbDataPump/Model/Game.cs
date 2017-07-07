@@ -6,6 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MlbDataPump.Model
 {
+    [Table("Games")]
     internal sealed class Game
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -51,6 +52,13 @@ namespace MlbDataPump.Model
             set;
         }
 
+        [NotMapped, ForeignKey("HomeTeam")]
+        public int HomeTeamId
+        {
+            get;
+            set;
+        }
+
         public Team HomeTeam
         {
             get;
@@ -58,6 +66,13 @@ namespace MlbDataPump.Model
         }
 
         public Record HomeRecord
+        {
+            get;
+            set;
+        }
+
+        [NotMapped, ForeignKey("AwayTeam")]
+        public int AwayTeamId
         {
             get;
             set;
@@ -75,6 +90,13 @@ namespace MlbDataPump.Model
             set;
         }
 
+        [NotMapped, ForeignKey("WinningPitcher")]
+        public int WinningPitcherId
+        {
+            get;
+            set;
+        }
+
         public Pitcher WinningPitcher
         {
             get;
@@ -87,6 +109,13 @@ namespace MlbDataPump.Model
             set;
         }
 
+        [NotMapped, ForeignKey("LosingPitcher")]
+        public int LosingPitcherId
+        {
+            get;
+            set;
+        }
+
         public Pitcher LosingPitcher
         {
             get;
@@ -94,6 +123,13 @@ namespace MlbDataPump.Model
         }
 
         public Record LosingPitcherRecord
+        {
+            get;
+            set;
+        }
+
+        [NotMapped, ForeignKey("SavingPitcher")]
+        public int? SavingPitcherId
         {
             get;
             set;

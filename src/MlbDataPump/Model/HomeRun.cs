@@ -1,9 +1,11 @@
 ﻿
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Infrastructure.DataAccess;
 
 namespace MlbDataPump.Model
 {
+    [Table("HomeRuns")]
     internal sealed class HomeRun
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -25,13 +27,40 @@ namespace MlbDataPump.Model
             set;
         }
 
-        public string GameId
+        public string RawGameId
+        {
+            get;
+            set;
+        }
+
+        [NotMapped, ForeignKey("Game")]
+        public long GameId
+        {
+            get;
+            set;
+        }
+
+        public Game Game
+        {
+            get;
+            set;
+        }
+
+        [NotMapped, ForeignKey("Hitter")]
+        public int HitterId
         {
             get;
             set;
         }
 
         public Hitter Hitter
+        {
+            get;
+            set;
+        }
+
+        [NotMapped, ForeignKey("Team")]
+        public int TeamId
         {
             get;
             set;

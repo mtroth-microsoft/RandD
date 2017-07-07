@@ -19,9 +19,11 @@ namespace MlbDataPump
             kernel.Bind<IConnectionFactory>().To<DefaultConnectionFactory>();
             kernel.Bind<IMessageLogger>().To<LoggingHelper>();
             Container.Initialize(kernel);
+            new MlbModel(null).GetModel();
 
             //Stage();
             //Transform();
+            //var game = QueryHelper.Read<Model.Game>(null).ToList().SingleOrDefault();
             var metadata = QueryHelper.Read<Model.FileMetadata>("Address eq 'http://gd2.mlb.com/components/game/mlb/year_2017/month_07/day_03/uber_scoreboard.xml?store=MlbType'")
                 .ToList()
                 .SingleOrDefault();

@@ -25,6 +25,13 @@ namespace MlbDataPump.Model
             set;
         }
 
+        [NotMapped, ForeignKey("Team")]
+        public int TeamId
+        {
+            get;
+            set;
+        }
+
         public Team Team
         {
             get;
