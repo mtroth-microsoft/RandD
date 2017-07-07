@@ -169,7 +169,8 @@ namespace MlbDataPump
 
             this.completed = new HashSet<Model.FileMetadata>(results.Where(p => p.Status == 1));
             this.returned = new HashSet<Model.FileMetadata>(results.Where(p => p.Status == 3));
-            this.addresses = new HashSet<Model.FileMetadata>(results.Where(p => p.Status == 2));
+            this.addresses = new HashSet<Model.FileMetadata>(results.Where(p => p.Status == 2 || p.Status == 4));
+            this.transformed = new HashSet<Model.FileMetadata>(results.Where(p => p.Status == 5));
 
             string template = ConfigurationManager.AppSettings["LocationTemplate"];
             DateTime now = DateTime.Now.AddDays(-1);
@@ -180,6 +181,7 @@ namespace MlbDataPump
                 if (this.completed.Any(p => p.Address == address) == false &&
                     this.returned.Any(p => p.Address == address) == false &&
                     this.running.Any(p => p.Address == address) == false &&
+                    this.transformed.Any(p => p.Address == address) == false &&
                     this.addresses.Any(p => p.Address == address) == false)
                 {
                     addresses.Add(new Model.FileMetadata() { Address = address });

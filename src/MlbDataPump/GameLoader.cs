@@ -36,14 +36,17 @@ namespace MlbDataPump
                 if (child.Name.LocalName == "game")
                 {
                     Game game = TransformGame(child, dt);
-                    string json = JsonConvert.SerializeObject(game, settings);
-                    JObject jobject = JObject.Parse(json);
+                    if (game.Innings > 0)
+                    {
+                        string json = JsonConvert.SerializeObject(game, settings);
+                        JObject jobject = JObject.Parse(json);
 
-                    WriterReader reader = new WriterReader(typeof(Game));
-                    reader.Add(jobject);
+                        WriterReader reader = new WriterReader(typeof(Game));
+                        reader.Add(jobject);
 
-                    SequenceExecutor<Game> sequencer = new SequenceExecutor<Game>(reader, bulkWriteSettings);
-                    executes.Add(new ExecuteQuery(sequencer.Execute));
+                        SequenceExecutor<Game> sequencer = new SequenceExecutor<Game>(reader, bulkWriteSettings);
+                        executes.Add(new ExecuteQuery(sequencer.Execute));
+                    }
                 }
             }
 
@@ -71,17 +74,20 @@ namespace MlbDataPump
             game.AwayTeam = new Team() { Id = int.Parse(awayId.Value), Name = awayName.Value, City = awayCity.Value, Code = awayCode.Value };
             game.HomeTeam = new Team() { Id = int.Parse(homeId.Value), Name = homeName.Value, City = homeCity.Value, Code = homeCode.Value };
             game.HomeRecord = new Record();
-            game.HomeRecord.Wins = int.Parse(child.Attribute("home_win").Value);
-            game.HomeRecord.Losses = int.Parse(child.Attribute("home_loss").Value);
+            game.HomeRecord.Wins = child.Attribute("home_win") == null ? (int?)null : int.Parse(child.Attribute("home_win").Value);
+            game.HomeRecord.Losses = child.Attribute("home_loss") == null ? (int?)null : int.Parse(child.Attribute("home_loss").Value);
             game.AwayRecord = new Record();
-            game.AwayRecord.Wins = int.Parse(child.Attribute("away_win").Value);
-            game.AwayRecord.Losses = int.Parse(child.Attribute("away_loss").Value);
+            game.AwayRecord.Wins = child.Attribute("away_win") == null ? (int?)null : int.Parse(child.Attribute("away_win").Value);
+            game.AwayRecord.Losses = child.Attribute("away_loss") == null ? (int?)null : int.Parse(child.Attribute("away_loss").Value);
 
             foreach (XElement sub in child.Elements())
             {
                 if (sub.Name.LocalName == "status")
                 {
-                    game.Innings = int.Parse(sub.Attribute("inning").Value);
+                    if (sub.Attribute("status").Value == "Final")
+                    {
+                        game.Innings = int.Parse(sub.Attribute("inning").Value);
+                    }
                 }
                 else if (sub.Name.LocalName == "linescore")
                 {
@@ -113,19 +119,23 @@ namespace MlbDataPump
             game.HomeRuns = new List<HomeRun>();
             foreach (XElement player in sub.Elements())
             {
+                string id = player.Attribute("id").Value;
                 string code = player.Attribute("team_code").Value;
                 HomeRun hr = new HomeRun();
                 hr.RawGameId = game.GameId;
                 hr.Inning = int.Parse(player.Attribute("inning").Value);
                 hr.Runners = int.Parse(player.Attribute("runners").Value);
                 hr.Team = game.HomeTeam.Code == code ? game.HomeTeam : game.AwayTeam;
-                hr.Hitter = new Hitter()
+                if (string.IsNullOrEmpty(id) == false)
                 {
-                    Id = int.Parse(player.Attribute("id").Value),
-                    First = player.Attribute("first").Value,
-                    Last = player.Attribute("last").Value,
-                    Team = hr.Team
-                };
+                    hr.Hitter = new Hitter()
+                    {
+                        Id = int.Parse(player.Attribute("id").Value),
+                        First = player.Attribute("first").Value,
+                        Last = player.Attribute("last").Value,
+                        Team = hr.Team
+                    };
+                }
 
                 game.HomeRuns.Add(hr);
             }
@@ -143,43 +153,51 @@ namespace MlbDataPump
                 game.SavingPitcher.Team = game.HomeScore.Runs > game.AwayScore.Runs ? game.HomeTeam : game.AwayTeam;
                 game.SavingPitcherRecord = new Record()
                 {
-                    Wins = int.Parse(sub.Attribute("wins").Value),
-                    Losses = int.Parse(sub.Attribute("losses").Value),
-                    Era = decimal.Parse(sub.Attribute("era").Value),
-                    Saves = int.Parse(sub.Attribute("saves").Value),
-                    Opportunities = int.Parse(sub.Attribute("svo").Value)
+                    Wins = sub.Attribute("wins") == null ? (int?)null : int.Parse(sub.Attribute("wins").Value),
+                    Losses = sub.Attribute("losses") == null ? (int?)null : int.Parse(sub.Attribute("losses").Value),
+                    Era = sub.Attribute("era") == null ? (decimal?)null : decimal.Parse(sub.Attribute("era").Value),
+                    Saves = sub.Attribute("saves") == null ? (int?)null : int.Parse(sub.Attribute("saves").Value),
+                    Opportunities = sub.Attribute("svo") == null ? (int?)null : int.Parse(sub.Attribute("svo").Value)
                 };
             }
         }
 
         private static void TransformLosingPitcher(Game game, XElement sub)
         {
-            game.LosingPitcher = new Pitcher();
-            game.LosingPitcher.Id = int.Parse(sub.Attribute("id").Value);
-            game.LosingPitcher.Last = sub.Attribute("last").Value;
-            game.LosingPitcher.First = sub.Attribute("first").Value;
-            game.LosingPitcher.Team = game.HomeScore.Runs > game.AwayScore.Runs ? game.AwayTeam : game.HomeTeam;
-            game.LosingPitcherRecord = new Record()
+            string id = sub.Attribute("id").Value;
+            if (string.IsNullOrEmpty(id) == false)
             {
-                Wins = int.Parse(sub.Attribute("wins").Value),
-                Losses = int.Parse(sub.Attribute("losses").Value),
-                Era = decimal.Parse(sub.Attribute("era").Value)
-            };
+                game.LosingPitcher = new Pitcher();
+                game.LosingPitcher.Id = int.Parse(id);
+                game.LosingPitcher.Last = sub.Attribute("last").Value;
+                game.LosingPitcher.First = sub.Attribute("first").Value;
+                game.LosingPitcher.Team = game.HomeScore.Runs > game.AwayScore.Runs ? game.AwayTeam : game.HomeTeam;
+                game.LosingPitcherRecord = new Record()
+                {
+                    Wins = sub.Attribute("wins") == null ? (int?)null : int.Parse(sub.Attribute("wins").Value),
+                    Losses = sub.Attribute("losses") == null ? (int?)null : int.Parse(sub.Attribute("losses").Value),
+                    Era = sub.Attribute("era") == null ? (decimal?)null : decimal.Parse(sub.Attribute("era").Value)
+                };
+            }
         }
 
         private static void TransformWinningPitcher(Game game, XElement sub)
         {
-            game.WinningPitcher = new Pitcher();
-            game.WinningPitcher.Id = int.Parse(sub.Attribute("id").Value);
-            game.WinningPitcher.Last = sub.Attribute("last").Value;
-            game.WinningPitcher.First = sub.Attribute("first").Value;
-            game.WinningPitcher.Team = game.HomeScore.Runs > game.AwayScore.Runs ? game.HomeTeam : game.AwayTeam;
-            game.WinningPitcherRecord = new Record()
+            string id = sub.Attribute("id").Value;
+            if (string.IsNullOrEmpty(id) == false)
             {
-                Wins = int.Parse(sub.Attribute("wins").Value),
-                Losses = int.Parse(sub.Attribute("losses").Value),
-                Era = decimal.Parse(sub.Attribute("era").Value)
-            };
+                game.WinningPitcher = new Pitcher();
+                game.WinningPitcher.Id = int.Parse(id);
+                game.WinningPitcher.Last = sub.Attribute("last").Value;
+                game.WinningPitcher.First = sub.Attribute("first").Value;
+                game.WinningPitcher.Team = game.HomeScore.Runs > game.AwayScore.Runs ? game.HomeTeam : game.AwayTeam;
+                game.WinningPitcherRecord = new Record()
+                {
+                    Wins = sub.Attribute("wins") == null ? (int?)null : int.Parse(sub.Attribute("wins").Value),
+                    Losses = sub.Attribute("losses") == null ? (int?)null : int.Parse(sub.Attribute("losses").Value),
+                    Era = sub.Attribute("era") == null ? (decimal?)null : decimal.Parse(sub.Attribute("era").Value)
+                };
+            }
         }
 
         private static void TransformLinescore(Game game, XElement sub)

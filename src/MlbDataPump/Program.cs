@@ -21,8 +21,8 @@ namespace MlbDataPump
             Container.Initialize(kernel);
             new MlbModel(null).GetModel();
 
-            //Stage();
-            //Transform();
+            Stage();
+            Transform();
             //var game = QueryHelper.Read<Model.Game>(null).ToList().SingleOrDefault();
             var metadata = QueryHelper.Read<Model.FileMetadata>("Address eq 'http://gd2.mlb.com/components/game/mlb/year_2017/month_07/day_03/uber_scoreboard.xml?store=MlbType'")
                 .ToList()
@@ -35,16 +35,20 @@ namespace MlbDataPump
             Model.FileMetadata metadata = null;
             do
             {
-                try
+                metadata = AddressHelper.Instance.GetNextTransform();
+                if (metadata != null)
                 {
-                    metadata = AddressHelper.Instance.GetNextTransform();
-                    GameLoader.Transform(metadata);
-                    AddressHelper.Instance.CommitTransform(metadata, true);
-                    Console.WriteLine("TRANSFORM:: " + metadata.Address);
-                }
-                catch (Exception ex)
-                {
-                    AddressHelper.Instance.CommitTransform(metadata, false);
+                    try
+                    {
+                        GameLoader.Transform(metadata);
+                        AddressHelper.Instance.CommitTransform(metadata, true);
+                        Console.WriteLine("TRANSFORM:: " + metadata.Address);
+                    }
+                    catch (Exception ex)
+                    {
+                        AddressHelper.Instance.CommitTransform(metadata, false);
+                        Console.WriteLine("TRANSFORM:: " + ex.Message);
+                    }
                 }
             }
             while (metadata != null);
@@ -57,18 +61,22 @@ namespace MlbDataPump
             do
             {
                 metadata = AddressHelper.Instance.GetNextAddress();
-                try
+                if (metadata != null)
                 {
-                    XElement page = WebRequestHelper.LoadPage(metadata);
-                    store.AddPage(metadata, page);
-                    AddressHelper.Instance.Ack(metadata);
-                    Console.WriteLine("STAGE:: " + metadata.Address);
-                }
-                catch (Exception ex)
-                {
-                    bool isxml = (ex is XmlException);
-                    bool isweb = (ex is WebException);
-                    AddressHelper.Instance.Nack(metadata, !(isxml || isweb));
+                    try
+                    {
+                        XElement page = WebRequestHelper.LoadPage(metadata);
+                        store.AddPage(metadata, page);
+                        AddressHelper.Instance.Ack(metadata);
+                        Console.WriteLine("STAGE:: " + metadata.Address);
+                    }
+                    catch (Exception ex)
+                    {
+                        bool isxml = (ex is XmlException);
+                        bool isweb = (ex is WebException);
+                        AddressHelper.Instance.Nack(metadata, !(isxml || isweb));
+                        Console.WriteLine("STAGE:: " + ex.Message);
+                    }
                 }
             }
             while (metadata != null);
