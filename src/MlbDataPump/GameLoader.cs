@@ -58,28 +58,13 @@ namespace MlbDataPump
         {
             XAttribute id = child.Attribute("id");
             XAttribute gameType = child.Attribute("game_type");
-            XAttribute homeCode = child.Attribute("home_code");
-            XAttribute awayCode = child.Attribute("away_code");
-            XAttribute homeCity = child.Attribute("home_team_city");
-            XAttribute awayCity = child.Attribute("away_team_city");
-            XAttribute homeName = child.Attribute("home_team_name");
-            XAttribute awayName = child.Attribute("away_team_name");
-            XAttribute homeId = child.Attribute("home_team_id");
-            XAttribute awayId = child.Attribute("away_team_id");
 
             Game game = new Game();
             game.GameId = id.Value;
             game.Date = date;
             game.GameType = (GameType)char.Parse(gameType.Value);
-            game.AwayTeam = new Team() { Id = ParseInt(awayId), Name = awayName.Value, City = awayCity.Value, Code = awayCode.Value };
-            game.HomeTeam = new Team() { Id = ParseInt(homeId), Name = homeName.Value, City = homeCity.Value, Code = homeCode.Value };
-            game.HomeRecord = new Record();
-            game.HomeRecord.Wins = ParseNullableInt(child.Attribute("home_win"));
-            game.HomeRecord.Losses = ParseNullableInt(child.Attribute("home_loss"));
-            game.AwayRecord = new Record();
-            game.AwayRecord.Wins = ParseNullableInt(child.Attribute("away_win"));
-            game.AwayRecord.Losses = ParseNullableInt(child.Attribute("away_loss"));
 
+            TransformTeams(child, game);
             foreach (XElement sub in child.Elements())
             {
                 if (sub.Name.LocalName == "status")
@@ -112,6 +97,46 @@ namespace MlbDataPump
             }
 
             return game;
+        }
+
+        private static void TransformTeams(XElement child, Game game)
+        {
+            TransformHomeTeam(child, game);
+            TransformAwayTeam(child, game);
+        }
+
+        private static void TransformHomeTeam(XElement child, Game game)
+        {
+            game.HomeRecord = new Record();
+            game.HomeRecord.Wins = ParseNullableInt(child.Attribute("home_win"));
+            game.HomeRecord.Losses = ParseNullableInt(child.Attribute("home_loss"));
+
+            game.HomeTeam = new Team()
+            {
+                Id = ParseInt(child.Attribute("home_team_id")),
+                Name = child.Attribute("home_team_name").Value,
+                City = child.Attribute("home_team_city").Value,
+                Code = child.Attribute("home_code").Value,
+                DivisionCode = child.Attribute("home_division").Value,
+                LeagueId = ParseInt(child.Attribute("home_league_id"))
+            };
+        }
+
+        private static void TransformAwayTeam(XElement child, Game game)
+        {
+            game.AwayRecord = new Record();
+            game.AwayRecord.Wins = ParseNullableInt(child.Attribute("away_win"));
+            game.AwayRecord.Losses = ParseNullableInt(child.Attribute("away_loss"));
+
+            game.AwayTeam = new Team()
+            {
+                Id = ParseInt(child.Attribute("away_team_id")),
+                Name = child.Attribute("away_team_name").Value,
+                City = child.Attribute("away_team_city").Value,
+                Code = child.Attribute("away_code").Value,
+                DivisionCode = child.Attribute("away_division").Value,
+                LeagueId = ParseInt(child.Attribute("away_league_id"))
+            };
         }
 
         private static void TransformHomeRuns(Game game, XElement sub)

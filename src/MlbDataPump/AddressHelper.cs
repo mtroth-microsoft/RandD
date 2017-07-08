@@ -34,7 +34,7 @@ namespace MlbDataPump
 
         private HashSet<Model.FileMetadata> failed = new HashSet<Model.FileMetadata>();
 
-        private DateTime watermark = new DateTime(2010, 1, 1);
+        private DateTimeOffset watermark = new DateTimeOffset(2017, 1, 1, 0, 0, 0, TimeSpan.FromHours(0));
 
         private AddressHelper()
         {
@@ -164,8 +164,9 @@ namespace MlbDataPump
         }
 
         private void Initialize()
-        {            
-            List<Model.FileMetadata> results = QueryHelper.Read<Model.FileMetadata>(null).ToList();
+        {
+            string filter = string.Format("EventDate ge {0}", this.watermark.ToString("o"));
+            List<Model.FileMetadata> results = QueryHelper.Read<Model.FileMetadata>(filter).ToList();
 
             this.completed = new HashSet<Model.FileMetadata>(results.Where(p => p.Status == 1));
             this.returned = new HashSet<Model.FileMetadata>(results.Where(p => p.Status == 3));
@@ -173,8 +174,8 @@ namespace MlbDataPump
             this.transformed = new HashSet<Model.FileMetadata>(results.Where(p => p.Status == 5));
 
             string template = ConfigurationManager.AppSettings["LocationTemplate"];
-            DateTime now = DateTime.Now.AddDays(-1);
-            DateTime test = this.watermark;
+            DateTimeOffset now = DateTimeOffset.Now.AddDays(-1);
+            DateTimeOffset test = this.watermark;
             while (now > test)
             {
                 string address = string.Format(template, test.Year, Convert(test.Month), Convert(test.Day));

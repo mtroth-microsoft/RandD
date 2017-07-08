@@ -31,5 +31,17 @@ namespace MlbDataPump.Model
             get;
             set;
         }
+
+        public string DivisionCode
+        {
+            get;
+            set;
+        }
+
+        public int LeagueId
+        {
+            get;
+            set;
+        }
     }
 }
