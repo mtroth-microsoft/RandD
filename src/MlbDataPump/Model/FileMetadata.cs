@@ -38,5 +38,12 @@ namespace MlbDataPump.Model
             get;
             set;
         }
+
+        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+        public DateTimeOffset EventDate
+        {
+            get;
+            set;
+        }
     }
 }

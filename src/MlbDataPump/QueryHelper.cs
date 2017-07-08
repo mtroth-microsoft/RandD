@@ -27,6 +27,21 @@ namespace MlbDataPump
             return queryable;
         }
 
+        public static IQueryable<T> ReadCustom<T>(string path)
+        {
+            string address = "http://host/service/FileMetadata?store=Mlb";
+            if (string.IsNullOrEmpty(path) == false)
+            {
+                address += path;
+            }
+
+            Uri uri = new Uri(address);
+            QueryBuilderSettings settings = DataFilterParsingHelper.ExtractToSettings(uri, null);
+            DynamicQueryable<T> queryable = new DynamicQueryable<T>(settings, new MlbType(), null);
+
+            return queryable;
+        }
+
         public static EdmEntityObject CreateEntity<T>(T instance)
         {
             EdmEntityType edmType = new EdmEntityType(typeof(T).Namespace, typeof(T).Name);
