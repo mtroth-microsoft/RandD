@@ -20,6 +20,7 @@ namespace MlbDataPump
             kernel.Bind<IMessageLogger>().To<LoggingHelper>();
             Container.Initialize(kernel);
             // new MlbModel(null).GetModel();
+            GetStandings();
 
             //var metadata = QueryHelper.ReadCustom<Model.FileMetadata>("&$top=1&$orderby=EventDate desc&$filter=Status eq 5")
             //    .ToList()
@@ -27,8 +28,15 @@ namespace MlbDataPump
             Stage();
             Transform();
             //Prune();
-            var team = QueryHelper.Read<Model.Team>("Name eq 'Mariners' and City eq 'Seattle'").ToList().SingleOrDefault();
-            var games = QueryHelper.Read<Model.Game>(string.Format("(HomeTeam/Id eq {0} or AwayTeam/Id eq {0}) and year(Date) eq 2017", team.Id)).ToList();
+            //var team = QueryHelper.Read<Model.Team>("Name eq 'Mariners' and City eq 'Seattle'").ToList().SingleOrDefault();
+            //var games = QueryHelper.Read<Model.Game>(string.Format("(HomeTeam/Id eq {0} or AwayTeam/Id eq {0}) and year(Date) eq 2017", team.Id)).ToList();
+        }
+
+        private static void GetStandings()
+        {
+            DynamicProcedure<Model.StandingRecord> sp = new DynamicProcedure<Model.StandingRecord>(new MlbType());
+            sp.Name = "dbo.GetGameByGameOutcomes";
+            List<Model.StandingRecord> results = sp.Execute().ToList();
         }
 
         private static void Prune()
