@@ -10,6 +10,12 @@ namespace MlbDataPump.Model
             set;
         }
 
+        public string DivisionCode
+        {
+            get;
+            set;
+        }
+
         public string Name
         {
             get;
@@ -29,6 +35,18 @@ namespace MlbDataPump.Model
         }
 
         public decimal Pct
+        {
+            get;
+            set;
+        }
+
+        public decimal? GB
+        {
+            get;
+            set;
+        }
+
+        public decimal? WCGB
         {
             get;
             set;
@@ -83,6 +101,30 @@ namespace MlbDataPump.Model
         }
 
         public int L
+        {
+            get;
+            set;
+        }
+
+        public int WinsAtHome
+        {
+            get;
+            set;
+        }
+
+        public int LossesAtHome
+        {
+            get;
+            set;
+        }
+
+        public int WinsOnRoad
+        {
+            get;
+            set;
+        }
+
+        public int LossesOnRoad
         {
             get;
             set;
