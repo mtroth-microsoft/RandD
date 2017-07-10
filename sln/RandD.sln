@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevHarness", "..\src\DevHar
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MlbDataPump", "..\src\MlbDataPump\MlbDataPump.csproj", "{7490C8BF-D067-4691-A88E-F4E07E2235E9}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "MlbDb", "MlbDb\MlbDb.sqlproj", "{50752617-04BF-483E-8BA3-C8B0689B33FD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,12 @@ Global
 		{7490C8BF-D067-4691-A88E-F4E07E2235E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7490C8BF-D067-4691-A88E-F4E07E2235E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7490C8BF-D067-4691-A88E-F4E07E2235E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50752617-04BF-483E-8BA3-C8B0689B33FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50752617-04BF-483E-8BA3-C8B0689B33FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50752617-04BF-483E-8BA3-C8B0689B33FD}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{50752617-04BF-483E-8BA3-C8B0689B33FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50752617-04BF-483E-8BA3-C8B0689B33FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50752617-04BF-483E-8BA3-C8B0689B33FD}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
