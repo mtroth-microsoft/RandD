@@ -59,10 +59,18 @@
     <Folder Include="Properties" />
     <Folder Include="dbo" />
     <Folder Include="dbo\Procedures" />
+    <Folder Include="dbo\Tables" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Procedures\GetGameByGameOutcomes.sql" />
     <Build Include="dbo\Procedures\GetLastTenGamesRecord.sql" />
     <Build Include="dbo\Procedures\GetStandings.sql" />
+    <Build Include="dbo\Tables\FileMetadata.sql" />
+    <Build Include="dbo\Tables\FileStaging.sql" />
+    <Build Include="dbo\Tables\Games.sql" />
+    <Build Include="dbo\Tables\Hitters.sql" />
+    <Build Include="dbo\Tables\HomeRuns.sql" />
+    <Build Include="dbo\Tables\Pitchers.sql" />
+    <Build Include="dbo\Tables\Teams.sql" />
   </ItemGroup>
 </Project>
