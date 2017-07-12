@@ -103,6 +103,7 @@
     <Compile Include="Model\Pitcher.cs" />
     <Compile Include="Model\Hitter.cs" />
     <Compile Include="Model\Player.cs" />
+    <Compile Include="Model\Preview.cs" />
     <Compile Include="Model\Record.cs" />
     <Compile Include="Model\Score.cs" />
     <Compile Include="Model\StandingRecord.cs" />

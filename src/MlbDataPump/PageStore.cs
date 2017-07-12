@@ -12,39 +12,68 @@ namespace MlbDataPump
 {
     internal sealed class PageStore
     {
-        public void AddPage(Model.FileMetadata metadata, XElement xml)
+        public bool AddPage(Model.FileMetadata metadata, XElement xml)
         {
-            Model.FileStaging result = QueryHelper
-                .Read<Model.FileStaging>(string.Format("Address eq '{0}'", metadata.Address))
-                .ToList()
-                .SingleOrDefault();
-
-            if (result == null)
+            if (Verify(xml) == true)
             {
-                Model.FileStaging file = new Model.FileStaging();
-                file.Content = xml.ToString();
-                file.Address = metadata.Address;
+                Model.FileStaging result = QueryHelper
+                    .Read<Model.FileStaging>(string.Format("Address eq '{0}'", metadata.Address))
+                    .ToList()
+                    .SingleOrDefault();
 
-                //IEdmPrimitiveType type = EdmCoreModel.Instance.GetPrimitiveType(EdmPrimitiveTypeKind.String);
-                //IEdmPrimitiveType type1 = EdmCoreModel.Instance.GetPrimitiveType(EdmPrimitiveTypeKind.Int64);
-                //IEdmPrimitiveTypeReference typeKind = new EdmPrimitiveTypeReference(type, false);
-                //IEdmPrimitiveTypeReference typeKind1 = new EdmPrimitiveTypeReference(type1, false);
-                //EdmEntityType edmType = new EdmEntityType("MlbModel", "FileStaging");
-                //edmType.AddProperty(new EdmStructuralProperty(edmType, "Content", typeKind));
-                //edmType.AddProperty(new EdmStructuralProperty(edmType, "Id", typeKind1));
-                //edmType.AddProperty(new EdmStructuralProperty(edmType, "Address", typeKind));
+                if (result == null)
+                {
+                    Model.FileStaging file = new Model.FileStaging();
+                    file.Content = xml.ToString();
+                    file.Address = metadata.Address;
 
-                //EdmEntityObject eeo = new EdmEntityObject(edmType);
-                //eeo.TrySetPropertyValue("Content", file.Content);
-                //eeo.TrySetPropertyValue("Id", file.Id);
-                //eeo.TrySetPropertyValue("Address", file.Address);
+                    EdmEntityObject eeo = QueryHelper.CreateEntity(file);
 
-                EdmEntityObject eeo = QueryHelper.CreateEntity(file);
-
-                MlbModel model = new MlbModel(new Uri(metadata.Address));
-                WriteRequest request = new WriteRequest() { Entity = eeo };
-                model.Post<Model.FileStaging>(request);
+                    MlbModel model = new MlbModel(new Uri(metadata.Address));
+                    WriteRequest request = new WriteRequest() { Entity = eeo };
+                    model.Post<Model.FileStaging>(request);
+                }
             }
+            else
+            {
+                GameLoader.HandlePreviews(metadata, xml);
+                return true;
+            }
+
+            return false;
+        }
+
+        private static bool Verify(XElement xml)
+        {
+            foreach (XElement child in xml.Elements())
+            {
+                if (child.Name.LocalName == "game")
+                {
+                    if (VerifyStatus(child) == false)
+                    {
+                        return false;
+                    }
+                }
+            }
+
+            return true;
+        }
+
+        private static bool VerifyStatus(XElement child)
+        {
+            foreach (XElement sub in child.Elements())
+            {
+                if (sub.Name.LocalName == "status")
+                {
+                    if (sub.Attribute("status").Value == "Preview" ||
+                        sub.Attribute("status").Value == "InProgress")
+                    {
+                        return false;
+                    }
+                }
+            }
+
+            return true;
         }
     }
 }

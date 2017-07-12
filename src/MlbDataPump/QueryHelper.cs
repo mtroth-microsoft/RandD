@@ -7,11 +7,42 @@ using System.Web.OData;
 using Infrastructure.DataAccess;
 using Infrastructure.DataAccess.OdataExpressionModel;
 using Microsoft.OData.Edm;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace MlbDataPump
 {
     internal static class QueryHelper
     {
+        public static void Prune()
+        {
+            DynamicNonQuery sp = new DynamicNonQuery(new MlbType());
+            sp.Name = "dbo.PruneMlb";
+            int results = sp.Execute();
+        }
+
+        public static void GetStandings()
+        {
+            DynamicProcedure<Model.StandingRecord> sp = new DynamicProcedure<Model.StandingRecord>(new MlbType());
+            sp.Name = "dbo.GetGameByGameOutcomes";
+            List<Model.StandingRecord> results = sp.Execute().ToList();
+        }
+
+        public static void Write<T>(List<T> instances)
+        {
+            WriterReader reader = new WriterReader(typeof(T));
+            string json = JsonConvert.SerializeObject(instances);
+            JArray array = JArray.Parse(json);
+            foreach (JObject obj in array)
+            {
+                reader.Add(obj);
+            }
+
+            BulkWriterSettings settings = new BulkWriterSettings() { Store = new MlbType() };
+            SqlBulkWriter writer = new SqlBulkWriter();
+            writer.LoadAndMerge(reader, settings);
+        }
+
         public static IQueryable<T> Read<T>(string filter)
         {
             string address = "http://host/service/FileMetadata?store=Mlb";

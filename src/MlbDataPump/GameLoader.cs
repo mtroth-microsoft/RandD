@@ -54,6 +54,48 @@ namespace MlbDataPump
             writer.LoadAndMergeInTransaction(executes, bulkWriteSettings);
         }
 
+        internal static void HandlePreviews(FileMetadata metadata, XElement xml)
+        {
+            XAttribute year = xml.Attribute("year");
+            XAttribute month = xml.Attribute("month");
+            XAttribute day = xml.Attribute("day");
+            DateTime dt = new DateTime(int.Parse(year.Value), int.Parse(month.Value), int.Parse(day.Value));
+
+            foreach (XElement child in xml.Elements())
+            {
+                if (child.Name.LocalName == "game")
+                {
+                    List<Model.Preview> previews = new List<Preview>();
+                    int homeTeamId = ParseInt(child.Attribute("home_team_id"));
+                    int awayTeamId = ParseInt(child.Attribute("away_team_id"));
+                    foreach (XElement sub in child.Elements())
+                    {
+                        if (sub.Name.LocalName == "status")
+                        {
+                            if (sub.Attribute("status").Value == "Preview" ||
+                                sub.Attribute("status").Value == "InProgress")
+                            {
+                                XAttribute id = child.Attribute("id");
+                                XAttribute gameType = child.Attribute("game_type");
+
+                                Model.Preview preview = new Model.Preview();
+                                preview.Id = IdUtil.GetGuidFromString(id.Value);
+                                preview.GameId = id.Value;
+                                preview.Date = dt;
+                                preview.Address = metadata.Address;
+                                preview.GameType = (Model.GameType)char.Parse(gameType.Value);
+                                preview.AwayTeamId = awayTeamId;
+                                preview.HomeTeamId = homeTeamId;
+                                previews.Add(preview);
+                            }
+                        }
+                    }
+
+                    QueryHelper.Write(previews);
+                }
+            }
+        }
+
         private static Game TransformGame(XElement child, DateTime date)
         {
             XAttribute id = child.Attribute("id");

@@ -20,27 +20,20 @@ namespace MlbDataPump
             kernel.Bind<IMessageLogger>().To<LoggingHelper>();
             Container.Initialize(kernel);
             // new MlbModel(null).GetModel();
-            GetStandings();
 
             //var metadata = QueryHelper.ReadCustom<Model.FileMetadata>("&$top=1&$orderby=EventDate desc&$filter=Status eq 5")
             //    .ToList()
             //    .SingleOrDefault();
             Stage();
             Transform();
-            //Prune();
+            Prune();
             //var team = QueryHelper.Read<Model.Team>("Name eq 'Mariners' and City eq 'Seattle'").ToList().SingleOrDefault();
             //var games = QueryHelper.Read<Model.Game>(string.Format("(HomeTeam/Id eq {0} or AwayTeam/Id eq {0}) and year(Date) eq 2017", team.Id)).ToList();
         }
 
-        private static void GetStandings()
-        {
-            DynamicProcedure<Model.StandingRecord> sp = new DynamicProcedure<Model.StandingRecord>(new MlbType());
-            sp.Name = "dbo.GetGameByGameOutcomes";
-            List<Model.StandingRecord> results = sp.Execute().ToList();
-        }
-
         private static void Prune()
         {
+            QueryHelper.Prune();
         }
 
         private static void Transform()
@@ -73,22 +66,32 @@ namespace MlbDataPump
             Model.FileMetadata metadata = null;
             do
             {
+                string operation = "STAGE:: ";
                 metadata = AddressHelper.Instance.GetNextAddress();
                 if (metadata != null)
                 {
                     try
                     {
                         XElement page = WebRequestHelper.LoadPage(metadata);
-                        store.AddPage(metadata, page);
-                        AddressHelper.Instance.Ack(metadata);
-                        Console.WriteLine("STAGE:: " + metadata.Address);
+                        bool preview = store.AddPage(metadata, page);
+                        if (preview == false)
+                        {
+                            AddressHelper.Instance.Ack(metadata);
+                            Console.WriteLine(operation + metadata.Address);
+                        }
+                        else
+                        {
+                            operation = "PREVIEW:: ";
+                            AddressHelper.Instance.SetPreview(metadata);
+                            Console.WriteLine(operation + metadata.Address);
+                        }
                     }
                     catch (Exception ex)
                     {
                         bool isxml = (ex is XmlException);
                         bool isweb = (ex is WebException);
                         AddressHelper.Instance.Nack(metadata, !(isxml || isweb));
-                        Console.WriteLine("STAGE:: " + ex.Message);
+                        Console.WriteLine(operation + ex.Message);
                     }
                 }
             }

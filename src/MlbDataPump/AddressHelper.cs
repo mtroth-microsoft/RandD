@@ -12,6 +12,7 @@ namespace MlbDataPump
 {
     /// <summary>
     /// Status:
+    /// 0: preview
     /// 1: staged
     /// 2: running
     /// 3: staging error
@@ -33,6 +34,8 @@ namespace MlbDataPump
         private HashSet<Model.FileMetadata> transformed = new HashSet<Model.FileMetadata>();
 
         private HashSet<Model.FileMetadata> failed = new HashSet<Model.FileMetadata>();
+
+        private HashSet<Model.FileMetadata> previews = new HashSet<Model.FileMetadata>();
 
         private DateTimeOffset watermark = new DateTimeOffset(2017, 1, 1, 0, 0, 0, TimeSpan.FromHours(0));
 
@@ -151,6 +154,20 @@ namespace MlbDataPump
             }
         }
 
+        public void SetPreview(Model.FileMetadata metadata)
+        {
+            if (this.running.Contains(metadata) == true &&
+                this.previews.Contains(metadata) == false &&
+                metadata != null)
+            {
+                this.previews.Add(metadata);
+                this.running.Remove(metadata);
+                metadata.EndTime = DateTimeOffset.UtcNow;
+                metadata.Status = 0;
+                metadata = this.Set(metadata);
+            }
+        }
+
         private static string Convert(int value)
         {
             if (value >= 10)
@@ -170,11 +187,11 @@ namespace MlbDataPump
 
             this.completed = new HashSet<Model.FileMetadata>(results.Where(p => p.Status == 1));
             this.returned = new HashSet<Model.FileMetadata>(results.Where(p => p.Status == 3));
-            this.addresses = new HashSet<Model.FileMetadata>(results.Where(p => p.Status == 2 || p.Status == 4));
+            this.addresses = new HashSet<Model.FileMetadata>(results.Where(p => p.Status == 2 || p.Status == 4 || p.Status == 0));
             this.transformed = new HashSet<Model.FileMetadata>(results.Where(p => p.Status == 5));
 
             string template = ConfigurationManager.AppSettings["LocationTemplate"];
-            DateTimeOffset now = DateTimeOffset.Now.AddDays(-1);
+            DateTimeOffset now = DateTimeOffset.Now.AddDays(5);
             DateTimeOffset test = this.watermark;
             while (now > test)
             {
