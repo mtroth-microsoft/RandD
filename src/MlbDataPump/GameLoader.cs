@@ -61,13 +61,14 @@ namespace MlbDataPump
             XAttribute day = xml.Attribute("day");
             DateTime dt = new DateTime(int.Parse(year.Value), int.Parse(month.Value), int.Parse(day.Value));
 
+            List<Model.Preview> previews = new List<Preview>();
             foreach (XElement child in xml.Elements())
             {
                 if (child.Name.LocalName == "game")
                 {
-                    List<Model.Preview> previews = new List<Preview>();
                     int homeTeamId = ParseInt(child.Attribute("home_team_id"));
                     int awayTeamId = ParseInt(child.Attribute("away_team_id"));
+                    TimeSpan tod = GetTimeOfDay(child.Attribute("time"), child.Attribute("time_zone"));
                     foreach (XElement sub in child.Elements())
                     {
                         if (sub.Name.LocalName == "status")
@@ -82,6 +83,7 @@ namespace MlbDataPump
                                 preview.Id = IdUtil.GetGuidFromString(id.Value);
                                 preview.GameId = id.Value;
                                 preview.Date = dt;
+                                preview.TimeOfDay = tod.ToString();
                                 preview.Address = metadata.Address;
                                 preview.GameType = (Model.GameType)char.Parse(gameType.Value);
                                 preview.AwayTeamId = awayTeamId;
@@ -90,9 +92,12 @@ namespace MlbDataPump
                             }
                         }
                     }
-
-                    QueryHelper.Write(previews);
                 }
+            }
+
+            if (previews.Count > 0)
+            {
+                QueryHelper.Write(previews);
             }
         }
 
@@ -100,10 +105,12 @@ namespace MlbDataPump
         {
             XAttribute id = child.Attribute("id");
             XAttribute gameType = child.Attribute("game_type");
+            TimeSpan tod = GetTimeOfDay(child.Attribute("time"), child.Attribute("time_zone"));
 
             Game game = new Game();
             game.GameId = id.Value;
             game.Date = date;
+            game.TimeOfDay = tod.ToString();
             game.GameType = (GameType)char.Parse(gameType.Value);
 
             TransformTeams(child, game);
@@ -345,6 +352,25 @@ namespace MlbDataPump
             {
                 return null;
             }
+        }
+
+        private static TimeSpan GetTimeOfDay(XAttribute time, XAttribute timeZone)
+        {
+            DateTime timeOfDay = DateTime.Parse(time.Value + " PM");
+            switch (timeZone.Value)
+            {
+                case "CT":
+                    timeOfDay = timeOfDay.AddHours(1);
+                    break;
+                case "MT":
+                    timeOfDay = timeOfDay.AddHours(2);
+                    break;
+                case "PT":
+                    timeOfDay = timeOfDay.AddHours(3);
+                    break;
+            }
+
+            return timeOfDay - DateTime.Parse("0:00 AM");
         }
     }
 }

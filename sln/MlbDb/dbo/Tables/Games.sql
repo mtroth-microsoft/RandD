@@ -2,6 +2,7 @@
 	[Id] [bigint] IDENTITY(1,1) NOT NULL,
 	[GameId] [nvarchar](128) NULL,
 	[Date] [datetimeoffset](7) NOT NULL,
+    [TimeOfDay] [nvarchar](10) NOT NULL,
 	[GameType] [int] NOT NULL,
 	[Innings] [int] NOT NULL,
 	[HomeScore_Runs] [int] NOT NULL,

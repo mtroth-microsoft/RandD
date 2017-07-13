@@ -20,6 +20,7 @@ namespace MlbDataPump
             kernel.Bind<IMessageLogger>().To<LoggingHelper>();
             Container.Initialize(kernel);
             // new MlbModel(null).GetModel();
+            QueryHelper.GetStandings();
 
             //var metadata = QueryHelper.ReadCustom<Model.FileMetadata>("&$top=1&$orderby=EventDate desc&$filter=Status eq 5")
             //    .ToList()

@@ -28,6 +28,12 @@ namespace MlbDataPump.Model
             set;
         }
 
+        public string TimeOfDay
+        {
+            get;
+            set;
+        }
+
         public GameType GameType
         {
             get;

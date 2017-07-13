@@ -129,5 +129,23 @@ namespace MlbDataPump.Model
             get;
             set;
         }
+
+        public string NextOpponent
+        {
+            get;
+            set;
+        }
+
+        public string NextGameCode
+        {
+            get;
+            set;
+        }
+
+        public DateTimeOffset NextGame
+        {
+            get;
+            set;
+        }
     }
 }
