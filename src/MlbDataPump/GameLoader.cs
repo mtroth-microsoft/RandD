@@ -15,6 +15,8 @@ namespace MlbDataPump
     /// </summary>
     internal static class GameLoader
     {
+        private const string TimeZoneName = "Eastern Standard Time";
+
         internal static void Transform(FileMetadata metadata)
         {
             JsonSerializerSettings settings = new JsonSerializerSettings() { Formatting = Formatting.Indented };
@@ -28,7 +30,7 @@ namespace MlbDataPump
             XAttribute year = xml.Attribute("year");
             XAttribute month = xml.Attribute("month");
             XAttribute day = xml.Attribute("day");
-            DateTimeOffset dt = new DateTimeOffset(int.Parse(year.Value), int.Parse(month.Value), int.Parse(day.Value), 0, 0, 0, TimeSpan.FromHours(-4));
+            DateTimeOffset dt = GetGameTimeBasis(year, month, day);
 
             List<object> executes = new List<object>();
             foreach (XElement child in xml.Elements())
@@ -59,7 +61,7 @@ namespace MlbDataPump
             XAttribute year = xml.Attribute("year");
             XAttribute month = xml.Attribute("month");
             XAttribute day = xml.Attribute("day");
-            DateTimeOffset dt = new DateTimeOffset(int.Parse(year.Value), int.Parse(month.Value), int.Parse(day.Value), 0, 0, 0, TimeSpan.FromHours(-4));
+            DateTimeOffset dt = GetGameTimeBasis(year, month, day);
 
             List<Model.Preview> previews = new List<Preview>();
             foreach (XElement child in xml.Elements())
@@ -352,6 +354,29 @@ namespace MlbDataPump
             {
                 return null;
             }
+        }
+
+        private static DateTimeOffset GetGameTimeBasis(XAttribute year, XAttribute month, XAttribute day)
+        {
+            DateTimeOffset dt = new DateTimeOffset(
+                int.Parse(year.Value),
+                int.Parse(month.Value),
+                int.Parse(day.Value),
+                0,
+                0,
+                0,
+                GetOffset(TimeZoneName));
+
+            return dt;
+        }
+
+        private static TimeSpan GetOffset(string tzName)
+        {
+            TimeZoneInfo tz = TimeZoneInfo.FindSystemTimeZoneById(tzName);
+            DateTime now = TimeZoneInfo.ConvertTime(DateTime.Now, tz);
+            TimeSpan offset = tz.GetUtcOffset(now);
+
+            return offset;
         }
 
         private static TimeSpan GetTimeOfDay(XAttribute time, XAttribute timeZone)
