@@ -28,7 +28,7 @@ namespace MlbDataPump
             XAttribute year = xml.Attribute("year");
             XAttribute month = xml.Attribute("month");
             XAttribute day = xml.Attribute("day");
-            DateTime dt = new DateTime(int.Parse(year.Value), int.Parse(month.Value), int.Parse(day.Value));
+            DateTimeOffset dt = new DateTimeOffset(int.Parse(year.Value), int.Parse(month.Value), int.Parse(day.Value), 0, 0, 0, TimeSpan.FromHours(-4));
 
             List<object> executes = new List<object>();
             foreach (XElement child in xml.Elements())
@@ -59,7 +59,7 @@ namespace MlbDataPump
             XAttribute year = xml.Attribute("year");
             XAttribute month = xml.Attribute("month");
             XAttribute day = xml.Attribute("day");
-            DateTime dt = new DateTime(int.Parse(year.Value), int.Parse(month.Value), int.Parse(day.Value));
+            DateTimeOffset dt = new DateTimeOffset(int.Parse(year.Value), int.Parse(month.Value), int.Parse(day.Value), 0, 0, 0, TimeSpan.FromHours(-4));
 
             List<Model.Preview> previews = new List<Preview>();
             foreach (XElement child in xml.Elements())
@@ -82,7 +82,7 @@ namespace MlbDataPump
                                 Model.Preview preview = new Model.Preview();
                                 preview.Id = IdUtil.GetGuidFromString(id.Value);
                                 preview.GameId = id.Value;
-                                preview.Date = dt;
+                                preview.Date = dt + tod;
                                 preview.TimeOfDay = tod.ToString();
                                 preview.Address = metadata.Address;
                                 preview.GameType = (Model.GameType)char.Parse(gameType.Value);
@@ -101,7 +101,7 @@ namespace MlbDataPump
             }
         }
 
-        private static Game TransformGame(XElement child, DateTime date)
+        private static Game TransformGame(XElement child, DateTimeOffset date)
         {
             XAttribute id = child.Attribute("id");
             XAttribute gameType = child.Attribute("game_type");
@@ -109,7 +109,7 @@ namespace MlbDataPump
 
             Game game = new Game();
             game.GameId = id.Value;
-            game.Date = date;
+            game.Date = date + tod;
             game.TimeOfDay = tod.ToString();
             game.GameType = (GameType)char.Parse(gameType.Value);
 
