@@ -76,7 +76,7 @@ namespace MlbDataPump
                         if (sub.Name.LocalName == "status")
                         {
                             if (sub.Attribute("status").Value == "Preview" ||
-                                sub.Attribute("status").Value == "InProgress")
+                                sub.Attribute("status").Value == "In Progress")
                             {
                                 XAttribute id = child.Attribute("id");
                                 XAttribute gameType = child.Attribute("game_type");
