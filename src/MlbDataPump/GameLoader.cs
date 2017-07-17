@@ -15,6 +15,8 @@ namespace MlbDataPump
     /// </summary>
     internal static class GameLoader
     {
+        private const string TimeZoneName = "Eastern Standard Time";
+
         internal static void Transform(FileMetadata metadata)
         {
             JsonSerializerSettings settings = new JsonSerializerSettings() { Formatting = Formatting.Indented };
@@ -28,7 +30,7 @@ namespace MlbDataPump
             XAttribute year = xml.Attribute("year");
             XAttribute month = xml.Attribute("month");
             XAttribute day = xml.Attribute("day");
-            DateTime dt = new DateTime(int.Parse(year.Value), int.Parse(month.Value), int.Parse(day.Value));
+            DateTimeOffset dt = GetGameTimeBasis(year, month, day);
 
             List<object> executes = new List<object>();
             foreach (XElement child in xml.Elements())
@@ -59,7 +61,7 @@ namespace MlbDataPump
             XAttribute year = xml.Attribute("year");
             XAttribute month = xml.Attribute("month");
             XAttribute day = xml.Attribute("day");
-            DateTime dt = new DateTime(int.Parse(year.Value), int.Parse(month.Value), int.Parse(day.Value));
+            DateTimeOffset dt = GetGameTimeBasis(year, month, day);
 
             List<Model.Preview> previews = new List<Preview>();
             foreach (XElement child in xml.Elements())
@@ -74,7 +76,7 @@ namespace MlbDataPump
                         if (sub.Name.LocalName == "status")
                         {
                             if (sub.Attribute("status").Value == "Preview" ||
-                                sub.Attribute("status").Value == "InProgress")
+                                sub.Attribute("status").Value == "In Progress")
                             {
                                 XAttribute id = child.Attribute("id");
                                 XAttribute gameType = child.Attribute("game_type");
@@ -82,7 +84,7 @@ namespace MlbDataPump
                                 Model.Preview preview = new Model.Preview();
                                 preview.Id = IdUtil.GetGuidFromString(id.Value);
                                 preview.GameId = id.Value;
-                                preview.Date = dt;
+                                preview.Date = dt + tod;
                                 preview.TimeOfDay = tod.ToString();
                                 preview.Address = metadata.Address;
                                 preview.GameType = (Model.GameType)char.Parse(gameType.Value);
@@ -101,7 +103,7 @@ namespace MlbDataPump
             }
         }
 
-        private static Game TransformGame(XElement child, DateTime date)
+        private static Game TransformGame(XElement child, DateTimeOffset date)
         {
             XAttribute id = child.Attribute("id");
             XAttribute gameType = child.Attribute("game_type");
@@ -109,7 +111,7 @@ namespace MlbDataPump
 
             Game game = new Game();
             game.GameId = id.Value;
-            game.Date = date;
+            game.Date = date + tod;
             game.TimeOfDay = tod.ToString();
             game.GameType = (GameType)char.Parse(gameType.Value);
 
@@ -352,6 +354,29 @@ namespace MlbDataPump
             {
                 return null;
             }
+        }
+
+        private static DateTimeOffset GetGameTimeBasis(XAttribute year, XAttribute month, XAttribute day)
+        {
+            DateTimeOffset dt = new DateTimeOffset(
+                int.Parse(year.Value),
+                int.Parse(month.Value),
+                int.Parse(day.Value),
+                0,
+                0,
+                0,
+                GetOffset(TimeZoneName));
+
+            return dt;
+        }
+
+        private static TimeSpan GetOffset(string tzName)
+        {
+            TimeZoneInfo tz = TimeZoneInfo.FindSystemTimeZoneById(tzName);
+            DateTime now = TimeZoneInfo.ConvertTime(DateTime.Now, tz);
+            TimeSpan offset = tz.GetUtcOffset(now);
+
+            return offset;
         }
 
         private static TimeSpan GetTimeOfDay(XAttribute time, XAttribute timeZone)
