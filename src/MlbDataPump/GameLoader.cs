@@ -17,11 +17,12 @@ namespace MlbDataPump
     {
         private const string TimeZoneName = "Eastern Standard Time";
 
+        private static JsonSerializerSettings settings = new JsonSerializerSettings() { Formatting = Formatting.Indented };
+
+        private static BulkWriterSettings bulkWriteSettings = new BulkWriterSettings() { Store = new MlbType() };
+
         internal static void Transform(FileMetadata metadata)
         {
-            JsonSerializerSettings settings = new JsonSerializerSettings() { Formatting = Formatting.Indented };
-            BulkWriterSettings bulkWriteSettings = new BulkWriterSettings() { Store = new MlbType() };
-
             Model.FileStaging result = QueryHelper
                 .Read<Model.FileStaging>(string.Format("Address eq '{0}'", metadata.Address))
                 .ToList()
@@ -37,23 +38,34 @@ namespace MlbDataPump
             {
                 if (child.Name.LocalName == "game")
                 {
-                    Game game = TransformGame(child, dt);
-                    if (game.Innings > 0)
+                    ExecuteQuery query = HandleGame(child, dt);
+                    if (query != null)
                     {
-                        string json = JsonConvert.SerializeObject(game, settings);
-                        JObject jobject = JObject.Parse(json);
-
-                        WriterReader reader = new WriterReader(typeof(Game));
-                        reader.Add(jobject);
-
-                        SequenceExecutor<Game> sequencer = new SequenceExecutor<Game>(reader, bulkWriteSettings);
-                        executes.Add(new ExecuteQuery(sequencer.Execute));
+                        executes.Add(query);
                     }
                 }
             }
 
             SqlBulkWriter writer = new SqlBulkWriter();
             writer.LoadAndMergeInTransaction(executes, bulkWriteSettings);
+        }
+
+        private static ExecuteQuery HandleGame(XElement element, DateTimeOffset dt)
+        {
+            Game game = TransformGame(element, dt);
+            if (game.Innings > 0)
+            {
+                string json = JsonConvert.SerializeObject(game, settings);
+                JObject jobject = JObject.Parse(json);
+
+                WriterReader reader = new WriterReader(typeof(Game));
+                reader.Add(jobject);
+
+                SequenceExecutor<Game> sequencer = new SequenceExecutor<Game>(reader, bulkWriteSettings);
+                return new ExecuteQuery(sequencer.Execute);
+            }
+
+            return null;
         }
 
         internal static void HandlePreviews(FileMetadata metadata, XElement xml)
@@ -63,14 +75,12 @@ namespace MlbDataPump
             XAttribute day = xml.Attribute("day");
             DateTimeOffset dt = GetGameTimeBasis(year, month, day);
 
+            List<object> executes = new List<object>();
             List<Model.Preview> previews = new List<Preview>();
             foreach (XElement child in xml.Elements())
             {
                 if (child.Name.LocalName == "game")
                 {
-                    int homeTeamId = ParseInt(child.Attribute("home_team_id"));
-                    int awayTeamId = ParseInt(child.Attribute("away_team_id"));
-                    TimeSpan tod = GetTimeOfDay(child.Attribute("time"), child.Attribute("time_zone"));
                     foreach (XElement sub in child.Elements())
                     {
                         if (sub.Name.LocalName == "status")
@@ -78,19 +88,19 @@ namespace MlbDataPump
                             if (sub.Attribute("status").Value == "Preview" ||
                                 sub.Attribute("status").Value == "In Progress")
                             {
-                                XAttribute id = child.Attribute("id");
-                                XAttribute gameType = child.Attribute("game_type");
-
-                                Model.Preview preview = new Model.Preview();
-                                preview.Id = IdUtil.GetGuidFromString(id.Value);
-                                preview.GameId = id.Value;
-                                preview.Date = dt + tod;
-                                preview.TimeOfDay = tod.ToString();
-                                preview.Address = metadata.Address;
-                                preview.GameType = (Model.GameType)char.Parse(gameType.Value);
-                                preview.AwayTeamId = awayTeamId;
-                                preview.HomeTeamId = homeTeamId;
+                                Preview preview = TransformPreview(metadata, child, dt);
                                 previews.Add(preview);
+                                break;
+                            }
+                            else if (sub.Attribute("status").Value == "Final")
+                            {
+                                ExecuteQuery query = HandleGame(child, dt);
+                                if (query != null)
+                                {
+                                    executes.Add(query);
+                                }
+
+                                break;
                             }
                         }
                     }
@@ -101,6 +111,33 @@ namespace MlbDataPump
             {
                 QueryHelper.Write(previews);
             }
+
+            if (executes.Count > 0)
+            {
+                SqlBulkWriter writer = new SqlBulkWriter();
+                writer.LoadAndMergeInTransaction(executes, bulkWriteSettings);
+            }
+        }
+
+        private static Preview TransformPreview(FileMetadata metadata, XElement child, DateTimeOffset dt)
+        {
+            int homeTeamId = ParseInt(child.Attribute("home_team_id"));
+            int awayTeamId = ParseInt(child.Attribute("away_team_id"));
+            TimeSpan tod = GetTimeOfDay(child.Attribute("time"), child.Attribute("time_zone"));
+            XAttribute id = child.Attribute("id");
+            XAttribute gameType = child.Attribute("game_type");
+
+            Model.Preview preview = new Model.Preview();
+            preview.Id = IdUtil.GetGuidFromString(id.Value);
+            preview.GameId = id.Value;
+            preview.Date = dt + tod;
+            preview.TimeOfDay = tod.ToString();
+            preview.Address = metadata.Address;
+            preview.GameType = (Model.GameType)char.Parse(gameType.Value);
+            preview.AwayTeamId = awayTeamId;
+            preview.HomeTeamId = homeTeamId;
+
+            return preview;
         }
 
         private static Game TransformGame(XElement child, DateTimeOffset date)
