@@ -61,14 +61,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Author.cs" />
+    <Compile Include="BuildModel\Author.cs" />
     <Compile Include="BuildModel\Build.cs" />
     <Compile Include="BuildModel\BuildDefinition.cs" />
+    <Compile Include="BuildModel\BuildDefinitionId.cs" />
     <Compile Include="BuildModel\Definition.cs" />
     <Compile Include="BuildModel\Link.cs" />
     <Compile Include="BuildModel\Links.cs" />
     <Compile Include="BuildModel\Option.cs" />
     <Compile Include="BuildModel\Pool.cs" />
+    <Compile Include="BuildModel\ProcessParameters.cs" />
+    <Compile Include="BuildModel\QueueBuild.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="BuildModel\Project.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

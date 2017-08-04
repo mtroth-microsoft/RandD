@@ -27,8 +27,8 @@ namespace BuildManager
 
                 using (HttpResponseMessage response = client.GetAsync(url).Result)
                 {
-                    response.EnsureSuccessStatusCode();
                     string responseBody = response.Content.ReadAsStringAsync().Result;
+                    response.EnsureSuccessStatusCode();
 
                     return responseBody;
                 }
@@ -86,12 +86,12 @@ namespace BuildManager
                     "Basic",
                     Convert.ToBase64String(ASCIIEncoding.ASCII.GetBytes(string.Format("{0}:{1}", string.Empty, token))));
 
-                using (StringContent content = new StringContent(payload))
+                using (StringContent content = new StringContent(payload, Encoding.UTF8, "application/json"))
                 {
                     using (HttpResponseMessage response = client.PutAsync(url, content).Result)
                     {
-                        response.EnsureSuccessStatusCode();
                         string responseBody = response.Content.ReadAsStringAsync().Result;
+                        response.EnsureSuccessStatusCode();
 
                         return responseBody;
                     }
@@ -118,8 +118,8 @@ namespace BuildManager
 
                 using (HttpResponseMessage response = client.DeleteAsync(url).Result)
                 {
-                    response.EnsureSuccessStatusCode();
                     string responseBody = response.Content.ReadAsStringAsync().Result;
+                    response.EnsureSuccessStatusCode();
 
                     return responseBody;
                 }

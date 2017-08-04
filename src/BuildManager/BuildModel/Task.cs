@@ -8,5 +8,7 @@ namespace BuildManager
         public Guid id { get; set; }
 
         public string versionSpec { get; set; }
+
+        public string definitionType { get; set; }
     }
 }
