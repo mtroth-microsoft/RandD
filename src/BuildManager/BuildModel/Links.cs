@@ -6,5 +6,7 @@ namespace BuildManager
         public Link self { get; set; }
 
         public Link web { get; set; }
+
+        public Link editor { get; set; }
     }
 }
