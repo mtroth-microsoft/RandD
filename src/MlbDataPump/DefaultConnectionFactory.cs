@@ -125,7 +125,7 @@ namespace MlbDataPump
         /// <param name="metadataResource">The metadata resource string.</param>
         /// <param name="databaseType">The store type for the connection.</param>
         /// <returns>The entity connection to use.</returns>
-        public EntityConnection GetEntityConnection(
+        public object GetEntityConnection(
             string activeModel,
             string metadataResource,
             string databaseType)
