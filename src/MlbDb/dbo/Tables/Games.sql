@@ -47,5 +47,6 @@
 	[SavingPitcherRecord_Era] [decimal](19, 9) NULL,
 	[SavingPitcherRecord_Saves] [int] NULL,
 	[SavingPitcherRecord_Opportunities] [int] NULL,
-    CONSTRAINT [PK_Games] PRIMARY KEY CLUSTERED ([Id] ASC)
+    CONSTRAINT [PK_Games] PRIMARY KEY CLUSTERED ([Id] ASC),
+	CONSTRAINT [UQ_Games_GameId] UNIQUE ([GameId])
 )
