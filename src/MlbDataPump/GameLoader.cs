@@ -144,7 +144,7 @@ namespace MlbDataPump
         {
             XAttribute id = child.Attribute("id");
             XAttribute gameType = child.Attribute("game_type");
-            TimeSpan tod = GetTimeOfDay(child.Attribute("time"), child.Attribute("time_zone"));
+            TimeSpan tod = GetTimeOfDay(child.Attribute("home_time"), child.Attribute("time_zone"));
 
             Game game = new Game();
             game.GameId = id.Value;

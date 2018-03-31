@@ -37,7 +37,7 @@ namespace MlbDataPump
 
         private HashSet<Model.FileMetadata> previews = new HashSet<Model.FileMetadata>();
 
-        private DateTimeOffset watermark = new DateTimeOffset(2017, 1, 1, 0, 0, 0, TimeSpan.FromHours(0));
+        private DateTimeOffset watermark = new DateTimeOffset(2018, 1, 1, 0, 0, 0, TimeSpan.FromHours(0));
 
         private AddressHelper()
         {
