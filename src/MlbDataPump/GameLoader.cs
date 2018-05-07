@@ -418,7 +418,12 @@ namespace MlbDataPump
 
         private static TimeSpan GetTimeOfDay(XAttribute time, XAttribute timeZone)
         {
-            DateTime timeOfDay = DateTime.Parse(time.Value + " PM");
+            DateTime timeOfDay;
+            if (DateTime.TryParse(time.Value + " PM", out timeOfDay) == false)
+            {
+                return TimeSpan.FromMinutes(1439);
+            }
+
             switch (timeZone.Value)
             {
                 case "CT":

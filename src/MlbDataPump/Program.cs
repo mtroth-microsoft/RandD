@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Linq;
 using Infrastructure.DataAccess;
-using Ninject;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace MlbDataPump
 {
@@ -15,10 +15,11 @@ namespace MlbDataPump
     {
         static void Main(string[] args)
         {
-            IKernel kernel = new StandardKernel();
-            kernel.Bind<IConnectionFactory>().To<DefaultConnectionFactory>();
-            kernel.Bind<IMessageLogger>().To<LoggingHelper>();
-            Container.Initialize(kernel);
+            ServiceCollection collection = new ServiceCollection();
+            collection.AddSingleton<IConnectionFactory>(new DefaultConnectionFactory());
+            collection.AddSingleton<IMessageLogger>(new LoggingHelper());
+
+            Container.Initialize(collection.BuildServiceProvider());
             // new MlbModel(null).GetModel();
             QueryHelper.GetStandings();
 

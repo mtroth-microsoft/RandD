@@ -44,22 +44,10 @@ namespace MlbDataPump
             {
                 return this.GetConnectionString(databaseType.Name);
             }
-            else if (databaseType.Protocol == StoreProtocol.MySql)
+            else
             {
-                MySql.Data.MySqlClient.MySqlConnectionStringBuilder builder = new MySql.Data.MySqlClient.MySqlConnectionStringBuilder();
-                ShardIdentifier shardId = LookupServer(databaseType.Name);
-                Login login = LookupLogin(databaseType.Name, shardId);
-                builder.Server = shardId.DataSource;
-                builder.Database = shardId.Catalog;
-                builder.Port = (uint)shardId.Port;
-                builder.UserID = login.UserName;
-                builder.Password = login.Password;
-                builder.Pooling = false;
-
-                return builder.ConnectionString;
+                throw new NotSupportedException();
             }
-
-            throw new NotSupportedException();
         }
 
         /// <summary>
