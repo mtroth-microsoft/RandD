@@ -39,29 +39,6 @@ namespace MlbDataPump
         private static string logDir;
 
         /// <summary>
-        /// Initializes static members of the <see cref="LoggingHelper" /> class.
-        /// </summary>
-        static LoggingHelper()
-        {
-            ComponentVersion = FileVersionInfo.GetVersionInfo(
-                Assembly.GetExecutingAssembly().Location).FileVersion;
-
-            string assemblyOriginalLocation = Assembly.GetExecutingAssembly().CodeBase;
-            if (assemblyOriginalLocation.StartsWith("file:", StringComparison.Ordinal))
-            {
-                assemblyOriginalLocation = (new Uri(assemblyOriginalLocation)).LocalPath;
-            }
-
-            FileInfo originalAssemblyFile = new FileInfo(assemblyOriginalLocation);
-            string originalDir = originalAssemblyFile.Directory.FullName;
-            logDir = Path.Combine(originalAssemblyFile.Directory.Parent.Parent.FullName, "Data");
-            if (Directory.Exists(logDir) == false)
-            {
-                Directory.CreateDirectory(logDir);
-            }
-        }
-
-        /// <summary>
         /// Gets the Logging level flags
         /// </summary>
         public static short LevelFlags
