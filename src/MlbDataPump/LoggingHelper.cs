@@ -29,19 +29,9 @@ namespace MlbDataPump
     internal class LoggingHelper : IMessageLogger
     {
         /// <summary>
-        /// The logging level flags parameter name.
-        /// </summary>
-        private const string LoggingLevelFlags = "LoggingLevelFlags";
-
-        /// <summary>
         /// The version of this component (used for instrumentation).
         /// </summary>
         private static readonly string ComponentVersion;
-
-        /// <summary>
-        /// The configured level flags.
-        /// </summary>
-        private static short levelFlags = short.Parse(ConfigurationManager.AppSettings[LoggingLevelFlags]);
 
         /// <summary>
         /// The log directory.
@@ -78,7 +68,7 @@ namespace MlbDataPump
         {
             get
             {
-                return levelFlags;
+                return 0;
             }
         }
 
