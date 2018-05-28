@@ -146,13 +146,17 @@ namespace MlbDataPump
 
         private static string ShredPitcherPreview(XElement pitcher)
         {
-            string pitcherData = string.Format(
-                "{0} {1} ({2}-{3} {4})",
-                pitcher.Attribute("first_name")?.Value,
-                pitcher.Attribute("last_name")?.Value,
-                pitcher.Attribute("wins")?.Value,
-                pitcher.Attribute("losses")?.Value,
-                pitcher.Attribute("era")?.Value);
+            string pitcherData = null;
+            if (pitcher != null)
+            {
+                pitcherData = string.Format(
+                    "{0} {1} ({2}-{3} {4})",
+                    pitcher.Attribute("first_name")?.Value,
+                    pitcher.Attribute("last_name")?.Value,
+                    pitcher.Attribute("wins")?.Value,
+                    pitcher.Attribute("losses")?.Value,
+                    pitcher.Attribute("era")?.Value);
+            }
 
             return pitcherData == "  (- )" ? null : pitcherData;
         }
