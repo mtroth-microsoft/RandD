@@ -8,5 +8,7 @@
     [Address] [nvarchar](128) NOT NULL,
     [HomeTeamId] int NOT NULL ,
     [AwayTeamId] int NOT NULL ,
+    [HomePitcher] nvarchar(255) NULL, 
+    [AwayPitcher] nvarchar(255) NULL, 
     CONSTRAINT PK_Previews PRIMARY KEY CLUSTERED (Id)
 )

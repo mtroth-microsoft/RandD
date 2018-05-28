@@ -45,6 +45,18 @@ namespace MlbDataPump.Model
             set;
         }
 
+        public string HomePitcher
+        {
+            get;
+            set;
+        }
+
+        public string AwayPitcher
+        {
+            get;
+            set;
+        }
+
         [NotMapped, ForeignKey("HomeTeam")]
         public int HomeTeamId
         {

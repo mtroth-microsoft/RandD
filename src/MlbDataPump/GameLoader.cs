@@ -126,6 +126,8 @@ namespace MlbDataPump
             TimeSpan tod = GetTimeOfDay(child.Attribute("time"), child.Attribute("time_zone"));
             XAttribute id = child.Attribute("id");
             XAttribute gameType = child.Attribute("game_type");
+            XElement homePitcher = child.Element("home_probable_pitcher");
+            XElement awayPitcher = child.Element("away_probable_pitcher");
 
             Model.Preview preview = new Model.Preview();
             preview.Id = IdUtil.GetGuidFromString(id.Value);
@@ -136,8 +138,23 @@ namespace MlbDataPump
             preview.GameType = (Model.GameType)char.Parse(gameType.Value);
             preview.AwayTeamId = awayTeamId;
             preview.HomeTeamId = homeTeamId;
+            preview.HomePitcher = ShredPitcherPreview(homePitcher);
+            preview.AwayPitcher = ShredPitcherPreview(awayPitcher);
 
             return preview;
+        }
+
+        private static string ShredPitcherPreview(XElement pitcher)
+        {
+            string pitcherData = string.Format(
+                "{0} {1} ({2}-{3} {4})",
+                pitcher.Attribute("first_name")?.Value,
+                pitcher.Attribute("last_name")?.Value,
+                pitcher.Attribute("wins")?.Value,
+                pitcher.Attribute("losses")?.Value,
+                pitcher.Attribute("era")?.Value);
+
+            return pitcherData == "  (- )" ? null : pitcherData;
         }
 
         private static Game TransformGame(XElement child, DateTimeOffset date)
