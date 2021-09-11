@@ -3,9 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
-using System.Web.OData;
 using Infrastructure.DataAccess;
 using Infrastructure.DataAccess.OdataExpressionModel;
+using Microsoft.AspNet.OData;
 using Microsoft.OData.Edm;
 
 namespace MlbDataPump
