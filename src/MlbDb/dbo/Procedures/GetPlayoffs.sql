@@ -69,10 +69,10 @@ AS
     END
 
     SELECT * FROM @Matches ORDER BY GameType, LeagueId
-    SELECT * FROM @Games ORDER BY Date --ASC order so that games are in sequence.
+    SELECT * FROM @Games ORDER BY Date, HomeRecord, AwayRecord --ASC order so that games are in sequence.
 
 /*
-exec dbo.usp_GetPlayoffs 2013
+exec dbo.usp_GetPlayoffs 2021
 70 = Wild Card
 68 = Divisional Playoff
 76 = League Playoff
