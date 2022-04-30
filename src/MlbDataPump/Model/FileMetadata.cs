@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -41,6 +42,25 @@ namespace MlbDataPump.Model
 
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         public DateTimeOffset EventDate
+        {
+            get;
+            set;
+        }
+
+        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+        public string AddressEx
+        {
+            get;
+            set;
+        }
+
+        internal string Blob
+        {
+            get;
+            set;
+        }
+
+        internal bool Converted
         {
             get;
             set;

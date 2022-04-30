@@ -12,9 +12,9 @@ namespace MlbDataPump
 {
     internal sealed class PageStore
     {
-        public bool AddPage(Model.FileMetadata metadata, XElement xml)
+        public bool AddPage(Model.FileMetadata metadata)
         {
-            if (Verify(xml) == true)
+            if (Verify(metadata) == true)
             {
                 Model.FileStaging result = QueryHelper
                     .Read<Model.FileStaging>(string.Format("Address eq '{0}'", metadata.Address))
@@ -23,6 +23,7 @@ namespace MlbDataPump
 
                 if (result == null)
                 {
+                    XElement xml = XElement.Parse(metadata.Blob);
                     Model.FileStaging file = new Model.FileStaging();
                     file.Content = xml.ToString();
                     file.Address = metadata.Address;
@@ -36,15 +37,21 @@ namespace MlbDataPump
             }
             else
             {
-                GameLoader.HandlePreviews(metadata, xml);
+                GameLoader.HandlePreviews(metadata);
                 return true;
             }
 
             return false;
         }
 
-        private static bool Verify(XElement xml)
+        private static bool Verify(Model.FileMetadata metadata)
         {
+            if (metadata.Converted)
+            { 
+                return false; 
+            }
+
+            XElement xml = XElement.Parse(metadata.Blob);
             foreach (XElement child in xml.Elements())
             {
                 if (child.Name.LocalName == "game")

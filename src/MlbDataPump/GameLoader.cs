@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Xml.Linq;
 using Infrastructure.DataAccess;
 using MlbDataPump.Model;
@@ -68,39 +69,47 @@ namespace MlbDataPump
             return null;
         }
 
-        internal static void HandlePreviews(FileMetadata metadata, XElement xml)
+        internal static void HandlePreviews(FileMetadata metadata)
         {
-            XAttribute year = xml.Attribute("year");
-            XAttribute month = xml.Attribute("month");
-            XAttribute day = xml.Attribute("day");
-            DateTimeOffset dt = GetGameTimeBasis(year, month, day);
-
             List<object> executes = new List<object>();
             List<Model.Preview> previews = new List<Preview>();
-            foreach (XElement child in xml.Elements())
+            if (metadata.Converted)
             {
-                if (child.Name.LocalName == "game")
-                {
-                    foreach (XElement sub in child.Elements())
-                    {
-                        if (sub.Name.LocalName == "status")
-                        {
-                            if (sub.Attribute("status").Value == "Preview" ||
-                                sub.Attribute("status").Value == "In Progress")
-                            {
-                                Preview preview = TransformPreview(metadata, child, dt);
-                                previews.Add(preview);
-                                break;
-                            }
-                            else if (sub.Attribute("status").Value == "Final")
-                            {
-                                ExecuteQuery query = HandleGame(child, dt);
-                                if (query != null)
-                                {
-                                    executes.Add(query);
-                                }
+                previews.AddRange(ConvertHtml(metadata.Blob));
+            }
+            else
+            {
+                XElement xml = XElement.Parse(metadata.Blob);
+                XAttribute year = xml.Attribute("year");
+                XAttribute month = xml.Attribute("month");
+                XAttribute day = xml.Attribute("day");
+                DateTimeOffset dt = GetGameTimeBasis(year, month, day);
 
-                                break;
+                foreach (XElement child in xml.Elements())
+                {
+                    if (child.Name.LocalName == "game")
+                    {
+                        foreach (XElement sub in child.Elements())
+                        {
+                            if (sub.Name.LocalName == "status")
+                            {
+                                if (sub.Attribute("status").Value == "Preview" ||
+                                    sub.Attribute("status").Value == "In Progress")
+                                {
+                                    Preview preview = TransformPreview(metadata, child, dt);
+                                    previews.Add(preview);
+                                    break;
+                                }
+                                else if (sub.Attribute("status").Value == "Final")
+                                {
+                                    ExecuteQuery query = HandleGame(child, dt);
+                                    if (query != null)
+                                    {
+                                        executes.Add(query);
+                                    }
+
+                                    break;
+                                }
                             }
                         }
                     }
@@ -135,7 +144,7 @@ namespace MlbDataPump
             preview.Date = dt + tod;
             preview.TimeOfDay = tod.ToString();
             preview.Address = metadata.Address;
-            preview.GameType = (Model.GameType)char.Parse(gameType.Value);
+            preview.GameType = (GameType)char.Parse(gameType.Value);
             preview.AwayTeamId = awayTeamId;
             preview.HomeTeamId = homeTeamId;
             preview.HomePitcher = ShredPitcherPreview(homePitcher);
@@ -459,6 +468,115 @@ namespace MlbDataPump
             }
 
             return timeOfDay - DateTime.Parse("0:00 AM");
+        }
+
+        private static List<Preview> ConvertHtml(string xml)
+        {
+            Regex regex = new Regex("<script>(.*?)</script>");
+            var matches = regex.Matches(xml);
+            List<Preview> previews = new List<Preview>();
+
+            foreach (Match match in matches)
+            {
+                if (match.Value.Contains("window.espn.scoreboardData"))
+                {
+                    var parsed = match.Value.Replace("<script>", string.Empty).Replace("</script>", string.Empty);
+                    parsed = parsed.Substring(parsed.IndexOf("{"));
+                    parsed = parsed.Substring(0, parsed.IndexOf("};") + 1);
+                    previews.AddRange(TransformPreview(parsed));
+                }
+            }
+
+            return previews;
+        }
+
+        private static List<Preview> TransformPreview(string blob)
+        {
+            List<Preview> previews = new List<Preview>();
+            JObject o = JObject.Parse(blob);
+            JProperty evs = (JProperty)o.Children().Where(p => p.Path == "events").Single();
+            foreach (var ev in evs.Values())
+            {
+                var competitions = ev.Children().Where(p => (p as JProperty)?.Name == "competitions").Single();
+                foreach (var competition in competitions.Values())
+                {
+                    var gamedate = competition.Children().Where(p => (p as JProperty)?.Name == "date").Single() as JProperty;
+
+                    Preview preview = new Preview();
+                    preview.Date = DateTimeOffset.Parse(gamedate.Value.ToString());
+                    preview.TimeOfDay = preview.Date.TimeOfDay.ToString();
+                    preview.GameType = GameType.Regular;
+                    preview.Id = Guid.NewGuid();
+                    preview.GameId = preview.Id.ToString();
+                    preview.Address = "N/A";
+                    previews.Add(preview);
+
+                    var competitors = competition.Children().Where(p => (p as JProperty)?.Name == "competitors").Single() as JProperty;
+                    foreach (var competitor in competitors.Values())
+                    {
+                        var homeAway = competitor.Children().Where(p => (p as JProperty)?.Name == "homeAway").Single() as JProperty;
+                        var team = competitor.Children().Where(p => (p as JProperty)?.Name == "team").Single() as JProperty;
+                        var teamName = team.Values().Where(p => (p as JProperty).Name == "name").Single() as JProperty;
+                        var probables = competitor.Children().Where(p => (p as JProperty)?.Name == "probables").SingleOrDefault() as JProperty;
+
+                        if (homeAway.Value.ToString() == "home")
+                        {
+                            preview.HomeTeamId = LookupTeamId(teamName.Value);
+                        }
+                        else
+                        {
+                            preview.AwayTeamId = LookupTeamId(teamName.Value);
+                        }
+
+                        foreach (var probable in probables.EmptyIfNull().Values())
+                        {
+                            var shortDisplayName = probable.Children().Where(p => (p as JProperty)?.Name == "shortDisplayName").Single() as JProperty;
+                            if (shortDisplayName.Value.ToString() == "Starter")
+                            {
+                                var athlete = probable.Children().Where(p => (p as JProperty)?.Name == "athlete").Single() as JProperty;
+                                var displayName = athlete.Values().Where(p => (p as JProperty).Name == "displayName").Single() as JProperty;
+                                var statistics = probable.Children().Where(p => (p as JProperty)?.Name == "statistics").Single() as JProperty;
+                                int w = 0, l = 0;
+                                string era = null;
+                                foreach (var statistic in statistics.Values())
+                                {
+                                    switch ((statistic as JObject)["abbreviation"].ToString())
+                                    {
+                                        case "W": w = int.Parse((statistic as JObject)["displayValue"].ToString()); break;
+                                        case "L": l = int.Parse((statistic as JObject)["displayValue"].ToString()); break;
+                                        case "ERA": era = (statistic as JObject)["displayValue"].ToString(); break;
+                                        default: break;
+                                    }
+                                }
+
+                                var sp = $"{displayName.Value} ({w}-{l}, {era})";
+                                if (homeAway.Value.ToString() == "home")
+                                {
+                                    preview.HomePitcher = sp;
+                                }
+                                else
+                                {
+                                    preview.AwayPitcher = sp;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            return previews;
+        }
+
+        private static int LookupTeamId(JToken value)
+        {
+            string filter = string.Format("EspnName eq '{0}'", value.ToString());
+            var results = QueryHelper.Read<Model.Team>(filter).ToList();
+            if (results.Count == 1)
+            {
+                return results.First().Id;
+            }
+
+            throw new IndexOutOfRangeException();
         }
     }
 }

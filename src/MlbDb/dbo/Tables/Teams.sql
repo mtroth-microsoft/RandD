@@ -5,5 +5,6 @@
 	[Code] [nvarchar](32) NOT NULL,
 	[DivisionCode] [nvarchar](10) NULL,
 	[LeagueId] [int] NULL,
+	[EspnName] [nvarchar](128) NULL,
     CONSTRAINT [PK_Teams] PRIMARY KEY CLUSTERED ([Id] ASC)
 )

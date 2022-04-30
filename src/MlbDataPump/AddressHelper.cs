@@ -37,7 +37,7 @@ namespace MlbDataPump
 
         private HashSet<Model.FileMetadata> previews = new HashSet<Model.FileMetadata>();
 
-        private DateTimeOffset watermark = new DateTimeOffset(2018, 1, 1, 0, 0, 0, TimeSpan.FromHours(0));
+        private DateTimeOffset watermark = new DateTimeOffset(2022, 4, 7, 0, 0, 0, TimeSpan.FromHours(0));
 
         private AddressHelper()
         {
@@ -191,18 +191,20 @@ namespace MlbDataPump
             this.transformed = new HashSet<Model.FileMetadata>(results.Where(p => p.Status == 5));
 
             string template = ConfigurationManager.AppSettings["LocationTemplate"];
+            string templateEx = ConfigurationManager.AppSettings["LocationTemplateEx"];
             DateTimeOffset now = DateTimeOffset.Now.AddDays(5);
             DateTimeOffset test = this.watermark;
             while (now > test)
             {
                 string address = string.Format(template, test.Year, Convert(test.Month), Convert(test.Day));
+                string addressEx = string.Format(templateEx, $"{Convert(test.Year)}{Convert(test.Month)}{Convert(test.Day)}");
                 if (this.completed.Any(p => p.Address == address) == false &&
                     this.returned.Any(p => p.Address == address) == false &&
                     this.running.Any(p => p.Address == address) == false &&
                     this.transformed.Any(p => p.Address == address) == false &&
                     this.addresses.Any(p => p.Address == address) == false)
                 {
-                    addresses.Add(new Model.FileMetadata() { Address = address });
+                    addresses.Add(new Model.FileMetadata() { Address = address, AddressEx = addressEx });
                 }
 
                 test = test.AddDays(1);
@@ -245,7 +247,7 @@ namespace MlbDataPump
 
             EdmEntityObject eeo = QueryHelper.CreateEntity(metadata);
 
-            MlbModel model = new MlbModel(new Uri(metadata.Address));
+            MlbModel model = new MlbModel(new Uri(metadata.Address ?? metadata.AddressEx));
             WriteRequest request = new WriteRequest() { Entity = eeo };
             if (metadata.Id == default(long))
             {
@@ -259,6 +261,7 @@ namespace MlbDataPump
                 metadata.Status = result.Status;
                 metadata.EndTime = result.EndTime;
                 metadata.Address = result.Address;
+                metadata.AddressEx = result.AddressEx;
                 return metadata;
             }
         }

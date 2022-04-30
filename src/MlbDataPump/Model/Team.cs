@@ -43,5 +43,11 @@ namespace MlbDataPump.Model
             get;
             set;
         }
+
+        public string EspnName
+        { 
+            get; 
+            set; 
+        }
     }
 }

@@ -74,8 +74,8 @@ namespace MlbDataPump
                 {
                     try
                     {
-                        XElement page = WebRequestHelper.LoadPage(metadata);
-                        bool preview = store.AddPage(metadata, page);
+                        WebRequestHelper.LoadPage(metadata);
+                        bool preview = store.AddPage(metadata);
                         if (preview == false)
                         {
                             AddressHelper.Instance.Ack(metadata);
