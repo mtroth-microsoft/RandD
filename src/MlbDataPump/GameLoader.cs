@@ -75,7 +75,7 @@ namespace MlbDataPump
             List<Model.Preview> previews = new List<Preview>();
             if (metadata.Converted)
             {
-                previews.AddRange(ConvertHtml(metadata.Blob));
+                previews.AddRange(ConvertHtml(metadata));
             }
             else
             {
@@ -238,6 +238,7 @@ namespace MlbDataPump
                 DivisionCode = child.Attribute("home_division").Value,
                 LeagueId = ParseInt(child.Attribute("home_league_id"))
             };
+            game.HomeTeam.EspnName = game.HomeTeam.Name == "D-backs" ? "Diamondbacks" : game.HomeTeam.Name;
         }
 
         private static void TransformAwayTeam(XElement child, Game game)
@@ -255,6 +256,7 @@ namespace MlbDataPump
                 DivisionCode = child.Attribute("away_division").Value,
                 LeagueId = ParseInt(child.Attribute("away_league_id"))
             };
+            game.AwayTeam.EspnName = game.AwayTeam.Name == "D-backs" ? "Diamondbacks" : game.AwayTeam.Name;
         }
 
         private static void TransformHomeRuns(Game game, XElement sub)
@@ -470,10 +472,10 @@ namespace MlbDataPump
             return timeOfDay - DateTime.Parse("0:00 AM");
         }
 
-        private static List<Preview> ConvertHtml(string xml)
+        private static List<Preview> ConvertHtml(FileMetadata metadata)
         {
             Regex regex = new Regex("<script>(.*?)</script>");
-            var matches = regex.Matches(xml);
+            var matches = regex.Matches(metadata.Blob);
             List<Preview> previews = new List<Preview>();
 
             foreach (Match match in matches)
@@ -483,14 +485,14 @@ namespace MlbDataPump
                     var parsed = match.Value.Replace("<script>", string.Empty).Replace("</script>", string.Empty);
                     parsed = parsed.Substring(parsed.IndexOf("{"));
                     parsed = parsed.Substring(0, parsed.IndexOf("};") + 1);
-                    previews.AddRange(TransformPreview(parsed));
+                    previews.AddRange(TransformPreview(metadata, parsed));
                 }
             }
 
             return previews;
         }
 
-        private static List<Preview> TransformPreview(string blob)
+        private static List<Preview> TransformPreview(FileMetadata metadata, string blob)
         {
             List<Preview> previews = new List<Preview>();
             JObject o = JObject.Parse(blob);
@@ -501,14 +503,15 @@ namespace MlbDataPump
                 foreach (var competition in competitions.Values())
                 {
                     var gamedate = competition.Children().Where(p => (p as JProperty)?.Name == "date").Single() as JProperty;
+                    var uid = competition.Children().Where(p => (p as JProperty)?.Name == "uid").Single() as JProperty;
 
                     Preview preview = new Preview();
                     preview.Date = DateTimeOffset.Parse(gamedate.Value.ToString());
                     preview.TimeOfDay = preview.Date.TimeOfDay.ToString();
                     preview.GameType = GameType.Regular;
-                    preview.Id = Guid.NewGuid();
-                    preview.GameId = preview.Id.ToString();
-                    preview.Address = "N/A";
+                    preview.Id = IdUtil.GetGuidFromString(uid.Value.ToString());
+                    preview.GameId = uid.Value.ToString();
+                    preview.Address = metadata.AddressEx;
                     previews.Add(preview);
 
                     var competitors = competition.Children().Where(p => (p as JProperty)?.Name == "competitors").Single() as JProperty;
