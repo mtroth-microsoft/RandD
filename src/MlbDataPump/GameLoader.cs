@@ -494,11 +494,12 @@ namespace MlbDataPump
 
         private static List<Preview> TransformPreview(FileMetadata metadata, string blob)
         {
-            List<Preview> previews = new List<Preview>();
+            Dictionary<Guid, Preview> previews = new Dictionary<Guid, Preview>();
             JObject o = JObject.Parse(blob);
             JProperty evs = (JProperty)o.Children().Where(p => p.Path == "events").Single();
             foreach (var ev in evs.Values())
             {
+                var indexer = 0;
                 var competitions = ev.Children().Where(p => (p as JProperty)?.Name == "competitions").Single();
                 foreach (var competition in competitions.Values())
                 {
@@ -509,10 +510,8 @@ namespace MlbDataPump
                     preview.Date = DateTimeOffset.Parse(gamedate.Value.ToString());
                     preview.TimeOfDay = preview.Date.TimeOfDay.ToString();
                     preview.GameType = GameType.Regular;
-                    preview.Id = IdUtil.GetGuidFromString(uid.Value.ToString());
-                    preview.GameId = uid.Value.ToString();
                     preview.Address = metadata.AddressEx;
-                    previews.Add(preview);
+                    indexer++;
 
                     var competitors = competition.Children().Where(p => (p as JProperty)?.Name == "competitors").Single() as JProperty;
                     foreach (var competitor in competitors.Values())
@@ -524,11 +523,13 @@ namespace MlbDataPump
 
                         if (homeAway.Value.ToString() == "home")
                         {
-                            preview.HomeTeamId = LookupTeamId(teamName.Value);
+                            preview.HomeTeam = LookupTeamId(teamName.Value);
+                            preview.HomeTeamId = preview.HomeTeam.Id;
                         }
                         else
                         {
-                            preview.AwayTeamId = LookupTeamId(teamName.Value);
+                            preview.AwayTeam = LookupTeamId(teamName.Value);
+                            preview.AwayTeamId = preview.AwayTeam.Id;
                         }
 
                         foreach (var probable in probables.EmptyIfNull().Values())
@@ -564,19 +565,35 @@ namespace MlbDataPump
                             }
                         }
                     }
+
+                    preview.GameId = $"{preview.Date.ToLocalTime().Year}/{Normalize(preview.Date.ToLocalTime().Month)}/{Normalize(preview.Date.ToLocalTime().Day)}/{preview.AwayTeam.Code}mlb-{preview.HomeTeam.Code}mlb-{indexer}";
+                    preview.Id = IdUtil.GetGuidFromString(preview.GameId);
+                    preview.HomeTeam = null;
+                    preview.AwayTeam = null;
+                    previews[preview.Id] = preview;
                 }
             }
 
-            return previews;
+            return previews.Values.ToList();
         }
 
-        private static int LookupTeamId(JToken value)
+        private static string Normalize(int value)
+        {
+            if (value < 10)
+            {
+                return $"0{value}";
+            }
+
+            return value.ToString();
+        }
+
+        private static Team LookupTeamId(JToken value)
         {
             string filter = string.Format("EspnName eq '{0}'", value.ToString());
             var results = QueryHelper.Read<Model.Team>(filter).ToList();
             if (results.Count == 1)
             {
-                return results.First().Id;
+                return results.First();
             }
 
             throw new IndexOutOfRangeException();
