@@ -566,7 +566,11 @@ namespace MlbDataPump
                         }
                     }
 
-                    preview.GameId = $"{preview.Date.ToLocalTime().Year}/{Normalize(preview.Date.ToLocalTime().Month)}/{Normalize(preview.Date.ToLocalTime().Day)}/{preview.AwayTeam.Code}mlb-{preview.HomeTeam.Code}mlb-{indexer}";
+                    TimeSpan offset = TimeSpan.FromHours(-7);
+                    preview.GameId = $"{preview.Date.ToOffset(offset).Year}/" +
+                        $"{Normalize(preview.Date.ToOffset(offset).Month)}/" +
+                        $"{Normalize(preview.Date.ToOffset(offset).Day)}/" +
+                        $"{preview.AwayTeam.Code}mlb-{preview.HomeTeam.Code}mlb-{indexer}";
                     preview.Id = IdUtil.GetGuidFromString(preview.GameId);
                     preview.HomeTeam = null;
                     preview.AwayTeam = null;
