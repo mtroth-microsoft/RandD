@@ -484,7 +484,7 @@ namespace MlbDataPump
             {
                 Preview preview = new Preview();
                 previews.Add(preview);
-                preview.Date = metadata.EventDate;
+                preview.Date = metadata.EventDate.AddMinutes(1439);
                 preview.TimeOfDay = preview.Date.TimeOfDay.ToString();
                 preview.GameType = GameType.Regular;
                 preview.Address = metadata.AddressEx;
