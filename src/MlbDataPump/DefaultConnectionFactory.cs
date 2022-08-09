@@ -16,6 +16,7 @@ namespace MlbDataPump
     using System.Threading.Tasks;
     using Infrastructure.DataAccess;
     using Microsoft.Azure.KeyVault;
+    using Microsoft.Azure.KeyVault.Models;
     using Microsoft.IdentityModel.Clients.ActiveDirectory;
 
     /// <summary>
