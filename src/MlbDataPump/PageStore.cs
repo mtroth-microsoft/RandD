@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Xml.Linq;
 using Infrastructure.DataAccess;
 using Infrastructure.DataAccess.OdataExpressionModel;
@@ -14,7 +15,7 @@ namespace MlbDataPump
     {
         public bool AddPage(Model.FileMetadata metadata)
         {
-            if (Verify(metadata) == true)
+            if (metadata.EventDate.Date < metadata.StartTime.Date)
             {
                 Model.FileStaging result = QueryHelper
                     .Read<Model.FileStaging>(string.Format("Address eq '{0}'", metadata.Address))
@@ -23,7 +24,10 @@ namespace MlbDataPump
 
                 if (result == null)
                 {
-                    XElement xml = XElement.Parse(metadata.Blob);
+                    Regex regex = new Regex("<div id=\"espnfitt\">(.*?)\n");
+                    var blob = regex.Match(metadata.Blob.Replace("xlink:", string.Empty));
+
+                    XElement xml = XElement.Parse(blob.Value);
                     Model.FileStaging file = new Model.FileStaging();
                     file.Content = xml.ToString();
                     file.Address = metadata.Address;
@@ -42,45 +46,6 @@ namespace MlbDataPump
             }
 
             return false;
-        }
-
-        private static bool Verify(Model.FileMetadata metadata)
-        {
-            if (metadata.Converted)
-            { 
-                return false; 
-            }
-
-            XElement xml = XElement.Parse(metadata.Blob);
-            foreach (XElement child in xml.Elements())
-            {
-                if (child.Name.LocalName == "game")
-                {
-                    if (VerifyStatus(child) == false)
-                    {
-                        return false;
-                    }
-                }
-            }
-
-            return true;
-        }
-
-        private static bool VerifyStatus(XElement child)
-        {
-            foreach (XElement sub in child.Elements())
-            {
-                if (sub.Name.LocalName == "status")
-                {
-                    if (sub.Attribute("status").Value == "Preview" ||
-                        sub.Attribute("status").Value == "InProgress")
-                    {
-                        return false;
-                    }
-                }
-            }
-
-            return true;
         }
     }
 }

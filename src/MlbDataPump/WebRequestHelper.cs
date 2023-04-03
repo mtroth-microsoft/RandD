@@ -17,19 +17,10 @@ namespace MlbDataPump
     {
         public static void LoadPage(Model.FileMetadata metadata)
         {
-            bool convertResponse = false;
-            HttpWebRequest request = WebRequest.Create(metadata.Address) as HttpWebRequest;
+            bool convertResponse = true;
+            HttpWebRequest request = WebRequest.Create(metadata.AddressEx) as HttpWebRequest;
             WebResponse response = null;
-            try
-            {
-                response = request.GetResponse();
-            }
-            catch
-            {
-                convertResponse = true;
-                request = WebRequest.Create(metadata.AddressEx) as HttpWebRequest;
-                response = request.GetResponse();
-            }
+            response = request.GetResponse();
             
             using (Stream stream = response.GetResponseStream())
             {

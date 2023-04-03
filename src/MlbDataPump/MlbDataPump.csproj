@@ -114,6 +114,7 @@
     <Compile Include="Model\FileStaging.cs" />
     <Compile Include="Model\Game.cs" />
     <Compile Include="Model\GameType.cs" />
+    <Compile Include="Model\GameTypeMap.cs" />
     <Compile Include="Model\HomeRun.cs" />
     <Compile Include="Model\MlbModel.cs" />
     <Compile Include="Model\Pitcher.cs" />

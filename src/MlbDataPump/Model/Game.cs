@@ -158,5 +158,23 @@ namespace MlbDataPump.Model
             get;
             set;
         }
+
+        public string WinningPitcherName
+        {
+            get;
+            set;
+        }
+
+        public string LosingPitcherName
+        {
+            get;
+            set;
+        }
+
+        public string SavingPitcherName
+        {
+            get;
+            set;
+        }
     }
 }

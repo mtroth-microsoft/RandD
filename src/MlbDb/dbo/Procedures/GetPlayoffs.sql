@@ -1,4 +1,4 @@
-CREATE PROCEDURE dbo.usp_GetPlayoffs
+CREATE PROCEDURE [dbo].[usp_GetPlayoffs]
     @Year INT = 2021
 AS
   SET NOCOUNT ON
@@ -28,9 +28,9 @@ AS
         g.AwayScore_Runs AS AwayRuns,
         g.AwayScore_Hits AS AwayHits,
         g.AwayScore_Errors AS AwayErrors,
-        wp.First + ' ' + wp.Last + ' (' + CAST(g.WinningPitcherRecord_Wins AS nvarchar) + '-' + CAST(g.WinningPitcherRecord_Losses AS nvarchar) + ' ' + CAST(CAST(g.WinningPitcherRecord_Era AS decimal(19,2)) AS nvarchar) + ')' AS WinningPitcher,
-        lp.First + ' ' + lp.Last + ' (' + CAST(g.LosingPitcherRecord_Wins AS nvarchar) + '-' + CAST(g.LosingPitcherRecord_Losses AS nvarchar) + ' ' + CAST(CAST(g.LosingPitcherRecord_Era AS decimal(19,2)) AS nvarchar) + ')' AS LosingPitcher,
-        sp.First + ' ' + sp.Last + ' (' + CAST(g.SavingPitcherRecord_Saves AS nvarchar) + ')' AS SavingPitcher,
+        CASE WHEN WinningPitcherId > 0 THEN wp.First + ' ' + wp.Last ELSE WinningPitcherName END + ' (' + CAST(g.WinningPitcherRecord_Wins AS nvarchar) + '-' + CAST(g.WinningPitcherRecord_Losses AS nvarchar) + ' ' + CAST(CAST(g.WinningPitcherRecord_Era AS decimal(19,2)) AS nvarchar) + ')' AS WinningPitcher,
+        CASE WHEN LosingPitcherId > 0 THEN lp.First + ' ' + lp.Last ELSE LosingPitcherName END + ' (' + CAST(g.LosingPitcherRecord_Wins AS nvarchar) + '-' + CAST(g.LosingPitcherRecord_Losses AS nvarchar) + ' ' + CAST(CAST(g.LosingPitcherRecord_Era AS decimal(19,2)) AS nvarchar) + ')' AS LosingPitcher,
+        CASE WHEN SavingPitcherId > 0 THEN sp.First + ' ' + sp.Last ELSE SavingPitcherName END + ' (' + CAST(g.SavingPitcherRecord_Saves AS nvarchar) + ')' AS SavingPitcher,
         ROW_NUMBER() OVER(ORDER BY Date DESC) AS RowNumber
     FROM   dbo.Games AS g
     JOIN   dbo.Teams AS at ON g.AwayTeamId=at.Id

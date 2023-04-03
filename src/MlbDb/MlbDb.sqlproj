@@ -74,5 +74,8 @@
     <Build Include="dbo\Tables\Teams.sql" />
     <Build Include="dbo\Tables\Previews.sql" />
     <Build Include="dbo\Procedures\PruneMlb.sql" />
+    <Build Include="dbo\Procedures\GetMonthly.sql" />
+    <Build Include="dbo\Procedures\GetPlayoffs.sql" />
+    <Build Include="dbo\Tables\GameTypeMap.sql" />
   </ItemGroup>
 </Project>

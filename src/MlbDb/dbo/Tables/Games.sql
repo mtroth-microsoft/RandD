@@ -47,6 +47,9 @@
 	[SavingPitcherRecord_Era] [decimal](19, 9) NULL,
 	[SavingPitcherRecord_Saves] [int] NULL,
 	[SavingPitcherRecord_Opportunities] [int] NULL,
+	[WinningPitcherName] [nvarchar](128) NULL,
+	[LosingPitcherName] [nvarchar](128) NULL,
+	[SavingPitcherName] [nvarchar](128) NULL,
     CONSTRAINT [PK_Games] PRIMARY KEY CLUSTERED ([Id] ASC),
 	CONSTRAINT [UQ_Games_GameId] UNIQUE ([GameId])
 )
