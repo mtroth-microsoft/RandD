@@ -85,6 +85,11 @@ namespace MlbDataPump
 
             TransformTeams(child, game, list);
 
+            if (game.HomeScore.Runs == game.AwayScore.Runs)
+            {
+                game.Innings = 0;
+            }
+
             return game;
         }
 
@@ -119,11 +124,14 @@ namespace MlbDataPump
             var xperf = child.Descendants().Where(p => p.Name == "div" && (p.Attribute("class")?.Value.StartsWith("Scoreboard__Performers") ?? false));
             var pitchers = xperf.Descendants().Where(p => p.Name == "div" && (p.Attribute("class")?.Value.StartsWith("ContentList__Item") ?? false));
             XElement[] items = pitchers.ToArray();
-            TransformWinningPitcher(game, items[0]);
-            TransformLosingPitcher(game, items[1]);
-            if (items.Length > 2)
+            if (items.Length > 0)
             {
-                TransformSavePitcher(game, items[2]);
+                TransformWinningPitcher(game, items[0]);
+                TransformLosingPitcher(game, items[1]);
+                if (items.Length > 2)
+                {
+                    TransformSavePitcher(game, items[2]);
+                }
             }
 
             int count = list.Where(p => p.HomeTeam.Name == game.HomeTeam.Name && p.AwayTeam.Name == game.AwayTeam.Name).Count();
@@ -137,9 +145,12 @@ namespace MlbDataPump
             Score score = new Score();
 
             XElement[] elements = child.Descendants().ToArray();
-            score.Runs = int.Parse(elements[0].Value);
-            score.Hits = int.Parse(elements[1].Value);
-            score.Errors = int.Parse(elements[2].Value);
+            if (elements.Count() > 0)
+            {
+                score.Runs = int.Parse(elements[0].Value);
+                score.Hits = int.Parse(elements[1].Value);
+                score.Errors = int.Parse(elements[2].Value);
+            }
 
             return score;
         }
