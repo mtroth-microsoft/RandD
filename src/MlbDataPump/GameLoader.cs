@@ -281,10 +281,18 @@ namespace MlbDataPump
                 Regex regex1 = new Regex("<ul class=\"ScoreboardScoreCell__Competitors\">(.*?)</ul>");
                 var games = regex1.Match(match.Value).Value.Replace("xlink:", string.Empty);
                 var xgame = XElement.Parse(games).Descendants().Where(p => p.Name == "div" && (p.Attribute("class")?.Value.StartsWith("ScoreCell__TeamName") ?? false));
-                preview.AwayTeam = LookupTeamId(xgame.First().Value);
-                preview.AwayTeamId = preview.AwayTeam.Id;
-                preview.HomeTeam = LookupTeamId(xgame.Last().Value);
-                preview.HomeTeamId = preview.HomeTeam.Id;
+                try
+                {
+                    preview.AwayTeam = LookupTeamId(xgame.First().Value);
+                    preview.AwayTeamId = preview.AwayTeam.Id;
+                    preview.HomeTeam = LookupTeamId(xgame.Last().Value);
+                    preview.HomeTeamId = preview.HomeTeam.Id;
+                }
+                catch
+                {
+                    previews.Remove(preview);
+                    continue;
+                }
 
                 int indexer = previews.Where(p => p.AwayTeamId == preview.AwayTeamId && p.HomeTeamId == preview.HomeTeamId).Count();
                 TimeSpan offset = TimeSpan.FromHours(-7);
