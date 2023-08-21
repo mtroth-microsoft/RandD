@@ -50,7 +50,7 @@ namespace MlbDataPump
         private static ExecuteQuery HandleGame(XElement element, FileMetadata metadata, List<Game> list)
         {
             Game game = TransformGame(element, metadata, list);
-            if (game.Innings > 0)
+            if (game != null && game.Innings > 0)
             {
                 string json = JsonConvert.SerializeObject(game, settings);
                 JObject jobject = JObject.Parse(json);
@@ -84,6 +84,10 @@ namespace MlbDataPump
             game.GameType = GetGameType(metadata);
 
             TransformTeams(child, game, list);
+            if (game.HomeTeam == null || game.AwayTeam == null)
+            {
+                return null;
+            }
 
             if (game.HomeScore.Runs == game.AwayScore.Runs)
             {
@@ -110,8 +114,13 @@ namespace MlbDataPump
             var games = child.Descendants().Where(p => p.Name == "ul").Single();
             var xgame = games.Descendants().Where(p => p.Name == "div" && (p.Attribute("class")?.Value.StartsWith("ScoreCell__TeamName") ?? false));
             game.AwayTeam = LookupTeamId(xgame.First().Value);
-            game.AwayTeamId = game.AwayTeam.Id;
             game.HomeTeam = LookupTeamId(xgame.Last().Value);
+            if (game.AwayTeam == null || game.HomeTeam == null)
+            {
+                return;
+            }
+
+            game.AwayTeamId = game.AwayTeam.Id;
             game.HomeTeamId = game.HomeTeam.Id;
 
             var xrec = games.Descendants().Where(p => p.Name == "div" && (p.Attribute("class")?.Value.StartsWith("ScoreboardScoreCell__RecordContainer") ?? false));
@@ -284,8 +293,14 @@ namespace MlbDataPump
                 try
                 {
                     preview.AwayTeam = LookupTeamId(xgame.First().Value);
-                    preview.AwayTeamId = preview.AwayTeam.Id;
                     preview.HomeTeam = LookupTeamId(xgame.Last().Value);
+                    if (preview.AwayTeam == null || preview.HomeTeam == null)
+                    {
+                        previews.Remove(preview);
+                        continue;
+                    }
+
+                    preview.AwayTeamId = preview.AwayTeam.Id;
                     preview.HomeTeamId = preview.HomeTeam.Id;
                 }
                 catch
@@ -356,7 +371,7 @@ namespace MlbDataPump
                 return results.First();
             }
 
-            throw new IndexOutOfRangeException();
+            return null;
         }
     }
 }
