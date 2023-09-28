@@ -105,7 +105,7 @@ namespace MlbDataPump
                 .ToList()
                 .SingleOrDefault();
 
-            return (GameType)Enum.Parse(typeof(GameType), result.GameTypeName);
+            return result == null ? default(GameType) : (GameType)Enum.Parse(typeof(GameType), result.GameTypeName);
         }
 
         private static void TransformTeams(XElement child, Game game, List<Game> list)
