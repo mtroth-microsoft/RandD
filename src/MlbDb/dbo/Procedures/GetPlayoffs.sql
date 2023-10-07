@@ -3,12 +3,13 @@ CREATE PROCEDURE [dbo].[usp_GetPlayoffs]
 AS
   SET NOCOUNT ON
 
-  DECLARE @Games TABLE (Date NVARCHAR(12), GameType INT, 
-                        HomeLeagueId INT, HomeTeamId INT, HomeTeam NVARCHAR(30), HomeRecord NVARCHAR(30), HomeRuns INT, HomeHits INT, HomeErrors INT,
-                        AwayLeagueId INT, AwayTeamId INT, AwayTeam NVARCHAR(30), AwayRecord NVARCHAR(30), AwayRuns INT, AwayHits INT, AwayErrors INT,
+  DECLARE @Games TABLE (RowId INT IDENTITY(1,1), Date NVARCHAR(12), GameType INT, 
+                        HomeLeagueId INT, HomeTeamId INT, HomeTeam NVARCHAR(30), HomeRecord NVARCHAR(30), HomeWin INT, HomeLoss INT, HomeRuns INT, HomeHits INT, HomeErrors INT,
+                        AwayLeagueId INT, AwayTeamId INT, AwayTeam NVARCHAR(30), AwayRecord NVARCHAR(30), AwayWin INT, AwayLoss INT, AwayRuns INT, AwayHits INT, AwayErrors INT,
                         WinningPitcher NVARCHAR(128), LosingPitcher NVARCHAR(128), SavingPitcher NVARCHAR(128), RowNumber INT)
 
   DECLARE @Matches TABLE (GameType INT, TeamOne NVARCHAR(30), TeamTwo NVARCHAR(30), Record NVARCHAR(30), LeagueId INT)
+  DECLARE @Records TABLE (GameType INT, Team NVARCHAR(30), WINS INT, LOSSES INT)
 
     INSERT @Games
     SELECT
@@ -18,6 +19,8 @@ AS
         ht.Id AS HomeTeamId,
         ht.Name AS HomeTeam,
         CAST(g.HomeRecord_Wins AS nvarchar) + '-' + CAST(g.HomeRecord_Losses AS nvarchar) AS HomeRecord,
+        CASE WHEN g.HomeScore_Runs > g.AwayScore_Runs THEN 1 ELSE 0 END AS HomeWin,
+        CASE WHEN g.HomeScore_Runs < g.AwayScore_Runs THEN 1 ELSE 0 END AS HomeLoss,
         g.HomeScore_Runs AS HomeRuns,
         g.HomeScore_Hits AS HomeHits,
         g.HomeScore_Errors AS HomeErrors,
@@ -25,6 +28,8 @@ AS
         at.Id AS AwayTeamId,
         at.Name AS AwayTeam,
         CAST(g.AwayRecord_Wins AS nvarchar) + '-' + CAST(g.AwayRecord_Losses AS nvarchar) AS AwayRecord,
+        CASE WHEN g.HomeScore_Runs < g.AwayScore_Runs THEN 1 ELSE 0 END AS AwayWin,
+        CASE WHEN g.HomeScore_Runs > g.AwayScore_Runs THEN 1 ELSE 0 END AS AwayLoss,
         g.AwayScore_Runs AS AwayRuns,
         g.AwayScore_Hits AS AwayHits,
         g.AwayScore_Errors AS AwayErrors,
@@ -42,7 +47,14 @@ AS
     AND   Year(Date) = @Year
     AND   ht.LeagueId in (103, 104)
     AND   at.LeagueId in (103, 104)
-    ORDER BY Date DESC -- use DESC here to make sure @Record is correct without complex update logic.
+    ORDER BY Date
+
+    INSERT @Records
+    SELECT GameType, Team, SUM(Win) AS Wins, SUM(Loss) AS Losses
+    FROM (SELECT GameType, HomeTeam AS Team, HomeWin AS Win, HomeLoss AS Loss FROM @Games 
+          UNION ALL 
+          SELECT GameType, AwayTeam AS Team, AwayWin AS Win, AwayLoss AS Loss FROM @Games) AS Sub
+    GROUP BY Team, GameType
 
     DECLARE @Min INT = 1
     DECLARE @HomeTeam NVARCHAR(30)
@@ -68,8 +80,13 @@ AS
       SELECT @Min=MIN(RowNumber) FROM @Games WHERE RowNumber > @Min
     END
 
+    UPDATE M SET
+     Record = CAST(R.Wins AS nvarchar) + '-' + CAST(R.Losses AS nvarchar)
+    FROM @Matches AS M
+    JOIN @Records AS R ON M.TeamOne = R.Team AND M.GameType = R.GameType
+
     SELECT * FROM @Matches ORDER BY GameType, LeagueId
-    SELECT * FROM @Games ORDER BY Date, HomeRecord, AwayRecord --ASC order so that games are in sequence.
+    SELECT * FROM @Games ORDER BY RowId --ASC order so that games are in sequence.
 
 /*
 exec dbo.usp_GetPlayoffs 2021
