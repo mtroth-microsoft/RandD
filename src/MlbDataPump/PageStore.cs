@@ -24,12 +24,18 @@ namespace MlbDataPump
 
                 if (result == null)
                 {
-                    Regex regex = new Regex("<div id=\"espnfitt\">(.*?)\n");
-                    var blob = regex.Match(metadata.Blob.Replace("xlink:", string.Empty));
+                    int index = metadata.Blob.IndexOf("<div id=");
+                    var xs = metadata.Blob.Substring(index)
+                        .Replace("xlink:", string.Empty);
+                    var xt = xs.Substring(0, xs.IndexOf("<script"));
+                    var x = XElement.Parse(xt);
 
-                    XElement xml = XElement.Parse(blob.Value);
+                    ////Regex regex = new Regex("<div id=\"espnfitt\">(.*?)\n");
+                    ////var blob = regex.Match(metadata.Blob.Replace("xlink:", string.Empty));
+
+                    ////XElement xml = XElement.Parse(blob.Value);
                     Model.FileStaging file = new Model.FileStaging();
-                    file.Content = xml.ToString();
+                    file.Content = x.ToString();
                     file.Address = metadata.Address;
 
                     EdmEntityObject eeo = QueryHelper.CreateEntity(file);
