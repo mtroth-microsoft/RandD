@@ -1,4 +1,4 @@
-CREATE PROCEDURE [dbo].[usp_GetPlayoffs]
+CREATE PROCEDURE [mlb].[usp_GetPlayoffs]
     @Year INT = 2021
 AS
   SET NOCOUNT ON
@@ -37,12 +37,12 @@ AS
         CASE WHEN LosingPitcherId > 0 THEN lp.First + ' ' + lp.Last ELSE LosingPitcherName END + ' (' + CAST(g.LosingPitcherRecord_Wins AS nvarchar) + '-' + CAST(g.LosingPitcherRecord_Losses AS nvarchar) + ' ' + CAST(CAST(g.LosingPitcherRecord_Era AS decimal(19,2)) AS nvarchar) + ')' AS LosingPitcher,
         CASE WHEN SavingPitcherId > 0 THEN sp.First + ' ' + sp.Last ELSE SavingPitcherName END + ' (' + CAST(g.SavingPitcherRecord_Saves AS nvarchar) + ')' AS SavingPitcher,
         ROW_NUMBER() OVER(ORDER BY Date DESC) AS RowNumber
-    FROM   dbo.Games AS g
-    JOIN   dbo.Teams AS at ON g.AwayTeamId=at.Id
-    JOIN   dbo.Teams AS ht ON g.HomeTeamId=ht.Id
-    JOIN   dbo.Pitchers AS wp ON g.WinningPitcherId=wp.Id
-    JOIN   dbo.Pitchers AS lp ON g.LosingPitcherId=lp.Id
-    LEFT JOIN dbo.Pitchers AS sp ON g.SavingPitcherId=sp.Id
+    FROM   mlb.Games AS g
+    JOIN   mlb.Teams AS at ON g.AwayTeamId=at.Id
+    JOIN   mlb.Teams AS ht ON g.HomeTeamId=ht.Id
+    JOIN   mlb.Pitchers AS wp ON g.WinningPitcherId=wp.Id
+    JOIN   mlb.Pitchers AS lp ON g.LosingPitcherId=lp.Id
+    LEFT JOIN mlb.Pitchers AS sp ON g.SavingPitcherId=sp.Id
     WHERE GameType IN (70, 68, 76, 87)
     AND   Year(Date) = @Year
     AND   ht.LeagueId in (103, 104)
@@ -89,7 +89,7 @@ AS
     SELECT * FROM @Games ORDER BY RowId --ASC order so that games are in sequence.
 
 /*
-exec dbo.usp_GetPlayoffs 2021
+exec mlb.usp_GetPlayoffs 2021
 70 = Wild Card
 68 = Divisional Playoff
 76 = League Playoff

@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MlbDataPump.Model
 {
-    [Table("Teams")]
+    [Table("Teams", Schema = "mlb")]
     internal sealed class Team
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]

@@ -1,11 +1,15 @@
-﻿CREATE PROCEDURE [dbo].[PruneMlb]
+﻿CREATE PROCEDURE [mlb].[PruneMlb]
 AS
 BEGIN
-  DELETE dbo.Previews WHERE Address IN (SELECT Address FROM dbo.FileStaging)
+  DELETE mlb.Previews WHERE Address IN (SELECT Address FROM mlb.FileStaging)
 
   UPDATE a SET
    a.Content = N''
-  FROM dbo.FileStaging a
-  WHERE a.Address IN (SELECT Address FROM dbo.FileMetadata WHERE Status = 5)
+  FROM mlb.FileStaging a
+  WHERE a.Address IN (SELECT Address FROM mlb.FileMetadata WHERE Status = 5)
   AND   a.Content != N''
+
+  DELETE mlb.FileStaging
+  WHERE Content = N''
+  AND   UpdatedTime < DATEADD(dd, -7, GETUTCDATE())
 END

@@ -17,14 +17,14 @@ namespace MlbDataPump
         public static void Prune()
         {
             DynamicNonQuery sp = new DynamicNonQuery(new MlbType());
-            sp.Name = "dbo.PruneMlb";
+            sp.Name = "mlb.PruneMlb";
             int results = sp.Execute();
         }
 
         public static void GetStandings()
         {
             DynamicProcedure<Model.StandingRecord> sp = new DynamicProcedure<Model.StandingRecord>(new MlbType());
-            sp.Name = "dbo.GetGameByGameOutcomes";
+            sp.Name = "mlb.GetGameByGameOutcomes";
             List<Model.StandingRecord> results = sp.Execute().ToList();
         }
 

@@ -5,7 +5,7 @@ using Infrastructure.DataAccess;
 
 namespace MlbDataPump.Model
 {
-    [Table("HomeRuns")]
+    [Table("HomeRuns", Schema = "mlb")]
     internal sealed class HomeRun
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]

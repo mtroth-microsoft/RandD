@@ -1,4 +1,4 @@
-﻿  CREATE TABLE dbo.GameTypeMap (
+﻿  CREATE TABLE mlb.GameTypeMap (
     Id int IDENTITY(1,1) NOT NULL ,
     StartDate datetime NOT NULL ,
     EndDate datetime NOT NULL ,

@@ -1,8 +1,8 @@
-﻿CREATE TABLE [dbo].[Games](
+﻿CREATE TABLE [mlb].[Games](
 	[Id] [bigint] IDENTITY(1,1) NOT NULL,
 	[GameId] [nvarchar](128) NULL,
 	[Date] [datetimeoffset](7) NOT NULL,
-    [TimeOfDay] [nvarchar](10) NOT NULL,
+	[TimeOfDay] [nvarchar](10) NOT NULL,
 	[GameType] [int] NOT NULL,
 	[Innings] [int] NOT NULL,
 	[HomeScore_Runs] [int] NOT NULL,
@@ -50,6 +50,6 @@
 	[WinningPitcherName] [nvarchar](128) NULL,
 	[LosingPitcherName] [nvarchar](128) NULL,
 	[SavingPitcherName] [nvarchar](128) NULL,
-    CONSTRAINT [PK_Games] PRIMARY KEY CLUSTERED ([Id] ASC),
+	CONSTRAINT [PK_Games] PRIMARY KEY CLUSTERED ([Id] ASC),
 	CONSTRAINT [UQ_Games_GameId] UNIQUE ([GameId])
 )

@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[HomeRuns](
+﻿CREATE TABLE [mlb].[HomeRuns](
 	[Id] [bigint] IDENTITY(1,1) NOT NULL,
 	[Runners] [int] NOT NULL,
 	[Inning] [int] NOT NULL,

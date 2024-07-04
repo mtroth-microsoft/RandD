@@ -6,7 +6,7 @@ using Infrastructure.DataAccess;
 
 namespace MlbDataPump.Model
 {
-    [Table("FileStaging")]
+    [Table("FileStaging", Schema = "mlb")]
     internal sealed class FileStaging
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]

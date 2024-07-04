@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MlbDataPump.Model
 {
-    [Table("GameTypeMap")]
+    [Table("GameTypeMap", Schema = "mlb")]
     internal sealed class GameTypeMap
     {
         public int Id

@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MlbDataPump.Model
 {
-    [Table("FileMetadata")]
+    [Table("FileMetadata", Schema = "mlb")]
     internal sealed class FileMetadata
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]

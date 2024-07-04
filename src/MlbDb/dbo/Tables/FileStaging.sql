@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[FileStaging](
+﻿CREATE TABLE [mlb].[FileStaging](
 	[Id] [bigint] IDENTITY(1,1) NOT NULL,
 	[Content] [nvarchar](max) NOT NULL,
 	[InsertedTime] [datetimeoffset](7) NOT NULL,

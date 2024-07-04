@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[FileMetadata](
+﻿CREATE TABLE [mlb].[FileMetadata](
 	[Id] [bigint] IDENTITY(1,1) NOT NULL,
 	[Address] [nvarchar](128) NOT NULL,
 	[StartTime] [datetimeoffset](7) NOT NULL,

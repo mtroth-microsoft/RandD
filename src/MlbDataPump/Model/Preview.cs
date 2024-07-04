@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MlbDataPump.Model
 {
-    [Table("Previews")]
+    [Table("Previews", Schema = "mlb")]
     internal sealed class Preview
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]

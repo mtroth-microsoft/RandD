@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[Teams](
+﻿CREATE TABLE [mlb].[Teams](
 	[Id] [int] NOT NULL,
 	[City] [nvarchar](128) NOT NULL,
 	[Name] [nvarchar](128) NOT NULL,

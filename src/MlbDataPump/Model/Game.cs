@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MlbDataPump.Model
 {
-    [Table("Games")]
+    [Table("Games", Schema = "mlb")]
     internal sealed class Game
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
