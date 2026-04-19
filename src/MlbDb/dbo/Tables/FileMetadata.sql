@@ -6,6 +6,7 @@
 	[Status] [tinyint] NOT NULL,
 	[EventDate]  AS (CONVERT([datetime2],replace(replace(replace(replace(replace([address],'http://gd2.mlb.com/components/game/mlb/',''),'/master_scoreboard.xml?store=MlbType',''),'year_',''),'month_',''),'day_',''))),
 	[AddressEx]  AS replace(replace(replace(replace(replace([address], 'http://gd2.mlb.com/components/game/mlb/', 'https://www.espn.com/mlb/scoreboard/_/date/'), '/master_scoreboard.xml', ''), 'year_', ''), '/month_', ''), '/day_', ''),
+    [DateString] [nvarchar](8) NULL,
     CONSTRAINT [PK_FileMetadata] PRIMARY KEY CLUSTERED ([Id] ASC),
     CONSTRAINT [UQ_FileMetadata_Address] UNIQUE NONCLUSTERED ([Address] ASC),
 ) ON [PRIMARY]

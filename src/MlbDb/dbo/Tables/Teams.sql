@@ -6,5 +6,6 @@
 	[DivisionCode] [nvarchar](10) NULL,
 	[LeagueId] [int] NULL,
 	[EspnName] [nvarchar](128) NULL,
+    [FullEspnName] [nvarchar](128) NULL,
     CONSTRAINT [PK_Teams] PRIMARY KEY CLUSTERED ([Id] ASC)
 )

@@ -54,6 +54,12 @@ namespace MlbDataPump.Model
             set;
         }
 
+        public string DateString
+        {
+            get;
+            set;
+        }
+
         internal string Blob
         {
             get;

@@ -39,6 +39,9 @@
     <Reference Include="EntityFramework.SqlServer">
       <HintPath>E:\nuget\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>htmlagilitypack.1.12.4\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
     <Reference Include="Hyak.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>E:\nuget\packages\Hyak.Common.1.0.2\lib\net45\Hyak.Common.dll</HintPath>
@@ -109,6 +112,7 @@
     <Compile Include="DefaultConnectionFactory.cs" />
     <Compile Include="GameLoader.cs" />
     <Compile Include="LoggingHelper.cs" />
+    <Compile Include="MlbSchedule472.cs" />
     <Compile Include="MlbType.cs" />
     <Compile Include="Model\FileMetadata.cs" />
     <Compile Include="Model\FileStaging.cs" />

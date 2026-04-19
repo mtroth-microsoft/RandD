@@ -6,6 +6,7 @@ using System.Text.RegularExpressions;
 using System.Xml.Linq;
 using Infrastructure.DataAccess;
 using MlbDataPump.Model;
+using MlbSchedule;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
@@ -68,7 +69,8 @@ namespace MlbDataPump
         internal static void HandlePreviews(FileMetadata metadata)
         {
             List<Model.Preview> previews = new List<Preview>();
-            previews.AddRange(ConvertHtml(metadata));
+            var scheduledGames = Scraper.ScrapeScheduleAsync(metadata.DateString).Result;
+            previews.AddRange(ConvertToPreviews(metadata, scheduledGames));
 
             if (previews.Count > 0)
             {
@@ -269,45 +271,23 @@ namespace MlbDataPump
             return record;
         }
 
-        private static List<Preview> ConvertHtml(FileMetadata metadata)
+        private static IEnumerable<Preview> ConvertToPreviews(FileMetadata metadata, List<ScheduledGame> scheduledGames)
         {
-            Regex regex = new Regex("<div id=\"espnfitt\">(.*?)\n");
-            Regex rx = new Regex("<section class=\"Scoreboard(.*?)</section>");
-            var blob = regex.Match(metadata.Blob);
-            XElement x = XElement.Parse(blob.Value.Replace("xlink:", string.Empty));
-            var matches = rx.Matches(blob.Value);
             List<Preview> previews = new List<Preview>();
-
-            foreach (Match match in matches)
+            foreach (ScheduledGame sg in scheduledGames)
             {
                 Preview preview = new Preview();
                 previews.Add(preview);
-                preview.Date = metadata.EventDate.AddMinutes(719);
-                preview.TimeOfDay = preview.Date.TimeOfDay.ToString();
+                preview.Date = sg.GameTime;
+                preview.TimeOfDay = sg.GameTime.TimeOfDay.ToString();
                 preview.GameType = GetGameType(metadata);
                 preview.Address = metadata.AddressEx;
-
-                Regex regex1 = new Regex("<ul class=\"ScoreboardScoreCell__Competitors\">(.*?)</ul>");
-                var games = regex1.Match(match.Value).Value.Replace("xlink:", string.Empty);
-                var xgame = XElement.Parse(games).Descendants().Where(p => p.Name == "div" && (p.Attribute("class")?.Value.StartsWith("ScoreCell__TeamName") ?? false));
-                try
-                {
-                    preview.AwayTeam = LookupTeamId(xgame.First().Value);
-                    preview.HomeTeam = LookupTeamId(xgame.Last().Value);
-                    if (preview.AwayTeam == null || preview.HomeTeam == null)
-                    {
-                        previews.Remove(preview);
-                        continue;
-                    }
-
-                    preview.AwayTeamId = preview.AwayTeam.Id;
-                    preview.HomeTeamId = preview.HomeTeam.Id;
-                }
-                catch
-                {
-                    previews.Remove(preview);
-                    continue;
-                }
+                preview.AwayPitcher = sg.VisitingPitcher;
+                preview.HomePitcher = sg.HomePitcher;
+                preview.AwayTeam = LookupTeamId(sg.VisitingTeam);
+                preview.AwayTeamId = preview.AwayTeam.Id;
+                preview.HomeTeam = LookupTeamId(sg.HomeTeam);
+                preview.HomeTeamId = preview.HomeTeam.Id;
 
                 int indexer = previews.Where(p => p.AwayTeamId == preview.AwayTeamId && p.HomeTeamId == preview.HomeTeamId).Count();
                 TimeSpan offset = TimeSpan.FromHours(-7);
@@ -316,40 +296,9 @@ namespace MlbDataPump
                         $"{Normalize(preview.Date.ToOffset(offset).Day)}/" +
                         $"{preview.AwayTeam.Code}mlb-{preview.HomeTeam.Code}mlb-{indexer}";
                 preview.Id = IdUtil.GetGuidFromString(preview.GameId);
-
-                if (indexer == 1)
-                {
-                    try
-                    {
-                        var val = match.Value.Replace("xlink:", string.Empty);
-                        var xml = XElement.Parse(val);
-                        var performers = xml.Descendants().Where(p => p.Name == "div" && p.Attribute("class")?.Value == "ContentList__Item");
-                        if (performers.Count() == 2)
-                        {
-                            preview.AwayPitcher = ScrapePitcher(performers.First());
-                            preview.HomePitcher = ScrapePitcher(performers.Last());
-                        }
-                    }
-                    catch (System.Xml.XmlException) { }
-                }
             }
 
             return previews;
-        }
-
-        private static string ScrapePitcher(XElement element)
-        {
-            var nameNode = element.Descendants().Where(p => p.Name == "span" && p.Attribute("class")?.Value == "Athlete__PlayerName").SingleOrDefault();
-            var statNode = element.Descendants().Where(p => p.Name == "span" && (p.Attribute("class")?.Value.StartsWith("Athlete__Stats") ?? false)).SingleOrDefault();
-
-            if (nameNode != null)
-            {
-                return $"{nameNode.Value} {statNode?.Value ?? string.Empty}";
-            }
-            else
-            { 
-                return null; 
-            }
         }
 
         private static string Normalize(int value)
@@ -364,7 +313,7 @@ namespace MlbDataPump
 
         private static Team LookupTeamId(string value)
         {
-            string filter = string.Format("EspnName eq '{0}'", value);
+            string filter = string.Format("FullEspnName eq '{0}'", value);
             var results = QueryHelper.Read<Model.Team>(filter).ToList();
             if (results.Count == 1)
             {

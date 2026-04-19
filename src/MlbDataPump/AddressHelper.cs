@@ -196,15 +196,16 @@ namespace MlbDataPump
             DateTimeOffset test = this.watermark;
             while (now > test)
             {
+                string dateString = $"{Convert(test.Year)}{Convert(test.Month)}{Convert(test.Day)}";
                 string address = string.Format(template, test.Year, Convert(test.Month), Convert(test.Day));
-                string addressEx = string.Format(templateEx, $"{Convert(test.Year)}{Convert(test.Month)}{Convert(test.Day)}");
+                string addressEx = string.Format(templateEx, dateString);
                 if (this.completed.Any(p => p.Address == address) == false &&
                     this.returned.Any(p => p.Address == address) == false &&
                     this.running.Any(p => p.Address == address) == false &&
                     this.transformed.Any(p => p.Address == address) == false &&
                     this.addresses.Any(p => p.Address == address) == false)
                 {
-                    addresses.Add(new Model.FileMetadata() { Address = address, AddressEx = addressEx });
+                    addresses.Add(new Model.FileMetadata() { Address = address, AddressEx = addressEx, DateString = dateString });
                 }
 
                 test = test.AddDays(1);
@@ -262,6 +263,7 @@ namespace MlbDataPump
                 metadata.EndTime = result.EndTime;
                 metadata.Address = result.Address;
                 metadata.AddressEx = result.AddressEx;
+                metadata.DateString = result.DateString;
                 return metadata;
             }
         }
