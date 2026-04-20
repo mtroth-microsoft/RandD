@@ -313,7 +313,7 @@ namespace MlbDataPump
 
         private static Team LookupTeamId(string value)
         {
-            string filter = string.Format("FullEspnName eq '{0}'", value);
+            string filter = string.Format("FullEspnName eq '{0}' or EspnName eq '{0}'", value);
             var results = QueryHelper.Read<Model.Team>(filter).ToList();
             if (results.Count == 1)
             {
