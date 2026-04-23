@@ -282,8 +282,8 @@ namespace MlbDataPump
                 preview.TimeOfDay = sg.GameTime.TimeOfDay.ToString();
                 preview.GameType = GetGameType(metadata);
                 preview.Address = metadata.AddressEx;
-                preview.AwayPitcher = sg.VisitingPitcher;
-                preview.HomePitcher = sg.HomePitcher;
+                preview.AwayPitcher = sg.VisitingPitcher + sg.VisitingPitcherRecord?.ToString();
+                preview.HomePitcher = sg.HomePitcher + sg.HomePitcherRecord?.ToString();
                 preview.AwayTeam = LookupTeamId(sg.VisitingTeam);
                 preview.AwayTeamId = preview.AwayTeam.Id;
                 preview.HomeTeam = LookupTeamId(sg.HomeTeam);
@@ -291,9 +291,9 @@ namespace MlbDataPump
 
                 int indexer = previews.Where(p => p.AwayTeamId == preview.AwayTeamId && p.HomeTeamId == preview.HomeTeamId).Count();
                 TimeSpan offset = TimeSpan.FromHours(-7);
-                preview.GameId = $"{preview.Date.ToOffset(offset).Year}/" +
-                        $"{Normalize(preview.Date.ToOffset(offset).Month)}/" +
-                        $"{Normalize(preview.Date.ToOffset(offset).Day)}/" +
+                preview.GameId = $"{preview.Date.Year}/" +
+                        $"{Normalize(preview.Date.Month)}/" +
+                        $"{Normalize(preview.Date.Day)}/" +
                         $"{preview.AwayTeam.Code}mlb-{preview.HomeTeam.Code}mlb-{indexer}";
                 preview.Id = IdUtil.GetGuidFromString(preview.GameId);
             }

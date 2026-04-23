@@ -1,30 +1,52 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
 using System.Net.Http;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using HtmlAgilityPack;
+using Newtonsoft.Json.Linq;
 
 namespace MlbSchedule
 {
+    public class PitcherRecord
+    {
+        public int Wins { get; set; }
+        public int Losses { get; set; }
+        public double ERA { get; set; }
+
+        public PitcherRecord(int wins, int losses, double era)
+        {
+            Wins = wins;
+            Losses = losses;
+            ERA = era;
+        }
+
+        public override string ToString()
+        {
+            return $" ({Wins}-{Losses}, ERA: {ERA:F2})";
+        }
+    }
+
     public class ScheduledGame
     {
-        public DateTime GameTime { get; set; }
+        public DateTimeOffset GameTime { get; set; }
         public string VisitingTeam { get; set; }
         public string HomeTeam { get; set; }
         public string VisitingPitcher { get; set; }
         public string HomePitcher { get; set; }
+        public PitcherRecord VisitingPitcherRecord { get; set; }
+        public PitcherRecord HomePitcherRecord { get; set; }
 
-        public ScheduledGame(DateTime gameTime, string visitingTeam, string homeTeam,
-            string visitingPitcher, string homePitcher)
+        public ScheduledGame(DateTimeOffset gameTime, string visitingTeam, string homeTeam,
+            string visitingPitcher, string homePitcher,
+            PitcherRecord visitingPitcherRecord = null, PitcherRecord homePitcherRecord = null)
         {
             GameTime = gameTime;
             VisitingTeam = visitingTeam;
             HomeTeam = homeTeam;
             VisitingPitcher = visitingPitcher;
             HomePitcher = homePitcher;
+            VisitingPitcherRecord = visitingPitcherRecord;
+            HomePitcherRecord = homePitcherRecord;
         }
     }
 
@@ -75,12 +97,6 @@ namespace MlbSchedule
 
     public static class Scraper
     {
-        private static readonly Regex TeamSlugPattern =
-            new Regex(@"/mlb/team/_/name/([^/]+)", RegexOptions.Compiled);
-
-        private static readonly Regex PlayerLinkPattern =
-            new Regex(@"/mlb/player/", RegexOptions.Compiled);
-
         public static async Task<List<ScheduledGame>> ScrapeScheduleAsync(string dateStr)
         {
             if (dateStr == null)
@@ -88,126 +104,102 @@ namespace MlbSchedule
                 return new List<ScheduledGame>();
             }
 
-            var url = "https://www.espn.com/mlb/schedule/_/date/" + dateStr;
+            var url = "https://site.api.espn.com/apis/site/v2/sports/baseball/mlb/scoreboard?dates=" + dateStr;
 
             using (var client = new HttpClient())
             {
-                client.DefaultRequestHeaders.UserAgent.ParseAdd(
-                    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 " +
-                    "(KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36");
-
-                var html = await client.GetStringAsync(url).ConfigureAwait(false);
-                var doc = new HtmlDocument();
-                doc.LoadHtml(html);
-
-                var currentDate = DateTime.ParseExact(dateStr, "yyyyMMdd", CultureInfo.InvariantCulture);
-
+                var json = await client.GetStringAsync(url).ConfigureAwait(false);
+                var doc = JObject.Parse(json);
                 var games = new List<ScheduledGame>();
 
-                // The page shows multiple dates. Each date section is a ResponsiveTable div
-                // with an optional .Table__Title containing the date.
-                // Tables without a title inherit the previous date.
-                var tableDivs = doc.DocumentNode.SelectNodes(
-                    "//div[contains(@class,'ResponsiveTable')]");
-
-                if (tableDivs == null)
+                var events = doc["events"] as JArray;
+                if (events == null)
                     return games;
 
-                foreach (var tableDiv in tableDivs)
+                var pacific = TimeZoneInfo.FindSystemTimeZoneById("Pacific Standard Time");
+
+                foreach (var evt in events)
                 {
-                    var titleNode = tableDiv.SelectSingleNode(
-                        ".//div[contains(@class,'Table__Title')]");
-                    if (titleNode != null)
+                    var dateToken = (string)evt["date"];
+                    DateTimeOffset gameTime;
+                    if (dateToken != null)
                     {
-                        var titleText = titleNode.InnerText.Trim();
-                        DateTime parsedTitleDate;
-                        if (DateTime.TryParse(titleText, CultureInfo.InvariantCulture,
-                            DateTimeStyles.None, out parsedTitleDate))
-                        {
-                            currentDate = parsedTitleDate;
-                        }
+                        // Parse honoring whatever offset ESPN provides (Z, +00:00, etc.)
+                        var parsed = DateTimeOffset.Parse(dateToken, CultureInfo.InvariantCulture);
+                        gameTime = TimeZoneInfo.ConvertTime(parsed, pacific);
+                    }
+                    else
+                    {
+                        gameTime = new DateTimeOffset(DateTime.ParseExact(dateStr, "yyyyMMdd",
+                            CultureInfo.InvariantCulture), pacific.BaseUtcOffset);
                     }
 
-                    var tbodies = tableDiv.SelectNodes(".//tbody");
-                    if (tbodies == null) continue;
+                    var competitions = evt["competitions"] as JArray;
+                    if (competitions == null)
+                        continue;
 
-                    foreach (var tbody in tbodies)
+                    foreach (var comp in competitions)
                     {
-                        var rows = tbody.SelectNodes("tr");
-                        if (rows == null) continue;
+                        var competitors = comp["competitors"] as JArray;
+                        if (competitors == null)
+                            continue;
 
-                        foreach (var tr in rows)
+                        string homeTeam = null, visitingTeam = null;
+                        string homePitcher = "Undecided", visitingPitcher = "Undecided";
+                        PitcherRecord homeRecord = null, visitingRecord = null;
+
+                        foreach (var competitor in competitors)
                         {
-                            var tds = tr.SelectNodes("td");
-                            if (tds == null || tds.Count < 5)
-                                continue;
+                            var homeAway = (string)competitor["homeAway"] ?? "";
 
-                            // --- Visiting team (td[0]) ---
-                            var visitingLink = FindTeamLink(tds[0]);
-                            if (visitingLink == null)
-                                continue;
-                            var visitingTeam = ResolveTeamName(visitingLink);
-
-                            // --- Home team (td[1]) ---
-                            var homeLink = FindTeamLink(tds[1]);
-                            if (homeLink == null)
-                                continue;
-                            var homeTeam = ResolveTeamName(homeLink);
-
-                            // --- Time (td[2]) ---
-                            var timeTd = tds[2];
-                            var timeLink = timeTd.SelectSingleNode(".//a");
-                            var timeText = (timeLink ?? timeTd).InnerText.Trim();
-                            DateTime parsedTime;
-                            var gameTime = DateTime.TryParse(timeText, out parsedTime)
-                                ? currentDate.Date.Add(parsedTime.TimeOfDay)
-                                : currentDate.Date;
-
-                            // --- Pitching matchup (td[4]) ---
-                            var pitchingTd = tds[4];
-                            var pitchingText = pitchingTd.InnerText.Trim();
-                            var allPitcherLinks = pitchingTd.SelectNodes(".//a[@href]");
-                            var pitcherLinks = allPitcherLinks != null
-                                ? allPitcherLinks
-                                    .Where(a => PlayerLinkPattern.IsMatch(a.GetAttributeValue("href", "")))
-                                    .ToList()
-                                : new List<HtmlNode>();
-
-                            string visitingPitcher, homePitcher;
-
-                            if (pitchingText.Contains(" vs "))
+                            var teamName = "";
+                            var team = competitor["team"];
+                            if (team != null)
                             {
-                                var idx = pitchingText.IndexOf(" vs ", StringComparison.Ordinal);
-                                visitingPitcher = pitchingText.Substring(0, idx).Trim();
-                                homePitcher = pitchingText.Substring(idx + 4).Trim();
+                                var dn = (string)team["displayName"];
+                                var abbr = (string)team["abbreviation"];
+                                teamName = dn ?? (abbr != null ? TeamNames.Resolve(abbr) : "");
                             }
-                            else if (pitcherLinks.Count == 2)
+
+                            var pitcher = "Undecided";
+                            PitcherRecord record = null;
+                            var probables = competitor["probables"] as JArray;
+                            if (probables != null && probables.Count > 0)
                             {
-                                visitingPitcher = pitcherLinks[0].InnerText.Trim();
-                                homePitcher = pitcherLinks[1].InnerText.Trim();
+                                var prob = probables[0];
+                                var athlete = prob["athlete"];
+                                if (athlete != null)
+                                {
+                                    var pName = (string)athlete["displayName"];
+                                    if (pName != null)
+                                        pitcher = pName;
+                                }
+
+                                var stats = prob["statistics"] as JArray;
+                                if (stats != null)
+                                {
+                                    record = ParsePitcherRecord(stats);
+                                }
                             }
-                            else if (pitcherLinks.Count == 1)
+
+                            if (string.Equals(homeAway, "home", StringComparison.OrdinalIgnoreCase))
                             {
-                                var name = pitcherLinks[0].InnerText.Trim();
-                                if (pitchingText.StartsWith("Undecided", StringComparison.OrdinalIgnoreCase))
-                                {
-                                    visitingPitcher = "Undecided";
-                                    homePitcher = name;
-                                }
-                                else
-                                {
-                                    visitingPitcher = name;
-                                    homePitcher = "Undecided";
-                                }
+                                homeTeam = teamName;
+                                homePitcher = pitcher;
+                                homeRecord = record;
                             }
                             else
                             {
-                                visitingPitcher = "Undecided";
-                                homePitcher = "Undecided";
+                                visitingTeam = teamName;
+                                visitingPitcher = pitcher;
+                                visitingRecord = record;
                             }
+                        }
 
+                        if (homeTeam != null && visitingTeam != null)
+                        {
                             games.Add(new ScheduledGame(gameTime, visitingTeam, homeTeam,
-                                visitingPitcher, homePitcher));
+                                visitingPitcher, homePitcher, visitingRecord, homeRecord));
                         }
                     }
                 }
@@ -216,20 +208,25 @@ namespace MlbSchedule
             }
         }
 
-        private static HtmlNode FindTeamLink(HtmlNode td)
+        private static PitcherRecord ParsePitcherRecord(JArray stats)
         {
-            var allLinks = td.SelectNodes(".//a[@href]");
-            if (allLinks == null) return null;
-            return allLinks.FirstOrDefault(a =>
-                TeamSlugPattern.IsMatch(a.GetAttributeValue("href", ""))
-                && !string.IsNullOrWhiteSpace(a.InnerText));
-        }
+            int wins = 0, losses = 0;
+            double era = 0.0;
 
-        private static string ResolveTeamName(HtmlNode linkNode)
-        {
-            var href = linkNode.GetAttributeValue("href", "");
-            var match = TeamSlugPattern.Match(href);
-            return match.Success ? TeamNames.Resolve(match.Groups[1].Value) : linkNode.InnerText.Trim();
+            foreach (var stat in stats)
+            {
+                var name = (string)stat["name"] ?? "";
+                var value = (string)stat["displayValue"] ?? "0";
+
+                if (string.Equals(name, "wins", StringComparison.OrdinalIgnoreCase))
+                    int.TryParse(value, out wins);
+                else if (string.Equals(name, "losses", StringComparison.OrdinalIgnoreCase))
+                    int.TryParse(value, out losses);
+                else if (string.Equals(name, "ERA", StringComparison.OrdinalIgnoreCase))
+                    double.TryParse(value, NumberStyles.Float, CultureInfo.InvariantCulture, out era);
+            }
+
+            return new PitcherRecord(wins, losses, era);
         }
     }
 }
