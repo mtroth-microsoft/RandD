@@ -276,6 +276,11 @@ namespace MlbDataPump
             List<Preview> previews = new List<Preview>();
             foreach (ScheduledGame sg in scheduledGames)
             {
+                if (sg.HomeTeam == "TBD" || sg.VisitingTeam == "TBD")
+                {
+                    continue; 
+                }
+
                 Preview preview = new Preview();
                 previews.Add(preview);
                 preview.Date = sg.GameTime;
