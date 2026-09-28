@@ -290,8 +290,14 @@ namespace MlbDataPump
                 preview.AwayPitcher = sg.VisitingPitcher + sg.VisitingPitcherRecord?.ToString();
                 preview.HomePitcher = sg.HomePitcher + sg.HomePitcherRecord?.ToString();
                 preview.AwayTeam = LookupTeamId(sg.VisitingTeam);
-                preview.AwayTeamId = preview.AwayTeam.Id;
                 preview.HomeTeam = LookupTeamId(sg.HomeTeam);
+
+                if (preview.AwayTeam == null || preview.HomeTeam == null)
+                {
+                    continue;
+                }
+
+                preview.AwayTeamId = preview.AwayTeam.Id;
                 preview.HomeTeamId = preview.HomeTeam.Id;
 
                 int indexer = previews.Where(p => p.AwayTeamId == preview.AwayTeamId && p.HomeTeamId == preview.HomeTeamId).Count();
