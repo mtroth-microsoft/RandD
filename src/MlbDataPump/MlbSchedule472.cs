@@ -196,7 +196,7 @@ namespace MlbSchedule
                             }
                         }
 
-                        if (homeTeam != null && visitingTeam != null)
+                        if (ContainsNoSpecialCharacters(homeTeam, visitingTeam) == false)
                         {
                             games.Add(new ScheduledGame(gameTime, visitingTeam, homeTeam,
                                 visitingPitcher, homePitcher, visitingRecord, homeRecord));
@@ -206,6 +206,23 @@ namespace MlbSchedule
 
                 return games;
             }
+        }
+
+        private static bool ContainsNoSpecialCharacters(params string[] teams)
+        {
+            foreach (string item in teams)
+            {
+                if (string.IsNullOrWhiteSpace(item))
+                    return true;
+
+                foreach (char c in item)
+                {
+                    if (!char.IsLetterOrDigit(c) && !char.IsWhiteSpace(c))
+                        return true;
+                }
+            }
+
+            return false;
         }
 
         private static PitcherRecord ParsePitcherRecord(JArray stats)
